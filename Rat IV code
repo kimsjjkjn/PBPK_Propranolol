@@ -1,4 +1,4 @@
-# PBPK propranolol rat IV modeling
+;;; PBPK propranolol rat IV modeling
 
 METHOD RK4
 STARTTIME = 0
