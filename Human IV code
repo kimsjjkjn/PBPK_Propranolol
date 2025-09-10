@@ -183,7 +183,7 @@ Vm = 26897 ; muscle
 Vsk = 2600 ; skin
 Vsp = 182 ; spleen
 
-{ Blood flow (mL/min) } ;SimCYP human ver./논문 ver; 논문 대상자 맞춰서 (보통 male 70kg)
+{ Blood flow (mL/min) } ;SimCYP human ver. ; this model is in standard of male 70kg
 Q = 5200 ; cardiac output
 Q_lg = Q ; lung
 Q_a = Q * 5/100 ; adipose
