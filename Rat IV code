@@ -155,12 +155,6 @@ C_sp_uM = C_sp / MW
 
 MW =259.3434;g/mol
 
-;;;; AUC ;;;;;
-INIT AUC = 0
-d/dt(AUC) = C_ar
-INIT AUMC = 0
-d/dt(AUMC) = t * C_ar
-
 ;;;;;Rat physiological parameters;;;;;
 ;GI tract;
 radius_intestine =  1.8; cm, Issa et al., 2003
