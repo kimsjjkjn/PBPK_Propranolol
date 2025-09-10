@@ -140,6 +140,8 @@ Note: The in vivo data were digitized from published figures rather than obtaine
 
 # Discussion
 ## Rat IV Model
+AAFE = ~1.3–1.5, Within 2× = 100% indicate that all major pharmacokinetic parameters (t½, CL, Vd, AUC) match with both the digitised and literature in vivo data. This indicates that the rat IV model constructed is reliable and well-performed. 
+
 ### How Close?
 - All four IV metrics are within 2-fold of both the digitised in-vivo values and the literature targets (see “Within 2x” = True across the board).
 - AUC∞ is very tight to literature (28,349 vs 27,122 ng·min·mL⁻¹; FE = 1.05, +4.5%) and acceptable vs digitised in-vivo (FE = 1.14).
@@ -159,6 +161,10 @@ Note: The in vivo data were digitized from published figures rather than obtaine
 The in-vivo values were digitised from published figures (raw datasets were unavailable). Digitisation can introduce small systematic and random errors, so the “Digitised In-Vivo” numbers may not perfectly reflect the original raw values. We therefore compare to both the digitised points and the literature targets.
 
 ## Human IV Model
+Although predicted data against digitised data results in AAFE = 1.74, predicted data against literature data results in AAFE = 2.73. It is more reasonable to compare with actual in vivo data from literature rather than digitised data (except for the cases when it's inevitable - i.e. time-concentration profiles). Thus this result indicates that this model does not reliably work. AUC and CL values match reasonably well (within 2x),but Cmax, Tmax, Vd, t1/2 largely mismatch (e.g. Cmax is predicted 3-4 times higher). Especially, because Vd and t1/2 are overestimated, human IV PK is not reasonably reflected. Thus, this result indicates that although human UV models are partially appropriate, clinically not appropraite. 
+
+
+
 ### How Close?
 - Exposure is reasonably aligned. Predicted AUC₀–∞ ≈ 713 ng·min/mL vs in-vivo (digitized) 616 (fold-error, FE ≈ 1.16) and literature 979 (FE ≈ 1.37).
 - Cmax 7.39 ng/mL is close to in-vivo 8 (FE ≈ 1.08) and lower than literature 12.3 (FE ≈ 1.67).
@@ -173,6 +179,10 @@ The in-vivo values were digitised from published figures (raw datasets were unav
 The in-vivo values were digitised from published figures (raw datasets were unavailable). Digitisation can introduce small systematic and random errors, so the “Digitised In-Vivo” numbers may not perfectly reflect the original raw values. We therefore compare to both the digitised points and the literature targets.
 
 ## Human PO Model
+Although predicted data against digitised data results in AAFE = 1.4, predicted data against literature data results in AAFE = 2.0. It is more reasonable to compare with actual in vivo data from literature rather than digitised data (except for the cases when it's inevitable - i.e. time-concentration profiles). Thus this result indicates that although some parameters such as Cmax, AUC, F are reasonably well-predicted using the model (within 2x), some parameters like Tmax and t1/2 largely mismatch (Tmax is 3.6 times faster, t1/2 is 5 times overestimated). This is potentially due to non-realistic absorption equations which did not consider secretion and reabsorption. Thus, this result indicates that although human PO models are partially appropriate, clinically not appropraite. 
+
+
+
 ### How Close?
 - AUC₀–∞ is acceptable: predicted ≈ 11,280 ng·min/mL vs in-vivo 6,985 (FE ≈ 1.62) and literature 8,930 (FE ≈ 1.26).
 - Cmax 31.3 ng/mL vs in-vivo 20 (FE ≈ 1.56) and literature 28 (FE ≈ 1.12).
