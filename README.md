@@ -34,8 +34,12 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 - After completing simulations in Berkeley Madonna, the datasets were exported to Excel.
 - Published in vivo concentration–time profiles were digitized from figures (as raw datasets were unavailable).  
 - Simulated and in vivo datasets were overlaid in Excel for direct comparison.  
-- Model performance was evaluated by Average Absolute Fold Error (AAFE) and % within 2-fold / 3-fold error ranges.
-- Where available, key PK parameters (Cmax, Tmax, AUC, t1/2) were extracted and compared.
+- Model performance was evaluated by Average Absolute Fold Error (AAFE) and % within 2-fold / 3-fold error ranges:
+  <img width="631" height="291" alt="Screenshot 2025-09-10 at 10 29 07 PM" src="https://github.com/user-attachments/assets/799af2d3-9e5e-4f78-bbb7-2e261a5cb61f" />
+
+- Where available, key PK parameters (Cmax, Tmax, AUC, t1/2) were extracted and compared. The evaluation from this aspect was done bu (adopted from the following research paper: https://doi.org/10.2165/00003088-200645050-00006) calculating:
+  - Fold error (FE) per parameter = max(predicted, observed) / min(predicted, observed) so FE ≥ 1.0 by definition.
+  - Average-fold error (AFE/AAFE) across parameters = geometric mean of the per-parameter FEs; the paper also reports the % within 2-fold (and 3-fold).
 
 # Results
 ## Rat IV Model
@@ -44,7 +48,7 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
   <img width="616" height="496" alt="Screenshot 2025-09-10 at 3 13 19 PM" src="https://github.com/user-attachments/assets/e821a4a7-fc80-422e-940d-2287ed015a3b" />
 
 - Figure 2. Rat IV: Simulated vs observed propranolol blood concentrations.
-  <img width="619" height="487" alt="Screenshot 2025-09-10 at 1 56 44 PM" src="https://github.com/user-attachments/assets/eaa3857a-8aa9-4e6d-bc54-f16d88571cc7" />
+  <img width="347" height="237" alt="image" src="https://github.com/user-attachments/assets/704a2208-4d6b-4e98-81da-c7d8832e2eaf" />
 - Table 1. Average Absolute Fold Error (AAFE) between Predicted and In Vivo Concentrations in IV rat model
 
 | Metric | Value |
@@ -55,65 +59,81 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 
 - Table 2. Comparison of literature In Vivo Pharmacokinetic Parameters with Predicted and Digitized In Vivo Pharmacokinetic Parameters in IV rat model
 
-| Metric                   | Predicted (model) | Digitised In Vivo | Literature In Vivo | Pred/Dig | FE vs Dig | Within 2x (Dig) | Pred/Lit | FE vs Lit | Within 2x (Lit) |
+| Parameter                   | Predicted (model) | Digitised In Vivo | Literature In Vivo | Pred/Dig | FE vs Dig | Within 2x (Dig) | Pred/Lit | FE vs Lit | Within 2x (Lit) |
 |--------------------------|------------------:|------------------:|-------------------:|---------:|----------:|:----------------:|---------:|----------:|:---------------:|
 | t½ (min)                 | 67.9              | 38.8              | 40                 | 1.75     | 1.75      | True             | 1.70     | 1.70      | True            |
-| CL (mL·kg⁻¹·min⁻¹)       | 88.2              | 100.6             | 92.2               | 0.88     | 1.14      | True             | 0.96     | 1.05      | True            |
-| Vd (L·kg⁻¹)              | 8.64              | 5.63              | 5.30               | 1.53     | 1.53      | True             | 1.63     | 1.63      | True            |
-| AUC∞ (ng·min·mL⁻¹)       | 28,349            | 24,850            | 27,122             | 1.14     | 1.14      | True             | 1.05     | 1.05      | True            |
- 
-- Note: The in vivo data were digitized from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 2. 
+| CL (mL/kg·min)       | 88.2              | 100.6             | 92.2               | 0.88     | 1.14      | True             | 0.96     | 1.05      | True            |
+| Vd (L/kg)              | 8.64              | 5.63              | 5.30               | 1.53     | 1.53      | True             | 1.63     | 1.63      | True            |
+| AUC∞ (ng·min/mL)       | 28,349            | 24,850            | 27,122             | 1.14     | 1.14      | True             | 1.05     | 1.05      | True            |
+
+Route-level summary (Rat IV)					
+- vs Digitised: AAFE = 1.37, within 2× = 4/4 (100%), within 3× = 4/4 (100%).
+- vs Literature: AAFE = 1.32, within 2× = 4/4 (100%), within 3× = 4/4 (100%).
+
+Note: The in vivo data were digitized from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 2. 
 
 ## Human IV Model
 - in vivo pharmacokinetic data for comparison: 10.1371/journal.pone.0097885
 - Figure 3. Human IV: In Vivo figure (figure 2A control data was used)
   <img width="711" height="351" alt="Screenshot 2025-09-10 at 2 06 48 PM" src="https://github.com/user-attachments/assets/83b672f8-65d8-4171-b4b3-eead4938a100" />
 - Figure 4. Human IV: Simulated vs observed propranolol plasma concentrations (in vivo data is in venous plasma concentration, so simulated data was also converted to venous plasma concentration).
-  <img width="362" height="218" alt="image" src="https://github.com/user-attachments/assets/bfd6c49b-5887-46ee-bf1f-150c63581dab" />
+  <img width="362" height="218" alt="image" src="https://github.com/user-attachments/assets/cbcc3781-8e5c-4c31-bcd1-cc0b332089d7" />
 - Table 3. Average Absolute Fold Error (AAFE) between Predicted and In Vivo Concentrations in IV human model
 
 | Metric | Value |
 | :------ | ----: |
-| AAFE | 1.277554836 |
+| AAFE | 1.213295173 |
 | Fraction within 2-fold (0.5–2.0) | 1 |
 | Fraction within 3-fold (0.33–3.0) | 1 |
 
 - Table 4. Comparison of literature In Vivo Pharmacokinetic Parameters with Predicted and Digitized In Vivo Pharmacokinetic Parameters in IV human model
 
-| Metric             | Predicted | Digitised In Vivo | Literature In Vivo | Pred/Dig | FE vs Dig | Within 2x (Dig) | Pred/Lit | FE vs Lit | Within 2x (Lit) |
-| :----------------- | --------: | ----------------: | -----------------: | -------: | --------: | :-------------: | -------: | --------: | :-------------: |
-| AUC₀–∞ (ng·min/mL) |    712.77 |            616.38 |                979 |    1.156 |     1.156 |       TRUE      |    0.728 |     1.374 |       TRUE      |
-| Cmax (ng/mL)       |     7.388 |                 8 |               12.3 |    0.924 |     1.083 |       TRUE      |    0.601 |     1.665 |       TRUE      |
-| Tmax (min)         |         0 |                 5 |                  5 |        0 |         – |      FALSE      |        0 |         – |      FALSE      |
-| t½ (min)           |    856.01 |            831.18 |                205 |     1.03 |      1.03 |       TRUE      |    4.176 |     4.176 |      FALSE      |
+| Parameter         | Predicted | Digitised In Vivo | Literature In Vivo | Pred/Dig | FE vs Dig | Within 2× (Dig) | Pred/Lit | FE vs Lit | Within 2× (Lit) |
+|-------------------|-----------|-------------------|--------------------|----------|-----------|-----------------|----------|-----------|-----------------|
+| Cmax (ng/mL)      | 36.08     | 8                 | 12.3               | 4.51     | 4.51      | FALSE           | 2.93     | 2.93      | FALSE           |
+| Tmax (min)        | 0         | 5                 | 5                  | 0        | ∞         | FALSE           | 0        | ∞         | FALSE           |
+| AUC₀–∞ (ng·min/mL)| 792.82    | 593.19            | 979                | 1.34     | 1.34      | TRUE            | 0.81     | 1.24      | TRUE            |
+| CL (mL/min)       | 1261.31   | 1685.79           | 1187               | 0.75     | 1.34      | TRUE            | 1.06     | 1.06      | TRUE            |
+| Vd (L/kg)         | 30.3      | 25.04             | 4.4                | 1.21     | 1.21      | TRUE            | 6.89     | 6.89      | FALSE           |
+| t½ (min)          | 1165.6    | 720.61            | 205                | 1.62     | 1.62      | TRUE            | 5.68     | 5.68      | FALSE           |
 
-- Note: The in vivo data were digitized from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 4. 
+Route-level summary (Human IV)					
+- vs Digitised (excluding IV Tmax, which is 0 by definition): AAFE = 1.74, within 2× = 80%, within 3× = 80%.
+- vs Literature (excluding IV Tmax): AAFE = 2.73, within 2× = 40%, within 3× = 60%.				
+
+Note: The in vivo data were digitized from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 4. 
 
 ## Human PO Model
 - in vivo pharmacokinetic data for comparison: 10.1371/journal.pone.0097885
 - Figure 5. Human PO: In Vivo figure (figure 2B control data was used)
     <img width="711" height="351" alt="Screenshot 2025-09-10 at 2 06 48 PM" src="https://github.com/user-attachments/assets/83b672f8-65d8-4171-b4b3-eead4938a100" />
 - Figure 6. Human PO: Simulated vs observed propranolol plasma concentrations (in vivo data is in venous plasma concentration, so simulated data was also converted to venous plasma concentration).
-  <img width="362" height="217" alt="image" src="https://github.com/user-attachments/assets/7558ae70-f615-4b34-bf5a-e26d52a3312f" />
+  <img width="361" height="217" alt="image" src="https://github.com/user-attachments/assets/ad72b1e4-84d7-46be-b58a-e0a33a8ab9fc" />
 - Table 5. Average Absolute Fold Error (AAFE) between Predicted and In Vivo Concentrations in PO human model
 
 | Metric                            |       Value |
 | :-------------------------------- | ----------: |
-| AAFE                              | 1.792876734 |
+| AAFE                              | 1.740499695 |
 | Fraction within 2-fold (0.5–2.0)  | 0.666666667 |
 | Fraction within 3-fold (0.33–3.0) | 0.916666667 |
 
 - Table 6. Comparison of literature In Vivo Pharmacokinetic Parameters with Predicted and Digitized In Vivo Pharmacokinetic Parameters in PO human model
 
-| Metric             | Predicted | Digitised In Vivo | Literature In Vivo | Pred/Dig | FE vs Dig | Within 2x (Dig) | Pred/Lit | FE vs Lit | Within 2x (Lit) |
-| :----------------- | --------: | ----------------: | -----------------: | -------: | --------: | :-------------: | -------: | --------: | :-------------: |
-| AUC₀–∞ (ng·min/mL) |  11279.78 |           6984.69 |               8930 |    1.615 |     1.615 |       TRUE      |    1.263 |     1.263 |       TRUE      |
-| Cmax (ng/mL)       |     31.31 |                20 |                 28 |    1.566 |     1.566 |       TRUE      |    1.118 |     1.118 |       TRUE      |
-| Tmax (min)         |        45 |                60 |                180 |     0.75 |     1.333 |       TRUE      |     0.25 |         4 |      FALSE      |
-| t½ (min)           |    1163.5 |            596.76 |                214 |     1.95 |      1.95 |       TRUE      |    5.437 |     5.437 |      FALSE      |
-| F (%)              |    39.563 |            28.329 |                 27 |    1.397 |     1.397 |       TRUE      |    1.465 |     1.465 |       TRUE      |
+| Parameter         | Predicted   | Digitised In Vivo | Literature In Vivo | Pred/Dig | FE vs Dig | Within 2× (Dig) | Pred/Lit | FE vs Lit | Within 2× (Lit) |
+|-------------------|-------------|-------------------|--------------------|----------|-----------|-----------------|----------|-----------|-----------------|
+| Cmax (ng/mL)      | 31.12       | 20                | 28                 | 1.56     | 1.56      | TRUE            | 1.11     | 1.11      | TRUE            |
+| Tmax (min)        | 50          | 60                | 180                | 0.83     | 1.20      | TRUE            | 0.28     | 3.60      | FALSE           |
+| AUC₀–∞ (ng·min/mL)| 11192.89    | 7015.94           | 8930               | 1.60     | 1.60      | TRUE            | 1.25     | 1.25      | TRUE            |
+| CL/F (mL/min)     | 3573.7      | 5701.31           | —                  | 0.63     | 1.60      | TRUE            | —        | —         | —               |
+| Vz/F (mL)         | 5,987,170.77| 5,799,234.70      | —                  | 1.03     | 1.03      | TRUE            | —        | —         | —               |
+| t½ (min)          | 1161.26     | 705.05            | 214                | 1.65     | 1.65      | TRUE            | 5.43     | 5.43      | FALSE           |
+| F (%)             | 35.29       | 29.57             | 27                 | 1.19     | 1.19      | TRUE            | 1.31     | 1.31      | TRUE            |
 
-- Note: The in vivo data were digitized from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 6. 
+Route-level summary (Human PO)
+- vs Digitised: AAFE = 1.38, within 2× = 100%, within 3× = 100%.
+- vs Literature (for the parameters reported in the paper: Cmax, Tmax, AUC, t½, F): AAFE = 2.04, within 2× = 60%, within 3× = 60%.
+
+Note: The in vivo data were digitized from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 6. 
 
 # Discussion
 ## Rat IV Model
@@ -186,14 +206,16 @@ Jamei, M. et al. "Population-based mechanistic prediction of oral drug absorptio
 
 Jones, H. M., and K. Rowland Yeo. "Basic concepts in physiologically based pharmacokinetic modeling in drug discovery and development." CPT: Pharmacometrics & Systems Pharmacology, vol. 2, no. 8, 2013, pp. 1–12. doi:10.1038/psp.2013.41.
 
+Jones, Hannah M, et al. “A Novel Strategy for Physiologically Based Predictions of Human Pharmacokinetics.” Clinical Pharmacokinetics, vol. 45, no. 5, 2006, pp. 511–542, https://doi.org/10.2165/00003088-200645050-00006.
+
 Reigner, B., et al. "Comparative pharmacokinetics of propranolol after administration into the portal and systemic circulation in the rat." Journal of Pharmacology, vol. 38, no. 2, 1989, pp. 112–119. doi:10.1159/000136352.
 
 Rowland, M., et al. "Physiologically based pharmacokinetics in drug development and regulatory science: a workshop report." Clinical Pharmacokinetics, vol. 45, no. 5, 2006, pp. 507–526. doi:10.2165/00003088-200645050-00006.
 
-Rowland, M., and T. N. Tozer. Clinical Pharmacokinetics and Pharmacodynamics: Concepts and Applications. 4th ed., Wolters Kluwer Health/Lippincott Williams & Wilkins, 2011.
+Rowland, M., and T. N. Tozer. "Clinical Pharmacokinetics and Pharmacodynamics: Concepts and Applications." 4th ed., Wolters Kluwer Health/Lippincott Williams & Wilkins, 2011.
 
 Rostami-Hodjegan, A. "Physiologically based pharmacokinetics joined with in vitro–in vivo extrapolation of ADME: a marriage under the arch of systems pharmacology." Clinical Pharmacology & Therapeutics, vol. 92, no. 1, 2012, pp. 50–61. doi:10.1038/clpt.2012.65.
 
-Taegtmeyer, Anne B, et al. A Study of the Relationship between Serum Bile Acids and Propranolol Pharmacokinetics and Pharmacodynamics in Patients with Liver Cirrhosis and in Healthy Controls. Vol. 9, no. 6, 6 June 2014, pp. e97885–e97885, https://doi.org/10.1371/journal.pone.0097885.
+Taegtmeyer, Anne B, et al. "A Study of the Relationship between Serum Bile Acids and Propranolol Pharmacokinetics and Pharmacodynamics in Patients with Liver Cirrhosis and in Healthy Controls." Vol. 9, no. 6, 6 June 2014, pp. e97885–e97885, https://doi.org/10.1371/journal.pone.0097885.
 
 Zhao, Peng, et al. "Applications of physiologically based pharmacokinetic (PBPK) modeling and simulation during regulatory review." Clinical Pharmacology & Therapeutics, vol. 92, no. 1, 2012, pp. 1–4. doi:10.1038/clpt.2012.113.
