@@ -1,0 +1,236 @@
+;;; PBPK propranolol human PO modeling (finalise)
+;;;비교 invivo 논문: https://pmc.ncbi.nlm.nih.gov/articles/PMC4048194/#pone-0097885-t002
+;;; Cart/Rb --> Cp (논문에는 Cp 값 줄 때가 많으니까 비교하려면 이렇게 환산해서 비교하기)
+
+METHOD RK4
+STARTTIME = 0
+STOPTIME = 2890 ;10 minute administration, thus datapoint used in analysis put 10 minute as 0 minute. 
+DT = 0.001
+DTOUT = 5
+
+t = time
+
+{ Abbreviation }
+; Volume (V)
+; Blood flow (Q)
+; Hematocrit (Hct)
+; Weight (W)
+; Vein (ve)
+; Artery (ar)
+; Adipose (a)
+; Bone (bo)
+; Brain (b)
+; Gut (g)
+; Heart (h)
+; Kidneys (k)
+; Liver (li)
+; Lung (lg)
+; Muscle (m)
+; Plasma (p)
+; Skin (sk)
+; Spleen (sp)
+; mg protein per gram liver (MPPGL)
+
+{ administration }
+;dose_IV =   ;ng ;
+;dosing_time_IV =  ;min
+;IV_input = IF t< dosing_time_IV THEN dose_IV/dosing_time_IV ELSE 0
+dose_PO = 40000000 ;ng
+
+{ distribution }
+fup = 0.1138 
+RB = 0.74
+EP = 1 + (RB-1)/Hct
+Vss = EP * (Vve+Var) * Hct + (Vve+Var) * (1-Hct) + Kp_a * Va + Kp_bo * Vbo + Kp_b * Vb + Kp_g * Vg + Kp_h * Vh + Kp_k * Vk + Kp_li * Vli + Kp_lg * Vlg + Kp_m * Vm + Kp_sk * Vsk + Kp_sp * Vsp
+
+;predicted Kp;
+Kp_a = 17.7322
+Kp_bo = 3.2744
+Kp_b = 7.3635
+Kp_g = 7.7889
+Kp_h = 3.2617
+Kp_k = 3.6189
+Kp_li = 3.9773
+Kp_lg = 4.8402
+Kp_m = 2.3011
+Kp_sk = 11.4123
+Kp_sp = 2.1052
+
+{ metabolism & excretion }
+;;;;; CL_int_u ;;;;
+CL_int_eff = 2710 ;ml/min
+;since CL_int_eff is already in whole blood concentration, don't need to divide by fu_MP
+
+;;;renal clearance;;;
+GFR_human = 120 ;ml/min
+CL_r_human = (fup/RB * GFR_human) ;ml/min ; fub = fup/RB
+CL_r_u_human  = GFR_human  ; mL/min
+
+;;;;; Metabolism ;;;;
+Xmet_li = CL_int_eff * (RB * C_li * (1/Kp_li))
+; invivo CL_int_eff * CvLI = CL_int_eff * (RB * Cli *(1/Kp_li))
+; since CL_int_eff is already in whole blood concentration, don't need to multiply unbound CvLI - just multiply CvLI value
+Xmet_r = CL_r_u_human * (C_k * (1/Kp_k)) * fup
+; invivo CL_r_u * Cvk,u(= CvR * fub)) = CL_r_u * (fup/RB * (RB * C_k *(1/kp_k))
+;propranolol is almost completely hepatically metabolised, thus it is rational to put xmet_r as 0. 
+
+;;;;; Initial Values ;;;;;
+
+INIT C_ar = 0
+INIT C_ve = 0
+INIT C_a = 0
+INIT C_bo = 0
+INIT C_b = 0
+INIT C_g = 0
+INIT C_h = 0
+INIT C_k = 0
+INIT C_li = 0
+INIT C_lg = 0
+INIT C_m = 0
+INIT C_sk = 0
+INIT C_sp = 0
+
+
+;;;;; Absorption ;;;;;
+ka = 0.5/60 ; 1/h --> 1/min
+;ka value must be fitted based on the data points
+
+Fobs = 0.27
+FH = Q_li / (Q_li + CL_int_eff) ;because CL_int_eff is already in whole blood concentration, no need to multiply fub (= fup/RB)
+FaFg = MIN(1, Fobs / FH)       
+
+INIT A_gut = dose_PO
+d/dt(A_gut) = -ka * A_gut
+Rabs0 = ka * A_gut ;ng/min
+
+
+;;;;; Mass in ;;;;;
+Xin_ar = Xout_lg
+Xin_ve = Xout_a + Xout_bo + Xout_b + Xout_h + Xout_k + Xout_li + Xout_m + Xout_sk
+Xin_a = Q_a * C_ar
+Xin_bo = Q_bo * C_ar
+Xin_b = Q_b * C_ar
+Xin_g = Q_g * C_ar
+Xin_h = Q_h * C_ar
+Xin_k = Q_k * C_ar
+Xin_li = (Q_li - Q_sp - Q_g) * C_ar + (Xout_g) + (Xout_sp)
+Xin_lg = Q_lg * C_ve
+Xin_m = Q_m * C_ar
+Xin_sk = Q_sk * C_ar
+Xin_sp = Q_sp * C_ar
+
+;;;;; Mass out ;;;;;
+Xout_ar = Q_lg * C_ar
+Xout_ve = Q_lg * C_ve
+Xout_a = Q_a * C_a * RB * (1/Kp_a)
+Xout_bo = Q_bo * C_bo * RB * (1/Kp_bo)
+Xout_b = Q_b * C_b * RB * (1/Kp_b)
+Xout_g = Q_g * C_g * RB * (1/Kp_g)
+Xout_h = Q_h * C_h * RB * (1/Kp_h)
+Xout_k = Q_k * C_k * RB * (1/Kp_k)
+Xout_li = Q_li * C_li * RB * (1/Kp_li)
+Xout_lg = Q_lg * C_lg * RB * (1/Kp_lg)
+Xout_m = Q_m * C_m * RB * (1/Kp_m)
+Xout_sk = Q_sk * C_sk * RB * (1/Kp_sk)
+Xout_sp = Q_sp * C_sp * RB * (1/Kp_sp)
+
+;;;;; Differential Equations ;;;;;
+d/dt(C_ar) = (1/Var) * (Xin_ar - Xout_ar)
+d/dt(C_ve) = (1/Vve) * (Xin_ve - Xout_ve)
+d/dt(C_a) = (1/Va) * (Xin_a - Xout_a)
+d/dt(C_bo) = (1/Vbo) * (Xin_bo - Xout_bo)
+d/dt(C_b) = (1/Vb) * (Xin_b - Xout_b)
+d/dt(C_g) = (1/Vg) * (Xin_g - Xout_g + Rabs)
+d/dt(C_h) = (1/Vh) * (Xin_h - Xout_h)
+d/dt(C_k) = (1/Vk) * (Xin_k - Xout_k - Xmet_r)
+d/dt(C_li) = (1/Vli) * (Xin_li - Xout_li - Xmet_li)
+d/dt(C_lg) = (1/Vlg) * (Xin_lg - Xout_lg)
+d/dt(C_m) = (1/Vm) * (Xin_m - Xout_m)
+d/dt(C_sk) = (1/Vsk) * (Xin_sk - Xout_sk)
+d/dt(C_sp) = (1/Vsp) * (Xin_sp - Xout_sp)
+
+;;;;; Unit conversion ;;;;;
+C_ar_uM = C_ar / MW
+C_ve_uM = C_ve / MW
+C_a_uM = C_a / MW
+C_bo_uM = C_bo / MW
+C_b_uM = C_b / MW
+C_g_uM = C_g / MW
+C_h_uM = C_h / MW
+C_k_uM = C_k / MW
+C_li_uM = C_li / MW
+C_lg_uM = C_lg / MW
+C_m_uM = C_m / MW
+C_sk_uM = C_sk / MW
+C_sp_uM = C_sp / MW
+
+;;;;; Compound physical & chemical properties ;;;;;
+
+MW =259.3434;g/mol
+
+;;;; AUC ;;;;;
+INIT AUC = 0
+d/dt(AUC) = C_ar
+INIT AUMC = 0
+d/dt(AUMC) = t * C_ar
+
+;;;;;Human physiological parameters;;;;;
+;GI tract;
+radius_intestine = 1.53 ; cm, Issa et al., 2003
+
+; Hematocrit;
+Hct = 0.45
+
+{ tissue volume (mL) } ; mass/density ; simcyp parameters
+Vve = 3470 ; vein (blood)
+Var = 1730 ; artery (blood)
+Va = 15000 ; adipose
+Vbo = 10500 ; bone
+Vb = 1400 ; brain
+Vg = 1038 ; gut ;(stomach + intestines)
+Vh = 329 ; heart
+Vk = 308 ; kidney
+Vli = 1800 ; liver
+Vlg = 532 ; lung
+Vm = 26897 ; muscle
+Vsk = 2600 ; skin
+Vsp = 182 ; spleen
+
+{ Blood flow (mL/min) } ;SimCYP human ver. ; this model is in standard of male 70kg
+Q = 5200 ; cardiac output
+Q_lg = Q ; lung
+Q_a = Q * 5/100 ; adipose
+Q_bo = Q * 5/100 ; bone
+Q_b = Q * 12/100 ; brain
+Q_h = Q * 4/100 ; heart
+Q_k = Q * 19/100 ; kidney
+Q_li = Q * 25.5/100 ; liver
+Q_sp = Q * 2/100 ; spleen
+Q_g = Q * (10+4+1)/100 ; gut ;(stomach + intestines)
+Q_m = Q * 17/100 ; muscle
+Q_sk = Q * 5/100 ; skin
+Q_rest = Q - (Q_a+Q_bo+Q_b+Q_h+Q_k+Q_li+Q_m+Q_sk+Q_g+Q_sp); rest of body
+
+;{ weight (g) }
+;volume x density 
+;use necessary weight only --> liver in this case
+BW = 70000
+;W_a = 
+;W_bo= 
+;W_b =
+;W_g =
+;W_h =
+;W_k = 
+W_li = Vli * 1.08 ; liver density = 1.08 g/L -> from simcyp)
+;W_lg =
+;W_m =
+;W_sk=
+;W_sp = ;g
+
+{ liver }
+HPGL = 117.52 ; million cells / g liver
+MPPGL_mic = 39.791 ; mg microsomal protein / g liver 
+MPPGL_S9 = 120.824 ; mg S9 protein / g liver
+
+;;; Cart/Rb --> Cp (because comparative literature gives venous Cp value, convert the values into Cp_ve)
+Cp_ve = C_ve / RB 
