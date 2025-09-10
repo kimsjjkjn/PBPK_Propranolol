@@ -1,6 +1,4 @@
 ;;; PBPK propranolol human PO modeling (finalise)
-;;;비교 invivo 논문: https://pmc.ncbi.nlm.nih.gov/articles/PMC4048194/#pone-0097885-t002
-;;; Cart/Rb --> Cp (논문에는 Cp 값 줄 때가 많으니까 비교하려면 이렇게 환산해서 비교하기)
 
 METHOD RK4
 STARTTIME = 0
@@ -103,6 +101,7 @@ INIT A_gut = dose_PO
 d/dt(A_gut) = -ka * A_gut
 Rabs0 = ka * A_gut ;ng/min
 
+Rabs = FaFg * Rabs0 
 
 ;;;;; Mass in ;;;;;
 Xin_ar = Xout_lg
@@ -167,12 +166,6 @@ C_sp_uM = C_sp / MW
 ;;;;; Compound physical & chemical properties ;;;;;
 
 MW =259.3434;g/mol
-
-;;;; AUC ;;;;;
-INIT AUC = 0
-d/dt(AUC) = C_ar
-INIT AUMC = 0
-d/dt(AUMC) = t * C_ar
 
 ;;;;;Human physiological parameters;;;;;
 ;GI tract;
