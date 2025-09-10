@@ -1,1 +1,219 @@
+# PBPK propranolol rat IV modeling
 
+METHOD RK4
+STARTTIME = 0
+STOPTIME = 120
+DT = 0.001
+DTOUT = 1
+
+t = time
+
+{ Abbreviation }
+; Volume (V)
+; Blood flow (Q)
+; Hematocrit (Hct)
+; Weight (W)
+; Vein (ve)
+; Artery (ar)
+; Adipose (a)
+; Bone (bo)
+; Brain (b)
+; Gut (g)
+; Heart (h)
+; Kidneys (k)
+; Liver (li)
+; Lung (lg)
+; Muscle (m)
+; Plasma (p)
+; Skin (sk)
+; Spleen (sp)
+; mg protein per gram liver (MPPGL)
+
+{ administration }
+dose_IV = 2500000 * BW/1000  ;ng ;(BW/1000=kg)
+dosing_time_IV = 30/60 ;min
+IV_input = IF t< dosing_time_IV THEN dose_IV/dosing_time_IV ELSE 0
+;dose_PO =  ;ng
+
+{ distribution }
+fup = 0.08
+RB = 0.78
+EP = 1 + (RB-1)/Hct
+Vss = EP * (Vve+Var) * Hct + (Vve+Var) * (1-Hct) + Kp_a * Va + Kp_bo * Vbo + Kp_b * Vb + Kp_g * Vg + Kp_h * Vh + Kp_k * Vk + Kp_li * Vli + Kp_lg * Vlg + Kp_m * Vm + Kp_sk * Vsk + Kp_sp * Vsp
+
+;predicted Kp;
+Kp_a = 12.4655
+Kp_bo = 3.1750
+Kp_b = 7.1400
+Kp_g = 7.5525
+Kp_h = 3.1627
+Kp_k = 3.5091
+Kp_li = 3.8566
+Kp_lg = 4.6933
+Kp_m = 2.2313
+Kp_sk = 11.0660
+Kp_sp = 2.0413
+
+{ metabolism & excretion }
+;renal clearance;
+GFR_rat = 18 ;ml/min
+CL_r = (fup/RB * GFR_rat) ;ml/mi ; fub = fup/RB
+CL_r_u = GFR_rat
+
+;;;;; CL_int_u ;;;;
+CL_int = 0.13 * MPPGL_mic * W_li ;ml/min
+fu_MP = 0.49
+CL_int_u = CL_int / fu_MP
+
+;;;;; Metabolism ;;;;
+Xmet_li = CL_int_u * (C_li * (1/Kp_li)) * fup   
+; invivo CL_int_u * CvLI,u(= CvLI * fub)) = CL_int_u * (fup/RB * (RB * Cli *(1/Kp_li))
+Xmet_r = CL_r_u * (C_k * (1/kp_k)) * fup
+; invivo CL_r_u * Cvk,u(= CvR * fub)) = CL_r_u * (fup/RB * (RB * C_k *(1/kp_k))
+;propranolol is almost completely hepatically metabolised, thus it is rational to put xmet_r as 0. 
+
+;;;;; Initial Values ;;;;;
+
+INIT C_ar = 0
+INIT C_ve = 0
+INIT C_a = 0
+INIT C_bo = 0
+INIT C_b = 0
+INIT C_g = 0
+INIT C_h = 0
+INIT C_k = 0
+INIT C_li = 0
+INIT C_lg = 0
+INIT C_m = 0
+INIT C_sk = 0
+INIT C_sp = 0
+
+;;;;; IV model, thus GI absorption = 0 ;;;;;
+Rabs = 0
+
+;;;;; Mass in ;;;;;
+Xin_ar = Xout_lg
+Xin_ve = Xout_a + Xout_bo + Xout_b + Xout_h + Xout_k + Xout_li + Xout_m + Xout_sk
+Xin_a = Q_a * C_ar
+Xin_bo = Q_bo * C_ar
+Xin_b = Q_b * C_ar
+Xin_g = Q_g * C_ar
+Xin_h = Q_h * C_ar
+Xin_k = Q_k * C_ar
+Xin_li = (Q_li - Q_sp - Q_g) * C_ar + (Xout_g) + (Xout_sp)
+Xin_lg = Q_lg * C_ve
+Xin_m = Q_m * C_ar
+Xin_sk = Q_sk * C_ar
+Xin_sp = Q_sp * C_ar
+
+;;;;; Mass out ;;;;;
+Xout_ar = Q_lg * C_ar
+Xout_ve = Q_lg * C_ve
+Xout_a = Q_a * C_a * RB * (1/Kp_a)
+Xout_bo = Q_bo * C_bo * RB * (1/Kp_bo)
+Xout_b = Q_b * C_b * RB * (1/Kp_b)
+Xout_g = Q_g * C_g * RB * (1/Kp_g)
+Xout_h = Q_h * C_h * RB * (1/Kp_h)
+Xout_k = Q_k * C_k * RB * (1/Kp_k)
+Xout_li = Q_li * C_li * RB * (1/Kp_li)
+Xout_lg = Q_lg * C_lg * RB * (1/Kp_lg)
+Xout_m = Q_m * C_m * RB * (1/Kp_m)
+Xout_sk = Q_sk * C_sk * RB * (1/Kp_sk)
+Xout_sp = Q_sp * C_sp * RB * (1/Kp_sp)
+
+;;;;; Differential Equations ;;;;;
+d/dt(C_ar) = (1/Var) * (Xin_ar - Xout_ar)
+d/dt(C_ve) = (1/Vve) * (IV_input + Xin_ve - Xout_ve)
+d/dt(C_a) = (1/Va) * (Xin_a - Xout_a)
+d/dt(C_bo) = (1/Vbo) * (Xin_bo - Xout_bo)
+d/dt(C_b) = (1/Vb) * (Xin_b - Xout_b)
+d/dt(C_g) = (1/Vg) * (Xin_g - Xout_g + Rabs)
+d/dt(C_h) = (1/Vh) * (Xin_h - Xout_h)
+d/dt(C_k) = (1/Vk) * (Xin_k - Xout_k - Xmet_r)
+d/dt(C_li) = (1/Vli) * (Xin_li - Xout_li - Xmet_li)
+d/dt(C_lg) = (1/Vlg) * (Xin_lg - Xout_lg)
+d/dt(C_m) = (1/Vm) * (Xin_m - Xout_m)
+d/dt(C_sk) = (1/Vsk) * (Xin_sk - Xout_sk)
+d/dt(C_sp) = (1/Vsp) * (Xin_sp - Xout_sp)
+
+;;;;; Unit conversion ;;;;;
+C_ar_uM = C_ar / MW
+C_ve_uM = C_ve / MW
+C_a_uM = C_a / MW
+C_bo_uM = C_bo / MW
+C_b_uM = C_b / MW
+C_g_uM = C_g / MW
+C_h_uM = C_h / MW
+C_k_uM = C_k / MW
+C_li_uM = C_li / MW
+C_lg_uM = C_lg / MW
+C_m_uM = C_m / MW
+C_sk_uM = C_sk / MW
+C_sp_uM = C_sp / MW
+
+;;;;; Compound physical & chemical properties ;;;;;
+
+MW =259.3434;g/mol
+
+;;;; AUC ;;;;;
+INIT AUC = 0
+d/dt(AUC) = C_ar
+INIT AUMC = 0
+d/dt(AUMC) = t * C_ar
+
+;;;;;Rat physiological parameters;;;;;
+;GI tract;
+radius_intestine =  1.8; cm, Issa et al., 2003
+
+; Hematocrit;
+Hct = 0.45
+
+{ tissue volume (mL) } ;Brown et al
+Vve = (20.4) * 2/3 ; vein (blood)
+Var = (20.4) * 1/3 ; artery (blood)
+Va = 19.025 ; adipose
+Vbo = 10.369 ; bone
+Vb = 1.425 ; brain
+Vg = 6.750 ; gut
+Vh = 0.825 ; heart
+Vk = 1.825 ; kidney
+Vli = 9.150 ; liver
+Vlg = 1.250 ; lung
+Vm = 101 ; muscle
+Vsk = 47.5 ; skin
+Vsp = 0.500 ; spleen
+
+{ Blood flow (mL/min) } ;SimCYP rat ver 22
+Q = 80 ; cardiac output
+Q_lg = Q ; lung
+Q_a = Q * 5.9/100 ; adipose
+Q_bo = Q * 10.1/100 ; bone
+Q_b = Q * 1.4/100 ; brain
+Q_h = Q * 4/100 ; heart
+Q_k = Q * 14.5/100 ; kidney
+Q_li = Q * 24.2/100 ; liver
+Q_sp = Q * 1.1/100 ; spleen
+Q_g = Q * 10.1/100 ; gut
+Q_m = Q * 23.7/100 ; muscle
+Q_sk = Q * 5.1/100 ; skin
+Q_rest = Q - (Q_a+Q_bo+Q_b+Q_h+Q_k+Q_li+Q_m+Q_sk+Q_g+Q_sp); rest of body
+
+{ weight (g) }
+
+BW = 250
+W_a =16.60
+W_bo=18.25
+W_b =1.425
+W_g =6.750
+W_h =0.8250
+W_k =1.825 
+W_li =9.150
+W_lg =1.250
+W_m =101.1
+W_sk=47.58
+W_sp =0.5000 ;g
+
+{ liver }
+HPGL = 120 ; million cells / g liver
+MPPGL_mic = 44.5 ; mg microsomal protein / g liver : https://doi.org/10.1002/bdd.1959
+MPPGL_S9 = 115.2 ; mg S9 protein / g liver ; inhouse measured
