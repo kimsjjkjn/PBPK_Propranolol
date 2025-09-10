@@ -62,7 +62,7 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 | Vd (L·kg⁻¹)              | 8.64              | 5.63              | 5.30               | 1.53     | 1.53      | True             | 1.63     | 1.63      | True            |
 | AUC∞ (ng·min·mL⁻¹)       | 28,349            | 24,850            | 27,122             | 1.14     | 1.14      | True             | 1.05     | 1.05      | True            |
  
-- Note: The in vivo data were digitized from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values. 
+- Note: The in vivo data were digitized from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 2. 
 
 ## Human IV Model
 - in vivo pharmacokinetic data for comparison: 10.1371/journal.pone.0097885
@@ -87,7 +87,7 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 | Tmax (min)         |         0 |                 5 |                  5 |        0 |         – |      FALSE      |        0 |         – |      FALSE      |
 | t½ (min)           |    856.01 |            831.18 |                205 |     1.03 |      1.03 |       TRUE      |    4.176 |     4.176 |      FALSE      |
 
-- Note: The in vivo data were digitized from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values. 
+- Note: The in vivo data were digitized from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 4. 
 
 ## Human PO Model
 - in vivo pharmacokinetic data for comparison: 10.1371/journal.pone.0097885
@@ -113,7 +113,7 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 | t½ (min)           |    1163.5 |            596.76 |                214 |     1.95 |      1.95 |       TRUE      |    5.437 |     5.437 |      FALSE      |
 | F (%)              |    39.563 |            28.329 |                 27 |    1.397 |     1.397 |       TRUE      |    1.465 |     1.465 |       TRUE      |
 
-- Note: The in vivo data were digitized from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values. 
+- Note: The in vivo data were digitized from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 6. 
 
 # Discussion
 ## Rat IV Model
