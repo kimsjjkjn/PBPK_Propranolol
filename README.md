@@ -140,7 +140,9 @@ Note: The in vivo data were digitized from published figures rather than obtaine
 
 # Discussion
 ## Rat IV Model
-AAFE = ~1.3–1.5, Within 2× = 100% indicate that all major pharmacokinetic parameters (t½, CL, Vd, AUC) match with both the digitised and literature in vivo data. This indicates that the rat IV model constructed is reliable and well-performed. 
+The rat IV model showed excellent performance, with an AAFE of ~1.3–1.5 and all major pharmacokinetic parameters (t½, CL, Vd, AUC) predicted within 2-fold of both digitised and literature in vivo data. This indicates that the constructed rat IV model is reliable and well-validated.
+
+
 
 ### How Close?
 - All four IV metrics are within 2-fold of both the digitised in-vivo values and the literature targets (see “Within 2x” = True across the board).
@@ -161,8 +163,7 @@ AAFE = ~1.3–1.5, Within 2× = 100% indicate that all major pharmacokinetic par
 The in-vivo values were digitised from published figures (raw datasets were unavailable). Digitisation can introduce small systematic and random errors, so the “Digitised In-Vivo” numbers may not perfectly reflect the original raw values. We therefore compare to both the digitised points and the literature targets.
 
 ## Human IV Model
-Although predicted data against digitised data results in AAFE = 1.74, predicted data against literature data results in AAFE = 2.73. It is more reasonable to compare with actual in vivo data from literature rather than digitised data (except for the cases when it's inevitable - i.e. time-concentration profiles). Thus this result indicates that this model does not reliably work. AUC and CL values match reasonably well (within 2x),but Cmax, Tmax, Vd, t1/2 largely mismatch (e.g. Cmax is predicted 3-4 times higher). Especially, because Vd and t1/2 are overestimated, human IV PK is not reasonably reflected. Thus, this result indicates that although human UV models are partially appropriate, clinically not appropraite. 
-
+Although the predicted data compared with digitised in vivo data yielded an AAFE of 1.21 based on Time-Concentration profile and an AAFE of 1.74 based on PK parameters, comparison with literature values gave a higher AAFE of 2.73. Since it is generally more appropriate to benchmark against actual literature data rather than digitised estimates (except where digitisation is unavoidable, such as for concentration–time profiles), these results indicate that the model is not reliably predictive in humans. While AUC and CL were reasonably well reproduced (within 2-fold), other key parameters including Cmax, Tmax, Vd, and t½ showed large discrepancies (e.g., Cmax was overpredicted by 3–4 fold). In particular, the overestimation of Vd and t½ suggests that human IV pharmacokinetics were not adequately captured. Thus, although the human IV model provides partial agreement, it is not clinically predictive.
 
 
 ### How Close?
@@ -179,8 +180,7 @@ Although predicted data against digitised data results in AAFE = 1.74, predicted
 The in-vivo values were digitised from published figures (raw datasets were unavailable). Digitisation can introduce small systematic and random errors, so the “Digitised In-Vivo” numbers may not perfectly reflect the original raw values. We therefore compare to both the digitised points and the literature targets.
 
 ## Human PO Model
-Although predicted data against digitised data results in AAFE = 1.4, predicted data against literature data results in AAFE = 2.0. It is more reasonable to compare with actual in vivo data from literature rather than digitised data (except for the cases when it's inevitable - i.e. time-concentration profiles). Thus this result indicates that although some parameters such as Cmax, AUC, F are reasonably well-predicted using the model (within 2x), some parameters like Tmax and t1/2 largely mismatch (Tmax is 3.6 times faster, t1/2 is 5 times overestimated). This is potentially due to non-realistic absorption equations which did not consider secretion and reabsorption. Thus, this result indicates that although human PO models are partially appropriate, clinically not appropraite. 
-
+The human PO model showed an AAFE of 1.74 based on Time-Concentration profile and an AAFE of 1.4 based on PK parameters when compared with digitised data, but the latter increased to 2.0 when compared with literature values. As with the IV case, comparison with literature data is more meaningful. These findings indicate that while some parameters such as Cmax, AUC, and F were reasonably predicted (within 2-fold), others such as Tmax and t½ were poorly captured (Tmax was predicted to be 3.6-fold faster, and t½ overestimated by more than 5-fold). This discrepancy likely reflects limitations of the absorption model, which did not account for processes such as intestinal secretion and reabsorption. Therefore, although the human PO model demonstrates partial agreement, it is not clinically predictive.
 
 
 ### How Close?
