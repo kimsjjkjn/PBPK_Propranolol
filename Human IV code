@@ -41,7 +41,7 @@ RB = 0.74
 EP = 1 + (RB-1)/Hct
 Vss = EP * (Vve+Var) * Hct + (Vve+Var) * (1-Hct) + Kp_a * Va + Kp_bo * Vbo + Kp_b * Vb + Kp_g * Vg + Kp_h * Vh + Kp_k * Vk + Kp_li * Vli + Kp_lg * Vlg + Kp_m * Vm + Kp_sk * Vsk + Kp_sp * Vsp
 
-;predicted Kp;
+;predicted Kp (tissue:plasma);
 Kp_a = 17.7322
 Kp_bo = 3.2744
 Kp_b = 7.3635
@@ -57,7 +57,7 @@ Kp_sp = 2.1052
 { metabolism & excretion }
 ;;;;; CL_int_u ;;;;
 CL_int_eff = 2710 ;ml/min
-;since CL_int_eff is already in whole blood concentration, don't need to divide by fu_MP
+;since CL_int_eff is already in the standard of whole blood concentration, don't need to divide by fu_MP
 
 ;;;renal clearance;;;
 GFR_human = 120 ;ml/min
@@ -67,7 +67,7 @@ CL_r_u_human  = GFR_human  ; mL/min
 ;;;;; Metabolism ;;;;
 Xmet_li = CL_int_eff * (RB * C_li * (1/Kp_li))
 ; invivo CL_int_eff * CvLI = CL_int_eff * (RB * Cli *(1/Kp_li))
-; since CL_int_eff is already in whole blood concentration, don't need to multiply unbound CvLI - just multiply CvLI value
+; since CL_int_eff is already in the standard of whole blood concentration, don't need to multiply unbound CvLI - just multiply CvLI value
 Xmet_r = CL_r_u_human * (C_k * (1/Kp_k)) * fup
 ; invivo CL_r_u * Cvk,u(= CvR * fub)) = CL_r_u * (fup/RB * (RB * C_k *(1/kp_k))
 ;propranolol is almost completely hepatically metabolised, thus it is rational to put xmet_r as 0. 
