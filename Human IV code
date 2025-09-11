@@ -42,17 +42,17 @@ EP = 1 + (RB-1)/Hct
 Vss = EP * (Vve+Var) * Hct + (Vve+Var) * (1-Hct) + Kp_a * Va + Kp_bo * Vbo + Kp_b * Vb + Kp_g * Vg + Kp_h * Vh + Kp_k * Vk + Kp_li * Vli + Kp_lg * Vlg + Kp_m * Vm + Kp_sk * Vsk + Kp_sp * Vsp
 
 ;predicted Kp (tissue:plasma);
-Kp_a = 17.7322
-Kp_bo = 3.2744
-Kp_b = 7.3635
-Kp_g = 7.7889
-Kp_h = 3.2617
-Kp_k = 3.6189
-Kp_li = 3.9773
-Kp_lg = 4.8402
-Kp_m = 2.3011
-Kp_sk = 11.4123
-Kp_sp = 2.1052
+Kp_a = 17.73215821
+Kp_bo = 4.516502933
+Kp_b = 10.15666198
+Kp_g = 10.74348028
+Kp_h = 4.498970067
+Kp_k = 4.991699431
+Kp_li = 5.486028647
+Kp_lg = 6.676228082
+Kp_m = 3.174008321
+Kp_sk =15.74141117
+Kp_sp = 2.903790085
 
 { metabolism & excretion }
 ;;;;; CL_int_u ;;;;
