@@ -2,7 +2,7 @@
 
 METHOD RK4
 STARTTIME = 0
-STOPTIME = 2890 ;10 minute infusion, thus datapoint used in analysis put 10 minute as 0 minute to reflect post-infusion sampling. 
+STOPTIME = 2880
 DT = 0.001
 DTOUT = 5
 
