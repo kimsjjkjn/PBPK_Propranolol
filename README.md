@@ -22,7 +22,7 @@ Propranolol was selected as the model compound for this PBPK project primarily b
 
 # Methods
 ## Software and Workflow
-Model development and simulation were performed in Berkeley Madonna (METHOD RK4). Data wrangling and figure generation were done in Excel (digitized literature profiles, PK tables).
+Model development and simulation were performed in Berkeley Madonna (METHOD RK4). Data wrangling and figure generation were done in Excel (digitised literature profiles, PK tables).
 ## Model Structure & Assumptions
 - A physiologically based, perfusion-limited, well-stirred PBPK model was implemented for rat IV, human IV, and human PO.
 - Blood concentrations were the model standard. When literature to be compared reported plasma concentration values, simulated blood concentration values were converted to plasma concentration values at the end using the following equation: Cp_ve = C_ve / RB (in case the collected sample is venous blood) or Cp_ar = C_ar / RB (in case the collected sample is arterial blood).
@@ -32,8 +32,8 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 - For derivation of each equation used in model, refer to 'docs' section.
 ## Data & Validation
 - After completing simulations in Berkeley Madonna, the raw time-concentration datasets were exported to Excel.
-- Published in vivo concentration–time profiles were digitized from figures (as raw datasets were unavailable).  
-- Simulated and in vivo datasets were overlaid in Excel for direct comparison.  
+- The in-vivo Time-Concentration values were digitised from published figures (raw datasets were unavailable). Digitisation can introduce small systematic and random errors, so the “Digitised In-Vivo” numbers may not perfectly reflect the original raw values. 
+- Simulated and digitised in vivo datasets were overlaid in Excel for direct comparison.  
 - Model performance based on concentration-time profile was evaluated by Average Absolute Fold Error (AAFE) and % within 2-fold / 3-fold error ranges:
 
    <img width="631" height="291" alt="Screenshot 2025-09-10 at 10 29 07 PM" src="https://github.com/user-attachments/assets/799af2d3-9e5e-4f78-bbb7-2e261a5cb61f" />
@@ -42,7 +42,7 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 - Where available, key PK parameters (Cmax, Tmax, AUC, t1/2) were extracted and compared. The evaluation of model performance based on the calculated PK parameters was done by (adopted from the following research paper: https://doi.org/10.2165/00003088-200645050-00006) calculating:
   - Fold error (FE) per parameter = max(predicted, observed) / min(predicted, observed) so FE ≥ 1.0 by definition.
   - Average-fold error (AFE/AAFE) across parameters = geometric mean of the per-parameter FEs; the paper also reports the % within 2-fold (and 3-fold).
-  - Note: Both digitised In Vivo parameter values and In Vivo paremeter values directly reported by the literature were used to evaluate overall the model performance based on parameters calculated.
+  - Note: As mentioned above, digitisation can introduce small systematic and random errors, so the “Digitised In-Vivo” numbers may not perfectly reflect the original raw values. Therefore both digitised In Vivo parameter values and In Vivo paremeter values directly reported by the literature were used to evaluate overall the model performance based on parameters calculated.
     
 # Results
 ## Rat IV Model
@@ -60,7 +60,7 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 | Fraction within 2-fold (0.5–2.0) | 1 |
 | Fraction within 3-fold (0.33–3.0) | 1 |
 
-- Table 2. Comparison of Predicted Pharmacokinetic Parameters with Digitized and literature In Vivo Pharmacokinetic Parameters in IV Rat Model
+- Table 2. Comparison of Predicted Pharmacokinetic Parameters with Digitised and literature In Vivo Pharmacokinetic Parameters in IV Rat Model
 
 | Parameter                   | Predicted (model) | Digitised In Vivo | Literature In Vivo | Pred/Dig | FE vs Dig | Within 2x (Dig) | Pred/Lit | FE vs Lit | Within 2x (Lit) |
 |--------------------------|------------------:|------------------:|-------------------:|---------:|----------:|:----------------:|---------:|----------:|:---------------:|
@@ -73,7 +73,7 @@ Route-level summary (Rat IV)
 - vs Digitised: AAFE = 1.37, within 2× = 100%, within 3× = 100%.
 - vs Literature: AAFE = 1.32, within 2× = 100%, within 3× = 100%.
 
-Note: The in vivo data were digitized from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 2. 
+Note: The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 2. 
 
 ## Human IV Model
 - in vivo pharmacokinetic data for comparison: 10.1371/journal.pone.0097885
@@ -89,7 +89,7 @@ Note: The in vivo data were digitized from published figures rather than obtaine
 | Fraction within 2-fold (0.5–2.0) | 1 |
 | Fraction within 3-fold (0.33–3.0) | 1 |
 
-- Table 4. Comparison of Predicted Pharmacokinetic Parameters with Digitized and literature In Vivo Pharmacokinetic Parameters in IV Human Model
+- Table 4. Comparison of Predicted Pharmacokinetic Parameters with Digitised and literature In Vivo Pharmacokinetic Parameters in IV Human Model
 
 | Parameter         | Predicted | Digitised In Vivo | Literature In Vivo | Pred/Dig | FE vs Dig | Within 2× (Dig) | Pred/Lit | FE vs Lit | Within 2× (Lit) |
 |-------------------|-----------|-------------------|--------------------|----------|-----------|-----------------|----------|-----------|-----------------|
@@ -104,7 +104,7 @@ Route-level summary (Human IV)
 - vs Digitised (excluding IV Tmax, which is 0 by definition): AAFE = 1.74, within 2× = 80%, within 3× = 80%.
 - vs Literature (excluding IV Tmax): AAFE = 2.73, within 2× = 40%, within 3× = 60%.				
 
-Note: The in vivo data were digitized from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 4. 
+Note: The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 4. 
 
 ## Human PO Model
 - in vivo pharmacokinetic data for comparison: 10.1371/journal.pone.0097885
@@ -120,7 +120,7 @@ Note: The in vivo data were digitized from published figures rather than obtaine
 | Fraction within 2-fold (0.5–2.0)  | 0.666666667 |
 | Fraction within 3-fold (0.33–3.0) | 0.916666667 |
 
-- Table 6. Comparison of Predicted Pharmacokinetic Parameters with Digitized and literature In Vivo Pharmacokinetic Parameters in PO Human Model
+- Table 6. Comparison of Predicted Pharmacokinetic Parameters with Digitised and literature In Vivo Pharmacokinetic Parameters in PO Human Model
 
 | Parameter         | Predicted   | Digitised In Vivo | Literature In Vivo | Pred/Dig | FE vs Dig | Within 2× (Dig) | Pred/Lit | FE vs Lit | Within 2× (Lit) |
 |-------------------|-------------|-------------------|--------------------|----------|-----------|-----------------|----------|-----------|-----------------|
@@ -136,77 +136,35 @@ Route-level summary (Human PO)
 - vs Digitised: AAFE = 1.38, within 2× = 100%, within 3× = 100%.
 - vs Literature (for the parameters reported in the paper: Cmax, Tmax, AUC, t½, F): AAFE = 2.04, within 2× = 60%, within 3× = 60%.
 
-Note: The in vivo data were digitized from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 6. 
+Note: The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 6. 
 
 # Discussion
 ## Rat IV Model
-The rat IV model showed excellent performance, with an AAFE of ~1.3–1.5 and all major pharmacokinetic parameters (t½, CL, Vd, AUC) predicted within 2-fold of both digitised and literature in vivo data. This indicates that the constructed rat IV model is reliable and well-validated.
-
-
-
-### How Close?
-- All four IV metrics are within 2-fold of both the digitised in-vivo values and the literature targets (see “Within 2x” = True across the board).
-- AUC∞ is very tight to literature (28,349 vs 27,122 ng·min·mL⁻¹; FE = 1.05, +4.5%) and acceptable vs digitised in-vivo (FE = 1.14).
-- CL is close: 88.2 vs 92.2 mL·kg⁻¹·min⁻¹ (FE = 1.05, −4% vs literature; FE = 1.14 vs digitised).
-- t½ is long relative to both benchmarks (67.9 min vs 40 / 38.8; FE = 1.70 vs literature, 1.75 vs digitised).
-- Vd is high (8.64 vs 5.3 / 5.63 L·kg⁻¹; FE = 1.63 vs literature, 1.53 vs digitised).
-- Overall fold accuracy summary: AAFE ≈ 1.32 (vs literature) and ≈ 1.37 (vs digitised) for these four IV endpoints.
-### Where it diverges and why
-- Half-life and Vd are jointly high. Because t1/2 = 0.693⋅Vd/CL, even a modestly low CL (−4% vs lit) combined with an inflated Vd (≈+63%) naturally yields a longer terminal half-life. Mechanistically this points to:
-- Partitioning assumptions (Kp scalars) that over-distribute the drug into tissues (especially adipose/muscle) or an over-estimated fu_p / under-estimated blood-to-plasma ratio (R_b) in the well-stirred framework.
-- Terminal-phase slope underestimation (λz too shallow) due to either insufficient weight on the late tail or using points where distribution is not fully complete.
-- Exposure (AUC∞) and clearance (CL) are right on target. That suggests the systemic elimination capacity is parameterised reasonably; the main residual bias sits in distributional parameters and λz fitting.
-### Interpretation
-- From a dose-normalised exposure perspective (AUC∞) the model is essentially calibrated to literature; CL is likewise close. This supports the use of the current elimination parameters for exposure-based predictions.
-- The shape of the terminal phase is less accurate (longer tail), driven by an over-large Vd. Until Vd (and thus t1/2) is corrected, the model may over-project late-time concentrations, time-above-threshold, and accumulation on repeated dosing.
-### Note
-The in-vivo values were digitised from published figures (raw datasets were unavailable). Digitisation can introduce small systematic and random errors, so the “Digitised In-Vivo” numbers may not perfectly reflect the original raw values. We therefore compare to both the digitised points and the literature targets.
+The rat IV model showed excellent performance, with an AAFE of 1.5 based on the time–concentration profile and an AAFE of around 1.3 based on the PK parameters (both digitised and literature in vivo data). All major pharmacokinetic parameters (t½, CL, Vd, AUC) were predicted within 2-fold of both digitised and literature values. Generally, an AAFE within 2-fold is considered good validation for building robust PBPK models (Deepika et al., 2023). Therefore, this result indicates that the constructed rat IV model is reliable and well validated.
 
 ## Human IV Model
-Although the predicted data compared with digitised in vivo data yielded an AAFE of 1.21 based on Time-Concentration profile and an AAFE of 1.74 based on PK parameters, comparison with literature values gave a higher AAFE of 2.73. Since it is generally more appropriate to benchmark against actual literature data rather than digitised estimates (except where digitisation is unavoidable, such as for concentration–time profiles), these results indicate that the model is not reliably predictive in humans. While AUC and CL were reasonably well reproduced (within 2-fold), other key parameters including Cmax, Tmax, Vd, and t½ showed large discrepancies (e.g., Cmax was overpredicted by 3–4 fold). In particular, the overestimation of Vd and t½ suggests that human IV pharmacokinetics were not adequately captured. Thus, although the human IV model provides partial agreement, it is not clinically predictive.
+Although the comparison with digitised in vivo data yielded an AAFE of 1.21 based on the time–concentration profile and 1.74 based on PK parameters, comparison with literature values gave a higher AAFE of 2.73. It is generally more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data (except where digitization is unavoidable, such as for time–concentration profiles). Prediction error within 3-fold is widely accepted as informative but less reliable than within 2-fold; it is often regarded as moderate accuracy, sometimes acceptable for screening or early development, but usually insufficient for confident clinical application. Therefore, the AAFE of 2.73 based on PK parameters when compared with literature indicates that the model is not reliably predictive in humans. More specifically, while AUC and CL were reproduced reasonably well (within 2-fold), other key parameters including Cmax, Tmax, Vd, and t½ showed large discrepancies (e.g., Cmax was overpredicted by 3–4 fold). In particular, the overestimation of Vd and t½ suggests that human IV pharmacokinetics were not adequately captured. Thus, although the human IV model shows partial agreement, it is not clinically predictive.
 
-
-### How Close?
-- Exposure is reasonably aligned. Predicted AUC₀–∞ ≈ 713 ng·min/mL vs in-vivo (digitized) 616 (fold-error, FE ≈ 1.16) and literature 979 (FE ≈ 1.37).
-- Cmax 7.39 ng/mL is close to in-vivo 8 (FE ≈ 1.08) and lower than literature 12.3 (FE ≈ 1.67).
-- Aggregate accuracy across core exposure metrics (AUC∞, Cmax) is good: AAFE ≈ 1.28; 100% within 2-fold.
-### Where it diverges and why
-- t½ and Vd are inflated. Predicted t½ ≈ 856 min is similar to in-vivo 831 min (FE ≈ 1.03) but far above literature ≈ 205 min (FE ≈ 4.2). A shallow terminal slope (λz too small) propagates to large Vd (≈ 24.8 L/kg vs literature ≈ 4.4 L/kg) via Vd = CL/λz.
-- Tmax = 0 min arises from the model’s instantaneous mixing assumption; clinical sampling typically starts at ≥5 min, so observed Tmax of 5 min is partly a sampling artifact.
-### Interpretation
-- Early/mid profile (driving AUC, Cmax, CL) is acceptable; CL ≈ 1.40 L/min is within ∼20% of the reported 1.19 L/min.
-- The terminal phase is the weak spot. Either (i) the λz window included distribution-phase points, or (ii) distribution parameters (Kp scaling, blood/plasma binding) make elimination appear too slow.
-### Note
-The in-vivo values were digitised from published figures (raw datasets were unavailable). Digitisation can introduce small systematic and random errors, so the “Digitised In-Vivo” numbers may not perfectly reflect the original raw values. We therefore compare to both the digitised points and the literature targets.
 
 ## Human PO Model
-The human PO model showed an AAFE of 1.74 based on Time-Concentration profile and an AAFE of 1.4 based on PK parameters when compared with digitised data, but the latter increased to 2.0 when compared with literature values. As with the IV case, comparison with literature data is more meaningful. These findings indicate that while some parameters such as Cmax, AUC, and F were reasonably predicted (within 2-fold), others such as Tmax and t½ were poorly captured (Tmax was predicted to be 3.6-fold faster, and t½ overestimated by more than 5-fold). This discrepancy likely reflects limitations of the absorption model, which did not account for processes such as intestinal secretion and reabsorption. Therefore, although the human PO model demonstrates partial agreement, it is not clinically predictive.
+The human PO model showed an AAFE of 1.74 based on the time–concentration profile and 1.4 based on PK parameters when compared with digitised data. However, when compared with literature values, the AAFE increased to 2.0. As with the IV case, comparison with literature data is more meaningful. An AAFE of around 2 indicates acceptable predictive performance of a PBPK model. More specifically, while some parameters such as Cmax, AUC, and F were well predicted (within 2-fold), others such as Tmax and t½ were not well captured (Tmax was predicted to be 3.6-fold faster, and t½ overestimated by more than 5-fold). This discrepancy likely reflects limitations of the absorption model, which did not account for processes such as intestinal secretion and reabsorption. Therefore, although the human PO model demonstrates acceptable prediction and partial agreement for certain parameters, it is not sufficiently predictive for clinical application.
 
 
-### How Close?
-- AUC₀–∞ is acceptable: predicted ≈ 11,280 ng·min/mL vs in-vivo 6,985 (FE ≈ 1.62) and literature 8,930 (FE ≈ 1.26).
-- Cmax 31.3 ng/mL vs in-vivo 20 (FE ≈ 1.56) and literature 28 (FE ≈ 1.12).
-- F ≈ 39.6% vs in-vivo 28.3% (FE ≈ 1.40) and literature 27% (FE ≈ 1.47).
-- Tmax 45 min vs in-vivo 60 min (FE ≈ 1.33) and literature 180 min (faster than literature).
-- Overall accuracy on the oral set (AUC∞, Cmax, F): AAFE ≈ 1.79; 67% within 2-fold, 92% within 3-fold.
-### Where it diverges and why
-- The absorption equation does not reflect secretion or reabsorption. Consequently, absorption is too fast (short Tmax, high Cmax). Missing or under-specifying gastric emptying delay, intestinal transit, dissolution/solubility limits, or permeability gradients can all shift the peak earlier and higher.
-- t½ is too long (≈ 1164 min vs ≈ 214 min literature) for the same reason as IV: terminal slope underestimation.
-- F is high for a high-extraction drug. Overestimation typically reflects Fg/Fh too large—i.e., hepatic or gut intrinsic clearance (CLint) too low or unbound blood fraction (fuB) too high in the well-stirred framework.
-### Intepretation
-- On central exposure (AUC, Cmax) and F, predictions are within conventional acceptability (mostly ≤2-fold of literature).
-- Shape mismatches remain: Tmax too early and tail too long, indicating under-modeled absorption delays and an over-permissive terminal phase.
-### Note
-The in-vivo values were digitised from published figures (raw datasets were unavailable). Digitisation can introduce small systematic and random errors, so the “Digitised In-Vivo” numbers may not perfectly reflect the original raw values. We therefore compare to both the digitised points and the literature targets.
+# Model Performance Summary
 
-# Key Takeaways
-## Validated IV models
-- Rat IV and Human IV reproduced exposure reasonably (AAFE ≈ 1.49 and 1.28; 100% within 2-fold in both datasets).
-- CL and AUC∞ were within ~5–20% of literature targets.
-## Cross-species translation achieved
-- Drug-specific constants (MW, pKa, logP, fup, RB) transferred from rat to human with physiology updated, preserving early/mid-profile accuracy.
-## Oral model captures exposure but not shape
-- Human PO predicts AUC and Cmax within ~1.1–1.6x of literature but shows earlier Tmax and longer terminal tail (AAFE ≈ 1.79), indicating missing/oversimplified absorption delays and an over-permissive terminal phase.
+- Table 7. PBPK Propranolol – Model Performance Summary
+
+| Model        |        AAFE (Time–Concentration) (digitised) |                          AAFE (PK Parameters) | Key Matches (within 2×)       | Key Mismatches                                                           | Overall Conclusion                                                                                           |
+| ------------ | -----------------------: | --------------------------------------------: | ----------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| **Rat IV**   |                      1.5 |                \~1.3 (digitised & literature) | t½, CL, Vd, AUC all within 2× | Slightly high Vd → longer t½                                             | Excellent fit. Exposure (AUC, CL) on target. Reliable and well-validated.                                    |
+| **Human IV** | 1.21 | 1.74 (digitised PK), **2.73 (literature PK)** | AUC, CL within 2×             | Cmax overpredicted (3–4×), Tmax mismatch, Vd & t½ strongly overestimated | Partial agreement. Moderate accuracy by 3× rule, but not sufficiently predictive for clinical use.           |
+| **Human PO** |                     1.74 |         1.4 (digitised), **2.0 (literature)** | Cmax, AUC, F within 2×        | Tmax too fast (3.6×), t½ overestimated (>5×)                             | Acceptable prediction for exposure, but absorption model too simple. Not sufficiently predictive clinically. |
+
+## Key Takeaways
+### Validated IV models
+- Rat IV and Human IV reproduce systemic exposure (AUC, CL) reasonably, but Human IV overestimates Vd and t½.
+### Human Oral model
+- Human PO captures exposure (AUC, Cmax, F) but misses absorption delays (Tmax) and terminal slope (t½), showing the need for more detailed absorption modeling.
 
 
 # Future Work
@@ -214,6 +172,8 @@ The in-vivo values were digitised from published figures (raw datasets were unav
 - These models can be used with variations in parameters to model disease state (e.g. hepatic impairment).
 
 # References
+
+https://pmc.ncbi.nlm.nih.gov/articles/PMC9966583/?utm_source=chatgpt.com 
 
 Jamei, M. et al. "Population-based mechanistic prediction of oral drug absorption." The AAPS Journal, vol. 11, no. 2, 2009, pp. 225–237. doi:10.1208/s12248-009-9099-y.
 
