@@ -1,5 +1,5 @@
 # PBPK_Propranolol
-Physiologically-based pharmacokinetic (PBPK) modeling of propranolol in rats and humans (IV &amp; PO) using Berkeley Madonna with validation against in vivo data.
+Physiologically-based pharmacokinetic (PBPK) modeling of propranolol in rats and humans (IV & PO) using Berkeley Madonna with validation against in vivo data.
 # Background
 ## PBPK
 Physiologically based pharmacokinetic (PBPK) modeling is a useful tool for predicting how drugs are absorbed, distributed, metabolized, and excreted (ADME) based on physiological and biochemical factors. Unlike traditional compartmental models, PBPK models use detailed representations of organ-specific blood flows, tissue volumes, and protein binding. This allows for a more realistic simulation of how drugs behave in the body (Rowland et al., 2011).
@@ -171,6 +171,36 @@ The human PO model showed an AAFE of 1.74 based on the time–concentration prof
 - Human PO captures exposure (AUC, Cmax, F) but misses absorption delays (Tmax) and terminal slope (t½), showing the need for more detailed absorption modeling.
 
 
+# Potential Reasons for Discrepancies and Solutions
+## High Vd and Longer T1/2 (Human IV & PO)
+In the human IV and PO models, the terminal half-life (t½) and apparent volume of distribution (Vd) were markedly overestimated. 
+
+Propranolol is a highly lipophilic, basic compound (logP ≈ 3–4, pKa ≈ 9–10). Standard Poulin–Theil Kp equations often overpredict tissue partitioning for such drugs, particularly in adipose, skin, and brain, where binding and lysosomal trapping are exaggerated. This in turn inflates Vd (Vss = ∑Kp·V) and prolongs the terminal slope thus terminal half-life.   
+
+It is rational to question why rat IV fit well while human IV showed discrepancies despite the same drug was modeled. This is due to both species-specific physiology and data resolution. 
+- Physiological differences: Rats have a much smaller proportion of adipose and skin tissue relative to body weight. Even if partition coefficients (Kp) are overpredicted, the overall contribution to steady-state volume of distribution (Vss) remains limited.
+- Data resolution and sampling: Rat IV studies typically capture concentration–time profiles over a shorter window (hours). This makes any overestimation of the terminal phase less evident. On the other hand, human IV studies extend sampling to 10–12 hours or more, so the prolonged terminal slope from Kp inflation becomes clearly visible in t½ and Vd.
+
+Solution:
+- Calculating Kp using equations proposed by Rodgers-Rowland or Schmitt
+
+## Cmax Overprediction (Human IV)
+Cmax was overpredicted by ~3–4× the literature value.
+
+The model uses a purely perfusion-limited central compartment. This leads to excessively rapid equilibration and a sharper initial peak than observed. In vivo, propranolol shows arteriovenous concentration gradients and red blood cell binding kinetics, which delay the rise in venous plasma concentrations. Because the observed dataset reflects venous plasma samples, the model’s lack of a shallow mixing phase overpredicts the early concentrations. Additionally, possible variability in plasma protein/RBC partitioning during and immediately after infusion may dampen the peak in clinical data, but this dynamic is not represented in the model.
+
+Solution:
+- Maintain infusion dosing but introduce a fast shallow distribution/mixing compartment (e.g., central venous reservoir or permeability-limited lung/heart) to better reflect the delay before drug appears in peripheral venous plasma.
+
+## Tmax Too Early & Terminal Phase Too Long (Human PO)
+The oral model predicted Tmax ≈ 50 min vs. 180 min observed, while the terminal slope was prolonged.
+
+Oral absorption was modeled with a single first-order ka, without gastric emptying, intestinal transit, or lag time. However, propranolol’s absorption is known to be influenced by gastric emptying, intestinal permeability, regional pH, and first-pass intestinal metabolism. The fixed FaFg constraint ensured overall bioavailability but could not shape the time profile. Meanwhile, the same distribution issue (inflated Kp) extended the terminal half-life.
+
+Solution:
+- Minimal fixes include adding a gastric lag (Tlag) and reducing ka (0.15–0.25 h⁻¹) to align Tmax with observed values. A more mechanistic refinement would incorporate stomach and intestinal transit compartments (kGE, kT), dynamic intestinal metabolism, and, ultimately, an ACAT-like GI model including dissolution, solubility, P-gp efflux, and potential enterohepatic recycling.
+
+
 
 # Future Work
 - Gastric emptying and transit to be added on PO absorption equations for more realistic and validated 
@@ -179,7 +209,7 @@ The human PO model showed an AAFE of 1.74 based on the time–concentration prof
 # Reflection
 This independent project on physiologically based pharmacokinetic (PBPK) modeling of propranolol was undertaken using Berkeley Madonna, with all organ-level differential equations derived from first principles. Through the construction and validation of rat (IV) and human (IV & PO) models, I gained practical experience in mechanistic model building, parameterisation, and quantitative evaluation of model performance.
 
-The rat IV model achieved high accuracy, with AAFE values around 1.3–1.5 and all major pharmacokinetic parameters (t½, CL, Vd, AUC) predicted within 2-fold of in vivo data, demonstrating reliability of the framework. In contrast, human IV and PO simulations highlighted key limitations: while exposure metrics such as AUC and CL were predicted within 2-fold, discrepancies emerged in parameters like Tmax, Vd, and t½. These issues were traced to simplified absorption modeling and omission of transporter- or enzyme-specific processes.
+The rat IV model achieved high accuracy, with AAFE values around 1.3–1.5 and all major pharmacokinetic parameters (t½, CL, Vd, AUC) predicted within 2-fold of in vivo data, demonstrating reliability of the framework. In contrast, human IV and PO simulations highlighted key limitations: while exposure metrics such as AUC and CL were predicted within 2-fold, discrepancies emerged in parameters like Tmax, Vd, and t½. These issues were traced to simplified absorption modeling and omission of transporter- or enzyme-specific processes. Because it was my first time constructing PBPK model, I started with the simplest model, in the future, absorption model must be developed to reflect more complex real-life absorption mechanism. 
 
 Overall, this project not only established a validated baseline model (rat IV) but also outlined a roadmap for refinement of human models. Future improvements include incorporating gastric emptying and intestinal transit into the oral absorption module, refining hepatic clearance scaling, and integrating transporter and enzyme dynamics. Beyond the technical results, the project provided an opportunity to gain knowledge of the mechanism behind PBPK model, practice complete ODE derivation, systematic model validation using fold-error criteria (FE, AAFE, within 2×/3×), and critical evaluation of mechanistic assumptions.
 
