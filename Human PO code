@@ -90,8 +90,8 @@ INIT C_sp = 0
 
 
 ;;;;; Absorption ;;;;;
-ka = 0.5/60 ; 1/h --> 1/min
-;ka value must be fitted based on the data points
+ka = 0.25/60 ; 1/h --> 1/min
+;ka value must be fitted based on the data points considering AAFE, Tmax, Cmax, etc.
 
 Fobs = 0.27
 FH = Q_li / (Q_li + CL_int_eff) ;because CL_int_eff is already in whole blood concentration, no need to multiply fub (= fup/RB)
