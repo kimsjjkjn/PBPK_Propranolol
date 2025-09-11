@@ -1,4 +1,4 @@
-<img width="347" height="237" alt="image" src="https://github.com/user-attachments/assets/9887d326-1fd9-4a6b-9397-31b6952fc48b" /># PBPK_Propranolol
+># PBPK_Propranolol
 Physiologically-based pharmacokinetic (PBPK) modeling of propranolol in rats and humans (IV & PO) using Berkeley Madonna with validation against in vivo data.
 # Background
 ## PBPK
@@ -107,9 +107,9 @@ Note: The in vivo data were digitised from published figures rather than obtaine
 
 - Note: Human CL reported as total mL/min (70kg standard)
 
-Route-level summary (IV)
-- vs Digitised (excluding IV Tmax, which is 0 by definition): AAFE = 1.78, within 2× = 80%, within 3× = 80%
-- vs Literature (excluding IV Tmax): AAFE = 2.65, within 2× = 40%, within 3× = 60%
+Route-level summary (Human IV)
+- vs Digitised (excluding IV Tmax, which is 0 by definition): AAFE = 1.78, within 2× = 80%, within 3× = 80%.
+- vs Literature (excluding IV Tmax): AAFE = 2.65, within 2× = 40%, within 3× = 60%.
 
 Note: The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 4. 
 
@@ -138,9 +138,9 @@ Note: The in vivo data were digitised from published figures rather than obtaine
 | F (%)                     | 34.90865834 | 29.46857457       | 27                 | 1.184606274 | 1.184606274 | TRUE            | TRUE            | 1.292913272 | 1.292913272 | TRUE            | TRUE            |
 
 
-Route-level summary (PO)
-- vs Digitised: AAFE = 1.483473576, within 2× = 80%, within 3× = 100%
-- vs Literature (for the parameters reported in the paper: Cmax, Tmax, AUC, t½, F): AAFE = 1.876685502, within 2× = 80%, within 3× = 80%
+Route-level summary (Human PO)
+- vs Digitised: AAFE = 1.483473576, within 2× = 80%, within 3× = 100%.
+- vs Literature (for the parameters reported in the paper: Cmax, Tmax, AUC, t½, F): AAFE = 1.876685502, within 2× = 80%, within 3× = 80%.
 
 
 Note: The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 6. 
@@ -164,8 +164,8 @@ The human PO model showed an AAFE of 1.74 based on the time–concentration prof
 | Model        |        AAFE (Time–Concentration) (digitised) |                          AAFE (PK Parameters) | Key Matches (within 2×)       | Key Mismatches                                                           | Overall Conclusion                                                                                           |
 | ------------ | -----------------------: | --------------------------------------------: | ----------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | **Rat IV**   |                      1.5 |                \~1.3 (digitised & literature) | t½, CL, Vd, AUC all within 2× | Slightly high Vd → longer t½                                             | Excellent fit. Exposure (AUC, CL) on target. Reliable and well-validated.                                    |
-| **Human IV** | 1.21 | 1.74 (digitised PK), **2.73 (literature PK)** | AUC, CL within 2×             | Cmax overpredicted (3–4×), Tmax mismatch, Vd & t½ strongly overestimated | Partial agreement. Moderate accuracy by 3× rule, but not sufficiently predictive for clinical use.           |
-| **Human PO** |                     1.74 |         1.4 (digitised), **2.0 (literature)** | Cmax, AUC, F within 2×        | Tmax too fast (3.6×), t½ overestimated (>5×)                             | Acceptable prediction for exposure, but absorption model too simple. Not sufficiently predictive clinically. |
+| **Human IV** | 1.28 | 1.78 (digitised PK), **2.65 (literature PK)** | AUC, CL within 2×             | Cmax overpredicted (3×), Tmax mismatch, Vd & t½ strongly overestimated | Partial agreement. Moderate accuracy by 3× rule, but not sufficiently predictive for clinical use.           |
+| **Human PO** |                     1.76 |         1.5 (digitised), **1.88 (literature)** | Cmax, Tmax, AUC, F within 2×        | t½ overestimated (5×)                             | Acceptable fit. Exposure (AUC, CL) on target. Reliable and well-validated but absorption model too simple leading to t½ overestimation. |
 
 ## Key Takeaways
 ### Validated IV models
