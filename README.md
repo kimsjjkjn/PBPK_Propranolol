@@ -1,4 +1,4 @@
-# PBPK_Propranolol
+<img width="347" height="237" alt="image" src="https://github.com/user-attachments/assets/9887d326-1fd9-4a6b-9397-31b6952fc48b" /># PBPK_Propranolol
 Physiologically-based pharmacokinetic (PBPK) modeling of propranolol in rats and humans (IV & PO) using Berkeley Madonna with validation against in vivo data.
 # Background
 ## PBPK
@@ -51,7 +51,8 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
   <img width="616" height="496" alt="Screenshot 2025-09-10 at 3 13 19 PM" src="https://github.com/user-attachments/assets/e821a4a7-fc80-422e-940d-2287ed015a3b" />
 
 - Figure 2. Rat IV: Simulated vs Digitised In Vivo Propranolol Blood Concentrations.
-  <img width="347" height="237" alt="image" src="https://github.com/user-attachments/assets/704a2208-4d6b-4e98-81da-c7d8832e2eaf" />
+<img width="347" height="237" alt="image" src="https://github.com/user-attachments/assets/39e252f2-65f1-4d8d-8272-1288711b2b2c" />
+
 - Table 1. Model performance based on concentration–time profile: Average Absolute Fold Error (AAFE) between Predicted and In Vivo concentrations in the IV rat model
   
 | Metric | Value |
@@ -62,14 +63,13 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 
 - Table 2. Comparison of Predicted Pharmacokinetic Parameters with Digitised and literature In Vivo Pharmacokinetic Parameters in IV Rat Model
 
-| Parameter                   | Predicted (model) | Digitised In Vivo | Literature In Vivo | Pred/Dig | FE vs Dig | Within 2x (Dig) | Pred/Lit | FE vs Lit | Within 2x (Lit) |
-|--------------------------|------------------:|------------------:|-------------------:|---------:|----------:|:----------------:|---------:|----------:|:---------------:|
-| t½ (min)                 | 67.9              | 38.8              | 40                 | 1.75     | 1.75      | True             | 1.70     | 1.70      | True            |
-| CL (mL/kg·min)       | 88.2              | 100.6             | 92.2               | 0.88     | 1.14      | True             | 0.96     | 1.05      | True            |
-| Vd (L/kg)              | 8.64              | 5.63              | 5.30               | 1.53     | 1.53      | True             | 1.63     | 1.63      | True            |
-| AUC∞ (ng·min/mL)       | 28,349            | 24,850            | 27,122             | 1.14     | 1.14      | True             | 1.05     | 1.05      | True            |
+| Parameter            | Predicted (model) | Digitised In Vivo | Literature In Vivo | Pred/Dig | FE vs Dig | Within 2× (Dig) | Within 3× (Dig) | Pred/Lit | FE vs Lit | Within 2× (Lit) | Within 3× (Lit) |
+|----------------------|------------------:|------------------:|-------------------:|---------:|----------:|:----------------:|:----------------:|---------:|----------:|:---------------:|:---------------:|
+| AUC∞ (ng·min/mL)     | 28,349            | 24,850            | 27,122             | 1.14     | 1.14      | True             | True             | 1.05     | 1.05      | True            | True            |
+| CL (mL/kg/min)       | 88.2              | 100.6             | 92.2               | 0.88     | 1.14      | True             | True             | 0.96     | 1.05      | True            | True            |
+| Vd (L/kg)            | 8.64              | 5.63              | 5.30               | 1.53     | 1.53      | True             | True             | 1.63     | 1.63      | True            | True            |
+| t½ (min)             | 67.9              | 38.8              | 40                 | 1.75     | 1.75      | True             | True             | 1.70     | 1.70      | True            | True            |
 
-- Note: - Note: Human CL reported as total mL/min (70kg standard)
 
 Route-level summary (Rat IV)					
 - vs Digitised: AAFE = 1.37, within 2× = 100%, within 3× = 100%.
@@ -82,31 +82,34 @@ Note: The in vivo data were digitised from published figures rather than obtaine
 - Figure 3. Human IV: In Vivo figure (figure 2A control data was used)
   <img width="711" height="351" alt="Screenshot 2025-09-10 at 2 06 48 PM" src="https://github.com/user-attachments/assets/83b672f8-65d8-4171-b4b3-eead4938a100" />
 - Figure 4. Human IV: Simulated vs Digitised In Vivo Propranolol Plasma Concentrations (in vivo data is in venous plasma concentration, so simulated data was also converted to venous plasma concentration).
-  <img width="362" height="218" alt="image" src="https://github.com/user-attachments/assets/cbcc3781-8e5c-4c31-bcd1-cc0b332089d7" />
+
+<img width="446" height="278" alt="image" src="https://github.com/user-attachments/assets/c09201b8-198a-4f61-906d-f91a04424ebf" />
+
 - Table 3. Model performance based on concentration–time profile: Average Absolute Fold Error (AAFE) between Predicted and In Vivo concentrations in the IV human model
 
 | Metric | Value |
 | :------ | ----: |
-| AAFE | 1.213295173 |
+| AAFE | 1.278428459 |
 | Fraction within 2-fold (0.5–2.0) | 1 |
 | Fraction within 3-fold (0.33–3.0) | 1 |
 
 - Table 4. Comparison of Predicted Pharmacokinetic Parameters with Digitised and literature In Vivo Pharmacokinetic Parameters in IV Human Model
 
-| Parameter         | Predicted | Digitised In Vivo | Literature In Vivo | Pred/Dig | FE vs Dig | Within 2× (Dig) | Pred/Lit | FE vs Lit | Within 2× (Lit) |
-|-------------------|-----------|-------------------|--------------------|----------|-----------|-----------------|----------|-----------|-----------------|
-| Cmax (ng/mL)      | 36.08     | 8                 | 12.3               | 4.51     | 4.51      | FALSE           | 2.93     | 2.93      | FALSE           |
-| Tmax (min)        | 0         | 5                 | 5                  | 0        | ∞         | FALSE           | 0        | ∞         | FALSE           |
-| AUC₀–∞ (ng·min/mL)| 792.82    | 593.19            | 979                | 1.34     | 1.34      | TRUE            | 0.81     | 1.24      | TRUE            |
-| CL (mL/min)       | 1261.31   | 1685.79           | 1187               | 0.75     | 1.34      | TRUE            | 1.06     | 1.06      | TRUE            |
-| Vd (L/kg)         | 30.3      | 25.04             | 4.4                | 1.21     | 1.21      | TRUE            | 6.89     | 6.89      | FALSE           |
-| t½ (min)          | 1165.6    | 720.61            | 205                | 1.62     | 1.62      | TRUE            | 5.68     | 5.68      | FALSE           |
+| Human IV                  | Predicted   | Digitised In Vivo | Literature In Vivo | Pred/Dig   | FE vs Dig | Within 2× (Dig) | Within 3× (Dig) | Pred/Lit   | FE vs Lit | Within 2× (Lit) | Within 3× (Lit) |
+|----------------------------|-------------|-------------------|--------------------|------------|-----------|-----------------|-----------------|------------|-----------|-----------------|-----------------|
+| Cmax (ng/mL)              | 34.54493085 | 8                 | 12.3               | 4.318116356| 4.318116356| FALSE           | FALSE           | 2.808530963| 2.808530963| FALSE           | TRUE            |
+| Tmax (min)                | 0           | 5                 | 5                  | 0          | ∞         | FALSE           | FALSE           | 0          | ∞         | FALSE           | FALSE           |
+| AUC₀–∞ (ng·min/mL)        | 801.8329383 | 591.1275773       | 979                | 1.356446508| 1.356446508| TRUE            | TRUE            | 0.819032623| 1.220952587| TRUE            | TRUE            |
+| CL (mL/min)               | 1,247.14    | 1,691.68          | 1187               | 0.737220372| 1.356446508| TRUE            | TRUE            | 1.050667718| 1.050667718| TRUE            | TRUE            |
+| Vd (L/kg)                 | 29.12554313 | 22.6293637        | 4.4                | 1.287068586| 1.287068586| TRUE            | TRUE            | 6.61944162 | 6.61944162 | FALSE           | FALSE           |
+| t½ (min)                  | 1133.134406 | 649.0483707       | 205                | 1.745839689| 1.745839689| TRUE            | TRUE            | 5.527484906| 5.527484906| FALSE           | FALSE           |
+
 
 - Note: Human CL reported as total mL/min (70kg standard)
 
-Route-level summary (Human IV)					
-- vs Digitised (excluding IV Tmax, which is 0 by definition): AAFE = 1.74, within 2× = 80%, within 3× = 80%.
-- vs Literature (excluding IV Tmax): AAFE = 2.73, within 2× = 40%, within 3× = 60%.				
+Route-level summary (IV)
+- vs Digitised (excluding IV Tmax, which is 0 by definition): AAFE = 1.78, within 2× = 80%, within 3× = 80%
+- vs Literature (excluding IV Tmax): AAFE = 2.65, within 2× = 40%, within 3× = 60%
 
 Note: The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 4. 
 
@@ -120,25 +123,25 @@ Note: The in vivo data were digitised from published figures rather than obtaine
 
 | Metric                            |       Value |
 | :-------------------------------- | ----------: |
-| AAFE                              | 1.740499695 |
-| Fraction within 2-fold (0.5–2.0)  | 0.666666667 |
+| AAFE                              | 1.758673167 |
+| Fraction within 2-fold (0.5–2.0)  | 0.583333333 |
 | Fraction within 3-fold (0.33–3.0) | 0.916666667 |
 
 - Table 6. Comparison of Predicted Pharmacokinetic Parameters with Digitised and literature In Vivo Pharmacokinetic Parameters in PO Human Model
 
-| Parameter         | Predicted   | Digitised In Vivo | Literature In Vivo | Pred/Dig | FE vs Dig | Within 2× (Dig) | Pred/Lit | FE vs Lit | Within 2× (Lit) |
-|-------------------|-------------|-------------------|--------------------|----------|-----------|-----------------|----------|-----------|-----------------|
-| Cmax (ng/mL)      | 31.12       | 20                | 28                 | 1.56     | 1.56      | TRUE            | 1.11     | 1.11      | TRUE            |
-| Tmax (min)        | 50          | 60                | 180                | 0.83     | 1.20      | TRUE            | 0.28     | 3.60      | FALSE           |
-| AUC₀–∞ (ng·min/mL)| 11192.89    | 7015.94           | 8930               | 1.60     | 1.60      | TRUE            | 1.25     | 1.25      | TRUE            |
-| CL/F (mL/min)     | 3573.7      | 5701.31           | —                  | 0.63     | 1.60      | TRUE            | —        | —         | —               |
-| Vz/F (mL)         | 5,987,170.77| 5,799,234.70      | —                  | 1.03     | 1.03      | TRUE            | —        | —         | —               |
-| t½ (min)          | 1161.26     | 705.05            | 214                | 1.65     | 1.65      | TRUE            | 5.43     | 5.43      | FALSE           |
-| F (%)             | 35.29       | 29.57             | 27                 | 1.19     | 1.19      | TRUE            | 1.31     | 1.31      | TRUE            |
+| Human PO                  | Predicted   | Digitised In Vivo | Literature In Vivo | Pred/Dig    | FE vs Dig   | Within 2× (Dig) | Within 3× (Dig) | Pred/Lit    | FE vs Lit   | Within 2× (Lit) | Within 3× (Lit) |
+|----------------------------|-------------|-------------------|--------------------|-------------|-------------|-----------------|-----------------|-------------|-------------|-----------------|-----------------|
+| Cmax (ng/mL)              | 17.31471324 | 20                | 28                 | 0.865735662 | 1.15508699  | TRUE            | TRUE            | 0.618382616 | 1.617121786 | TRUE            | TRUE            |
+| Tmax (min)                | 100         | 60                | 180                | 1.666666667 | 1.666666667 | TRUE            | TRUE            | 0.555555556 | 1.8         | TRUE            | TRUE            |
+| AUC₀–∞ (ng·min/mL)        | 11196.36484 | 6967.874838       | 8930               | 1.606855045 | 1.606855045 | TRUE            | TRUE            | 1.253792255 | 1.253792255 | TRUE            | TRUE            |
+| t½ (min)                  | 1055.749924 | 538.488155        | 214                | 1.960581516 | 1.960581516 | TRUE            | TRUE            | 4.933410858 | 4.933410858 | FALSE           | FALSE           |
+| F (%)                     | 34.90865834 | 29.46857457       | 27                 | 1.184606274 | 1.184606274 | TRUE            | TRUE            | 1.292913272 | 1.292913272 | TRUE            | TRUE            |
 
-Route-level summary (Human PO)
-- vs Digitised: AAFE = 1.38, within 2× = 100%, within 3× = 100%.
-- vs Literature (for the parameters reported in the paper: Cmax, Tmax, AUC, t½, F): AAFE = 2.04, within 2× = 60%, within 3× = 60%.
+
+Route-level summary (PO)
+- vs Digitised: AAFE = 1.483473576, within 2× = 80%, within 3× = 100%
+- vs Literature (for the parameters reported in the paper: Cmax, Tmax, AUC, t½, F): AAFE = 1.876685502, within 2× = 80%, within 3× = 80%
+
 
 Note: The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 6. 
 
