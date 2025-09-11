@@ -42,7 +42,7 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 - Where available, key PK parameters (Cmax, Tmax, AUC, t1/2) were extracted and compared. The evaluation of model performance based on the calculated PK parameters was done by (adopted from the following research paper: https://doi.org/10.2165/00003088-200645050-00006) calculating:
   - Fold error (FE) per parameter = max(predicted, observed) / min(predicted, observed) so FE ≥ 1.0 by definition.
   - Average-fold error (AFE/AAFE) across parameters = geometric mean of the per-parameter FEs; the paper also reports the % within 2-fold (and 3-fold).
-  - Note: As mentioned above, digitisation can introduce small systematic and random errors, so the “Digitised In-Vivo” numbers may not perfectly reflect the original raw values. Therefore both digitised In Vivo parameter values and In Vivo paremeter values directly reported by the literature were used to evaluate overall the model performance based on parameters calculated.
+  - Note: As mentioned above, digitisation can introduce small systematic and random errors, so the “Digitised In-Vivo” numbers may not perfectly reflect the original raw values. Therefore both digitised In Vivo parameter values and In Vivo parameter values directly reported by the literature were used to evaluate overall the model performance based on parameters calculated.
     
 # Results
 ## Rat IV Model
@@ -68,6 +68,8 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 | CL (mL/kg·min)       | 88.2              | 100.6             | 92.2               | 0.88     | 1.14      | True             | 0.96     | 1.05      | True            |
 | Vd (L/kg)              | 8.64              | 5.63              | 5.30               | 1.53     | 1.53      | True             | 1.63     | 1.63      | True            |
 | AUC∞ (ng·min/mL)       | 28,349            | 24,850            | 27,122             | 1.14     | 1.14      | True             | 1.05     | 1.05      | True            |
+
+- Note: - Note: Human CL reported as total mL/min (70kg standard)
 
 Route-level summary (Rat IV)					
 - vs Digitised: AAFE = 1.37, within 2× = 100%, within 3× = 100%.
@@ -99,6 +101,8 @@ Note: The in vivo data were digitised from published figures rather than obtaine
 | CL (mL/min)       | 1261.31   | 1685.79           | 1187               | 0.75     | 1.34      | TRUE            | 1.06     | 1.06      | TRUE            |
 | Vd (L/kg)         | 30.3      | 25.04             | 4.4                | 1.21     | 1.21      | TRUE            | 6.89     | 6.89      | FALSE           |
 | t½ (min)          | 1165.6    | 720.61            | 205                | 1.62     | 1.62      | TRUE            | 5.68     | 5.68      | FALSE           |
+
+- Note: Human CL reported as total mL/min (70kg standard)
 
 Route-level summary (Human IV)					
 - vs Digitised (excluding IV Tmax, which is 0 by definition): AAFE = 1.74, within 2× = 80%, within 3× = 80%.
@@ -143,11 +147,11 @@ Note: The in vivo data were digitised from published figures rather than obtaine
 The rat IV model showed excellent performance, with an AAFE of 1.5 based on the time–concentration profile and an AAFE of around 1.3 based on the PK parameters (both digitised and literature in vivo data). All major pharmacokinetic parameters (t½, CL, Vd, AUC) were predicted within 2-fold of both digitised and literature values. Generally, an AAFE within 2-fold is considered good validation for building robust PBPK models (Deepika et al., 2023). Therefore, this result indicates that the constructed rat IV model is reliable and well validated.
 
 ## Human IV Model
-Although the comparison with digitised in vivo data yielded an AAFE of 1.21 based on the time–concentration profile and 1.74 based on PK parameters, comparison with literature values gave a higher AAFE of 2.73. It is generally more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data (except where digitization is unavoidable, such as for time–concentration profiles). Prediction error within 3-fold is widely accepted as informative but less reliable than within 2-fold; it is often regarded as moderate accuracy, sometimes acceptable for screening or early development, but usually insufficient for confident clinical application. Therefore, the AAFE of 2.73 based on PK parameters when compared with literature indicates that the model is not reliably predictive in humans. More specifically, while AUC and CL were reproduced reasonably well (within 2-fold), other key parameters including Cmax, Tmax, Vd, and t½ showed large discrepancies (e.g., Cmax was overpredicted by 3–4 fold). In particular, the overestimation of Vd and t½ suggests that human IV pharmacokinetics were not adequately captured. Thus, although the human IV model shows partial agreement, it is not clinically predictive.
+Although the comparison with digitised in vivo data yielded an AAFE of 1.21 based on the time–concentration profile and 1.74 based on PK parameters, comparison with literature values gave a higher AAFE of 2.73. It is generally more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data (except where digitisation is unavoidable, such as for time–concentration profiles). Prediction error within 3-fold is widely accepted as informative but less reliable than within 2-fold; it is often regarded as moderate accuracy, sometimes acceptable for screening or early development, but usually insufficient for confident clinical application. Therefore, the AAFE of 2.73 based on PK parameters when compared with literature indicates that the model is not reliably predictive in humans. More specifically, while AUC and CL were reproduced reasonably well (within 2-fold), other key parameters including Cmax, Tmax, Vd, and t½ showed large discrepancies (e.g., Cmax was overpredicted by 3–4 fold). In particular, the overestimation of Vd and t½ suggests that human IV pharmacokinetics were not adequately captured. Thus, although the human IV model shows partial agreement, it is not clinically predictive.
 
 
 ## Human PO Model
-The human PO model showed an AAFE of 1.74 based on the time–concentration profile and 1.4 based on PK parameters when compared with digitised data. However, when compared with literature values, the AAFE increased to 2.0. As with the IV case, comparison with literature data is more meaningful. An AAFE of around 2 indicates acceptable predictive performance of a PBPK model. More specifically, while some parameters such as Cmax, AUC, and F were well predicted (within 2-fold), others such as Tmax and t½ were not well captured (Tmax was predicted to be 3.6-fold faster, and t½ overestimated by more than 5-fold). This discrepancy likely reflects limitations of the absorption model, which did not account for processes such as intestinal secretion and reabsorption. Therefore, although the human PO model demonstrates acceptable prediction and partial agreement for certain parameters, it is not sufficiently predictive for clinical application.
+The human PO model showed an AAFE of 1.74 based on the time–concentration profile and 1.4 based on PK parameters when compared with digitised data. However, when compared with literature values, the AAFE increased to 2.0. As with the IV case, comparison with literature data is more meaningful. An AAFE near 2 sits at the boundary of commonly accepted accuracy (i.e., many studies consider ≤2-fold acceptable) (Deepika et al., 2023). More specifically, while some parameters such as Cmax, AUC, and F were well predicted (within 2-fold), others such as Tmax and t½ were not well captured (Tmax was predicted to be 3.6-fold faster, and t½ overestimated by more than 5-fold). This discrepancy likely reflects limitations of the absorption model, which did not account for processes such as intestinal secretion and reabsorption. Therefore, although the human PO model demonstrates acceptable prediction and partial agreement for certain parameters, it is not sufficiently predictive for clinical application.
 
 
 # Model Performance Summary
@@ -167,9 +171,19 @@ The human PO model showed an AAFE of 1.74 based on the time–concentration prof
 - Human PO captures exposure (AUC, Cmax, F) but misses absorption delays (Tmax) and terminal slope (t½), showing the need for more detailed absorption modeling.
 
 
+
 # Future Work
-- gastric emptying and transit to be added on PO absorption equations
+- Gastric emptying and transit to be added on PO absorption equations for more realistic and validated 
 - These models can be used with variations in parameters to model disease state (e.g. hepatic impairment).
+
+# Reflection
+This independent project on physiologically based pharmacokinetic (PBPK) modeling of propranolol was undertaken using Berkeley Madonna, with all organ-level differential equations derived from first principles. Through the construction and validation of rat (IV) and human (IV & PO) models, I gained practical experience in mechanistic model building, parameterisation, and quantitative evaluation of model performance.
+
+The rat IV model achieved high accuracy, with AAFE values around 1.3–1.5 and all major pharmacokinetic parameters (t½, CL, Vd, AUC) predicted within 2-fold of in vivo data, demonstrating reliability of the framework. In contrast, human IV and PO simulations highlighted key limitations: while exposure metrics such as AUC and CL were predicted within 2-fold, discrepancies emerged in parameters like Tmax, Vd, and t½. These issues were traced to simplified absorption modeling and omission of transporter- or enzyme-specific processes.
+
+Overall, this project not only established a validated baseline model (rat IV) but also outlined a roadmap for refinement of human models. Future improvements include incorporating gastric emptying and intestinal transit into the oral absorption module, refining hepatic clearance scaling, and integrating transporter and enzyme dynamics. Beyond the technical results, the project provided an opportunity to gain knowledge of the mechanism behind PBPK model, practice complete ODE derivation, systematic model validation using fold-error criteria (FE, AAFE, within 2×/3×), and critical evaluation of mechanistic assumptions.
+
+This exercise reflects both the strengths and challenges of PBPK modeling: while exposure-based predictions can often be achieved with reasonable accuracy, faithfully reproducing shape-dependent parameters such as Tmax and terminal half-life requires deeper biological detail. The project therefore serves as both a validated case study and a platform for future extensions toward clinically predictive PBPK modeling.
 
 # References
 
