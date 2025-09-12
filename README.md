@@ -1,4 +1,4 @@
-># PBPK_Propranolol
+# PBPK_Propranolol
 Physiologically-based pharmacokinetic (PBPK) modeling of propranolol in rats and humans (IV & PO) using Berkeley Madonna with validation against in vivo data.
 
 ## Quickstart (3 steps)
@@ -14,14 +14,14 @@ For full workflow, see **[Workflow.md](Workflow.md)**.
 
 3) See outputs  
    - **Run (▶) → Table → File ▸ Export Table…** (CSV) or copy/paste to Excel.
-   - Calculate key PK parameters and metrices (FE & AAFE) and plot Time-Concentration profiles in Excel.
+   - Calculate key PK parameters and metrics (FE & AAFE) and plot Time-Concentration profiles in Excel.
      - For full formulas & PK calculations, see the Excel template in the repository (**[PBPK_Propranolol_Data_Processing.xlsx](PBPK_Propranolol_Data_Processing.xlsx)** )    
 
 > Want a quick look without running anything? See **[docs/Results.md](docs/Results.md)**, **[docs/Discussion.md](docs/Discussion.md)** for the full result summaries and interpretation.
 
 
 # Repository Structure
-## workflow/
+## Workflow/
 **[Workflow.md](Workflow.md)**: Detailed workflow of how this project was processed
 
 ## code/ 
