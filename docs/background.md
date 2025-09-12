@@ -12,3 +12,9 @@ In summary, PBPK modeling offers a structured and connected way to link experime
 
 ## Why Propranolol Was Chosen for PBPK Modeling
 Propranolol was selected as the model compound for this PBPK project primarily because it is extensively studied in clinical pharmacology, providing a rich body of literature data. This allows for robust model validation and makes propranolol an appropriate small-molecule drug to begin with. 
+
+
+
+## Objectives
+- Construct PBPK model of propranolol for Rat IV, Human IV, and Human PO administration.
+- Validate the models by comparing simulated concentration–time profiles and resulting parameters against published in vivo pharmacokinetic data.
