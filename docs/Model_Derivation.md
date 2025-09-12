@@ -6,9 +6,9 @@
 
 # Parameters To Prepare
 - Parameters that are brought from literature or SimCYP include:
-  - Drug-specific parameters: fup (unbound drug fraction in plamsa) & RB (ratio blood:plasma)
-  - Species-specific parameters: GFR (Glomerular Filtration Rate), tissue volume, blood flow, weight (body weight & organ weight), hepatic IVIVE scaling factors (HPGL – hepatocytes per gram liver (cells/g liver), MPPGL (or MPPGL_mic) – microsomal protein per gram liver (mg/g liver), S9PGL – S9 protein per gram liver (mg/g liver))
-  - Species and drug-specific parameters: CL_int (intrinsic clearance), ka (absorption rate), Fobs (known bioavaliability)
+  - **Drug-specific parameters**: fup (unbound drug fraction in plamsa) & RB (ratio blood:plasma)
+  - **Species-specific parameters**: GFR (Glomerular Filtration Rate), tissue volume, blood flow, weight (body weight & organ weight), hepatic IVIVE scaling factors (HPGL – hepatocytes per gram liver (cells/g liver), MPPGL (or MPPGL_mic) – microsomal protein per gram liver (mg/g liver), S9PGL – S9 protein per gram liver (mg/g liver))
+  - **Species and drug-specific parameters**: CL_int (intrinsic clearance), ka (absorption rate), Fobs (known bioavaliability)
 
 # Abbreviation
 - Tissue (T)
