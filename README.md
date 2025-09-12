@@ -1,7 +1,10 @@
 # PBPK_Propranolol
 Physiologically-based pharmacokinetic (PBPK) modeling of propranolol in rats and humans (IV & PO) using Berkeley Madonna with validation against in vivo data.
 
-## Quickstart (3 steps)
+# What this repository is
+This is a proof-of-understanding portfolio for PBPK modeling of propranolol. It focuses on first-principles derivation (to strengthen knowledge and mechanism behind the PBPK modeling), assumption clarity, and reproducible validation of metrics (AAFE/FE/Within-2×) from simulation outputs. Simulations were run in Berkeley Madonna, but all validation and metrics (AAFE, FE, Within 2×/3×) are reproduced transparently in Excel utilising Excel formulas (please refer to **[PBPK_Propranolol_Data_Processing.xlsx](PBPK_Propranolol_Data_Processing.xlsx)** in this repository).
+
+# Quickstart (3 steps)
 For full workflow, see **[Workflow.md](Workflow.md)**. 
 
 1) Install Berkeley Madonna  
@@ -21,7 +24,7 @@ For full workflow, see **[Workflow.md](Workflow.md)**.
 
 
 # Repository Structure
-## Workflow/
+## Workflow.md
 **[Workflow.md](Workflow.md)**: Detailed workflow of how this project was processed
 
 ## code/ 
@@ -29,6 +32,9 @@ Berkeley Madonna codes for rat IV, human IV, human PO models
 - [Rat IV code](https://github.com/kimsjjkjn/PBPK_Propranolol/blob/main/code/Rat%20IV%20code)
 - [Human IV code](https://github.com/kimsjjkjn/PBPK_Propranolol/blob/main/code/Human%20IV%20code)
 - [Human PO code](https://github.com/kimsjjkjn/PBPK_Propranolol/blob/main/code/Human%20PO%20code)
+
+## PBPK_Propranolol_Data_Processing.xlsx 
+**[PBPK_Propranolol_Data_Processing.xlsx](PBPK_Propranolol_Data_Processing.xlsx)**: Excel workbook for processing PK data: computes key parameters, Fold Error (FE), and AAFE, and generates time–concentration plots via embedded formulas.
 
 ## docs/ 
 Detailed document of the project
