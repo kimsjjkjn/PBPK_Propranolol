@@ -11,7 +11,7 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 - Kp (tissue-to-plasma partition coefficient) values were obtained in Excel using standard partition coefficient calculators (Poulin–Theil): <img width="249" height="94" alt="Screenshot 2025-09-10 at 1 41 10 PM" src="https://github.com/user-attachments/assets/4ea4e765-38f3-433e-b0a3-bcd3b51a770e" />
 - For derivation of each equation used in model, refer to 'model derivation' section in 'docs' folder.
 
-## Data & Validation 
+## Data & Validation
 - After completing simulations in Berkeley Madonna, the raw time-concentration datasets were exported to Excel.
 - The in-vivo Time-Concentration values were digitised from published figures (raw datasets were unavailable). Digitisation can introduce small systematic and random errors, so the “Digitised In-Vivo” numbers may not perfectly reflect the original raw values. 
 - Simulated and digitised in vivo datasets were overlaid in Excel for direct comparison.  
