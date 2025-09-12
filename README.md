@@ -5,7 +5,7 @@ Physiologically-based pharmacokinetic (PBPK) modeling of propranolol in rats and
 This is a proof-of-understanding portfolio for PBPK modeling of propranolol. It focuses on first-principles derivation (to strengthen knowledge and mechanism behind the PBPK modeling), assumption clarity, and reproducible validation of metrics (AAFE/FE/Within-2×) from simulation outputs. Simulations were run in Berkeley Madonna, but all validation and metrics (AAFE, FE, Within 2×/3×) are reproduced transparently in Excel utilising Excel formulas (please refer to **[PBPK_Propranolol_Data_Processing.xlsx](PBPK_Propranolol_Data_Processing.xlsx)** in this repository).
 
 # License
-Code under MIT (**[MIT_License](/License/MIT_License)**), docs/figures under CC BY 4.0 ((**[License-DOCS](/License/License-Docs)**)).”
+Code under MIT (**[MIT_License](/License/MIT_License)**), docs/figures under CC BY 4.0 (**[License-DOCS](/License/License-Docs)**).
 
 
 # Quickstart (3 steps)
