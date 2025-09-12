@@ -90,7 +90,7 @@ Note: The in vivo data were digitised from published figures rather than obtaine
 
 | Metric | Value |
 | :------ | ----: |
-| AAFE | 1.278428459 |
+| AAFE | 1.28 |
 | Fraction within 2-fold (0.5–2.0) | 1 |
 | Fraction within 3-fold (0.33–3.0) | 1 |
 
@@ -98,12 +98,12 @@ Note: The in vivo data were digitised from published figures rather than obtaine
 
 | Human IV                  | Predicted   | Digitised In Vivo | Literature In Vivo | Pred/Dig   | FE vs Dig | Within 2× (Dig) | Within 3× (Dig) | Pred/Lit   | FE vs Lit | Within 2× (Lit) | Within 3× (Lit) |
 |----------------------------|-------------|-------------------|--------------------|------------|-----------|-----------------|-----------------|------------|-----------|-----------------|-----------------|
-| Cmax (ng/mL)              | 34.54493085 | 8                 | 12.3               | 4.318116356| 4.318116356| FALSE           | FALSE           | 2.808530963| 2.808530963| FALSE           | TRUE            |
+| Cmax (ng/mL)              | 34.54 | 8                 | 12.3               | 4.32| 4.32| FALSE           | FALSE           | 2.81| 2.81| FALSE           | TRUE            |
 | Tmax (min)                | 0           | 5                 | 5                  | 0          | ∞         | FALSE           | FALSE           | 0          | ∞         | FALSE           | FALSE           |
-| AUC₀–∞ (ng·min/mL)        | 801.8329383 | 591.1275773       | 979                | 1.356446508| 1.356446508| TRUE            | TRUE            | 0.819032623| 1.220952587| TRUE            | TRUE            |
-| CL (mL/min)               | 1,247.14    | 1,691.68          | 1187               | 0.737220372| 1.356446508| TRUE            | TRUE            | 1.050667718| 1.050667718| TRUE            | TRUE            |
-| Vss (L/kg)                 | 29.12554313 | 22.6293637        | 4.4                | 1.287068586| 1.287068586| TRUE            | TRUE            | 6.61944162 | 6.61944162 | FALSE           | FALSE           |
-| t½ (min)                  | 1133.134406 | 649.0483707       | 205                | 1.745839689| 1.745839689| TRUE            | TRUE            | 5.527484906| 5.527484906| FALSE           | FALSE           |
+| AUC₀–∞ (ng·min/mL)        | 801.83 | 591.13       | 979                | 1.36| 1.36| TRUE            | TRUE            | 0.82| 1.22| TRUE            | TRUE            |
+| CL (mL/min)               | 1,247.14    | 1,691.68          | 1187               | 0.74| 1.36| TRUE            | TRUE            | 1.05| 1.05| TRUE            | TRUE            |
+| Vss (L/kg)                 | 29.13 | 22.63        | 4.4                | 1.29| 1.29| TRUE            | TRUE            | 6.62 | 6.62 | FALSE           | FALSE           |
+| t½ (min)                  | 1133.13 | 649.05       | 205                | 1.75| 1.75| TRUE            | TRUE            | 5.53| 5.53| FALSE           | FALSE           |
 
 - Abbreviations: AUC, area under the concentration–time curve; Cmax, peak concentration; CL, clearance; t½, elimination half-life; Vss, volume of distribution at steady state; Tmax, time point of Cmax.
 
@@ -125,33 +125,33 @@ Note: The in vivo data were digitised from published figures rather than obtaine
 
 | Metric                            |       Value |
 | :-------------------------------- | ----------: |
-| AAFE                              | 1.758673167 |
-| Fraction within 2-fold (0.5–2.0)  | 0.583333333 |
-| Fraction within 3-fold (0.33–3.0) | 0.916666667 |
+| AAFE                              | 1.76 |
+| Fraction within 2-fold (0.5–2.0)  | 0.58 |
+| Fraction within 3-fold (0.33–3.0) | 0.92 |
 
 - Table 6. Comparison of Predicted Pharmacokinetic Parameters with Digitised and literature In Vivo Pharmacokinetic Parameters in PO Human Model
 
 | Human PO                  | Predicted   | Digitised In Vivo | Literature In Vivo | Pred/Dig    | FE vs Dig   | Within 2× (Dig) | Within 3× (Dig) | Pred/Lit    | FE vs Lit   | Within 2× (Lit) | Within 3× (Lit) |
 |----------------------------|-------------|-------------------|--------------------|-------------|-------------|-----------------|-----------------|-------------|-------------|-----------------|-----------------|
-| Cmax (ng/mL)              | 17.31471324 | 20                | 28                 | 0.865735662 | 1.15508699  | TRUE            | TRUE            | 0.618382616 | 1.617121786 | TRUE            | TRUE            |
-| Tmax (min)                | 100         | 60                | 180                | 1.666666667 | 1.666666667 | TRUE            | TRUE            | 0.555555556 | 1.8         | TRUE            | TRUE            |
-| AUC₀–∞ (ng·min/mL)        | 11196.36484 | 6967.874838       | 8930               | 1.606855045 | 1.606855045 | TRUE            | TRUE            | 1.253792255 | 1.253792255 | TRUE            | TRUE            |
-| t½ (min)                  | 1055.749924 | 538.488155        | 214                | 1.960581516 | 1.960581516 | TRUE            | TRUE            | 4.933410858 | 4.933410858 | FALSE           | FALSE           |
-| F (%)                     | 34.90865834 | 29.46857457       | 27                 | 1.184606274 | 1.184606274 | TRUE            | TRUE            | 1.292913272 | 1.292913272 | TRUE            | TRUE            |
+| Cmax (ng/mL)              | 17.31 | 20                | 28                 | 0.87 | 1.16  | TRUE            | TRUE            | 0.62 | 1.62 | TRUE            | TRUE            |
+| Tmax (min)                | 100         | 60                | 180                | 1.67 | 1.67 | TRUE            | TRUE            | 0.56 | 1.8         | TRUE            | TRUE            |
+| AUC₀–∞ (ng·min/mL)        | 11196.36 | 6967.87       | 8930               | 1.61 | 1.61 | TRUE            | TRUE            | 1.25 | 1.25 | TRUE            | TRUE            |
+| t½ (min)                  | 1055.75 | 538.49        | 214                | 1.96 | 1.96 | TRUE            | TRUE            | 4.93 | 4.93 | FALSE           | FALSE           |
+| F (%)                     | 34.91 | 29.47       | 27                 | 1.18 | 1.18 | TRUE            | TRUE            | 1.29 | 1.29 | TRUE            | TRUE            |
 
 - Abbreviations: AUC, area under the concentration–time curve; Cmax, peak concentration; F, oral bioavailability; t½, elimination half-life; Tmax, time point of Cmax.
 
 
 Route-level summary (Human PO)
-- vs Digitised: AAFE = 1.483473576, within 2× = 80%, within 3× = 100%.
-- vs Literature (for the parameters reported in the paper: Cmax, Tmax, AUC, t½, F): AAFE = 1.876685502, within 2× = 80%, within 3× = 80%.
+- vs Digitised: AAFE = 1.48, within 2× = 80%, within 3× = 100%.
+- vs Literature (for the parameters reported in the paper: Cmax, Tmax, AUC, t½, F): AAFE = 1.88, within 2× = 80%, within 3× = 80%.
 
 
 Note: The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 6. 
 
 # Discussion
 ## Rat IV Model
-The rat IV model showed excellent performance, with an AAFE of 1.5 based on the time–concentration profile and an AAFE of around 1.3 based on the PK parameters (both digitised and literature in vivo data). All major pharmacokinetic parameters (t½, CL, Vss, AUC) were predicted within 2-fold of both digitised and literature values. Generally, an AAFE within 2-fold is considered good validation for building robust PBPK models (Deepika et al., 2023). Therefore, this result indicates that the constructed rat IV model is reliable and well validated.
+The rat IV model showed excellent performance, with an AAFE of 1.49 based on the time–concentration profile and an AAFE of around 1.3 based on the PK parameters (both digitised and literature in vivo data). All major pharmacokinetic parameters (t½, CL, Vss, AUC) were predicted within 2-fold of both digitised and literature values. Generally, an AAFE within 2-fold is considered good validation for building robust PBPK models (Deepika et al., 2023). Therefore, this result indicates that the constructed rat IV model is reliable and well validated.
 
 ## Human IV Model
 Although the comparison with digitised in vivo data yielded an AAFE of 1.28 based on the time–concentration profile and 1.78 based on PK parameters, comparison with literature values gave a higher AAFE of 2.65. It is generally more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data (except where digitisation is unavoidable, such as for time–concentration profiles). Prediction error within 3-fold is widely accepted as informative but less reliable than within 2-fold. It is often regarded as moderate accuracy, sometimes acceptable for screening or early development, but usually insufficient for confident clinical application. Therefore, the AAFE of 2.65 based on PK parameters when compared with literature indicates that the model is not reliably predictive in humans. More specifically, while AUC and CL were reproduced reasonably well (within 2-fold), other key parameters including Cmax, Tmax, Vss, and t½ showed large discrepancies (e.g., Cmax was overpredicted by about 3 fold). In particular, the overestimation of Vss and t½ suggests that human IV pharmacokinetics were not adequately captured. Thus, although the human IV model shows partial agreement, it is not clinically predictive.
@@ -167,9 +167,9 @@ The human PO model showed an AAFE of 1.76 based on the time–concentration prof
 
 | Model        |        AAFE (Time–Concentration) (digitised) |                          AAFE (PK Parameters) | Key Matches (within 2×)       | Key Mismatches                                                           | Overall Conclusion                                                                                           |
 | ------------ | -----------------------: | --------------------------------------------: | ----------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| **Rat IV**   |                      1.5 |                \~1.3 (digitised & literature) | t½, CL, Vss, AUC all within 2× | Slightly high Vss → longer t½                                             | Excellent fit. Exposure (AUC, CL) on target. Reliable and well-validated.                                    |
+| **Rat IV**   |                      1.49 |                1.37 (digitised), 1.32 (literature) | t½, CL, Vss, AUC all within 2× | Slightly high Vss → longer t½                                             | Excellent fit. Exposure (AUC, CL) on target. Reliable and well-validated.                                    |
 | **Human IV** | 1.28 | 1.78 (digitised), **2.65 (literature)** | AUC, CL within 2×             | Cmax overpredicted (3×), Tmax mismatch, Vss & t½ strongly overestimated | Partial agreement. Moderate accuracy by 3× rule, but not sufficiently predictive for clinical use.           |
-| **Human PO** |                     1.76 |         1.5 (digitised), **1.88 (literature)** | Cmax, Tmax, AUC, F within 2×        | t½ overestimated (~5×)    | Acceptable fit overall. Exposure (AUC, F) well predicted but t½ largely overestimated potentially due to oversimplified absorption model.   |
+| **Human PO** |                     1.76 |         1.48 (digitised), **1.88 (literature)** | Cmax, Tmax, AUC, F within 2×        | t½ overestimated (~5×)    | Acceptable fit overall. Exposure (AUC, F) well predicted but t½ largely overestimated potentially due to oversimplified absorption model.   |
 
 - Abbreviations: AUC, area under the concentration–time curve; Cmax, peak concentration; CL, clearance; F, oral bioavailability; t½, elimination half-life; Vss, volume of distribution at steady state; Tmax, time point of Cmax.
 
