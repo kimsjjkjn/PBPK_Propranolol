@@ -39,7 +39,7 @@ Detailed document of the project
 - [Discussion](docs/Discussion.md) ; Evaluation of validity of models, interpretation of fits/mismatches (e.g., Vss, t½, Cmax), limitations, and improvement ideas.
 - [Reflection](docs/Reflection.md) ; Lessons learned, modeling choices/trade-offs, and next steps from a student perspective.
 - [References](docs/References.md) ; Full citations for all literature used.
-- [Full Document](docs/Full_Document.md) ; All sections merged into a single page for continuous reading/printing.
+- [Full Document](docs/Full_Document.md) ; All sections merged into a single page for continuous reading/printing, excep for [Model Derivation](docs/model_derivation.md) section.
 
 # Key Results Highlight
 ## Model Performance Summary
