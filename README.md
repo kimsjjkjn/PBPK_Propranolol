@@ -32,16 +32,16 @@ Berkeley Madonna codes for rat IV, human IV, human PO models
 
 ## docs/ 
 Detailed document of the project
-- [Background](docs/Background.md)
-- [Methods](docs/Methods.md)
-- [Model Derivation](docs/model_derivation.md)
-- [Results](docs/Results.md)
-- [Discussion](docs/Discussion.md)
-- [Reflection](docs/Reflection.md)
-- [References](docs/References.md)
-- [Full Document](docs/Full_Document.md) ; all sectiosn merged into one document
+- [Background](docs/Background.md) ; What PBPK is, why propranolol was chosen, and the project’s objective.
+- [Methods](docs/Methods.md) ; Software, datasets, parameter sources, model structure, and evaluation metrics (FE/AAFE, PK).
+- [Model Derivation](docs/model_derivation.md) ; Derivation of core ODEs/equations used to construct each model, key assumptions, blood↔plasma conversions, and Kp estimation approach.
+- [Results](docs/Results.md) ; Side-by-side comparison of in vivo data and model predictions (IV/PO; rat/human), with AAFE and within-2×/3× metrics.
+- [Discussion](docs/Discussion.md) ; Evaluation of validity of models, interpretation of fits/mismatches (e.g., Vss, t½, Cmax), limitations, and improvement ideas.
+- [Reflection](docs/Reflection.md) ; Lessons learned, modeling choices/trade-offs, and next steps from a student perspective.
+- [References](docs/References.md) ; Full citations for all literature used.
+- [Full Document](docs/Full_Document.md) ; All sections merged into a single page for continuous reading/printing.
 
-# Results Highlight
+# Key Results Highlight
 ## Model Performance Summary
 **At a glance** · Full results: [docs/Results.md](docs/Results.md)
 
