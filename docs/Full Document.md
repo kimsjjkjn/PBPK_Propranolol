@@ -57,7 +57,7 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
   
 | Metric | Value |
 | :------ | ----: |
-| AAFE | 1.491919857 |
+| AAFE | 1.49 |
 | Fraction within 2-fold (0.5–2.0) | 1 |
 | Fraction within 3-fold (0.33–3.0) | 1 |
 
@@ -65,16 +65,16 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 
 | Parameter            | Predicted (model) | Digitised In Vivo | Literature In Vivo | Pred/Dig | FE vs Dig | Within 2× (Dig) | Within 3× (Dig) | Pred/Lit | FE vs Lit | Within 2× (Lit) | Within 3× (Lit) |
 |----------------------|------------------:|------------------:|-------------------:|---------:|----------:|:----------------:|:----------------:|---------:|----------:|:---------------:|:---------------:|
-| AUC₀–∞ (ng·min/mL)     | 28,349            | 24,850            | 27,122             | 1.14     | 1.14      | True             | True             | 1.05     | 1.05      | True            | True            |
-| CL (mL/kg/min)       | 88.2              | 100.6             | 92.2               | 0.88     | 1.14      | True             | True             | 0.96     | 1.05      | True            | True            |
-| Vss (L/kg)            | 8.64              | 5.63              | 5.30               | 1.53     | 1.53      | True             | True             | 1.63     | 1.63      | True            | True            |
-| t½ (min)             | 67.9              | 38.8              | 40                 | 1.75     | 1.75      | True             | True             | 1.70     | 1.70      | True            | True            |
+| AUC₀–∞ (ng·min/mL)     | 28293.97           | 24254.95           | 27122             | 1.17     | 1.17       | True             | True             | 1.04     | 1.04      | True            | True            |
+| CL (mL/kg/min)       | 88.36             | 103.07            | 92.2               | 0.86     | 1.17      | True             | True             | 0.96     | 1.04      | True            | True            |
+| Vss (L/kg)            | 8.58              | 4.14            | 5.30               | 2.07     | 2.07      | False             | True             | 1.62     | 1.62      | True            | True            |
+| t½ (min)             | 67.31              | 27.81              | 40                 | 2.42     | 2.42      | False             | True             | 1.68     | 1.68      | True            | True            |
 
 - Abbreviations: AUC, area under the concentration–time curve; CL, clearance; Vss, volume of distribution at steady state; t½, elimination half-life.
 
 Route-level summary (Rat IV)					
-- vs Digitised: AAFE = 1.37, within 2× = 100%, within 3× = 100%.
-- vs Literature: AAFE = 1.32, within 2× = 100%, within 3× = 100%.
+- vs Digitised: AAFE = 1.62, within 2× = 50%, within 3× = 100%.
+- vs Literature: AAFE = 1.31, within 2× = 100%, within 3× = 100%.
 
 Note: The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 2. 
 
@@ -167,7 +167,7 @@ The human PO model showed an AAFE of 1.76 based on the time–concentration prof
 
 | Model        |        AAFE (Time–Concentration) (digitised) |                          AAFE (PK Parameters) | Key Matches (within 2×)       | Key Mismatches                                                           | Overall Conclusion                                                                                           |
 | ------------ | -----------------------: | --------------------------------------------: | ----------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| **Rat IV**   |                      1.49 |                1.37 (digitised), 1.32 (literature) | t½, CL, Vss, AUC all within 2× | Slightly high Vss → longer t½                                             | Excellent fit. Exposure (AUC, CL) on target. Reliable and well-validated.                                    |
+| **Rat IV**   |                      1.49 |                1.62 (digitised), 1.31 (literature) | t½, CL, Vss, AUC all within 2× | Slightly high Vss → longer t½                                             | Excellent fit. Exposure (AUC, CL) on target. Reliable and well-validated.                                    |
 | **Human IV** | 1.28 | 1.78 (digitised), **2.65 (literature)** | AUC, CL within 2×             | Cmax overpredicted (3×), Tmax mismatch, Vss & t½ strongly overestimated | Partial agreement. Moderate accuracy by 3× rule, but not sufficiently predictive for clinical use.           |
 | **Human PO** |                     1.76 |         1.48 (digitised), **1.88 (literature)** | Cmax, Tmax, AUC, F within 2×        | t½ overestimated (~5×)    | Acceptable fit overall. Exposure (AUC, F) well predicted but t½ largely overestimated potentially due to oversimplified absorption model.   |
 
