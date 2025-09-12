@@ -190,7 +190,8 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
 
 
 ## Weight
-Note that standard average weight of rat (250g) is used in this model. 
+- Note that standard average weight of rat (250g) is used in this model. 
+
 
 # Human IV Model
 
@@ -267,7 +268,11 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
 This is the same as in what's discussed in rat IV model. Please refer to **'Rat IV Model - Differential Equations'** section.
 
 ## Weight
-Note that standard average weight of male human (70kg = 70000g) is used in this model. 
+- Note that standard average weight of male human (70kg = 70000g) is used in this model. 
+- This can be adjusted based on the need (e.g. if want to model propranolol behaviour in 50kg human, change the body weight and organ weights accordingly).
+
+
+
 
 
 # Human PO Model
@@ -290,25 +295,51 @@ This is the same as in what's discussed in human IV model. Please refer to **'Hu
 
 ### **DerivationE**:
 - `ka = 0.25/60 ; 1/h --> 1/min`
-  - ka in human is usually in the range of 0.06-6 (1/h). Specific ka (absorption rate constant) value must be selected (fitted) depending on which ka yields the data points that best-desscribe AAFE, Tmax, Cmax, etc.
+  - ka in human is usually in the range of 0.06-6 (1/h). Specific ka (absorption rate constant) value must be selected (fitted) depending on which ka yields the data points that best-describe AAFE, Tmax, Cmax, etc.
+
 - `Fobs = 0.27`
   - This is bioavailability of propranolol reported by literature. 
-- `FH = Q_li / (Q_li + CL_int_eff)`
-  - Hepatic Extraction ratio (EH): `EH = (fub * CL_int_u) / (Q_li + fub * CL_int_u)`
-  - Hepatic availability (FH): `FH = 1 - EH` = `((Q_li + fub * CL_int_u) - (fub * CL_int_u)) / (Q_li + fub * CL_int_u)` = `Q_li / (Q_li + fub * CL_int_u)`
-    -   Since we have CL_int_eff from literature and `CL_int_eff = fub * CL_int_u`, `FH = Q_li / (Q_li + CL_int_eff)` and there is no need to multiply by fub again.
 
-- FaFg = MIN(1, Fobs / FH)`       
+- `FH = Q_li / (Q_li + CL_int_eff)`
+  - Definition:
+    - Hepatic Extraction ratio (EH): `EH = (Cin - Cout) / Cin` (fraction removed in a single pass through the liver)
+    - Hepatic availability (FH): `FH = Cout / Cin`
+      - `FH = 1 - EH` = `1 - ((Cin - Cout) / Cin)` = `(Cin / Cin) - ((Cin - Cout) / Cin)` = `Cout / Cin`
+  - Mass balance equation (at steady state):
+    - Input to liver (arterial blood inflow) − output from liver (venous blood outflow) = metabolised
+    - `Q_li * (Cin - Cout) = CL_int_u * (fub * Cout)`
+  - Rearrangement:
+    - `Cin − Cout = (CL_int_u * fub * Cout) / Q_li`
+    - `Cin = Cout + ((CL_int_u * fub * Cout) / Q_li)` = `((Q_li * Cout) + (CL_int_u * fub * Cout)) / Q_li` = `Cout * (Q_li + (CL_int_u * fub)) / Q_li`
+    - `Cout / Cin = Cout / (Cout * (Q_li + (CL_int_u * fub)) / Q_li)` = `Q_li / (Q_li + (CL_int_u * fub))`
+  - Thus, `FH = Cout / Cin` = `Q_li / (Q_li + (CL_int_u * fub))`
+    - Since we have CL_int_eff from literature and `CL_int_eff = fub * CL_int_u`, `FH = Q_li / (Q_li + CL_int_eff)` and there is no need to multiply by fub again. 
+  - Thus, `FH = Q_li / (Q_li + CL_int_eff)`
+
+- `FaFg = MIN(1, Fobs / FH)`
+  - `Fa * Fg` represents intestinal loss (where Fa = fraction absorbed in gut; Fg = fraction escaping gut-wall elimination).
+  - Under linear PK, systemic oral bioavailability is `F_obs = Fa * Fg * FH`. 
+  - Thus, `Fa * Fg = F_obs / FH`
+  - Function `MIN(1,` is used to numerically cap to [0, 1] to avoid round-off/estimation artifacts.
 
 - `INIT A_gut = dose_PO`
+  - This states variable and initial condition.
+
 - `d/dt(A_gut) = -ka * A_gut`
+  - This reflects first-order depletion from the gut lumen.
+
 - `Rabs0 = ka * A_gut ;ng/min`
+  - This is uncorrected absorption flux into portal vein (pre-gut loss).
 
 - `Rabs = FaFg * Rabs0`
+  - Apply intestinal loss (Fa * Fg) to Rabs0 (uncorrected absorption flux into portal vein) (post-gut loss) so that systemic `F_obs = FaFg * FH`.
+  - Thus `Rabs` represents the amount that actually enters the portal vein after traversing the intestinal wall.
+
 
 ## **Differential Equations**: 
 This is the same as in what's discussed in rat IV model. Please refer to **'Rat IV Model - Differential Equations'** section.
 
 ## Weight
-Note that standard average weight of male human (70kg = 70000g) is used in this model. 
+- Note that standard average weight of male human (70kg = 70000g) is used in this model.
+- This can be adjusted based on the need (e.g. if want to model propranolol behaviour in 50kg human, change the body weight and organ weights accordingly).
 
