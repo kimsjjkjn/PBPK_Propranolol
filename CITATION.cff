@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: >-
+  If you use or reference this repository, please cite it as follows.
+title: PBPK_Propranolol (Proof-of-Understanding Portfolio)
+type: software
+authors:
+  - family-names: Kim
+    given-names: Su Jee
+repository-code: https://github.com/kimsjjkjn/PBPK_Propranolol
+license: MIT
+version: 0.1.0
+date-released: 2025-09-13
+keywords:
+  - PBPK
+  - pharmacokinetics
+  - propranolol
+preferred-citation:
+  type: software
+  title: PBPK_Propranolol
+  authors:
+    - family-names: Kim
+      given-names: Su Jee
+  year: 2025
+  url: https://github.com/kimsjjkjn/PBPK_Propranolol
