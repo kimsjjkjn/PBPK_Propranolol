@@ -4,7 +4,7 @@ Physiologically-based pharmacokinetic (PBPK) modeling of propranolol in rats and
 ## PBPK
 Physiologically based pharmacokinetic (PBPK) modeling is a useful tool for predicting how drugs are absorbed, distributed, metabolized, and excreted (ADME) based on physiological and biochemical factors. Unlike traditional compartmental models, PBPK models use detailed representations of organ-specific blood flows, tissue volumes, and protein binding. This allows for a more realistic simulation of how drugs behave in the body (Rowland et al., 2011).
 
-The main goal of PBPK modeling is to describe and predict drug concentration over time in plasma or blood and tissues under different conditions. This helps estimate important pharmacokinetic parameters such as maximum plasma concentration (Cmax), time to reach Cmax (Tmax), area under the curve (AUC), and half-life (t1/2). These parameters are crucial for evaluating drug effectiveness and safety (Jones & Rowland-Yeo, 2013).
+The main goal of PBPK modeling is to describe and predict drug concentration over time in plasma or blood and tissues under different conditions. This helps estimate important pharmacokinetic parameters such as maximum plasma concentration (Cmax), time to reach Cmax (Tmax), area under the curve (AUC), and half-life (t½). These parameters are crucial for evaluating drug effectiveness and safety (Jones & Rowland-Yeo, 2013).
 
 Another key use of PBPK modeling is to translate findings from laboratory studies to real-life outcomes, which is known as in vitro–in vivo extrapolation (IVIVE). Data obtained from liver microsomes or hepatocytes, such as intrinsic clearance (CLint) and fraction unbound in plasma (fup) or in blood (fub), can be integrated into PBPK models to predict systemic clearance and bioavailability in humans (Rostami-Hodjegan, 2012). This ability is particularly important in the early stages of drug development, as it reduces the need for extensive or unnecessary animal testing and provides a rational basis for selecting first-in-human (FIH) doses with greater confidence. By running simulations in silico, PBPK models allow researchers to identify and eliminate implausible or unsafe dosing regimens before they are tested experimentally, thereby avoiding wasted resources and minimizing ethical concerns. This approach both saves time in the transition from preclinical to clinical studies and increases the likelihood that FIH doses achieve the desired exposure safely.
 
@@ -28,7 +28,7 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 - Blood concentrations were the model standard. When literature to be compared reported plasma concentration values, simulated blood concentration values were converted to plasma concentration values at the end using the following equation: Cp_ve = C_ve / RB (in case the collected sample is venous blood) or Cp_ar = C_ar / RB (in case the collected sample is arterial blood).
 - All equations in PBPK model were manually derived using the basic rationale discussed in the following research paper: Jones, Hannah M, et al. “A Novel Strategy for Physiologically Based Predictions of Human Pharmacokinetics.” Clinical Pharmacokinetics, vol. 45, no. 5, 2006, pp. 511–542, https://doi.org/10.2165/00003088-200645050-00006. 
 - Values of parameters (fup, RB, CL_int, fu_MP, Molecular Weight, etc.) were obtained from the literature or SimCYP. MW, pKa, logP, fup, RB were drug-specific properties (constant in rat and human models), whilst physiological parameters such as organ volumes/flows, cardiac output, hematocrit, etc. were species-specific parameters (different in rat and human models).
-- Kp values were obtained in Excel using standard partition coefficient calculators (Poulin–Theil): <img width="249" height="94" alt="Screenshot 2025-09-10 at 1 41 10 PM" src="https://github.com/user-attachments/assets/4ea4e765-38f3-433e-b0a3-bcd3b51a770e" />
+- Kp (tissue-to-plasma partition coefficient) values were obtained in Excel using standard partition coefficient calculators (Poulin–Theil): <img width="249" height="94" alt="Screenshot 2025-09-10 at 1 41 10 PM" src="https://github.com/user-attachments/assets/4ea4e765-38f3-433e-b0a3-bcd3b51a770e" />
 - For derivation of each equation used in model, refer to 'docs' section.
 ## Data & Validation
 - After completing simulations in Berkeley Madonna, the raw time-concentration datasets were exported to Excel.
@@ -39,7 +39,7 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
    <img width="631" height="291" alt="Screenshot 2025-09-10 at 10 29 07 PM" src="https://github.com/user-attachments/assets/799af2d3-9e5e-4f78-bbb7-2e261a5cb61f" />
 
   - Note: Because raw time-concentration datasets were not provided by original literature, digitised In Vivo data were used to plot graph and evaluate overall model performance. 
-- Where available, key PK parameters (Cmax, Tmax, AUC, t1/2) were extracted and compared. The evaluation of model performance based on the calculated PK parameters was done by (adopted from the following research paper: https://doi.org/10.2165/00003088-200645050-00006) calculating:
+- Where available, key PK parameters (Cmax, Tmax, AUC, t½) were extracted and compared. The evaluation of model performance based on the calculated PK parameters was done by (adopted from the following research paper: https://doi.org/10.2165/00003088-200645050-00006) calculating:
   - Fold error (FE) per parameter = max(predicted, observed) / min(predicted, observed) so FE ≥ 1.0 by definition.
   - Average-fold error (AFE/AAFE) across parameters = geometric mean of the per-parameter FEs; the paper also reports the % within 2-fold (and 3-fold).
   - Note: As mentioned above, digitisation can introduce small systematic and random errors, so the “Digitised In-Vivo” numbers may not perfectly reflect the original raw values. Therefore both digitised In Vivo parameter values and In Vivo parameter values directly reported by the literature were used to evaluate overall the model performance based on parameters calculated.
@@ -65,11 +65,12 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 
 | Parameter            | Predicted (model) | Digitised In Vivo | Literature In Vivo | Pred/Dig | FE vs Dig | Within 2× (Dig) | Within 3× (Dig) | Pred/Lit | FE vs Lit | Within 2× (Lit) | Within 3× (Lit) |
 |----------------------|------------------:|------------------:|-------------------:|---------:|----------:|:----------------:|:----------------:|---------:|----------:|:---------------:|:---------------:|
-| AUC∞ (ng·min/mL)     | 28,349            | 24,850            | 27,122             | 1.14     | 1.14      | True             | True             | 1.05     | 1.05      | True            | True            |
+| AUC₀–∞ (ng·min/mL)     | 28,349            | 24,850            | 27,122             | 1.14     | 1.14      | True             | True             | 1.05     | 1.05      | True            | True            |
 | CL (mL/kg/min)       | 88.2              | 100.6             | 92.2               | 0.88     | 1.14      | True             | True             | 0.96     | 1.05      | True            | True            |
-| Vd (L/kg)            | 8.64              | 5.63              | 5.30               | 1.53     | 1.53      | True             | True             | 1.63     | 1.63      | True            | True            |
+| Vss (L/kg)            | 8.64              | 5.63              | 5.30               | 1.53     | 1.53      | True             | True             | 1.63     | 1.63      | True            | True            |
 | t½ (min)             | 67.9              | 38.8              | 40                 | 1.75     | 1.75      | True             | True             | 1.70     | 1.70      | True            | True            |
 
+- Abbreviations: AUC, area under the concentration–time curve; CL, clearance; Vss, volume of distribution at steady state; t½, elimination half-life.
 
 Route-level summary (Rat IV)					
 - vs Digitised: AAFE = 1.37, within 2× = 100%, within 3× = 100%.
@@ -101,9 +102,10 @@ Note: The in vivo data were digitised from published figures rather than obtaine
 | Tmax (min)                | 0           | 5                 | 5                  | 0          | ∞         | FALSE           | FALSE           | 0          | ∞         | FALSE           | FALSE           |
 | AUC₀–∞ (ng·min/mL)        | 801.8329383 | 591.1275773       | 979                | 1.356446508| 1.356446508| TRUE            | TRUE            | 0.819032623| 1.220952587| TRUE            | TRUE            |
 | CL (mL/min)               | 1,247.14    | 1,691.68          | 1187               | 0.737220372| 1.356446508| TRUE            | TRUE            | 1.050667718| 1.050667718| TRUE            | TRUE            |
-| Vd (L/kg)                 | 29.12554313 | 22.6293637        | 4.4                | 1.287068586| 1.287068586| TRUE            | TRUE            | 6.61944162 | 6.61944162 | FALSE           | FALSE           |
+| Vss (L/kg)                 | 29.12554313 | 22.6293637        | 4.4                | 1.287068586| 1.287068586| TRUE            | TRUE            | 6.61944162 | 6.61944162 | FALSE           | FALSE           |
 | t½ (min)                  | 1133.134406 | 649.0483707       | 205                | 1.745839689| 1.745839689| TRUE            | TRUE            | 5.527484906| 5.527484906| FALSE           | FALSE           |
 
+- Abbreviations: AUC, area under the concentration–time curve; Cmax, peak concentration; CL, clearance; t½, elimination half-life; Vss, volume of distribution at steady state; Tmax, time point of Cmax.
 
 - Note: Human CL reported as total mL/min (70kg standard)
 
@@ -137,6 +139,8 @@ Note: The in vivo data were digitised from published figures rather than obtaine
 | t½ (min)                  | 1055.749924 | 538.488155        | 214                | 1.960581516 | 1.960581516 | TRUE            | TRUE            | 4.933410858 | 4.933410858 | FALSE           | FALSE           |
 | F (%)                     | 34.90865834 | 29.46857457       | 27                 | 1.184606274 | 1.184606274 | TRUE            | TRUE            | 1.292913272 | 1.292913272 | TRUE            | TRUE            |
 
+- Abbreviations: AUC, area under the concentration–time curve; Cmax, peak concentration; F, oral bioavailability; t½, elimination half-life; Tmax, time point of Cmax.
+
 
 Route-level summary (Human PO)
 - vs Digitised: AAFE = 1.483473576, within 2× = 80%, within 3× = 100%.
@@ -147,10 +151,10 @@ Note: The in vivo data were digitised from published figures rather than obtaine
 
 # Discussion
 ## Rat IV Model
-The rat IV model showed excellent performance, with an AAFE of 1.5 based on the time–concentration profile and an AAFE of around 1.3 based on the PK parameters (both digitised and literature in vivo data). All major pharmacokinetic parameters (t½, CL, Vd, AUC) were predicted within 2-fold of both digitised and literature values. Generally, an AAFE within 2-fold is considered good validation for building robust PBPK models (Deepika et al., 2023). Therefore, this result indicates that the constructed rat IV model is reliable and well validated.
+The rat IV model showed excellent performance, with an AAFE of 1.5 based on the time–concentration profile and an AAFE of around 1.3 based on the PK parameters (both digitised and literature in vivo data). All major pharmacokinetic parameters (t½, CL, Vss, AUC) were predicted within 2-fold of both digitised and literature values. Generally, an AAFE within 2-fold is considered good validation for building robust PBPK models (Deepika et al., 2023). Therefore, this result indicates that the constructed rat IV model is reliable and well validated.
 
 ## Human IV Model
-Although the comparison with digitised in vivo data yielded an AAFE of 1.28 based on the time–concentration profile and 1.78 based on PK parameters, comparison with literature values gave a higher AAFE of 2.65. It is generally more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data (except where digitisation is unavoidable, such as for time–concentration profiles). Prediction error within 3-fold is widely accepted as informative but less reliable than within 2-fold. It is often regarded as moderate accuracy, sometimes acceptable for screening or early development, but usually insufficient for confident clinical application. Therefore, the AAFE of 2.65 based on PK parameters when compared with literature indicates that the model is not reliably predictive in humans. More specifically, while AUC and CL were reproduced reasonably well (within 2-fold), other key parameters including Cmax, Tmax, Vd, and t½ showed large discrepancies (e.g., Cmax was overpredicted by about 3 fold). In particular, the overestimation of Vd and t½ suggests that human IV pharmacokinetics were not adequately captured. Thus, although the human IV model shows partial agreement, it is not clinically predictive.
+Although the comparison with digitised in vivo data yielded an AAFE of 1.28 based on the time–concentration profile and 1.78 based on PK parameters, comparison with literature values gave a higher AAFE of 2.65. It is generally more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data (except where digitisation is unavoidable, such as for time–concentration profiles). Prediction error within 3-fold is widely accepted as informative but less reliable than within 2-fold. It is often regarded as moderate accuracy, sometimes acceptable for screening or early development, but usually insufficient for confident clinical application. Therefore, the AAFE of 2.65 based on PK parameters when compared with literature indicates that the model is not reliably predictive in humans. More specifically, while AUC and CL were reproduced reasonably well (within 2-fold), other key parameters including Cmax, Tmax, Vss, and t½ showed large discrepancies (e.g., Cmax was overpredicted by about 3 fold). In particular, the overestimation of Vss and t½ suggests that human IV pharmacokinetics were not adequately captured. Thus, although the human IV model shows partial agreement, it is not clinically predictive.
 
 
 ## Human PO Model
@@ -163,29 +167,29 @@ The human PO model showed an AAFE of 1.76 based on the time–concentration prof
 
 | Model        |        AAFE (Time–Concentration) (digitised) |                          AAFE (PK Parameters) | Key Matches (within 2×)       | Key Mismatches                                                           | Overall Conclusion                                                                                           |
 | ------------ | -----------------------: | --------------------------------------------: | ----------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| **Rat IV**   |                      1.5 |                \~1.3 (digitised & literature) | t½, CL, Vd, AUC all within 2× | Slightly high Vd → longer t½                                             | Excellent fit. Exposure (AUC, CL) on target. Reliable and well-validated.                                    |
-| **Human IV** | 1.28 | 1.78 (digitised PK), **2.65 (literature PK)** | AUC, CL within 2×             | Cmax overpredicted (3×), Tmax mismatch, Vd & t½ strongly overestimated | Partial agreement. Moderate accuracy by 3× rule, but not sufficiently predictive for clinical use.           |
-| **Human PO** |                     1.76 |         1.5 (digitised), **1.88 (literature)** | Cmax, Tmax, AUC, F within 2×        | t½ overestimated (~5×)    | Acceptable fit overall. Exposure (AUC, F) well predicted but largely overestimated t½ potentially due to oversimplified absorption model.   |
+| **Rat IV**   |                      1.5 |                \~1.3 (digitised & literature) | t½, CL, Vss, AUC all within 2× | Slightly high Vss → longer t½                                             | Excellent fit. Exposure (AUC, CL) on target. Reliable and well-validated.                                    |
+| **Human IV** | 1.28 | 1.78 (digitised), **2.65 (literature)** | AUC, CL within 2×             | Cmax overpredicted (3×), Tmax mismatch, Vss & t½ strongly overestimated | Partial agreement. Moderate accuracy by 3× rule, but not sufficiently predictive for clinical use.           |
+| **Human PO** |                     1.76 |         1.5 (digitised), **1.88 (literature)** | Cmax, Tmax, AUC, F within 2×        | t½ overestimated (~5×)    | Acceptable fit overall. Exposure (AUC, F) well predicted but t½ largely overestimated potentially due to oversimplified absorption model.   |
 
-## Key Takeaways
-### Validated IV models
-- Rat IV and Human IV reproduce systemic exposure (AUC, CL) reasonably, but Human IV overestimates Vd and t½.
-### Validated Human Oral model
-- Human PO captures exposure (AUC, Cmax, F) but misses absorption delays (Tmax) and terminal slope (t½), showing the need for more detailed absorption modeling.
+- Abbreviations: AUC, area under the concentration–time curve; Cmax, peak concentration; CL, clearance; F, oral bioavailability; t½, elimination half-life; Vss, volume of distribution at steady state; Tmax, time point of Cmax.
 
+  
 
 # Potential Reasons for Discrepancies and Solutions
-## High Vd and Longer T1/2 (Human IV & PO)
-In the human IV and PO models, the terminal half-life (t½) and apparent volume of distribution (Vd) were markedly overestimated. 
+## High Vss and Longer t½ (Human IV & PO)
+In the human IV and PO models, the terminal half-life (t½) and apparent volume of distribution (Vss) were significantly overestimated. 
 
-Propranolol is a highly lipophilic, basic compound (logP ≈ 3–4, pKa ≈ 9–10). Standard Poulin–Theil Kp equations often overpredict tissue partitioning for such drugs, particularly in adipose, skin, and brain, where binding and lysosomal trapping are exaggerated. This in turn inflates Vd (Vss = ∑Kp·V) and prolongs the terminal slope thus terminal half-life.   
+Propranolol is a highly lipophilic, basic compound (logP ≈ 3–4, pKa ≈ 9–10). Standard Poulin–Theil Kp equations often overpredict tissue partitioning for such drugs, particularly in adipose, skin, and brain, where binding and lysosomal trapping are exaggerated. This in turn inflates Vss (= ∑Kp·V) and prolongs the terminal slope, thus yields a longer terminal half-life.   
 
-It is rational to question why rat IV fit well while human IV showed discrepancies despite the same drug was modeled. This is due to both species-specific physiology and data resolution. 
-- Physiological differences: Rats have a much smaller proportion of adipose and skin tissue relative to body weight. Even if partition coefficients (Kp) are overpredicted, the overall contribution to steady-state volume of distribution (Vss) remains limited.
-- Data resolution and sampling: Rat IV studies typically capture concentration–time profiles over a shorter window (hours). This makes any overestimation of the terminal phase less evident. On the other hand, human IV studies extend sampling to 10–12 hours or more, so the prolonged terminal slope from Kp inflation becomes clearly visible in t½ and Vd.
+However, it is rational to question why rat IV model fit well while human IV showed discrepancies despite the same drug was modeled. This is due to both species-specific physiology and data resolution. 
+- Rats have a much smaller proportion of adipose and skin tissue relative to body weight. Even if Kps are overpredicted, the overall contribution to Vss remains limited (which is not the case in humans).
+- Rat IV Time-Concentration profiles ended over a shorter window (2 hours). This makes any overestimation of the terminal phase less evident. On the other hand, human IV studies extend sampling period to 48 hours, so the prolonged terminal slope from Kp inflation becomes clearly visible in t½ and Vss.
+
+In addition to this, human Kp values were obtained by scaling rat Kp values with an fup ratio (fup human/fup rat). This empirical adjustment does not fully capture species differences in tissue composition (lipid, water, and protein content) in reality. Therefore, this factor could contribute to yielding less accurate human Kp values, resulting in inflated Vss and thus longer half-life. 
 
 Solution:
-- Calculating Kp using equations proposed by Rodgers-Rowland or Schmitt
+- Recalculate Kp using equations proposed by Rodgers-Rowland (base-specific pH-partition and binding) or Schmitt. Use the method that yields the values of Vss and t½ that are closer to the literature values. 
+- Use PBPK platforms such as PK-Sim or Simcyp to recalculate Kp values using species-specific tissue composition data rather than using a simple empirical adjustment.
 
 ## Cmax Overprediction (Human IV)
 Cmax was overpredicted by ~3–4× the literature value.
@@ -193,26 +197,25 @@ Cmax was overpredicted by ~3–4× the literature value.
 The model uses a purely perfusion-limited central compartment. This leads to excessively rapid equilibration and a sharper initial peak than observed. In vivo, propranolol shows arteriovenous concentration gradients and red blood cell binding kinetics, which delay the rise in venous plasma concentrations. Because the observed dataset reflects venous plasma samples, the model’s lack of a shallow mixing phase overpredicts the early concentrations. Additionally, possible variability in plasma protein/RBC partitioning during and immediately after infusion may dampen the peak in clinical data, but this dynamic is not represented in the model.
 
 Solution:
-- Maintain infusion dosing but introduce a fast shallow distribution/mixing compartment (e.g., central venous reservoir or permeability-limited lung/heart) to better reflect the delay before drug appears in peripheral venous plasma.
+- Introduce a fast shallow distribution/mixing compartment (e.g., central venous reservoir or permeability-limited lung/heart) to better reflect the delay before drug appears in peripheral venous plasma.
 
-## Tmax Too Early & Terminal Phase Too Long (Human PO)
-The oral model predicted Tmax ≈ 50 min vs. 180 min observed, while the terminal slope was prolonged.
+## Oversimplified Absorption Model (Human PO) - no discrepancy but for future improvement
+In the human PO model, oral absorption was represented by a single first-order rate constant (ka) without gastric emptying, intestinal transit, or a lag time. However, propranolol’s absorption is influenced by gastric emptying, regional pH, intestinal permeability, and first-pass intestinal metabolism. In other words, the absorption model is oversimplified and does not sufficiently reflect complex nature of an actual in vivo absorption mechanism. This simplification primarily affects the early profile (Cmax, Tmax) and bioavailability (F). 
 
-Oral absorption was modeled with a single first-order ka, without gastric emptying, intestinal transit, or lag time. However, propranolol’s absorption is known to be influenced by gastric emptying, intestinal permeability, regional pH, and first-pass intestinal metabolism. The fixed FaFg constraint ensured overall bioavailability but could not shape the time profile. Meanwhile, the same distribution issue (inflated Kp) extended the terminal half-life.
+Yet, in PO model results, Cmax, Tmax, AUC, and F are all within 2-fold of the literature, indicating that the simple ka model is adequate for the prediction. However, to sufficiently reflect complex mechanism of in vivo absoprtion in the future, it would be more appropriate to use more compelx absorption model rather than this over-simplified model. 
 
-Solution:
-- Minimal fixes include adding a gastric lag (Tlag) and reducing ka (0.15–0.25 h⁻¹) to align Tmax with observed values. A more mechanistic refinement would incorporate stomach and intestinal transit compartments (kGE, kT), dynamic intestinal metabolism, and, ultimately, an ACAT-like GI model including dissolution, solubility, P-gp efflux, and potential enterohepatic recycling.
-
+Improvement:
+- Use a more mechanistic refinement which would incorporate stomach and intestinal transit compartments (kGE, kT), dynamic intestinal metabolism, and, ultimately, an ACAT-like GI model which accounts for dissolution, solubility, P-gp efflux, and potential enterohepatic recycling to reflect complex nature of absorption in vivo.
 
 
 # Future Work
-- Gastric emptying and transit to be added on PO absorption equations for more realistic and validated 
+- Current models are the simplest models which are good to start with. More complex factors could be incorporated to better reflect complex mechanisms occuring in actual body. 
 - These models can be used with variations in parameters to model disease state (e.g. hepatic impairment).
 
 # Reflection
 This independent project on physiologically based pharmacokinetic (PBPK) modeling of propranolol was undertaken using Berkeley Madonna, with all organ-level differential equations derived from first principles. Through the construction and validation of rat (IV) and human (IV & PO) models, I gained practical experience in mechanistic model building, parameterisation, and quantitative evaluation of model performance.
 
-The rat IV model achieved high accuracy, with AAFE values around 1.3–1.5 and all major pharmacokinetic parameters (t½, CL, Vd, AUC) predicted within 2-fold of in vivo data, demonstrating reliability of the framework. In contrast, human IV and PO simulations highlighted key limitations: while exposure metrics such as AUC and CL were predicted within 2-fold, discrepancies emerged in parameters like Tmax, Vd, and t½. These issues were traced to simplified absorption modeling and omission of transporter- or enzyme-specific processes. Because it was my first time constructing PBPK model, I started with the simplest model, in the future, absorption model must be developed to reflect more complex real-life absorption mechanism. 
+The rat IV model achieved high accuracy, with AAFE values around 1.3–1.5 and all major pharmacokinetic parameters (t½, CL, Vss, AUC) predicted within 2-fold of in vivo data, demonstrating reliability of the framework. In contrast, human IV and PO simulations highlighted key limitations: while exposure metrics such as AUC and CL were predicted within 2-fold, discrepancies emerged in parameters like Tmax, Vss, and t½. These issues were traced to simplified absorption modeling and omission of transporter- or enzyme-specific processes. Because it was my first time constructing PBPK model, I started with the simplest model, in the future, absorption model must be developed to reflect more complex real-life absorption mechanism. 
 
 Overall, this project not only established a validated baseline model (rat IV) but also outlined a roadmap for refinement of human models. Future improvements include incorporating gastric emptying and intestinal transit into the oral absorption module, refining hepatic clearance scaling, and integrating transporter and enzyme dynamics. Beyond the technical results, the project provided an opportunity to gain knowledge of the mechanism behind PBPK model, practice complete ODE derivation, systematic model validation using fold-error criteria (FE, AAFE, within 2×/3×), and critical evaluation of mechanistic assumptions.
 
@@ -220,7 +223,7 @@ This exercise reflects both the strengths and challenges of PBPK modeling: while
 
 # References
 
-https://pmc.ncbi.nlm.nih.gov/articles/PMC9966583/?utm_source=chatgpt.com 
+Deepika, Deepika, and Vikas Kumar. “The Role of “Physiologically Based Pharmacokinetic Model (PBPK)” New Approach Methodology (NAM) in Pharmaceuticals and Environmental Chemical Risk Assessment.” International Journal of Environmental Research and Public Health, vol. 20, no. 4, 16 Feb. 2023, p. 3473, www.ncbi.nlm.nih.gov/pmc/articles/PMC9966583/, https://doi.org/10.3390/ijerph20043473.
 
 Jamei, M. et al. "Population-based mechanistic prediction of oral drug absorption." The AAPS Journal, vol. 11, no. 2, 2009, pp. 225–237. doi:10.1208/s12248-009-9099-y.
 
@@ -230,11 +233,11 @@ Jones, Hannah M, et al. “A Novel Strategy for Physiologically Based Prediction
 
 Reigner, B., et al. "Comparative pharmacokinetics of propranolol after administration into the portal and systemic circulation in the rat." Journal of Pharmacology, vol. 38, no. 2, 1989, pp. 112–119. doi:10.1159/000136352.
 
+Rostami-Hodjegan, A. "Physiologically based pharmacokinetics joined with in vitro–in vivo extrapolation of ADME: a marriage under the arch of systems pharmacology." Clinical Pharmacology & Therapeutics, vol. 92, no. 1, 2012, pp. 50–61. doi:10.1038/clpt.2012.65.
+
 Rowland, M., et al. "Physiologically based pharmacokinetics in drug development and regulatory science: a workshop report." Clinical Pharmacokinetics, vol. 45, no. 5, 2006, pp. 507–526. doi:10.2165/00003088-200645050-00006.
 
 Rowland, M., and T. N. Tozer. "Clinical Pharmacokinetics and Pharmacodynamics: Concepts and Applications." 4th ed., Wolters Kluwer Health/Lippincott Williams & Wilkins, 2011.
-
-Rostami-Hodjegan, A. "Physiologically based pharmacokinetics joined with in vitro–in vivo extrapolation of ADME: a marriage under the arch of systems pharmacology." Clinical Pharmacology & Therapeutics, vol. 92, no. 1, 2012, pp. 50–61. doi:10.1038/clpt.2012.65.
 
 Taegtmeyer, Anne B, et al. "A Study of the Relationship between Serum Bile Acids and Propranolol Pharmacokinetics and Pharmacodynamics in Patients with Liver Cirrhosis and in Healthy Controls." Vol. 9, no. 6, 6 June 2014, pp. e97885–e97885, https://doi.org/10.1371/journal.pone.0097885.
 
