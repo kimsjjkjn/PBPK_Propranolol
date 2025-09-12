@@ -293,7 +293,7 @@ This is the same as in what's discussed in human IV model. Please refer to **'Hu
 - `Rabs0 = ka * A_gut ;ng/min`
 - `Rabs = FaFg * Rabs0`
 
-### **DerivationE**:
+### **Derivation**:
 - `ka = 0.25/60 ; 1/h --> 1/min`
   - ka in human is usually in the range of 0.06-6 (1/h). Specific ka (absorption rate constant) value must be selected (fitted) depending on which ka yields the data points that best-describe AAFE, Tmax, Cmax, etc.
 
