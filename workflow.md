@@ -29,6 +29,7 @@
   - Fold Error (FE): `FE = max(pred, obs) / min(pred, obs)`
   - AAFE: `AAFE = 10^( mean( |log10(FE)| ) )`
   - PK params: AUC (linear trapezoid), Cmax/Tmax (from profile), t½ (terminal slope), CL and Vss (as applicable), F (PO only).
-  - For the formulas used to compute each metric and PK parameter, see the Excel file titled '[PBPK Propranolol Data Processing.xlsx]([[url](https://github.com/kimsjjkjn/PBPK_Propranolol/blob/main/PBPK%20Propranolol%20Data%20Processing.xlsx)]' in this repository; click any relevant cell to view its underlying formula in the formula bar.
+  - For the formulas used to compute each metric and PK parameter, see the Excel file titled **[PBPK_Propranolol_Data_Processing.xlsx](results/PBPK_Propranolol_Data_Processing.xlsx)** 
+ in this repository; click any relevant cell to view its underlying formula in the formula bar.
 - Plot time–concentration overlays.
   - Change y-axis to log-scale for better display.
