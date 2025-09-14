@@ -1,14 +1,14 @@
 # Model Derivation
-- All equations in PBPK model were manually derived using the basic rationale discussed in the following research paper: Jones, Hannah M, et al. “A Novel Strategy for Physiologically Based Predictions of Human Pharmacokinetics.” Clinical Pharmacokinetics, vol. 45, no. 5, 2006, pp. 511–542, https://doi.org/10.2165/00003088-200645050-00006.
+- All equations in PBPK model were manually derived using the basic rationale discussed in the following research paper: https://doi.org/10.2165/00003088-200645050-00006.
 - A physiologically based, perfusion-limited, well-stirred PBPK model was implemented for rat IV, human IV, and human PO simulations.
-- All models are in the standard of blood concentration. Therefore, `fub (= fup / RB)` (unbound drug fraction in blood) is used to maintain the standard.
-  - It is okay to construct models in the standard of plasma concentration, but make sure to maintain the standard as either blood or plasma concentration through the model. 
-
+- All models are in the standard of blood concentration. Therefore, `fub (= fup / RB)` (unbound drug fraction in blood) is used to maintain the standard if needed.
+  - Models may be built on plasma concentration, but the standard (blood vs. plasma) must remain consistent across the model.
+    
 # Parameters To Prepare
-- Parameters that are brought from literature or SimCYP include:
+- Parameter values that are directly brought from literature or SimCYP include:
   - **Drug-specific parameters**: fup (unbound drug fraction in plamsa) & RB (ratio blood:plasma)
   - **Species-specific parameters**: GFR (Glomerular Filtration Rate), tissue volume, blood flow, weight (body weight & organ weight), hepatic IVIVE scaling factors (HPGL – hepatocytes per gram liver (cells/g liver), MPPGL (or MPPGL_mic) – microsomal protein per gram liver (mg/g liver), S9PGL – S9 protein per gram liver (mg/g liver))
-  - **Species and drug-specific parameters**: CL_int (intrinsic clearance), ka (absorption rate), Fobs (known bioavaliability)
+  - **Species and drug-specific parameters**: CL_int (intrinsic clearance), ka (absorption rate constant), Fobs (known/reported bioavaliability)
 
 # Abbreviation
 - Tissue (T)
@@ -262,6 +262,7 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
   - `Cv_li = C_li * (1/kp_li) * RB`
     - Please refer to non-eliminatiing tissue derivation for derivating Cv_li.
     - Again, there is no need to multiply fub (= fup / RB) as we are not solving for Cv_li_u.
+      - *Note that this is valid only if CL_int_eff = 2710 is obtained under steady-state conditions. It does not apply when distribution has not been fully achieved.*
 - Therefore, `Xmet_li = CL_int_eff * (RB * C_li * (1/Kp_li))`
 
 ## **Differential Equations**: 
@@ -271,8 +272,8 @@ This is the same as in what's discussed in rat IV model. Please refer to **'Rat 
 - Note that standard average weight of male human (70kg = 70000g) is used in this model. 
 - This can be adjusted based on the need (e.g. if want to model propranolol behaviour in 50kg human, change the body weight and organ weights accordingly).
 
-
-
+## Converting Output
+- Since the literature reports drug concentration as venous plasma concentration (Cp_ve), the model should also provide output in terms of Cp_ve. As the current model is expressed in blood concentration, the venous blood concentration (C_ve) must be converted to Cp_ve using the blood-to-plasma ratio (RB): `Cp_ve = C_ve / RB`.
 
 
 # Human PO Model
@@ -339,7 +340,12 @@ This is the same as in what's discussed in human IV model. Please refer to **'Hu
 ## **Differential Equations**: 
 This is the same as in what's discussed in rat IV model. Please refer to **'Rat IV Model - Differential Equations'** section.
 
+
 ## Weight
-- Note that standard average weight of male human (70kg = 70000g) is used in this model.
-- This can be adjusted based on the need (e.g. if want to model propranolol behaviour in 50kg human, change the body weight and organ weights accordingly).
+This is the same as in what's discussed in human IV model. Please refer to **'Human IV Model - Weight'** section.
+
+
+
+## Converting Output
+This is the same as in what's discussed in human IV model. Please refer to **'Human IV Model - Converting Output'** section.
 
