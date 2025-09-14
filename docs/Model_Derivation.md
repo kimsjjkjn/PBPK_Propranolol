@@ -71,11 +71,11 @@ Kp (tissue-to-plasma partition coefficient) values were obtained using standard 
   - `fub = fup / RB`
 
 - Filtration removes only UNBOUND drug:
-  - `elimination_rate = C_unbound * GFR = (fub * C_blood) * GFR`
+  - `elimination_rate` = `C_unbound * GFR` = `(fub * C_blood) * GFR`
 
 - Therefore (algebra):
-  - `CL_r_blood = (fub * C_blood * GFR) / C_blood = fub * GFR`
-  - `CL_r_u = (fub * C_blood * GFR) / (fub * C_blood) = GFR`
+  - `CL_r_blood` = `(fub * C_blood * GFR) / C_blood` = `fub * GFR`
+  - `CL_r_u` = `(fub * C_blood * GFR) / (fub * C_blood)` = `GFR`
 
 ### **Renal Metabolism**: 
 #### **CODE**:
@@ -89,7 +89,7 @@ Kp (tissue-to-plasma partition coefficient) values were obtained using standard 
   - `Cv_k = C_k * (1/kp_k) * RB`
     - Please refer to non-eliminatiing tissue derivation for derivating Cv_k.
   - `fub = fup / RB`
-- Thus `Cv_k_u = C_k * (1/kp_k) * RB * (fup / RB) = C_k * (1/kp_k)) * fup`
+- Thus `Cv_k_u` = `C_k * (1/kp_k) * RB * (fup / RB)` = `C_k * (1/kp_k)) * fup`
 - Therefore, `Xmet_r = CL_r_u * (C_k * (1/kp_k)) * fup`
 
 
@@ -108,7 +108,7 @@ Kp (tissue-to-plasma partition coefficient) values were obtained using standard 
   - The enzyme only “sees” **unbound** drug. In incubation:
     - `fu_MP` = `C_unbound / C_total`  (fraction unbound in incubation)
   - Metabolic rate follows the free-drug hypothesis: `rate = CL_int_u * C_unbound`
-    - Thus `CL_int = rate / C_total` = `(CL_int_u * C_unbound) / C_total` = `CL_int_u * (C_unbound / C_total)` = `CL_int_u * fu_MP`
+    - Thus `CL_int` = `rate / C_total` = `(CL_int_u * C_unbound) / C_total` = `CL_int_u * (C_unbound / C_total)` = `CL_int_u * fu_MP`
     - Thus, `CL_int_u = CL_int / fu_MP`
 
 ### **Hepatic Metabolism**: 
@@ -123,7 +123,7 @@ Kp (tissue-to-plasma partition coefficient) values were obtained using standard 
   - `Cv_li = C_li * (1/kp_li) * RB`
     - Please refer to non-eliminatiing tissue derivation for derivating Cv_li.
   - `fub = fup / RB`
-- Thus `Cv_li_u = C_li * (1/kp_li) * RB * (fup / RB) = C_li * (1/kp_li)) * fup`
+- Thus `Cv_li_u` = `C_li * (1/kp_li) * RB * (fup / RB)` = `C_li * (1/kp_li)) * fup`
 - Therefore, `Xmet_li = CL_int_u * (C_li * (1/kp_li)) * fup`
 #### Note:
 Propranolol is almost completely hepatically metabolised, thus it is rational to put Xmet_r as 0. 
@@ -241,8 +241,8 @@ Rat Kp values obtained above are converted to human Kp values by multiplying fup
   - `elimination_rate = C_unbound * GFR = (fub * C_blood) * GFR`
 
 - Therefore (algebra):
-  - `CL_r_blood = (fub * C_blood * GFR) / C_blood = fub * GFR`
-  - `CL_r_u_human = (fub * C_blood * GFR) / (fub * C_blood) = GFR`
+  - `CL_r_blood` = `(fub * C_blood * GFR) / C_blood` = `fub * GFR`
+  - `CL_r_u_human` = `(fub * C_blood * GFR) / (fub * C_blood)` = `GFR`
 
 ### **Renal Metabolism**: 
 #### **CODE**:
@@ -256,7 +256,7 @@ Rat Kp values obtained above are converted to human Kp values by multiplying fup
   - `Cv_k = C_k * (1/kp_k) * RB`
     - Please refer to non-eliminatiing tissue derivation for derivating Cv_k.
   - `fub = fup / RB`
-- Thus `Cv_k_u = C_k * (1/kp_k) * RB * (fup / RB) = C_k * (1/kp_k)) * fup`
+- Thus `Cv_k_u` = `C_k * (1/kp_k) * RB * (fup / RB)` = `C_k * (1/kp_k)) * fup`
 - Therefore, `Xmet_r = CL_r_u_human * (C_k * (1/kp_k)) * fup`
 #### Note:
 Propranolol is almost completely hepatically metabolised, thus it is rational to put Xmet_r as 0. 
@@ -324,9 +324,9 @@ This is the same as in what's discussed in human IV model. Please refer to **'Hu
     - `Q_li * (Cin - Cout) = CL_int_u * (fub * Cout)`
   - Rearrangement:
     - `Cin − Cout = (CL_int_u * fub * Cout) / Q_li`
-    - `Cin = Cout + ((CL_int_u * fub * Cout) / Q_li)` = `((Q_li * Cout) + (CL_int_u * fub * Cout)) / Q_li` = `Cout * (Q_li + (CL_int_u * fub)) / Q_li`
-    - `Cout / Cin = Cout / (Cout * (Q_li + (CL_int_u * fub)) / Q_li)` = `Q_li / (Q_li + (CL_int_u * fub))`
-  - Thus, `FH = Cout / Cin` = `Q_li / (Q_li + (CL_int_u * fub))`
+    - `Cin` = `Cout + ((CL_int_u * fub * Cout) / Q_li)` = `((Q_li * Cout) + (CL_int_u * fub * Cout)) / Q_li` = `Cout * (Q_li + (CL_int_u * fub)) / Q_li`
+    - `Cout / Cin` = `Cout / (Cout * (Q_li + (CL_int_u * fub)) / Q_li)` = `Q_li / (Q_li + (CL_int_u * fub))`
+  - Thus, `FH` = `Cout / Cin` = `Q_li / (Q_li + (CL_int_u * fub))`
     - Since we have CL_int_eff from literature and `CL_int_eff = fub * CL_int_u`, `FH = Q_li / (Q_li + CL_int_eff)` and there is no need to multiply by fub again. 
   - Thus, `FH = Q_li / (Q_li + CL_int_eff)`
 
