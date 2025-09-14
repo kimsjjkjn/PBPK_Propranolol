@@ -1,7 +1,7 @@
 # Workflow
 
 ## 1) Install Berkeley Madonna
-- Open the official download page: https://berkeley-madonna.myshopify.com/pages/download
+- Open the official download page: https://berkeley-madonna.myshopify.com/pages/download (free software).
 - Download and install the latest Berkeley Madonna that matches your machine (e.g., Windows, macOS Intel, Apple Silicon).
 
 ## 2) Run the models (Berkeley Madonna)
