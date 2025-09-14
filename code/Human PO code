@@ -225,5 +225,5 @@ HPGL = 117.52 ; million cells / g liver
 MPPGL_mic = 39.791 ; mg microsomal protein / g liver 
 MPPGL_S9 = 120.824 ; mg S9 protein / g liver
 
-;;; Cart/Rb --> Cp (because comparative literature gives venous Cp value, convert the values into Cp_ve)
+;;; Cart/Rb --> Cp (because comparative literature gives venous plasma concentration (Cp_ve) value, convert the venous blood concentration (C_ve) values into Cp_ve by applying RB)
 Cp_ve = C_ve / RB 
