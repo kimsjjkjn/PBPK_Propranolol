@@ -11,19 +11,31 @@
   - **Drug-specific parameters**:
     - fup (unbound drug fraction in plasma)
     - RB (ratio blood:plasma)
+    - MW (Molecular Weight)
   - **Species-specific parameters**:
     - GFR (Glomerular Filtration Rate)
+    - Hematocrit (Hct)
     - Tissue volume (V)
     - Blood flow (Q)
     - Weight (body weight & organ weight)
-    - Hepatic IVIVE scaling factors
-      - HPGL – hepatocytes per gram liver (cells/g liver)
-      - MPPGL (or MPPGL_mic) – microsomal protein per gram liver (mg/g liver)
-      - S9PGL – S9 protein per gram liver (mg/g liver)
+    - Hepatic IVIVE scaling factor: MPPGL (microsomal protein per gram liver (mg/g liver))
   - **Species and drug-specific parameters**:
     - CL_int (intrinsic clearance)
-    - ka (absorption rate constant)
+    - fu_MP (unbound drug fraction in microsomal incubation)
     - Fobs (known/reported bioavailability)
+
+## Parameter–Reference Table 
+Table 1. Parameters obtained from literature that are used to construct models and their references
+
+| Parameter                              | Symbol/Unit                 | Value (Baseline) | Literature Range | Source / Reference                     | Notes (Assumptions, Comments)      |
+| -------------------------------------- | --------------------------- | ---------------- | ---------------- | -------------------------------------- | ---------------------------------- |
+| Liver blood flow                       | Q\_li (L/h/kg)              | 3.3              | 3.0–3.5          | Smith et al., 2018; Jones et al., 2015 | Normalized by body weight          |
+| Fraction unbound in plasma             | fup (–)                     | 0.12             | 0.10–0.15        | Yamazaki et al., 2002                  | Bounded within assay variability   |
+| Blood-to-plasma ratio                  | Rb (–)                      | 1.1              | 1.0–1.2          | FDA Guidance, 2020                     | Used for conversion: Cb → Cp       |
+| Intrinsic clearance                    | CLint,u (µL/min/mg protein) | 35               | 20–40            | Brown et al., 2007                     | Scaled by microsomal protein yield |
+| Volume of distribution at steady state | Vss (L/kg)                  | 3.5              | 2.5–4.0          | ICH MIDD White Paper, 2019             | Overpredicted in human model       |
+| Terminal half-life                     | t½ (h)                      | 4.0              | 3–5              | Clinical PK data (EMA, 2014)           | Model output within range          |
+
 
 # Abbreviation
 - Tissue (T)
@@ -49,6 +61,8 @@
 # Rat IV Model
 
 ## Period setting
+*Note: The period setting should be aligned with the literature conditions to ensure valid comparison.*
+
 code:
 - `STARTTIME = 0` ; Simulation start time (min)
 - `STOPTIME = 120` ; Simulation end time (min)
@@ -56,6 +70,8 @@ code:
 - `DTOUT = 1`; Output sampling interval (min). Results are recorded/shown every 1 min (doesn’t affect dynamics).
 
 ## Administration
+*Note: The administration setting should be aligned with the literature conditions to ensure valid comparison.*
+
 code:
 - `dose_IV = 2500000 * BW/1000  ;ng ;(BW/1000=kg)`
   - Defines the total IV dose in nanograms (ng).
@@ -117,12 +133,17 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
 - `CL_int = 0.13 * MPPGL_mic * W_li ;mL/min`
 - `fu_MP = 0.49`
 - `CL_int_u = CL_int / fu_MP`
+
+
 #### **Derivation**:
-- `CL_int = 0.13` is microsomal intrinsic clearance obtained from literature and is in the unit of mL/min/mg MP. `MPPGL_mic * W_li` is multiplied for in vivo scaling.
+- `CL_int = 0.13` is microsomal intrinsic clearance obtained from literature and is in the unit of mL/min/mg microsomal protein. `MPPGL_mic * W_li` is multiplied for in vivo scaling.
   - `MPPGL_mic`: mg microsomal protein / g liver.
   - `W_li`: liver weight (g).
   - Unit check: *(mL/min/mg) × (mg/g) × (g) = mL/min* → whole-liver intrinsic clearance.
 - `fu_MP = 0.49` is unbound fraction in microsomal incubation.
+  - *Note: If CL_int is determined from hepatocyte or S9 incubations, apply the appropriate scaling factors and unbound fraction as follows:*
+    - *HPGL – hepatocytes per gram liver (cells/g liver)*
+    - *S9PGL – S9 protein per gram liver (mg/g liver)*
 - `CL_int_u`, i.e. unbound intrinsic clearance is obtained by dividing `CL_int` (whole-liver intrinsic clearance) value by `fu_MP` (unbound fraction in microsomal incubation).
   - The enzyme only “sees” **unbound** drug. In incubation:
     - `fu_MP` = `C_unbound / C_total`  (fraction unbound in incubation)
@@ -231,19 +252,9 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
 
 
 # Human IV Model
-
-## Administration
-code:
-- `dose_IV = 1000000   ;ng`
-  - Defines the total IV dose in nanograms (ng).
-- `dosing_time_IV = 10 ;min`
-  - Defines the infusion duration in minutes.
-- `IV_input = IF t< dosing_time_IV THEN dose_IV/dosing_time_IV ELSE 0`
-  - Defines the infusion rate (ng/min) as a time-dependent input.
-  - If the simulation time `t` is still within the infusion window (`t < dosing_time_IV`), drug is delivered at a constant rate (`Rate = Total dose / Infusion duration`)
-  - Once infusion time is over (`t ≥ dosing_time_IV`), the input is set to 0, meaning no more drug enters the system.
-
 ## Period setting
+*Note: The period setting should be aligned with the literature conditions to ensure valid comparison.*
+
 code:
 - `STARTTIME = 0` ; Simulation start time (min)
 - `STOPTIME = 2890` ; Simulation end time (min) ; 10-min infusion + 2880-min post-infusion
@@ -261,6 +272,18 @@ To reproduce this, the model runs for the **infusion (10 min) + sampling (2880 m
   - Discard rows with `t′ < 0` (i.e., pre-infusion times after shifting).
 
 This way, simulated times align exactly with the **post-infusion** sampling window reported in the literature.
+
+## Administration
+*Note: The administration setting should be aligned with the literature conditions to ensure valid comparison.*
+code:
+- `dose_IV = 1000000   ;ng`
+  - Defines the total IV dose in nanograms (ng).
+- `dosing_time_IV = 10 ;min`
+  - Defines the infusion duration in minutes.
+- `IV_input = IF t< dosing_time_IV THEN dose_IV/dosing_time_IV ELSE 0`
+  - Defines the infusion rate (ng/min) as a time-dependent input.
+  - If the simulation time `t` is still within the infusion window (`t < dosing_time_IV`), drug is delivered at a constant rate (`Rate = Total dose / Infusion duration`)
+  - Once infusion time is over (`t ≥ dosing_time_IV`), the input is set to 0, meaning no more drug enters the system.
 
 ## Predicted Human Kp values
 As a heuristic cross-species adjustment, human Kp values were obtained by scaling rat Kp values by the plasma-unbound fraction (`fup`) ratio (`fup_human / fup_rat`).
@@ -324,7 +347,8 @@ This is the same as in what's discussed in rat IV model. Please refer to **'Rat 
 
 ## Weight
 - Note that standard average weight of male human (70kg = 70000g) is used in this model. 
-- This can be adjusted based on the need (e.g. if want to model propranolol behaviour in 50kg human, change the body weight and organ weights accordingly).
+- Since this human model did not require organ weights, they were not defined. If needed (e.g., when using microsomal intrinsic clearance and requiring liver weight for in vivo scaling), human organ weights can be obtained from the SimCYP human database.
+- - This can be adjusted based on the need.
 
 ## Converting Output
 - Since the literature reports drug concentration as venous plasma concentration (`Cp_ve`), the model should also provide output in terms of Cp_ve to align with the literature. As the current model is expressed in blood concentration, the venous blood concentration (`C_ve`) must be converted to `Cp_ve` using the blood-to-plasma ratio (`RB`): `Cp_ve = C_ve / RB`.
@@ -332,17 +356,19 @@ This is the same as in what's discussed in rat IV model. Please refer to **'Rat 
 
 # Human PO Model
 
-## Administration
-code:
-- `dose_PO = 40000000 ;ng`
-  - Defines the total PO dose in nanograms (ng). 
-
 ## Period setting
+*Note: The period setting should be aligned with the literature conditions to ensure valid comparison.*
 code:
 - `STARTTIME = 0` ; Simulation start time (min)
 - `STOPTIME = 2880` ; Simulation end time (min) 
 - `DT = 0.001`; Solver integration step (min). Smaller → more accurate (slower); larger → faster but risk of error.
 - `DTOUT = 5`; Output sampling interval (min). Results are recorded/shown every 5 min (doesn’t affect dynamics).
+
+## Administration
+*Note: The administration setting should be aligned with the literature conditions to ensure valid comparison.*
+code:
+- `dose_PO = 40000000 ;ng`
+  - Defines the total PO dose in nanograms (ng). 
 
 ## Predicted Human Kp values
 This is the same as in what's discussed in human IV model. Please refer to **'Human IV Model - Predicted Human Kp values'** section.
@@ -363,7 +389,7 @@ This is the same as in what's discussed in human IV model. Please refer to **'Hu
 
 ### **Derivation**:
 - `ka = 0.25/60 ; 1/h --> 1/min`
-  - ka in human is usually in the range of 0.06-6 (1/h). Specific ka (absorption rate constant) value must be selected (fitted) depending on which ka yields the data points that best-describe AAFE, Tmax, Cmax, etc.
+  - In humans, ka (absorption rate constant) values observed in literature often fall within the ~0.1 to a few h⁻¹ range (e.g. ~0.2-1.0 h⁻¹ in many studies). A specific ka value should be selected through fitting, based on which estimate best reproduces key parameters such as AAFE, Tmax, and Cmax across multiple trial simulations. 
 
 - `Fobs = 0.27`
   - This is bioavailability of propranolol reported by literature. 
