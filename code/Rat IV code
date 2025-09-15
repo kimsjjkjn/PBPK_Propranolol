@@ -1,6 +1,6 @@
 ;;; PBPK propranolol rat IV modeling
 
-;ka value must be fitted based on the data points considering AAFE, Tmax, Cmax, etc.
+; A semicolon (;) indicates a comment and is not executed as part of the code.
 
 METHOD RK4
 STARTTIME = 0
