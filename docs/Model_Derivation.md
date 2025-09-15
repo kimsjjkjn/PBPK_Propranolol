@@ -24,17 +24,51 @@
     - fu_MP (unbound drug fraction in microsomal incubation)
     - Fobs (known/reported bioavailability)
 
-## Parameter–Reference Table 
-Table 1. Parameters obtained from literature that are used to construct models and their references
+## Parameter–Reference Tables
 
-| Parameter                              | Symbol/Unit                 | Value (Baseline) | Literature Range | Source / Reference                     | Notes (Assumptions, Comments)      |
-| -------------------------------------- | --------------------------- | ---------------- | ---------------- | -------------------------------------- | ---------------------------------- |
-| Liver blood flow                       | Q\_li (L/h/kg)              | 3.3              | 3.0–3.5          | Smith et al., 2018; Jones et al., 2015 | Normalized by body weight          |
-| Fraction unbound in plasma             | fup (–)                     | 0.12             | 0.10–0.15        | Yamazaki et al., 2002                  | Bounded within assay variability   |
-| Blood-to-plasma ratio                  | Rb (–)                      | 1.1              | 1.0–1.2          | FDA Guidance, 2020                     | Used for conversion: Cb → Cp       |
-| Intrinsic clearance                    | CLint,u (µL/min/mg protein) | 35               | 20–40            | Brown et al., 2007                     | Scaled by microsomal protein yield |
-| Volume of distribution at steady state | Vss (L/kg)                  | 3.5              | 2.5–4.0          | ICH MIDD White Paper, 2019             | Overpredicted in human model       |
-| Terminal half-life                     | t½ (h)                      | 4.0              | 3–5              | Clinical PK data (EMA, 2014)           | Model output within range          |
+Table 1. Parameters obtained from literature that are used to construct **rat IV model** and their references
+
+| Parameter | Unit | Value (Baseline) | Source / Reference | Notes (Assumptions, Comments) |
+|-----------|------|------------------|--------------------|-------------------------------|
+| fup       | -    | 0.08             | EVANS, GWYN H., et al. “THE DISPOSITION of PROPRANOLOL. III. DECREASED HALF-LIFE and VOLUME of DISTRIBUTION as a RESULT of PLASMA BINDING in MAN, MONKEY, DOG and RAT.” The Journal of Pharmacology and Experimental Therapeutics, vol. 186, no. 1, 31 Jan. 2025, pp. 114–122, https://doi.org/10.1016/S0022-3565(25)29572-6. | The binding of propranolol to plasma has been determined at therapeutic concentrations by equilibrium dialysis in rat (92.2%), thus fup is (100-92.2)/100 = 0.078 ≈ 0.08 |
+| RB        | -    | 0.78             | Singh, K, et al. “Determination of in Vivo Hepatic Extraction Ratio from in Vitro Metabolism by Rat Hepatocytes.” Drug Metabolism and Disposition, vol. 19, no. 5, 1991, pp. 990–6. | - |
+| GFR_rat   | mL/min | 2.9            | Potter, D, et al. “Character of Function and Size in Kidney during Normal Growth of Rats.” Pediatric Research, vol. 3, no. 1, 1969, pp. 51–59. | Mean GFR is 1.7 mL/min (173 g rats) and 4.1 mL/min (350 g rats). For 250 g rat, interpolated average = 2.9 mL/min. |
+| CL_int    | mL/min/mg microsomal protein | 0.13 | Hung, Daniel Y., et al. “Disposition Kinetics of Propranolol Isomers in the Perfused Rat Liver.” J Pharmacol Exp Ther, vol. 311, no. 2, 2025, pp. 822–829. | - |
+| fu_MP     | -    | 0.49             | Hung, Daniel Y., et al. “Disposition Kinetics of Propranolol Isomers in the Perfused Rat Liver.” J Pharmacol Exp Ther, vol. 311, no. 2, 2025. | - |
+| MW        | g/mol | 259.3434        | DrugBank. “Propranolol.” Go.drugbank.com, 13 June 2024. | - |
+| Hct       | -    | 0.45             | Lee, H B, and M D Blaufox. “Blood Volume in the Rat.” J Nucl Med, vol. 26, no. 1, 1985, pp. 72–6. | Representative hematocrit 45% from reported values 42–44%. |
+| Tissue volume | mL | See Rat IV code | Brown, Ronald P., et al. “Physiological Parameter Values for PBPK Models.” Toxicol Ind Health, vol. 13, no. 4, 1997, pp. 407–484. | - |
+| Blood flow | mL/min | See Rat IV code | SimCYP rat ver. | - |
+| Weight    | g    | See Rat IV code  | Brown, Ronald P., et al. (1997) | Obtained by multiplying relative organ weights by 250 g BW. |
+| MPPGL_mic | mg microsomal protein/g liver | 44.5 | J. Nicolaï, et al. “Verapamil Hepatic Clearance in Four Preclinical Rat Models.” Biopharm Drug Dispos, vol. 36, no. 7, 2015, pp. 462–480. | - |
+
+Table 2. Parameters obtained from literature that are used to construct **human IV model** and their references
+
+| Parameter | Symbol/Unit | Value (Baseline) | Source / Reference | Notes |
+|-----------|-------------|------------------|--------------------|-------|
+| fup       | -           | 0.1138           | Taylor, EA, and P Turner. “The Distribution of Propranolol, Pindolol and Atenolol between Human Erythrocytes and Plasma.” Br J Clin Pharmacol, vol. 12, no. 4, 1981, pp. 543–548. | 88.62 ± 0.93% bound → fup = 0.1138 |
+| RB        | -           | 0.74             | Taylor & Turner (1981) | - |
+| GFR_human | mL/min      | 120              | Kaufman, D P, et al. “Physiology, Glomerular Filtration Rate.” StatPearls, 2023. | - |
+| CL_int_eff| mL/min      | 2710             | Silberx, B M, et al. “Dose-Dependent Elimination of Propranolol.” J Pharm Sci, vol. 72, no. 7, 1983, pp. 725–732. | Reported as 2.71 L/min on whole blood → 2710 mL/min |
+| MW        | g/mol       | 259.3434         | DrugBank (2024) | - |
+| Hct       | -           | 0.45             | Mondal, H., and S Lotfollahzadeh. “Hematocrit (HCT).” StatPearls, 2024. | Midpoint of normal adult ranges. |
+| Tissue volume | mL      | See Human IV code | SimCYP human ver. | - |
+| Blood flow   | mL/min   | See Human IV code | SimCYP human ver. | - |
+
+Table 3. Parameters obtained from literature that are used to construct **human PO model** and their references
+
+| Parameter | Symbol/Unit | Value (Baseline) | Source / Reference | Notes |
+|-----------|-------------|------------------|--------------------|-------|
+| fup       | -           | 0.1138           | Taylor, EA, and P Turner (1981) | Same as IV. |
+| RB        | -           | 0.74             | Taylor & Turner (1981) | - |
+| GFR_human | mL/min      | 120              | Kaufman et al. (2023) | - |
+| CL_int_eff| mL/min      | 2710             | Silberx et al. (1983) | Already in vivo scaled on blood concentrations. |
+| Fobs      | -           | 0.27             | Taegtmeyer, A B, et al. “Serum Bile Acids and Propranolol PK in Cirrhosis vs Controls.” PLoS ONE, vol. 9, no. 6, 2014. | Observed oral bioavailability. |
+| MW        | g/mol       | 259.3434         | DrugBank (2024) | - |
+| Hct       | -           | 0.45             | Mondal & Lotfollahzadeh (2024) | - |
+| Tissue volume | mL      | See Human IV code | SimCYP human ver. | - |
+| Blood flow   | mL/min   | See Human IV code | SimCYP human ver. | - |
+
 
 
 # Abbreviation
