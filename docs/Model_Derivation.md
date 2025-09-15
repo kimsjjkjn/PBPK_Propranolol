@@ -108,7 +108,7 @@ Kp (tissue-to-plasma partition coefficient) values were obtained using standard 
 - Thus `Cv_k_u` = `C_k * (1/Kp_k) * RB * (fup / RB)` = `C_k * (1/Kp_k)) * fup`
 - Therefore, `Xmet_r = CL_r_u * (C_k * (1/Kp_k)) * fup`
 #### Note:
-Propranolol is almost completely hepatically metabolised, thus it is rational to put Xmet_r as 0. 
+Propranolol is almost completely hepatically metabolised, thus it is rational to put `Xmet_r` as 0. 
 
 ### **CL_int_u**: 
 #### **CODE**:
@@ -299,7 +299,7 @@ Rat Kp values obtained above are converted to human Kp values by multiplying fup
 - Thus `Cv_k_u` = `C_k * (1/Kp_k) * RB * (fup / RB)` = `C_k * (1/Kp_k)) * fup`
 - Therefore, `Xmet_r = CL_r_u_human * (C_k * (1/Kp_k)) * fup`
 #### Note:
-Propranolol is almost completely hepatically metabolised, thus it is rational to put Xmet_r as 0. 
+Propranolol is almost completely hepatically metabolised, thus it is rational to put `Xmet_r` as 0. 
 
 
 ### **CL_int_u**: 
