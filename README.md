@@ -56,20 +56,19 @@ Detailed document of the project
 - **[Full Document](docs/Full_Document.md)** ; All sections merged into a single page for continuous reading/printing, except for [Model Derivation](docs/model_derivation.md) section.
 
 # Key Results Highlight
-## Model Performance Summary
 **At a glance** · Full results: [docs/Results.md](docs/Results.md)
 
-Figure 2. Rat IV: Simulated vs Digitised In Vivo Propranolol Blood Concentrations.
+Figure 2. **Rat IV: Simulated vs Digitised In Vivo Propranolol Blood Concentrations**.
 <img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/39e252f2-65f1-4d8d-8272-1288711b2b2c" />
 
-Figure 4. Human IV: Simulated vs Digitised In Vivo Propranolol Plasma Concentrations (in vivo data is in venous plasma concentration, so simulated data was also converted to venous plasma concentration).
+Figure 4. **Human IV: Simulated vs Digitised In Vivo Propranolol Plasma Concentrations** (in vivo data is in venous plasma concentration, so simulated data was also converted to venous plasma concentration).
 
 <img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/efce50cc-c284-4551-8aca-f7192ba1f897" />
 
-Figure 6. Human PO: Simulated vs Digitised In Vivo Propranolol Plasma Concentrations (in vivo data is in venous plasma concentration, so simulated data was also converted to venous plasma concentration).
+Figure 6. **Human PO: Simulated vs Digitised In Vivo Propranolol Plasma Concentrations** (in vivo data is in venous plasma concentration, so simulated data was also converted to venous plasma concentration).
   <img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/ad72b1e4-84d7-46be-b58a-e0a33a8ab9fc" />
 
-Table 7. PBPK Propranolol – Model Performance Summary
+Table 7. **PBPK Propranolol – Model Performance Summary**
 
 | Model        |        AAFE (Time–Concentration) (digitised) |                          AAFE (PK Parameters) | Key Matches (within 2×)       | Key Mismatches                                                           | Overall Conclusion                                                                                           |
 | ------------ | -----------------------: | --------------------------------------------: | ----------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
