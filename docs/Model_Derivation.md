@@ -181,7 +181,9 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
     - This basic structure is directly applied to mass in equation of adipose, bone, brain, gut, heart, kidney, muscle, skin, and spleen.
     - The following tissues had slight variations in mass in equations:
       - **Artery**: `Xin_ar = Xout_lg`
-        - `Xout_lg = Q_lg * Cv_lg = Q_lg * C_lg * RB * (1/Kp_lg)` ; look above for Cv_lg derivation
+        - `Xout_lg` = `Q_lg * Cv_lg` = `Q_lg * C_lg * RB * (1/Kp_lg)`
+          - *Please refer to **Non-Eliminating Tissue Differential Equation Derivation** in **Rat IV Model - Differential Equation** section for derivating Cv_lg.*
+
         - Xin_ar (arterial inflow) is equivalent to Xout_lg (pulmonary outflow) because blood leaving the lung (pulmonary vein) is the direct source of systemic arterial blood. Therefore, drug concentration of pulmonary vein is equivalent to the drug concentration of systemic arterial blood. 
       - **Vein**: `Xin_ve = Xout_a + Xout_bo + Xout_b + Xout_h + Xout_k + Xout_li + Xout_m + Xout_sk`
         - Because vein compartment is where blood that outflow from each tissue is assembled, `Xin_ve` (venous inflow) equals the sum of tissue outflows excluding artery, lung, and the portal-drained organs (gut, spleen - which reach the systemic vein via the liver). This is because:
