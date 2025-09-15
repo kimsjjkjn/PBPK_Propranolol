@@ -11,10 +11,10 @@
     - RB (ratio blood:plasma)
   - **Species-specific parameters**:
     - GFR (Glomerular Filtration Rate)
-    - tissue volume
-    - blood flow
-    - weight (body weight & organ weight)
-    - hepatic IVIVE scaling factors
+    - Tissue volume (V)
+    - Blood flow (Q)
+    - Weight (body weight & organ weight)
+    - Hepatic IVIVE scaling factors
       - HPGL – hepatocytes per gram liver (cells/g liver)
       - MPPGL (or MPPGL_mic) – microsomal protein per gram liver (mg/g liver)
       - S9PGL – S9 protein per gram liver (mg/g liver)
