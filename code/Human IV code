@@ -200,7 +200,7 @@ BW = 70000
 ;W_g =
 ;W_h =
 ;W_k = 
-W_li = Vli * 1.08 ; liver density = 1.08 g/L -> from simcyp)
+W_li = Vli * 1.08/1000 ; density = 1.08 g/L = 1.08/1000 g/mL
 ;W_lg =
 ;W_m =
 ;W_sk=
