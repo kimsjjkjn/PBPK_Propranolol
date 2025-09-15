@@ -1,19 +1,19 @@
-# Results
+<img width="66" height="17" alt="image" src="https://github.com/user-attachments/assets/5b5416e8-d399-41fa-b54a-97b24cff7200" /># Results
 ## Rat IV Model
 - in vivo pharmacokinetic data for comparison: doi.org/10.1159/000136352
 Figure 1. Rat IV: In Vivo figure (figure 1 control data was used).
 
 
-<img width="468" height="273" alt="Screenshot 2025-09-10 at 3 13 19 PM" src="https://github.com/user-attachments/assets/e821a4a7-fc80-422e-940d-2287ed015a3b" />
+<img width="600" height="800" alt="Screenshot 2025-09-10 at 3 13 19 PM" src="https://github.com/user-attachments/assets/e821a4a7-fc80-422e-940d-2287ed015a3b" />
 
 Figure 2. Rat IV: Simulated vs Digitised In Vivo Propranolol Blood Concentrations.
-<img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/39e252f2-65f1-4d8d-8272-1288711b2b2c" />
+<img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/efd3e834-ff4b-4726-8801-47b8a65d2423" />
 
 Table 1. Model performance based on concentration–time profile: Average Absolute Fold Error (AAFE) between Predicted and In Vivo concentrations in the IV rat model
   
 | Metric | Value |
 | :------ | ----: |
-| AAFE | 1.49 |
+| AAFE | 1.51 |
 | Fraction within 2-fold (0.5–2.0) | 1 |
 | Fraction within 3-fold (0.33–3.0) | 1 |
 
@@ -21,18 +21,20 @@ Table 2. Comparison of Predicted Pharmacokinetic Parameters with Digitised and l
 
 | Parameter            | Predicted (model) | Digitised In Vivo | Literature In Vivo | Pred/Dig | FE vs Dig | Within 2× (Dig) | Within 3× (Dig) | Pred/Lit | FE vs Lit | Within 2× (Lit) | Within 3× (Lit) |
 |----------------------|------------------:|------------------:|-------------------:|---------:|----------:|:----------------:|:----------------:|---------:|----------:|:---------------:|:---------------:|
-| AUC₀–∞ (ng·min/mL)     | 28293.97           | 24254.95           | 27122             | 1.17     | 1.17       | True             | True             | 1.04     | 1.04      | True            | True            |
-| CL (mL/kg/min)       | 88.36             | 103.07            | 92.2               | 0.86     | 1.17      | True             | True             | 0.96     | 1.04      | True            | True            |
-| Vss (L/kg)            | 8.58              | 4.14            | 5.30               | 2.07     | 2.07      | False             | True             | 1.62     | 1.62      | True            | True            |
-| t½ (min)             | 67.31              | 27.81              | 40                 | 2.42     | 2.42      | False             | True             | 1.68     | 1.68      | True            | True            |
+| AUC₀–∞ (ng·min/mL)     | 30703.66          | 24254.95           | 27122             | 1.27     | 1.27       | True             | True             | 1.13     | 1.13      | True            | True            |
+| CL (mL/kg/min)       | 81.42             | 103.07            | 92.2               | 0.79     | 1.27      | True             | True             | 0.88     | 1.13      | True            | True            |
+| Vss (L/kg)            | 8.13              | 4.14            | 5.30               | 1.96     | 1.96      | True             | True             | 1.53     | 1.53      | True            | True            |
+| t½ (min)             | 69.17              | 27.81              | 40                 | 2.49     | 2.49      | False             | True             | 1.73    | 1.73      | True            | True            |
 
 - Abbreviations: AUC, area under the concentration–time curve; CL, clearance; Vss, volume of distribution at steady state; t½, elimination half-life.
 
 Route-level summary (Rat IV)					
-- vs Digitised: AAFE = 1.62, within 2× = 50%, within 3× = 100%.
-- vs Literature: AAFE = 1.31, within 2× = 100%, within 3× = 100%.
+- vs Digitised: AAFE = 1.67, within 2× = 75%, within 3× = 100%.
+- vs Literature: AAFE = 1.36, within 2× = 100%, within 3× = 100%.
 
-Note: The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 2. 
+Note: 
+- Only the parameters reported in the literature were calculated and compared.
+- The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 2. 
 
 ## Human IV Model
 - in vivo pharmacokinetic data for comparison: 10.1371/journal.pone.0097885
@@ -73,7 +75,9 @@ Route-level summary (Human IV)
 - vs Digitised (excluding IV Tmax, which is 0 by definition): AAFE = 1.78, within 2× = 80%, within 3× = 80%.
 - vs Literature (excluding IV Tmax): AAFE = 2.65, within 2× = 40%, within 3× = 60%.
 
-Note: The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 4. 
+Note: 
+- Only the parameters reported in the literature were calculated and compared.
+- The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 4. 
 
 ## Human PO Model
 - in vivo pharmacokinetic data for comparison: 10.1371/journal.pone.0097885
@@ -107,7 +111,9 @@ Table 6. Comparison of Predicted Pharmacokinetic Parameters with Digitised and l
 
 Route-level summary (Human PO)
 - vs Digitised: AAFE = 1.48, within 2× = 80%, within 3× = 100%.
-- vs Literature (for the parameters reported in the paper: Cmax, Tmax, AUC, t½, F): AAFE = 1.88, within 2× = 80%, within 3× = 80%.
+- vs Literature: AAFE = 1.88, within 2× = 80%, within 3× = 80%.
 
 
-Note: The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 6. 
+Note: 
+- Only the parameters reported in the literature were calculated and compared.
+- The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 6. 
