@@ -7,6 +7,8 @@ Figure 1. Rat IV: In Vivo figure (figure 1 control data was used).
 
 <img width="600" height="800" alt="Screenshot 2025-09-10 at 3 13 19 PM" src="https://github.com/user-attachments/assets/e821a4a7-fc80-422e-940d-2287ed015a3b" />
 
+
+
 Figure 2. Rat IV: Simulated vs Digitised In Vivo Propranolol Blood Concentrations.
 <img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/efd3e834-ff4b-4726-8801-47b8a65d2423" />
 
