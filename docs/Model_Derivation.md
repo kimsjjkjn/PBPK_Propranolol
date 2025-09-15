@@ -1,5 +1,6 @@
 # Model Derivation
 - All equations in PBPK model were manually derived using the basic rationale discussed in the following research paper: https://doi.org/10.2165/00003088-200645050-00006.
+  - All images/figures of certain equations in this page are from this research paper. 
 - A physiologically based, perfusion-limited, well-stirred PBPK model was implemented for rat IV, human IV, and human PO simulations.
 - All models are in the standard of blood concentration. Therefore, `fub (= fup / RB)` (unbound drug fraction in blood) is used to maintain the standard if needed.
   - Models may be built on plasma concentration, but the standard (blood vs. plasma) must remain consistent across the model.
