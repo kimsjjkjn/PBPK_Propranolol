@@ -1,5 +1,7 @@
 ;;; PBPK propranolol rat IV modeling
 
+;ka value must be fitted based on the data points considering AAFE, Tmax, Cmax, etc.
+
 METHOD RK4
 STARTTIME = 0
 STOPTIME = 120
@@ -154,10 +156,6 @@ C_sp_uM = C_sp / MW
 ;;;;; Compound physical & chemical properties ;;;;;
 
 MW =259.3434;g/mol
-
-;;;;;Rat physiological parameters;;;;;
-;GI tract;
-radius_intestine =  1.8; cm, Issa et al., 2003
 
 ; Hematocrit;
 Hct = 0.45
