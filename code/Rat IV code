@@ -58,12 +58,12 @@ Kp_sp = 2.0413
 
 { metabolism & excretion }
 ;renal clearance;
-GFR_rat = 18 ;ml/min
-CL_r = (fup/RB * GFR_rat) ;ml/mi ; fub = fup/RB
+GFR_rat = 18 ;mL/min
+CL_r = (fup/RB * GFR_rat) ;mL/mi ; fub = fup/RB
 CL_r_u = GFR_rat
 
 ;;;;; CL_int_u ;;;;
-CL_int = 0.13 * MPPGL_mic * W_li ;ml/min
+CL_int = 0.13 * MPPGL_mic * W_li ;mL/min
 fu_MP = 0.49
 CL_int_u = CL_int / fu_MP
 
