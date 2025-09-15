@@ -202,24 +202,6 @@ Q_m = Q * 17/100 ; muscle
 Q_sk = Q * 5/100 ; skin
 Q_rest = Q - (Q_a+Q_bo+Q_b+Q_h+Q_k+Q_li+Q_m+Q_sk+Q_g+Q_sp); rest of body
 
-;{ weight (g) }
-;use reported weight value directly or calculate using the following equation: weight = volume x density 
-;use necessary weight only --> liver in this case
-BW = 70000
-;W_a = 
-;W_bo= 
-;W_b =
-;W_g =
-;W_h =
-;W_k = 
-W_li = Vli * 1.08/1000 ; density = 1.08 g/L = 1.08/1000 g/mL
-;W_lg =
-;W_m =
-;W_sk=
-;W_sp = ;g
-
-{ liver }
-MPPGL_mic = 39.791 ; mg microsomal protein / g liver 
 
 ;;; Cart/Rb --> Cp (because comparative literature gives venous plasma concentration (Cp_ve) value, convert the venous blood concentration (C_ve) values into Cp_ve by applying RB)
 Cp_ve = C_ve / RB 
