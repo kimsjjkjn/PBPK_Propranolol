@@ -62,11 +62,17 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 
 ## Rat IV Model
 - in vivo pharmacokinetic data for comparison: doi.org/10.1159/000136352
-  
-Figure 1. Rat IV: In Vivo figure (figure 1 control data was used).
+
+
+
+Figure 1. Rat IV: In Vivo figure from the literature (figure 1 control data was used).
 
 
 <img width="600" height="800" alt="Screenshot 2025-09-10 at 3 13 19 PM" src="https://github.com/user-attachments/assets/e821a4a7-fc80-422e-940d-2287ed015a3b" />
+
+- doi.org/10.1159/000136352
+
+
 
 Figure 2. Rat IV: Simulated vs Digitised In Vivo Propranolol Blood Concentrations.
 <img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/efd3e834-ff4b-4726-8801-47b8a65d2423" />
@@ -102,9 +108,10 @@ Note:
 - in vivo pharmacokinetic data for comparison: 10.1371/journal.pone.0097885
 
 
-Figure 3. Human IV: In Vivo figure (figure 2A control data was used)
+Figure 3. Human IV: In Vivo figure from the literature (figure 2A control data was used)
   <img width="711" height="351" alt="Screenshot 2025-09-10 at 2 06 48 PM" src="https://github.com/user-attachments/assets/83b672f8-65d8-4171-b4b3-eead4938a100" />
 
+- 10.1371/journal.pone.0097885
 
 Figure 4. Human IV: Simulated vs Digitised In Vivo Propranolol Plasma Concentrations (in vivo data is in venous plasma concentration, so simulated data was also converted to venous plasma concentration).
 
@@ -144,9 +151,12 @@ Note:
 ## Human PO Model
 - in vivo pharmacokinetic data for comparison: 10.1371/journal.pone.0097885
 
-Figure 5. Human PO: In Vivo figure (figure 2B control data was used)
+Figure 5. Human PO: In Vivo figure from the literature (figure 2B control data was used)
     <img width="711" height="351" alt="Screenshot 2025-09-10 at 2 06 48 PM" src="https://github.com/user-attachments/assets/83b672f8-65d8-4171-b4b3-eead4938a100" />
 
+- 10.1371/journal.pone.0097885
+
+  
 Figure 6. Human PO: Simulated vs Digitised In Vivo Propranolol Plasma Concentrations (in vivo data is in venous plasma concentration, so simulated data was also converted to venous plasma concentration).
   <img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/ad72b1e4-84d7-46be-b58a-e0a33a8ab9fc" />
 
@@ -178,7 +188,7 @@ Route-level summary (Human PO)
 
 Note: 
 - Only the parameters reported in the literature were calculated and compared.
-- The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 6.
+- The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 6. 
 
   
 # Discussion
