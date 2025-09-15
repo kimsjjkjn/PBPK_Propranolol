@@ -158,7 +158,8 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
     - Thus `C_p = C_T / Kp`
     - `Cv_T = C_p * RB` ; RB is multiplied to convert the standard from plasma to blood concentration
     - Thus `Cv_T = (C_T / Kp) * RB`
-  - Thus, the mass differential equation can be written again as `VT * d/dt(C_T) = (Q_T * C_ab) - (Q_T * C_T / Kp * RB)`
+  - Thus, non-eliminating tissue differential equation can be written again as:
+    `VT * d/dt(C_T) = (Q_T * C_ab) - (Q_T * C_T / Kp * RB)`
 
 **Mass Differential Equations**
 - **Structure**:
