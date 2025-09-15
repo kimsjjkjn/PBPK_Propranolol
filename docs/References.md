@@ -18,6 +18,8 @@ Rowland, M., et al. "Physiologically based pharmacokinetics in drug development 
 
 Rowland, M., and T. N. Tozer. "Clinical Pharmacokinetics and Pharmacodynamics: Concepts and Applications." 4th ed., Wolters Kluwer Health/Lippincott Williams & Wilkins, 2011.
 
+Shand, D.G, et al. “The Disposition of Propranolol.” Pharmacology, vol. 8, no. 4-6, 1 Jan. 1972, pp. 344–352, https://doi.org/10.1159/000136352.
+
 Taegtmeyer, Anne B, et al. "A Study of the Relationship between Serum Bile Acids and Propranolol Pharmacokinetics and Pharmacodynamics in Patients with Liver Cirrhosis and in Healthy Controls." Vol. 9, no. 6, 6 June 2014, pp. e97885–e97885, https://doi.org/10.1371/journal.pone.0097885.
 
 Zhao, Peng, et al. "Applications of physiologically based pharmacokinetic (PBPK) modeling and simulation during regulatory review." Clinical Pharmacology & Therapeutics, vol. 92, no. 1, 2012, pp. 1–4. doi:10.1038/clpt.2012.113.
