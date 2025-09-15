@@ -206,6 +206,4 @@ W_sk=47.58
 W_sp =0.5000 ;g
 
 { liver }
-HPGL = 120 ; million cells / g liver
 MPPGL_mic = 44.5 ; mg microsomal protein / g liver : https://doi.org/10.1002/bdd.1959
-MPPGL_S9 = 115.2 ; mg S9 protein / g liver ; inhouse measured
