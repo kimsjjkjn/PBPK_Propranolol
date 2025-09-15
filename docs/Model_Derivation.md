@@ -38,7 +38,7 @@ Table 1. Parameters obtained from literature that are used to construct **rat IV
 | MW | g/mol | 259.3434 | DrugBank. “Propranolol.” Go.drugbank.com, 13 June 2024, go.drugbank.com/drugs/DB00571. | - |
 | Hct | - | 0.45 | "Lee, H B, and M D Blaufox. “Blood Volume in the Rat.” Journal of Nuclear Medicine : Official Publication, Society of Nuclear Medicine, vol. 26, no. 1, Jan. 1985, pp. 72–6, pubmed.ncbi.nlm.nih.gov/3965655/. | 0.45 (45%) was set as the representative hematocrit, as Lee & Blaufox (1985) reported hematocrit values of 43.94 ± 2.77% for rats with body weight >120 g, and 42.30 ± 3.39% for male rats. |
 | Tissue volume | mL | Check 'Rat IV code' under 'code' folder | "Brown, Ronald P., et al. “Physiological Parameter Values for Physiologically Based Pharmacokinetic Models.” Toxicology and Industrial Health, vol. 13, no. 4, July 1997, pp. 407–484, https://doi.org/10.1177/074823379701300401. | - |
-| Blood flow | mL/min | Check 'Rat IV code' under 'code' folder | SimCYP rat ver. | - |
+| Blood flow | mL/min | Check 'Rat IV code' under 'code' folder | Simcyp Simulator. Version 22, Certara UK Limited, 2023. | - |
 | Weight | g | Check 'Rat IV code' under 'code' folder | "Brown, Ronald P., et al. “Physiological Parameter Values for Physiologically Based Pharmacokinetic Models.” Toxicology and Industrial Health, vol. 13, no. 4, July 1997, pp. 407–484, https://doi.org/10.1177/074823379701300401. | Obtained by multiplying the relative organ weights (% of body weight) reported in Brown et al. (1997) by a 250 g rat body weight. |
 | MPPGL_mic | mg microsomal protein / g liver | 44.5 | "J. Nicolaï, et al. “Verapamil Hepatic Clearance in Four Preclinical Rat Models: Towards Activity‐Based Scaling.” Biopharmaceutics & Drug Disposition, vol. 36, no. 7, 11 May 2015, pp. 462–480, https://doi.org/10.1002/bdd.1959. | - |
 
@@ -52,8 +52,8 @@ Table 2. Parameters obtained from literature that are used to construct **human 
 | CL_int_eff | mL/min | 2710 | Silberx, Bernie M, et al. “Dose-Dependent Elimination of Propranolol and Its Major Metabolites in Humans.” Journal of Pharmaceutical Sciences, vol. 72, no. 7, 1 July 1983, pp. 725–732, https://doi.org/10.1002/jps.2600720703. | """Kornhauser et al. (31) reported an average intrinsic clearance (CLint) of 2.71 liter/min on whole blood concentrations)"". Thus, this intrinsic clearance value is already invivo scaled and in the standard of blood concentration." |
 | MW | g/mol | 259.3434 | DrugBank. “Propranolol.” Go.drugbank.com, 13 June 2024, go.drugbank.com/drugs/DB00571. | - |
 | Hct | - | 0.45 | "Mondal, Himel, and Saran Lotfollahzadeh. “Hematocrit (HCT).” Nih.gov, StatPearls Publishing, 6 Oct. 2024, www.ncbi.nlm.nih.gov/books/NBK542276/. | Hematocrit was set to 0.45 (45%), representing the mid-point of normal adult ranges (men 40–54%, women 36–48%). |
-| Tissue volume | mL | Check 'Human IV code' under 'code' folder | SimCYP human ver. | - |
-| Blood flow | mL/min | Check 'Human IV code' under 'code' folder | SimCYP human ver. | - |
+| Tissue volume | mL | Check 'Human IV code' under 'code' folder | Simcyp Simulator. Version 22, Certara UK Limited, 2023. | - |
+| Blood flow | mL/min | Check 'Human IV code' under 'code' folder | Simcyp Simulator. Version 22, Certara UK Limited, 2023. | - |
 
 
 Table 3. Parameters obtained from literature that are used to construct **human PO model** and their references
@@ -67,8 +67,8 @@ Table 3. Parameters obtained from literature that are used to construct **human 
 | Fobs | - | 0.27 | "Taegtmeyer, Anne B, et al. A Study of the Relationship between Serum Bile Acids and Propranolol Pharmacokinetics and Pharmacodynamics in Patients with Liver Cirrhosis and in Healthy Controls. Vol. 9, no. 6, 6 June 2014, pp. e97885–e97885, https://doi.org/10.1371/journal.pone.0097885. | - |
 | MW | g/mol | 259.3434 | DrugBank. “Propranolol.” Go.drugbank.com, 13 June 2024, go.drugbank.com/drugs/DB00571. | - |
 | Hct | - | 0.45 | "Mondal, Himel, and Saran Lotfollahzadeh. “Hematocrit (HCT).” Nih.gov, StatPearls Publishing, 6 Oct. 2024, www.ncbi.nlm.nih.gov/books/NBK542276/. | Hematocrit was set to 0.45 (45%), representing the mid-point of normal adult ranges (men 40–54%, women 36–48%). |
-| Tissue volume | mL | Check 'Human IV code' under 'code' folder | SimCYP human ver. | - |
-| Blood flow | mL/min | Check 'Human IV code' under 'code' folder | SimCYP human ver. | - |
+| Tissue volume | mL | Check 'Human IV code' under 'code' folder | Simcyp Simulator. Version 22, Certara UK Limited, 2023. | - |
+| Blood flow | mL/min | Check 'Human IV code' under 'code' folder | Simcyp Simulator. Version 22, Certara UK Limited, 2023. | - |
 
 
 # Abbreviation
