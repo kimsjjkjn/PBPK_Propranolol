@@ -262,8 +262,7 @@ To reproduce this, the model runs for the **infusion (10 min) + sampling (2880 m
 This way, simulated times align exactly with the **post-infusion** sampling window reported in the literature.
 
 ## Predicted Human Kp values
-Rat Kp values obtained above are converted to human Kp values by multiplying fup ratio (`fup_human / fup_rat`).
-
+As a heuristic cross-species adjustment, human Kp values were obtained by scaling rat Kp values by the plasma-unbound fraction (`fup`) ratio (`fup_human / fup_rat`).
 
 ## Metabolism & Excretion
 ### Renal Clearance
