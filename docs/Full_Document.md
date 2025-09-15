@@ -1,5 +1,6 @@
 # PBPK_Propranolol
 Physiologically-based pharmacokinetic (PBPK) modeling of propranolol in rats and humans (IV & PO) using Berkeley Madonna with validation against in vivo data.
+
 # Background
 ## PBPK
 Physiologically based pharmacokinetic (PBPK) modeling is a useful tool for predicting how drugs are absorbed, distributed, metabolized, and excreted (ADME) based on physiological and biochemical factors. Unlike traditional compartmental models, PBPK models use detailed representations of organ-specific blood flows, tissue volumes, and protein binding. This allows for a more realistic simulation of how drugs behave in the body (Rowland et al., 2011).
@@ -21,7 +22,9 @@ Propranolol was selected as the model compound for this PBPK project primarily b
 - Construct PBPK model of propranolol for Rat IV, Human IV, and Human PO administration.
 - Validate the models by comparing simulated concentration–time profiles and resulting parameters against published in vivo pharmacokinetic data.
 
-  # Methods
+
+
+# Methods
 
 ## Software and Workflow
 Model development and simulation were performed in Berkeley Madonna (METHOD RK4). Data wrangling and figure generation were done in Excel (digitised literature profiles, PK tables). For the detailed workflow of how this project was processed, please refer to **[Workflow.md](Workflow.md)** in this repository.  
@@ -54,22 +57,24 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
   - Fold error (FE) per parameter = max(predicted, observed) / min(predicted, observed) so FE ≥ 1.0 by definition.
   - Average-fold error (AFE/AAFE) across parameters = geometric mean of the per-parameter FEs; the paper also reports the % within 2-fold (and 3-fold).
   - Note: As mentioned above, digitisation can introduce small systematic and random errors, so the “Digitised In-Vivo” numbers may not perfectly reflect the original raw values. Therefore both digitised In Vivo parameter values and In Vivo parameter values directly reported by the literature were used to evaluate overall the model performance based on parameters calculated.
-  # Results
+
+# Results
+
 ## Rat IV Model
 - in vivo pharmacokinetic data for comparison: doi.org/10.1159/000136352
 Figure 1. Rat IV: In Vivo figure (figure 1 control data was used).
 
 
-<img width="468" height="273" alt="Screenshot 2025-09-10 at 3 13 19 PM" src="https://github.com/user-attachments/assets/e821a4a7-fc80-422e-940d-2287ed015a3b" />
+<img width="600" height="800" alt="Screenshot 2025-09-10 at 3 13 19 PM" src="https://github.com/user-attachments/assets/e821a4a7-fc80-422e-940d-2287ed015a3b" />
 
 Figure 2. Rat IV: Simulated vs Digitised In Vivo Propranolol Blood Concentrations.
-<img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/39e252f2-65f1-4d8d-8272-1288711b2b2c" />
+<img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/efd3e834-ff4b-4726-8801-47b8a65d2423" />
 
 Table 1. Model performance based on concentration–time profile: Average Absolute Fold Error (AAFE) between Predicted and In Vivo concentrations in the IV rat model
   
 | Metric | Value |
 | :------ | ----: |
-| AAFE | 1.49 |
+| AAFE | 1.51 |
 | Fraction within 2-fold (0.5–2.0) | 1 |
 | Fraction within 3-fold (0.33–3.0) | 1 |
 
@@ -77,18 +82,20 @@ Table 2. Comparison of Predicted Pharmacokinetic Parameters with Digitised and l
 
 | Parameter            | Predicted (model) | Digitised In Vivo | Literature In Vivo | Pred/Dig | FE vs Dig | Within 2× (Dig) | Within 3× (Dig) | Pred/Lit | FE vs Lit | Within 2× (Lit) | Within 3× (Lit) |
 |----------------------|------------------:|------------------:|-------------------:|---------:|----------:|:----------------:|:----------------:|---------:|----------:|:---------------:|:---------------:|
-| AUC₀–∞ (ng·min/mL)     | 28293.97           | 24254.95           | 27122             | 1.17     | 1.17       | True             | True             | 1.04     | 1.04      | True            | True            |
-| CL (mL/kg/min)       | 88.36             | 103.07            | 92.2               | 0.86     | 1.17      | True             | True             | 0.96     | 1.04      | True            | True            |
-| Vss (L/kg)            | 8.58              | 4.14            | 5.30               | 2.07     | 2.07      | False             | True             | 1.62     | 1.62      | True            | True            |
-| t½ (min)             | 67.31              | 27.81              | 40                 | 2.42     | 2.42      | False             | True             | 1.68     | 1.68      | True            | True            |
+| AUC₀–∞ (ng·min/mL)     | 30703.66          | 24254.95           | 27122             | 1.27     | 1.27       | True             | True             | 1.13     | 1.13      | True            | True            |
+| CL (mL/kg/min)       | 81.42             | 103.07            | 92.2               | 0.79     | 1.27      | True             | True             | 0.88     | 1.13      | True            | True            |
+| Vss (L/kg)            | 8.13              | 4.14            | 5.30               | 1.96     | 1.96      | True             | True             | 1.53     | 1.53      | True            | True            |
+| t½ (min)             | 69.17              | 27.81              | 40                 | 2.49     | 2.49      | False             | True             | 1.73    | 1.73      | True            | True            |
 
 - Abbreviations: AUC, area under the concentration–time curve; CL, clearance; Vss, volume of distribution at steady state; t½, elimination half-life.
 
 Route-level summary (Rat IV)					
-- vs Digitised: AAFE = 1.62, within 2× = 50%, within 3× = 100%.
-- vs Literature: AAFE = 1.31, within 2× = 100%, within 3× = 100%.
+- vs Digitised: AAFE = 1.67, within 2× = 75%, within 3× = 100%.
+- vs Literature: AAFE = 1.36, within 2× = 100%, within 3× = 100%.
 
-Note: The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 2. 
+Note: 
+- Only the parameters reported in the literature were calculated and compared.
+- The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 2. 
 
 ## Human IV Model
 - in vivo pharmacokinetic data for comparison: 10.1371/journal.pone.0097885
@@ -129,7 +136,9 @@ Route-level summary (Human IV)
 - vs Digitised (excluding IV Tmax, which is 0 by definition): AAFE = 1.78, within 2× = 80%, within 3× = 80%.
 - vs Literature (excluding IV Tmax): AAFE = 2.65, within 2× = 40%, within 3× = 60%.
 
-Note: The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 4. 
+Note: 
+- Only the parameters reported in the literature were calculated and compared.
+- The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 4. 
 
 ## Human PO Model
 - in vivo pharmacokinetic data for comparison: 10.1371/journal.pone.0097885
@@ -163,15 +172,17 @@ Table 6. Comparison of Predicted Pharmacokinetic Parameters with Digitised and l
 
 Route-level summary (Human PO)
 - vs Digitised: AAFE = 1.48, within 2× = 80%, within 3× = 100%.
-- vs Literature (for the parameters reported in the paper: Cmax, Tmax, AUC, t½, F): AAFE = 1.88, within 2× = 80%, within 3× = 80%.
+- vs Literature: AAFE = 1.88, within 2× = 80%, within 3× = 80%.
 
 
-Note: The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 6. 
+Note: 
+- Only the parameters reported in the literature were calculated and compared.
+- The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 6.
 
-
+  
 # Discussion
 ## Rat IV Model
-The rat IV model showed excellent performance, with an AAFE of 1.49 based on the time–concentration profile and an AAFE of 1.62 (digitised) and an AAFE of 1.31 (literature) based on the PK parameters. All major pharmacokinetic parameters (t½, CL, Vss, AUC) were predicted within 2-fold of literature values, although Vss and t½ were out of 2-fold of digitised values. Yet, it is more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data (except where digitisation is unavoidable, such as for time–concentration profiles). Generally, an AAFE within 2-fold is considered good validation for building robust PBPK models (Deepika et al., 2023). Therefore, this result indicates that the constructed rat IV model is reliable and well validated.
+The rat IV model showed excellent performance, with an AAFE of 1.51 based on the time–concentration profile and an AAFE of 1.67 (digitised) and an AAFE of 1.36 (literature) based on the PK parameters. All major pharmacokinetic parameters (t½, CL, Vss, AUC) were predicted within 2-fold of literature values, although t½ was out of 2-fold of digitised values. Yet, it is more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data (except where digitisation is unavoidable, such as for time–concentration profiles). Generally, an AAFE within 2-fold is considered good validation for building robust PBPK models (Deepika et al., 2023). Therefore, this result indicates that the constructed rat IV model is reliable and well validated.
 
 ## Human IV Model
 Although the comparison with digitised in vivo data yielded an AAFE of 1.28 based on the time–concentration profile and 1.78 based on PK parameters, comparison with literature values gave a higher AAFE of 2.65. As mentioned above, comparison with literature data is more valid and meaningful than with digitised data as digitised data may not be accurate. Prediction error within 3-fold is widely accepted as informative but less reliable than within 2-fold. It is often regarded as moderate accuracy, sometimes acceptable for screening or early development, but usually insufficient for confident clinical application. Therefore, the AAFE of 2.65 based on PK parameters when compared with literature indicates that the model is not reliably predictive in humans. More specifically, while AUC and CL were reproduced reasonably well (within 2-fold), other key parameters including Cmax, Tmax, Vss, and t½ showed large discrepancies (e.g., Cmax was overpredicted by about 3 fold). In particular, the overestimation of Vss and t½ suggests that human IV pharmacokinetics were not adequately captured. Thus, although the human IV model shows partial agreement, it is not clinically predictive.
@@ -186,7 +197,7 @@ The human PO model showed an AAFE of 1.76 based on the time–concentration prof
 
 | Model        |        AAFE (Time–Concentration) (digitised) |                          AAFE (PK Parameters) | Key Matches (within 2×)       | Key Mismatches                                                           | Overall Conclusion                                                                                           |
 | ------------ | -----------------------: | --------------------------------------------: | ----------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| **Rat IV**   |                      1.49 |                1.62 (digitised), 1.31 (literature) | t½, CL, Vss, AUC all within 2× | Slightly high Vss → longer t½                                             | Excellent fit. Exposure (AUC, CL) on target. Reliable and well-validated.                                    |
+| **Rat IV**   |                      1.51 |                1.67 (digitised), 1.36 (literature) | t½, CL, Vss, AUC all within 2× | Slightly high Vss → longer t½                                             | Excellent fit. Exposure (AUC, CL) on target. Reliable and well-validated.                                    |
 | **Human IV** | 1.28 | 1.78 (digitised), **2.65 (literature)** | AUC, CL within 2×             | Cmax overpredicted (3×), Tmax mismatch, Vss & t½ strongly overestimated | Partial agreement. Moderate accuracy by 3× rule, but not sufficiently predictive for clinical use.           |
 | **Human PO** |                     1.76 |         1.48 (digitised), **1.88 (literature)** | Cmax, Tmax, AUC, F within 2×        | t½ overestimated (~5×)    | Acceptable fit overall. Exposure (AUC, F) well predicted but t½ largely overestimated potentially due to oversimplified absorption model.   |
 
@@ -230,6 +241,7 @@ Improvement:
 - Current models are the simplest models which are good to start with. More complex factors could be incorporated to better reflect complex mechanisms occuring in actual body. 
 - These models can be used with variations in parameters to model disease state (e.g. hepatic impairment).
 
+
 # Reflection
 This independent project on physiologically based pharmacokinetic (PBPK) modeling of propranolol was conducted using Berkeley Madonna, with all organ-level differential equations derived from first principles. By constructing and validating rat (IV) and human (IV and PO) models, I developed hands-on experience in mechanistic model building, parameterization, and quantitative evaluation of model performance.
 
@@ -240,26 +252,55 @@ Beyond the technical implementation, this project strengthened my understanding 
 Overall, this work served as both a validated case study and a foundation for future extensions toward clinically predictive PBPK modeling.
 
 
+
 # References
 
-Deepika, Deepika, and Vikas Kumar. “The Role of “Physiologically Based Pharmacokinetic Model (PBPK)” New Approach Methodology (NAM) in Pharmaceuticals and Environmental Chemical Risk Assessment.” International Journal of Environmental Research and Public Health, vol. 20, no. 4, 16 Feb. 2023, p. 3473, www.ncbi.nlm.nih.gov/pmc/articles/PMC9966583/, https://doi.org/10.3390/ijerph20043473.
+Brown, Ronald P., et al. “Physiological Parameter Values for Physiologically Based Pharmacokinetic Models.” Toxicology and Industrial Health, vol. 13, no. 4, July 1997, pp. 407–484. https://doi.org/10.1177/074823379701300401.
 
-Jamei, M. et al. "Population-based mechanistic prediction of oral drug absorption." The AAPS Journal, vol. 11, no. 2, 2009, pp. 225–237. doi:10.1208/s12248-009-9099-y.
+Deepika, Deepika, and Vikas Kumar. “The Role of ‘Physiologically Based Pharmacokinetic Model (PBPK)’ New Approach Methodology (NAM) in Pharmaceuticals and Environmental Chemical Risk Assessment.” International Journal of Environmental Research and Public Health, vol. 20, no. 4, 16 Feb. 2023, p. 3473. https://doi.org/10.3390/ijerph20043473.
 
-Jones, H. M., and K. Rowland Yeo. "Basic concepts in physiologically based pharmacokinetic modeling in drug discovery and development." CPT: Pharmacometrics & Systems Pharmacology, vol. 2, no. 8, 2013, pp. 1–12. doi:10.1038/psp.2013.41.
+DrugBank. “Propranolol.” Go.drugbank.com, 13 June 2024. https://go.drugbank.com/drugs/DB00571.
 
-Jones, Hannah M, et al. “A Novel Strategy for Physiologically Based Predictions of Human Pharmacokinetics.” Clinical Pharmacokinetics, vol. 45, no. 5, 2006, pp. 511–542, https://doi.org/10.2165/00003088-200645050-00006.
+Evans, Gwyn H., et al. “The Disposition of Propranolol. III. Decreased Half-Life and Volume of Distribution as a Result of Plasma Binding in Man, Monkey, Dog and Rat.” The Journal of Pharmacology and Experimental Therapeutics, vol. 186, no. 1, 31 Jan. 2025, pp. 114–122. https://doi.org/10.1016/S0022-3565(25)29572-6.
 
-Lee, Myongjae, et al. “Prediction of Pharmacokinetics of IDP-73152 in Humans Using Physiologically-Based Pharmacokinetics.” Pharmaceutics, vol. 14, no. 6, 28 May 2022, p. 1157, https://doi.org/10.3390/pharmaceutics14061157. 
+Hung, Daniel Y., et al. “Disposition Kinetics of Propranolol Isomers in the Perfused Rat Liver.” The Journal of Pharmacology and Experimental Therapeutics, vol. 311, no. 2, 3 Jan. 2025, pp. 822–829. https://doi.org/10.1124/jpet.104.070011.
 
-Reigner, B., et al. "Comparative pharmacokinetics of propranolol after administration into the portal and systemic circulation in the rat." Journal of Pharmacology, vol. 38, no. 2, 1989, pp. 112–119. doi:10.1159/000136352.
+Jamei, M., et al. “Population-Based Mechanistic Prediction of Oral Drug Absorption.” The AAPS Journal, vol. 11, no. 2, 2009, pp. 225–237. https://doi.org/10.1208/s12248-009-9099-y.
 
-Rostami-Hodjegan, A. "Physiologically based pharmacokinetics joined with in vitro–in vivo extrapolation of ADME: a marriage under the arch of systems pharmacology." Clinical Pharmacology & Therapeutics, vol. 92, no. 1, 2012, pp. 50–61. doi:10.1038/clpt.2012.65.
+Jones, H. M., and K. Rowland Yeo. “Basic Concepts in Physiologically Based Pharmacokinetic Modeling in Drug Discovery and Development.” CPT: Pharmacometrics & Systems Pharmacology, vol. 2, no. 8, 2013, pp. 1–12. https://doi.org/10.1038/psp.2013.41.
 
-Rowland, M., et al. "Physiologically based pharmacokinetics in drug development and regulatory science: a workshop report." Clinical Pharmacokinetics, vol. 45, no. 5, 2006, pp. 507–526. doi:10.2165/00003088-200645050-00006.
+Jones, Hannah M., et al. “A Novel Strategy for Physiologically Based Predictions of Human Pharmacokinetics.” Clinical Pharmacokinetics, vol. 45, no. 5, 2006, pp. 511–542. https://doi.org/10.2165/00003088-200645050-00006.
 
-Rowland, M., and T. N. Tozer. "Clinical Pharmacokinetics and Pharmacodynamics: Concepts and Applications." 4th ed., Wolters Kluwer Health/Lippincott Williams & Wilkins, 2011.
+Kaufman, Daniel P., et al. “Physiology, Glomerular Filtration Rate (GFR).” StatPearls Publishing, National Library of Medicine, 2023. https://www.ncbi.nlm.nih.gov/books/NBK500032/.
 
-Taegtmeyer, Anne B, et al. "A Study of the Relationship between Serum Bile Acids and Propranolol Pharmacokinetics and Pharmacodynamics in Patients with Liver Cirrhosis and in Healthy Controls." Vol. 9, no. 6, 6 June 2014, pp. e97885–e97885, https://doi.org/10.1371/journal.pone.0097885.
+Lee, H. B., and M. D. Blaufox. “Blood Volume in the Rat.” Journal of Nuclear Medicine, vol. 26, no. 1, Jan. 1985, pp. 72–6. https://pubmed.ncbi.nlm.nih.gov/3965655/.
 
-Zhao, Peng, et al. "Applications of physiologically based pharmacokinetic (PBPK) modeling and simulation during regulatory review." Clinical Pharmacology & Therapeutics, vol. 92, no. 1, 2012, pp. 1–4. doi:10.1038/clpt.2012.113.doi:10.1038/clpt.2012.113.
+Lee, Myongjae, et al. “Prediction of Pharmacokinetics of IDP-73152 in Humans Using Physiologically-Based Pharmacokinetics.” Pharmaceutics, vol. 14, no. 6, 28 May 2022, p. 1157. https://doi.org/10.3390/pharmaceutics14061157.
+
+Mondal, Himel, and Saran Lotfollahzadeh. “Hematocrit (HCT).” StatPearls Publishing, Nih.gov, 6 Oct. 2024. https://www.ncbi.nlm.nih.gov/books/NBK542276/.
+
+Nicolaï, J., et al. “Verapamil Hepatic Clearance in Four Preclinical Rat Models: Towards Activity‐Based Scaling.” Biopharmaceutics & Drug Disposition, vol. 36, no. 7, 11 May 2015, pp. 462–480. https://doi.org/10.1002/bdd.1959.
+
+Potter, D., et al. “Character of Function and Size in Kidney during Normal Growth of Rats.” Pediatric Research, vol. 3, no. 1, 1 Jan. 1969, pp. 51–59. https://doi.org/10.1203/00006450-196901000-00007.
+
+Reigner, B., et al. “Comparative Pharmacokinetics of Propranolol after Administration into the Portal and Systemic Circulation in the Rat.” Journal of Pharmacology, vol. 38, no. 2, 1989, pp. 112–119. https://doi.org/10.1159/000136352.
+
+Rostami-Hodjegan, A. “Physiologically Based Pharmacokinetics Joined with In Vitro–In Vivo Extrapolation of ADME: A Marriage under the Arch of Systems Pharmacology.” Clinical Pharmacology & Therapeutics, vol. 92, no. 1, 2012, pp. 50–61. https://doi.org/10.1038/clpt.2012.65.
+
+Rowland, M., et al. “Physiologically Based Pharmacokinetics in Drug Development and Regulatory Science: A Workshop Report.” Clinical Pharmacokinetics, vol. 45, no. 5, 2006, pp. 507–526. https://doi.org/10.2165/00003088-200645050-00006.
+
+Rowland, M., and T. N. Tozer. Clinical Pharmacokinetics and Pharmacodynamics: Concepts and Applications. 4th ed., Wolters Kluwer Health/Lippincott Williams & Wilkins, 2011.
+
+Shand, D. G., et al. “The Disposition of Propranolol.” Pharmacology, vol. 8, no. 4–6, 1 Jan. 1972, pp. 344–352. https://doi.org/10.1159/000136352.
+
+Silberx, Bernie M., et al. “Dose-Dependent Elimination of Propranolol and Its Major Metabolites in Humans.” Journal of Pharmaceutical Sciences, vol. 72, no. 7, 1 July 1983, pp. 725–732. https://doi.org/10.1002/jps.2600720703.
+
+Simcyp Simulator. Version 22, Certara UK Limited, 2023.
+
+Singh, K., et al. “Determination of in Vivo Hepatic Extraction Ratio from in Vitro Metabolism by Rat Hepatocytes.” Drug Metabolism and Disposition, vol. 19, no. 5, 1991, pp. 990–6. https://pubmed.ncbi.nlm.nih.gov/1686248/.
+
+Taegtmeyer, Anne B., et al. “A Study of the Relationship between Serum Bile Acids and Propranolol Pharmacokinetics and Pharmacodynamics in Patients with Liver Cirrhosis and in Healthy Controls.” PLoS ONE, vol. 9, no. 6, 6 June 2014, pp. e97885–e97885. https://doi.org/10.1371/journal.pone.0097885.
+
+Taylor, E. A., and P. Turner. “The Distribution of Propranolol, Pindolol and Atenolol between Human Erythrocytes and Plasma.” British Journal of Clinical Pharmacology, vol. 12, no. 4, Oct. 1981, pp. 543–548. https://doi.org/10.1111/j.1365-2125.1981.tb01263.x.
+
+Zhao, Peng, et al. “Applications of Physiologically Based Pharmacokinetic (PBPK) Modeling and Simulation during Regulatory Review.” Clinical Pharmacology & Therapeutics, vol. 92, no. 1, 2012, pp. 1–4. https://doi.org/10.1038/clpt.2012.113.
