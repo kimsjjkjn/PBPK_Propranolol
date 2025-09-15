@@ -40,7 +40,7 @@ Table 1. Parameters obtained from literature that are used to construct **rat IV
 | Tissue volume | mL | Check 'Rat IV code' under 'code' folder | "Brown, Ronald P., et al. “Physiological Parameter Values for Physiologically Based Pharmacokinetic Models.” Toxicology and Industrial Health, vol. 13, no. 4, July 1997, pp. 407–484, https://doi.org/10.1177/074823379701300401. | - |
 | Blood flow | mL/min | Check 'Rat IV code' under 'code' folder | SimCYP rat ver. | - |
 | Weight | g | Check 'Rat IV code' under 'code' folder | "Brown, Ronald P., et al. “Physiological Parameter Values for Physiologically Based Pharmacokinetic Models.” Toxicology and Industrial Health, vol. 13, no. 4, July 1997, pp. 407–484, https://doi.org/10.1177/074823379701300401. | Obtained by multiplying the relative organ weights (% of body weight) reported in Brown et al. (1997) by a 250 g rat body weight. |
-| MPPGL_mic | mg microsomal protein / g liver | 44.5 | "J. Nicolaï, et al. “Verapamil Hepatic Clearance in Four Preclinical Rat Models: Towards Activity‐Based Scaling.” Biopharmaceutics & Drug Disposition, vol. 36, no. 7, 11 May 2015, pp. 462–480, https://doi.org/10.1002/bdd.1959. Accessed 1 May 2025. | - |
+| MPPGL_mic | mg microsomal protein / g liver | 44.5 | "J. Nicolaï, et al. “Verapamil Hepatic Clearance in Four Preclinical Rat Models: Towards Activity‐Based Scaling.” Biopharmaceutics & Drug Disposition, vol. 36, no. 7, 11 May 2015, pp. 462–480, https://doi.org/10.1002/bdd.1959. | - |
 
 Table 2. Parameters obtained from literature that are used to construct **human IV model** and their references
 
