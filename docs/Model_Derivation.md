@@ -55,7 +55,8 @@ code:
 
 ## Predicted Kp values
 Kp (tissue-to-plasma partition coefficient) values were obtained using standard partition coefficient calculators (Poulin–Theil): 
-<img width="578" height="327" alt="Screenshot 2025-09-15 at 1 51 55 PM" src="https://github.com/user-attachments/assets/1d280f9c-fe0e-4fa4-8c0f-007078901cff" />
+
+  <img width="578" height="327" alt="Screenshot 2025-09-15 at 1 51 55 PM" src="https://github.com/user-attachments/assets/1d280f9c-fe0e-4fa4-8c0f-007078901cff" />
 
 ## Metabolism & Excretion
 ### Renal Clearance
