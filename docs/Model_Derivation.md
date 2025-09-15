@@ -159,6 +159,8 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
     - `Cv_T = C_p * RB` ; RB is multiplied to convert the standard from plasma to blood concentration
     - Thus `Cv_T = (C_T / Kp) * RB`
   - Thus, the mass differential equation can be written again as `VT * d/dt(C_T) = (Q_T * C_ab) - (Q_T * C_T / Kp * RB)`
+
+**Mass Differential Equations**
 - **Structure**:
   - In the model, Mass in and Mass out are defined separately and under 'Differential Equations' section, each defined terms were used collectively.
   - **Basic structure of mass differential equation**: `d/dt(C_T) = (1/VT) * (Xin_T - Xout_T)`
