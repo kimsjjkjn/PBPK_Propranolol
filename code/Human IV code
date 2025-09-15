@@ -58,12 +58,12 @@ Kp_sp = 2.903790085
 
 { metabolism & excretion }
 ;;;;; CL_int_u ;;;;
-CL_int_eff = 2710 ;ml/min
+CL_int_eff = 2710 ;mL/min
 ;since CL_int_eff is already in the standard of whole blood concentration, don't need to divide by fu_MP
 
 ;;;renal clearance;;;
-GFR_human = 120 ;ml/min
-CL_r_human = (fup/RB * GFR_human) ;ml/min ; fub = fup/RB
+GFR_human = 120 ;mL/min
+CL_r_human = (fup/RB * GFR_human) ;mL/min ; fub = fup/RB
 CL_r_u_human  = GFR_human  ; mL/min
 
 ;;;;; Metabolism ;;;;
