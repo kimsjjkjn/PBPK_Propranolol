@@ -163,7 +163,7 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
 
 **Mass Differential Equations**
 - **Structure**:
-  - In the model, Mass in and Mass out are defined separately and under 'Differential Equations' section, each defined terms were used collectively.
+  - In the model, Mass in and Mass out are defined separately and each defined terms are used collectively to express mass differential equations.
   - **Basic structure of mass differential equation**: `d/dt(C_T) = (1/VT) * (Xin_T - Xout_T)`
     - This basic structure is directly applied to mass differential equations of artery, adipose, bone, brain, heart, lung, muscle, skin, and spleen.
     - The following tissues had slight variations in mass differential equations:
