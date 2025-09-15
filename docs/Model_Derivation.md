@@ -3,6 +3,7 @@
 - A physiologically based, perfusion-limited, well-stirred PBPK model was implemented for rat IV, human IV, and human PO simulations.
 - All models are in the standard of blood concentration. Therefore, `fub (= fup / RB)` (unbound drug fraction in blood) is used to maintain the standard if needed.
   - Models may be built on plasma concentration, but the standard (blood vs. plasma) must remain consistent across the model.
+- **Note: a semicolon (;) in codes indicates a comment and is not executed as part of the code.**
     
 # Parameters To Prepare
 - Parameter values that are directly brought from literature or SimCYP include:
