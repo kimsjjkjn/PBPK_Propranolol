@@ -1,5 +1,7 @@
 ;;; PBPK propranolol human PO modeling (finalise)
 
+; A semicolon (;) indicates a comment and is not executed as part of the code.
+
 METHOD RK4
 STARTTIME = 0
 STOPTIME = 2880
@@ -30,7 +32,7 @@ t = time
 ; mg protein per gram liver (MPPGL)
 
 { administration }
-;dose_IV =   ;ng ;
+;dose_IV =   ;ng 
 ;dosing_time_IV =  ;min
 ;IV_input = IF t< dosing_time_IV THEN dose_IV/dosing_time_IV ELSE 0
 dose_PO = 40000000 ;ng
@@ -166,10 +168,6 @@ C_sp_uM = C_sp / MW
 ;;;;; Compound physical & chemical properties ;;;;;
 
 MW =259.3434;g/mol
-
-;;;;;Human physiological parameters;;;;;
-;GI tract;
-radius_intestine = 1.53 ; cm, Issa et al., 2003
 
 ; Hematocrit;
 Hct = 0.45
