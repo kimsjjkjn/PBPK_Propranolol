@@ -62,6 +62,7 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 
 ## Rat IV Model
 - in vivo pharmacokinetic data for comparison: doi.org/10.1159/000136352
+  
 Figure 1. Rat IV: In Vivo figure (figure 1 control data was used).
 
 
