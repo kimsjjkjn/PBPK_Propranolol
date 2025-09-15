@@ -77,8 +77,8 @@ Kp (tissue-to-plasma partition coefficient) values were obtained using standard 
 ## Metabolism & Excretion
 ### Renal Clearance
 #### **CODE**:
-- `GFR_rat = 18 ;ml/min`
-- `CL_r = (fup/RB * GFR_rat) ;ml/mi ; fub = fup/RB`
+- `GFR_rat = 18 ;mL/min`
+- `CL_r = (fup/RB * GFR_rat) ;mL/mi ; fub = fup/RB`
 - `CL_r_u = GFR_rat`
 #### **Derivation**:
 - Definitions
@@ -113,14 +113,14 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
 
 ### **CL_int_u**: 
 #### **CODE**:
-- `CL_int = 0.13 * MPPGL_mic * W_li ;ml/min`
+- `CL_int = 0.13 * MPPGL_mic * W_li ;mL/min`
 - `fu_MP = 0.49`
 - `CL_int_u = CL_int / fu_MP`
 #### **Derivation**:
-- `CL_int = 0.13` is microsomal intrinsic clearance obtained from literature and is in the unit of ml/min/mg MP. `MPPGL_mic * W_li` is multiplied for in vivo scaling.
+- `CL_int = 0.13` is microsomal intrinsic clearance obtained from literature and is in the unit of mL/min/mg MP. `MPPGL_mic * W_li` is multiplied for in vivo scaling.
   - `MPPGL_mic`: mg microsomal protein / g liver.
   - `W_li`: liver weight (g).
-  - Unit check: *(ml/min/mg) × (mg/g) × (g) = ml/min* → whole-liver intrinsic clearance.
+  - Unit check: *(mL/min/mg) × (mg/g) × (g) = mL/min* → whole-liver intrinsic clearance.
 - `fu_MP = 0.49` is unbound fraction in microsomal incubation.
 - `CL_int_u`, i.e. unbound intrinsic clearance is obtained by dividing `CL_int` (whole-liver intrinsic clearance) value by `fu_MP` (unbound fraction in microsomal incubation).
   - The enzyme only “sees” **unbound** drug. In incubation:
@@ -269,7 +269,7 @@ Rat Kp values obtained above are converted to human Kp values by multiplying fup
 ### Renal Clearance
 #### **CODE**:
 - `GFR_human = 120 ;mL/min`
-- `CL_r = (fup/RB * GFR_human) ;ml/mi ; fub = fup/RB`
+- `CL_r = (fup/RB * GFR_human) ;mL/mi ; fub = fup/RB`
 - `CL_r_u_human = GFR_human`
 #### **Derivation**:
 - Definitions
@@ -305,7 +305,7 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
 
 ### **CL_int_u**: 
 #### **CODE**:
-- `CL_int_eff = 2710 ;ml/min`
+- `CL_int_eff = 2710 ;mL/min`
   - Since `CL_int_eff = 2710` obtained from literature is already in the standard of whole blood concentration, there is no need to divide it by fu_MP - it is already scaled to in vivo. 
 
 ### **Hepatic Metabolism**: 
