@@ -178,7 +178,7 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
       - **Liver**: `d/dt(C_li) = (1/Vli) * (Xin_li - Xout_li - Xmet_li)`
         - To reflect hepatic metabolism, `Xmet_li` is incorporated in the equation (because metabolised amount = `Xmet_li` is removed from total liver concentration, `Xmet_li` is subtracted).
 - **Mass in**
-  - Basic structure of mass in equation `(Xin_T): Xin_T = Q_T * C_T`
+  - Basic structure of mass in equation `(Xin_T): Xin_T = Q_ab * C_T`
     - This basic structure is directly applied to mass in equation of adipose, bone, brain, gut, heart, kidney, muscle, skin, and spleen.
     - The following tissues had slight variations in mass in equations:
       - **Artery**: `Xin_ar = Xout_lg`
