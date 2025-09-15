@@ -8,6 +8,8 @@ Jones, H. M., and K. Rowland Yeo. "Basic concepts in physiologically based pharm
 
 Jones, Hannah M, et al. “A Novel Strategy for Physiologically Based Predictions of Human Pharmacokinetics.” Clinical Pharmacokinetics, vol. 45, no. 5, 2006, pp. 511–542, https://doi.org/10.2165/00003088-200645050-00006.
 
+Lee, Myongjae, et al. “Prediction of Pharmacokinetics of IDP-73152 in Humans Using Physiologically-Based Pharmacokinetics.” Pharmaceutics, vol. 14, no. 6, 28 May 2022, p. 1157, https://doi.org/10.3390/pharmaceutics14061157. 
+
 Reigner, B., et al. "Comparative pharmacokinetics of propranolol after administration into the portal and systemic circulation in the rat." Journal of Pharmacology, vol. 38, no. 2, 1989, pp. 112–119. doi:10.1159/000136352.
 
 Rostami-Hodjegan, A. "Physiologically based pharmacokinetics joined with in vitro–in vivo extrapolation of ADME: a marriage under the arch of systems pharmacology." Clinical Pharmacology & Therapeutics, vol. 92, no. 1, 2012, pp. 50–61. doi:10.1038/clpt.2012.65.
