@@ -103,7 +103,7 @@ Kp (tissue-to-plasma partition coefficient) values were obtained using standard 
 - In this Mass balance differential equation of kidney tissue, the metabolism equation is `CL_R_u * Cv_k_u`.
 - `Cv_k_u = Cv_k * fub` ; fub is multiplied to obtain unbound drug concentration in venous 'blood'.
   - `Cv_k = C_k * (1/Kp_k) * RB`
-    - *Please refer to **Non-Eliminating Tissue Differential Equation Derivation** in **Rat IV Model - Differential Equation** section for derivating `Cv_k`.*
+    - *Please refer to **Non-Eliminating Tissue Differential Equation Derivation** in **Rat IV Model - Differential Equation** section for the derivation of `Cv_k`.*
   - `fub = fup / RB`
 - Thus `Cv_k_u` = `C_k * (1/Kp_k) * RB * (fup / RB)` = `C_k * (1/Kp_k)) * fup`
 - Therefore, `Xmet_r = CL_r_u * (C_k * (1/Kp_k)) * fup`
@@ -119,7 +119,7 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
 - `CL_int = 0.13` is microsomal intrinsic clearance obtained from literature and is in the unit of ml/min/mg MP. `MPPGL_mic * W_li` is multiplied for in vivo scaling.
   - `MPPGL_mic`: mg microsomal protein / g liver.
   - `W_li`: liver weight (g).
-  - Unit check: *(mL/min/mg) × (mg/g) × (g) = mL/min* → whole-liver intrinsic clearance.
+  - Unit check: *(ml/min/mg) × (mg/g) × (g) = ml/min* → whole-liver intrinsic clearance.
 - `fu_MP = 0.49` is unbound fraction in microsomal incubation.
 - `CL_int_u`, i.e. unbound intrinsic clearance is obtained by dividing `CL_int` (whole-liver intrinsic clearance) value by `fu_MP` (unbound fraction in microsomal incubation).
   - The enzyme only “sees” **unbound** drug. In incubation:
@@ -138,7 +138,7 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
 - In this Mass balance differential equation of liver tissue, the metabolism equation is `in vivo CL_int_u * Cv_li_u`.
 - `Cv_li_u = Cv_li * fub` ; fub is multiplied to obtain unbound drug concentration in venous 'blood'.
   - `Cv_li = C_li * (1/Kp_li) * RB`
-    - *Please refer to **Non-Eliminating Tissue Differential Equation Derivation** in **Rat IV Model - Differential Equation** section for derivating `Cv_li`.*
+    - *Please refer to **Non-Eliminating Tissue Differential Equation Derivation** in **Rat IV Model - Differential Equation** section for the derivation of `Cv_li`.*
   - `fub = fup / RB`
 - Thus `Cv_li_u` = `C_li * (1/Kp_li) * RB * (fup / RB)` = `C_li * (1/Kp_li)) * fup`
 - Therefore, `Xmet_li = CL_int_u * (C_li * (1/Kp_li)) * fup`
@@ -182,7 +182,7 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
     - The following tissues had slight variations in mass in equations:
       - **Artery**: `Xin_ar = Xout_lg`
         - `Xout_lg` = `Q_lg * Cv_lg` = `Q_lg * C_lg * RB * (1/Kp_lg)`
-          - *Please refer to **Non-Eliminating Tissue Differential Equation Derivation** in **Rat IV Model - Differential Equation** section for derivating `Cv_lg`.*
+          - *Please refer to **Non-Eliminating Tissue Differential Equation Derivation** in **Rat IV Model - Differential Equation** section for the derivation of `Cv_lg`.*
 
         - `Xin_ar` (arterial inflow) is equivalent to `Xout_lg` (pulmonary outflow) because blood leaving the lung (pulmonary vein) is the direct source of systemic arterial blood. Therefore, drug concentration of pulmonary vein is equivalent to the drug concentration of systemic arterial blood. 
       - **Vein**: `Xin_ve = Xout_a + Xout_bo + Xout_b + Xout_h + Xout_k + Xout_li + Xout_m + Xout_sk`
@@ -211,7 +211,7 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
 
 
 ## Blood flow
-- Blood flow of each tissue is determined by multiplying cardiac output and spefific fraction (specific fracion can be found in literature or SimCYP).
+- Blood flow of each tissue is determined by multiplying cardiac output and specific fraction (specific fraction can be found in literature or SimCYP).
   - e.g.
     - `Q = 80 ; cardiac output`
     - `Q_lg = Q ; lung`
@@ -267,7 +267,7 @@ Rat Kp values obtained above are converted to human Kp values by multiplying fup
 ## Metabolism & Excretion
 ### Renal Clearance
 #### **CODE**:
-- `GFR_human = 120 ;ml/min`
+- `GFR_human = 120 ;mL/min`
 - `CL_r = (fup/RB * GFR_human) ;ml/mi ; fub = fup/RB`
 - `CL_r_u_human = GFR_human`
 #### **Derivation**:
@@ -294,7 +294,7 @@ Rat Kp values obtained above are converted to human Kp values by multiplying fup
 - In this Mass balance differential equation of kidney tissue, the metabolism equation is `CL_r_u_human * Cv_k_u`.
 - `Cv_k_u = Cv_k * fub` ; fub is multiplied to obtain unbound drug concentration in venous 'blood'.
   - `Cv_k = C_k * (1/Kp_k) * RB`
-    - *Please refer to **Non-Eliminating Tissue Differential Equation Derivation** in **Rat IV Model - Differential Equation** section for derivating `Cv_k`.*
+    - *Please refer to **Non-Eliminating Tissue Differential Equation Derivation** in **Rat IV Model - Differential Equation** section for the derivation of `Cv_k`.*
   - `fub = fup / RB`
 - Thus `Cv_k_u` = `C_k * (1/Kp_k) * RB * (fup / RB)` = `C_k * (1/Kp_k)) * fup`
 - Therefore, `Xmet_r = CL_r_u_human * (C_k * (1/Kp_k)) * fup`
@@ -313,7 +313,7 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
 #### **Derivation**:
 - Since `CL_int_eff` is already in the standard of whole blood concentration, there is no need to multiply `unbound Cv_LI` - just multiply `Cv_LI` value. 
   - `Cv_li = C_li * (1/Kp_li) * RB`
-    - *Please refer to **Non-Eliminating Tissue Differential Equation Derivation** in **Rat IV Model - Differential Equation** section for derivating `Cv_li`.*
+    - *Please refer to **Non-Eliminating Tissue Differential Equation Derivation** in **Rat IV Model - Differential Equation** section for the derivation of `Cv_li`.*
     - Again, there is no need to multiply `fub` (= `fup / RB`) as we are not solving for `Cv_li_u`.
       - *Note that this is valid only if CL_int_eff = 2710 represents a whole-liver, blood-standard intrinsic clearance estimated under steady-state conditions. It does not apply when distribution has not been fully achieved.*
 - Therefore, `Xmet_li = CL_int_eff * (RB * C_li * (1/Kp_li))`
@@ -326,7 +326,7 @@ This is the same as in what's discussed in rat IV model. Please refer to **'Rat 
 - This can be adjusted based on the need (e.g. if want to model propranolol behaviour in 50kg human, change the body weight and organ weights accordingly).
 
 ## Converting Output
-- Since the literature reports drug concentration as venous plasma concentration (`Cp_ve`), the model should also provide output in terms of Cp_ve to alighn with the literature. As the current model is expressed in blood concentration, the venous blood concentration (`C_ve`) must be converted to `Cp_ve` using the blood-to-plasma ratio (`RB`): `Cp_ve = C_ve / RB`.
+- Since the literature reports drug concentration as venous plasma concentration (`Cp_ve`), the model should also provide output in terms of Cp_ve to align with the literature. As the current model is expressed in blood concentration, the venous blood concentration (`C_ve`) must be converted to `Cp_ve` using the blood-to-plasma ratio (`RB`): `Cp_ve = C_ve / RB`.
 
 
 # Human PO Model
