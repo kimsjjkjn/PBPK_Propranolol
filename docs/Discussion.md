@@ -54,7 +54,16 @@ Yet, in PO model results, Cmax, Tmax, AUC, and F are all within 2-fold of the li
 Improvement:
 - Use a more mechanistic refinement which would incorporate stomach and intestinal transit compartments (kGE, kT), dynamic intestinal metabolism, and, ultimately, an ACAT-like GI model which accounts for dissolution, solubility, P-gp efflux, and potential enterohepatic recycling to reflect complex nature of absorption in vivo.
 
+# Applications & Future Work
+Although this project was originally designed as a proof-of-understanding exercise, the outcomes highlight broader implications for pharmacokinetic modeling in both academic and industrial contexts. 
 
-# Future Work
-- Current models are the simplest models which are good to start with. More complex factors could be incorporated to better reflect complex mechanisms occuring in actual body. 
-- These models can be used with variations in parameters to model disease state (e.g. hepatic impairment).
+The rat IV and human PO model achieved close agreement with in vivo data, demonstrating that a first-principles approach can yield robust predictions when physiological parameters are well-defined. By contrast, the discrepancies observed in the human IV simulation underscores the challenges of current simplified models. Although these simplest models are good to start with as modeling beginners, more complex factors could be incorporated to better reflect complex mechanisms occuring in actual body (e.g. by integrating enzyme/transporter contributions and refined absorption modules). 
+
+From a translational perspective, this project also illustrates how a learning-oriented PBPK framework can be developed into more practical applications. 
+
+While the current model was intentionally limited in scope, future extensions could support early drug development (for example, by predicting appropriate dosing regimens or informing preclinical-to-clinical scaling strategies), ultimately helping to minimise wasted resources in identifying the optimal dose.
+
+Similarly, the framework could be adapted to simulate other drug compounds or different patient populations such as pediatrics or geriatrics, where physiological parameters diverge markedly from healthy adults. In addition, PBPK modeling can be applied to the development of precision medicine, as physiological parameters can be readily modified within the model to predict unique pharmacokinetic behavior in special populations.
+
+These potential directions highlight how even a learning-oriented model can provide a foundation for models with clinical and regulatory impact.
+
