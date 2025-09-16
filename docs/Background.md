@@ -10,6 +10,16 @@ Additionally, PBPK models help assess variations between individuals by simulati
 
 In summary, PBPK modeling offers a structured and connected way to link experimental pharmacology with clinical pharmacokinetics. By providing quantitative predictions of drug behavior in various situations, PBPK has become an essential part of modern drug development and regulatory processes.
 
+## Berkeley Madonna
+Berkeley Madonna is a software program specialized in obtaining numerical solutions for models composed of systems of differential equations.
+
+Advantages:
+- Very fast computational speed
+- Free to use (with some feature limitations)
+- Employs an intuitive scripting language, so no advanced programming knowledge is required.
+
+Because all equations must be manually derived, Berkeley Madonna is particularly suitable for beginners in PBPK modeling. It facilitates a clear understanding of the mechanisms behind prediction models and provides a strong foundation in the fundamental concepts of modeling. For this reason, it was chosen as the starting platform for this project, aligning with the learning-oriented objective of building mechanistic insight.
+
 ## Why Propranolol Was Chosen for PBPK Modeling
 Propranolol was selected as the model compound for this PBPK project primarily because it is extensively studied in clinical pharmacology, providing a rich body of literature data. This allows for robust model validation and makes propranolol an appropriate small-molecule drug to begin with. 
 
