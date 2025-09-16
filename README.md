@@ -47,7 +47,7 @@ Berkeley Madonna codes for rat IV, human IV, human PO models
 
 ## docs/ 
 Detailed document of the project
-- **[Background](docs/Background.md)** ; What PBPK is, why propranolol was chosen, and the project’s objective.
+- **[Background](docs/Background.md)** ; What PBPK is, why Berkeley Madonna was chosen, why propranolol was chosen, and the project’s objective.
 - **[Methods](docs/Methods.md)** ; Software, datasets, parameter sources, model structure, and evaluation metrics (FE/AAFE, PK).
 - **[Model Derivation](docs/model_derivation.md)** ; Derivation of core ODEs/equations used to construct each model.
 - **[Results](docs/Results.md)** ; Side-by-side comparison of in vivo data and model predictions (IV/PO; rat/human), with AAFE and within-2×/3× metrics.
