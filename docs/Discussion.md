@@ -63,7 +63,7 @@ From a translational perspective, this project also illustrates how a learning-o
 
 While the current model was intentionally limited in scope, future extensions could support early drug development (for example, by predicting appropriate dosing regimens or informing preclinical-to-clinical scaling strategies), ultimately helping to minimise wasted resources in identifying the optimal dose.
 
-Similarly, the framework could be adapted to simulate other drug compounds or different patient populations such as pediatrics or geriatrics, where physiological parameters diverge markedly from healthy adults. In addition, PBPK modeling can be applied to the development of precision medicine, as physiological parameters can be readily modified within the model to predict unique pharmacokinetic behavior in special populations.
+Similarly, the framework could be adapted to simulate other drug compounds or different patient populations such as pediatrics or geriatrics or patients with hepatic impairment, where physiological parameters diverge markedly from healthy adults. In addition, PBPK modeling can be applied to the development of precision medicine, as physiological parameters can be readily modified within the model to predict unique pharmacokinetic behavior in special populations.
 
 These potential directions highlight how even a learning-oriented model can provide a foundation for models with clinical and regulatory impact.
 
