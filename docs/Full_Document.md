@@ -46,7 +46,7 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 
 ## Data & Validation
 - After completing simulations in Berkeley Madonna, the raw time-concentration datasets were exported to Excel.
-- The in-vivo Time-Concentration values were digitised from published figures (raw datasets were unavailable). Digitisation can introduce small systematic and random errors, so the “Digitised In-Vivo” numbers may not perfectly reflect the original raw values. 
+- The in-vivo Time-Concentration values were digitised from published figures (as raw datasets were unavailable). Digitisation can introduce small systematic and random errors, so the “Digitised In-Vivo” numbers may not perfectly reflect the original raw values, as also demonstrated in the **Results** section). 
 - Simulated and digitised in vivo datasets were overlaid in the same graph in Excel for direct comparison of Time-Concentration profiles.  
 - Model performance based on Time-Concentration profile was evaluated by Average Absolute Fold Error (AAFE) and % within 2-fold / 3-fold error ranges (adopted from the following research paper: [https://doi.org/10.2165/00003088-200645050-00006](https://doi.org/10.3390/pharmaceutics14061157)):
 
