@@ -205,6 +205,7 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
 ## **Differential Equations**: 
 
 **Non-Eliminating Tissue Differential Equation Derivation**:
+
 <img width="577" height="180" alt="Screenshot 2025-09-12 at 9 32 08 PM" src="https://github.com/user-attachments/assets/5619ac97-93c3-4bde-9899-952cd3c72a33" />
 
 - `VT * d/dt(C_T) = Q_T * C_ab - Q_T * Cv_T`
