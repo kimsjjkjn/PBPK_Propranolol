@@ -70,23 +70,22 @@ Table 4. Comparison of Predicted Pharmacokinetic Parameters with Digitised and l
 
 | Human IV                  | Predicted   | Digitised In Vivo | Literature In Vivo | Pred/Dig   | FE vs Dig | Within 2× (Dig) | Within 3× (Dig) | Pred/Lit   | FE vs Lit | Within 2× (Lit) | Within 3× (Lit) |
 |----------------------------|-------------|-------------------|--------------------|------------|-----------|-----------------|-----------------|------------|-----------|-----------------|-----------------|
-| Cmax (ng/mL)              | 34.54 | 8                 | 12.3               | 4.32| 4.32| FALSE           | FALSE           | 2.81| 2.81| FALSE           | TRUE            |
-| Tmax (min)                | 0           | 5                 | 5                  | 0          | ∞         | FALSE           | FALSE           | 0          | ∞         | FALSE           | FALSE           |
 | AUC₀–∞ (ng·min/mL)        | 801.83 | 591.13       | 979                | 1.36| 1.36| TRUE            | TRUE            | 0.82| 1.22| TRUE            | TRUE            |
 | CL (mL/min)               | 1,247.14    | 1,691.68          | 1187               | 0.74| 1.36| TRUE            | TRUE            | 1.05| 1.05| TRUE            | TRUE            |
 | Vss (L/kg)                 | 29.13 | 22.63        | 4.4                | 1.29| 1.29| TRUE            | TRUE            | 6.62 | 6.62 | FALSE           | FALSE           |
 | t½ (min)                  | 1133.13 | 649.05       | 205                | 1.75| 1.75| TRUE            | TRUE            | 5.53| 5.53| FALSE           | FALSE           |
 
-- Abbreviations: AUC, area under the concentration–time curve; Cmax, peak concentration; CL, clearance; t½, elimination half-life; Vss, volume of distribution at steady state; Tmax, time point of Cmax.
+- Abbreviations: AUC, area under the concentration–time curve; CL, clearance; t½, elimination half-life; Vss, volume of distribution at steady state.
 
 - Note: Human CL reported as total mL/min (70kg standard)
 
 Route-level summary (Human IV)
-- vs Digitised (excluding IV Tmax, which is 0 by definition): AAFE = 1.78, within 2× = 80%, within 3× = 80%.
-- vs Literature (excluding IV Tmax): AAFE = 2.65, within 2× = 40%, within 3× = 60%.
+- vs Digitised (excluding IV Tmax, which is 0 by definition): AAFE = 1.43, within 2× = 80%, within 3× = 100%.
+- vs Literature (excluding IV Tmax): AAFE = 2.62, within 2× = 50%, within 3× = 50%.
 
 Note: 
 - Only the parameters reported in the literature were calculated and compared.
+  - In the referenced study, blood sampling was performed only after the infusion ended. This is also evident because the first sampling time point (5 min) shows the maximum observed concentration - if sampling began during the infusion, the end-of-infusion point (10 min) would be expected to capture Cmax. Because the earliest available sample is at 5 min (no sample at t = 0), the literature Tmax defaults to 5 min by design. Direct comparison of Cmax and Tmax with a simulation that reports concentrations from t = 0 would therefore yield misaligned values that are not physiologically informative. Accordingly, Cmax and Tmax were excluded from subsequent parameter analyses and are not reported in this portfolio.
 - The in vivo data were digitised from published figures rather than obtained from raw datasets as they were unavailable; therefore, they may not perfectly reflect the original raw values as shown in table 4. 
 
 ## Human PO Model
