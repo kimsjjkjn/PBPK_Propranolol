@@ -10,20 +10,21 @@ Figure 1. Rat IV: In Vivo figure from the literature (figure 1 control data was 
 
 <img width="600" height="800" alt="Screenshot 2025-09-10 at 3 13 19 PM" src="https://github.com/user-attachments/assets/e821a4a7-fc80-422e-940d-2287ed015a3b" />
 
-- doi.org/10.1159/000136352
+- Source: doi.org/10.1159/000136352
 
 
 
 Figure 2. Rat IV: Simulated vs Digitised In Vivo Propranolol Blood Concentrations.
-<img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/efd3e834-ff4b-4726-8801-47b8a65d2423" />
+
+<img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/1fd97cfc-5851-4255-b714-438d83ac760e" />
 
 Table 1. Model performance based on concentration–time profile: Average Absolute Fold Error (AAFE) between Predicted and In Vivo concentrations in the IV rat model
   
 | Metric | Value |
 | :------ | ----: |
 | AAFE | 1.51 |
-| Fraction within 2-fold (0.5–2.0) | 1 |
-| Fraction within 3-fold (0.33–3.0) | 1 |
+| Fraction within 2-fold (0.5–2.0) | 0.8 |
+| Fraction within 3-fold (0.33–3.0) | 0.8 |
 
 Table 2. Comparison of Predicted Pharmacokinetic Parameters with Digitised and literature In Vivo Pharmacokinetic Parameters in IV Rat Model
 
@@ -51,11 +52,11 @@ Note:
 Figure 3. Human IV: In Vivo figure from the literature (figure 2A control data was used)
   <img width="711" height="351" alt="Screenshot 2025-09-10 at 2 06 48 PM" src="https://github.com/user-attachments/assets/83b672f8-65d8-4171-b4b3-eead4938a100" />
 
-- 10.1371/journal.pone.0097885
+- Source: 10.1371/journal.pone.0097885
 
 Figure 4. Human IV: Simulated vs Digitised In Vivo Propranolol Plasma Concentrations (in vivo data is in venous plasma concentration, so simulated data was also converted to venous plasma concentration).
 
-<img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/efce50cc-c284-4551-8aca-f7192ba1f897" />
+<img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/59f4131f-4722-4d97-82e3-f392feb3212d" />
 
 Table 3. Model performance based on concentration–time profile: Average Absolute Fold Error (AAFE) between Predicted and In Vivo concentrations in the IV human model
 
@@ -94,11 +95,12 @@ Note:
 Figure 5. Human PO: In Vivo figure from the literature (figure 2B control data was used)
     <img width="711" height="351" alt="Screenshot 2025-09-10 at 2 06 48 PM" src="https://github.com/user-attachments/assets/83b672f8-65d8-4171-b4b3-eead4938a100" />
 
-- 10.1371/journal.pone.0097885
+- Source: 10.1371/journal.pone.0097885
 
   
 Figure 6. Human PO: Simulated vs Digitised In Vivo Propranolol Plasma Concentrations (in vivo data is in venous plasma concentration, so simulated data was also converted to venous plasma concentration).
-  <img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/ad72b1e4-84d7-46be-b58a-e0a33a8ab9fc" />
+
+<img width="480" height="264" alt="image" src="https://github.com/user-attachments/assets/0b8af275-9950-4c06-a528-feb8bc5836c3" />
 
 Table 5. Model performance based on concentration–time profile: Average Absolute Fold Error (AAFE) between Predicted and In Vivo concentrations in the PO human model
 
