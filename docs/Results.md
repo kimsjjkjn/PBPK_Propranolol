@@ -42,7 +42,7 @@ Route-level summary (Rat IV)
 
 Note: 
 - Only the parameters reported in the literature were calculated and compared.
-- The in vivo time–concentration profile used for Figure 2 and Table 1 was digitised from published figures (as raw datasets unavailable). Digitised data are used only for profile-level goodness-of-fit metrics (e.g., AAFE, fold-accuracy). Pharmacokinetic (PK) parameter-level comparisons (Table 2) are made exclusively against literature PK parameter values.
+- The in vivo time–concentration profile used for Figure 2 and Table 1 was digitised from published figures (as raw Time-Concentration datasets were unavailable). Digitised data are used only for profile-level goodness-of-fit metrics (e.g., AAFE, fold-accuracy). Pharmacokinetic (PK) parameter-level comparisons (Table 2) are made exclusively against literature PK parameter values, because it is more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data (except where digitisation is unavoidable, such as for Time–Concentration profiles).
 
 ## Human IV Model
 - in vivo pharmacokinetic data for comparison: 10.1371/journal.pone.0097885
@@ -86,8 +86,7 @@ vs Literature (excluding IV Cmax & Tmax): AAFE = 1.28, within 2× = 100%, within
 Note: 
 - Only the parameters reported in the literature were calculated and compared.
   - In the referenced study, blood sampling was performed only after the infusion ended. This is also evident because the first sampling time point (5 min) shows the maximum observed concentration - if sampling began during the infusion, the end-of-infusion point (10 min) would be expected to capture Cmax. Because the earliest available sample is at 5 min (no sample at t = 0), the literature Tmax defaults to 5 min by design. Direct comparison of Cmax and Tmax with a simulation that reports concentrations from t = 0 would therefore yield misaligned values that are not physiologically informative. Accordingly, Cmax and Tmax were excluded from subsequent parameter analyses and are not reported in this portfolio.
-- The in vivo time–concentration profile used for Figure 4 and Table 3 was digitised from published figures (as raw datasets unavailable). Digitised data are used only for profile-level goodness-of-fit metrics (e.g., AAFE, fold-accuracy). Pharmacokinetic (PK) parameter-level comparisons (Table 4) are made exclusively against literature PK parameter values.
-
+- The in vivo time–concentration profile used for Figure 4 and Table 3 was digitised from published figures (as raw Time-Concentration datasets were unavailable). Digitised data are used only for profile-level goodness-of-fit metrics (e.g., AAFE, fold-accuracy). Pharmacokinetic (PK) parameter-level comparisons (Table 2) are made exclusively against literature PK parameter values, because it is more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data (except where digitisation is unavoidable, such as for Time–Concentration profiles).
   
 ## Human PO Model
 - in vivo pharmacokinetic data for comparison: 10.1371/journal.pone.0097885
@@ -130,4 +129,4 @@ Route-level summary (Human PO)
 
 Note: 
 - Only the parameters reported in the literature were calculated and compared.
-- The in vivo time–concentration profile used for Figure 6 and Table 5 was digitised from published figures (as raw datasets unavailable). Digitised data are used only for profile-level goodness-of-fit metrics (e.g., AAFE, fold-accuracy). Pharmacokinetic (PK) parameter-level comparisons (Table 6) are made exclusively against literature PK parameter values.
+- The in vivo time–concentration profile used for Figure 6 and Table 5 was digitised from published figures (as raw Time-Concentration datasets were unavailable). Digitised data are used only for profile-level goodness-of-fit metrics (e.g., AAFE, fold-accuracy). Pharmacokinetic (PK) parameter-level comparisons (Table 2) are made exclusively against literature PK parameter values, because it is more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data (except where digitisation is unavoidable, such as for Time–Concentration profiles).
