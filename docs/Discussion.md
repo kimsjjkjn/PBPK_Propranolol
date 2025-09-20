@@ -30,9 +30,9 @@ The human PO model yielded AAFE 1.76 (Time–Concentration profile) and 1.43 (PK
 # Potential Improvement
 
 ## Oversimplified Absorption Model (Human PO)
-In the human PO model, oral absorption was represented by a single first-order rate constant (ka) without gastric emptying, intestinal transit, or a lag time. However, propranolol’s absorption is influenced by gastric emptying, regional pH, intestinal permeability, and first-pass intestinal metabolism. In other words, the absorption model is oversimplified and does not sufficiently reflect complex nature of an actual in vivo absorption mechanism. This simplification primarily affects the early profile (Cmax, Tmax) and bioavailability (F). 
+In the human PO model, oral absorption was represented by a single first-order rate constant (ka) without gastric emptying, intestinal transit, or a lag time. However, propranolol’s absorption is influenced by gastric emptying, regional pH, intestinal permeability, and first-pass intestinal metabolism. In other words, the absorption model is oversimplified and does not capture the complexity of in vivo absorption. This simplification primarily affects the early profile (Cmax, Tmax) and bioavailability (F). 
 
-Yet, in PO model results, Cmax, Tmax, AUC, and F are all within 2-fold of the literature, indicating that the simple ka model is coarsely predictive. However, to sufficiently and mechanistically reflect complex mechanism of in vivo absoprtion in the future, it would be more appropriate to use more compelx absorption model rather than this over-simplified model. 
+Yet, in PO model results, Cmax, Tmax, AUC, and F are all within 2-fold of the literature, indicating that the simple ka model is coarsely predictive. However, to sufficiently and mechanistically reflect complex mechanism of in vivo absorption in the future, it would be more appropriate to use more complex absorption model rather than this over-simplified model. 
 
 Improvement:
 - Use a more mechanistic refinement which would incorporate stomach and intestinal transit compartments (kGE, kT), dynamic intestinal metabolism, and, ultimately, an ACAT-like GI model which accounts for dissolution, solubility, P-gp efflux, and potential enterohepatic recycling to reflect complex nature of absorption in vivo.
