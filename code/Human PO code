@@ -41,7 +41,8 @@ dose_PO = 40000000 ;ng
 fup = 0.1138 
 RB = 0.74
 EP = 1 + (RB-1)/Hct
-Vss = EP * (Vve+Var) * Hct + (Vve+Var) * (1-Hct) + Kp_a * Va + Kp_bo * Vbo + Kp_b * Vb + Kp_g * Vg + Kp_h * Vh + Kp_k * Vk + Kp_li * Vli + Kp_lg * Vlg + Kp_m * Vm + Kp_sk * Vsk + Kp_sp * Vsp
+Vss = EP * (Vve+Var) * Hct + (Vve+Var) * (1-Hct) + Kp_a * Va + Kp_bo * Vbo + Kp_b * Vb + Kp_g * Vg + Kp_h * Vh + Kp_k * Vk + Kp_li * Vli + Kp_lg * Vlg + Kp_m * Vm + Kp_sk * Vsk + Kp_sp * Vsp ; plasma Vss
+Vss_b = Vss / RB
 
 ;predicted Kp (tissue:plasma);
 Kp_a = 17.73215821
