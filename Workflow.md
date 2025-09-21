@@ -34,3 +34,4 @@
         - Use `Vss` (plasma-referenced) when literature concentrations are reported in plasma (e.g., your rat IV model).
         - Use `Vss_b` (blood-referenced) when literature concentrations are in whole blood (e.g., your human IV and PO models).
   - For the formulas used to compute each metric and PK parameter, see the Excel file titled **[PBPK_Propranolol_Data_Processing.xlsx](PBPK_Propranolol_Data_Processing.xlsx)** in this repository - click any relevant cell to view its underlying formula in the formula bar.
+    - Check the comments as well for notes and further explanation.
