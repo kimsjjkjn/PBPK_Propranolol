@@ -24,9 +24,9 @@
 
 ## 3) Data Processing in Excel
 - Paste the exported **Table** (predictions) into an Excel file.
-- Add the literature in-vivo data in the same file if available.  
-  - If raw Time–Concentration datasets from literature are unavailable, use digitised data based on the figures in the literature for plotting Time-Concentration profile.
-- Plot Time–Concentration overlays.
+- Add the literature in-vivo datasets in the same file if available.  
+  - If raw in vivo time–concentration datasets from literature are unavailable, use digitised data based on the figures in the literature for plotting time-concentration profile.
+- Plot time–concentration overlays.
   - Change y-axis to log-scale for better display.
 - Calculate metrics (Fold Error (FE), Absolute Average Fold Error (AAFE)) and PK parameters (AUC, t½, CL, Vss, Cmax, Tmax, F).
     - **Vss** can be calculated from running code in Berkeley Madonna because the calculating code for Vss is already embedded in the code. To view `Vss` (or `Vss_b`, as appropriate) value, go to **Graph ▸ Choose Variables…** → add `Vss` or `Vss_b` to the Y-axis, run the simulation, and then open Table to read its value (units: mL). Copy this value into Vss (L) cell in Excel and convert the unit to liters by dividing by 1000.
