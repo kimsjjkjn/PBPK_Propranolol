@@ -291,13 +291,13 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
 - `VT * d/dt(C_T) = Q_T * C_ar - Q_T * Cv_T`
   - Mass in: `Q_T * C_ar`
   - Mass out: `Q_T * Cv_T`
-  - There is no differential equation for Cv_T as blood outflow is different depending on the tissues. Therefore, the following conversion is used to define Cv_T:
-    - `Kp = C_T / C_p` ; C_T = tissue concentration, C_P = plasma concentration
-    - Thus `C_p = C_T / Kp`
+  - There is no differential equation for `Cv_T` as blood outflow is different depending on the tissues. Therefore, the following conversion is used to define `Cv_T`:
+    - `Kp_T = C_T / C_p` ; `C_T` = tissue concentration, `C_P` = plasma concentration
+    - Thus `C_p = C_T / Kp_T`
     - `Cv_T = C_p * RB` ; RB is multiplied to convert the standard from plasma to blood concentration
-    - Thus `Cv_T = (C_T / Kp) * RB`
+    - Thus `Cv_T = (C_T / Kp_T) * RB`
   - Thus, non-eliminating tissue differential equation can be written again as:
-    `VT * d/dt(C_T) = (Q_T * C_ar) - (Q_T * C_T / Kp * RB)`
+    `VT * d/dt(C_T) = (Q_T * C_ar) - (Q_T * (C_T / Kp_T) * RB)`
 
 **Mass Differential Equations**
 - **Structure**:
@@ -320,7 +320,7 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
     - This basic structure is directly applied to mass in equation of adipose, bone, brain, gut, heart, kidney, muscle, skin, and spleen.
     - The following tissues had slight variations in mass in equations:
       - **Artery**: `Xin_ar = Xout_lg`
-        - `Xout_lg` = `Q_lg * Cv_lg` = `Q_lg * C_lg * RB * (1/Kp_lg)`
+        - `Xout_lg` = `Q_lg * Cv_lg` = `Q_lg * C_lg * (1/Kp_lg) * RB`
           - *Please refer to **Non-Eliminating Tissue Differential Equation Derivation** in **Rat IV Model - Differential Equation** section for the derivation of `Cv_lg`.*
 
         - `Xin_ar` (arterial inflow) is equivalent to `Xout_lg` (pulmonary outflow) because blood leaving the lung (pulmonary vein) is the direct source of systemic arterial blood. Therefore, drug concentration of pulmonary vein is equivalent to the drug concentration of systemic arterial blood. 
