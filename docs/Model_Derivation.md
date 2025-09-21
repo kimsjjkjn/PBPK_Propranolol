@@ -361,7 +361,7 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
   - To conserve **flow** and **mass**, the leftover flow must be routed somewhere, and it is done by defining a residual flow (`Q_rest`).
     - Define a residual flow: `Q_rest = Q − (Q_a + Q_bo + Q_b + Q_h + Q_k + Q_li + Q_m + Q_sk)`
     - What it does: With ROB, total inflow/outflow is balanced so that: `Σ all tissue flows + Q_rest = Q`. Lung inflow/outflow and venous/arterial pools remain consistent without artificially inflating any single tissue’s flow.
-      - Note: Blood from the gut and spleen drains to the liver first via the portal vein: `Xin_li = (Q_li - Q_sp - Q_g) * C_ar + Xout_g + Xout_sp`. Because `Q_li` represents total hepatic flow (hepatic artery + portal vein), `Q_sp` and `Q_g` are already included in it. Therefore, `Q_sp` and `Q_g` are not subtracted from `Q` when calculating `Q_rest`.
+      - Note: Because `Q_li` represents total hepatic flow (hepatic artery + portal vein), the gut and spleen flows (`Q_sp` and `Q_g`) are already included in `Q_li`. Therefore, `Q_sp` and `Q_g` are not subtracted again from `Q` when calculating `Q_rest`.
 
 
 ## Weight
