@@ -7,7 +7,7 @@ It emphasizes first-principles derivation (to strengthen understanding of the me
 
 
 # License
-Code under MIT (**[MIT_License](/License/MIT_License)**), docs/figures under CC BY 4.0 (**[License_DOCS](/License/License_Docs)**).
+Code under MIT (**[MIT_License](/License/MIT_License)**), docs/figures under CC BY 4.0 (**[License-DOCS](/License/License-Docs)**).
 
 
 # Quickstart (3 steps)
