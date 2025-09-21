@@ -249,7 +249,7 @@ The human PO model yielded AAFE 1.76 (time–concentration profile) and 1.43 (PK
 
 # Model Performance Summary
 
-Table 10. PBPK Propranolol – Model Performance Summary
+Table 10. PBPK Propranolol – Model Performance Summary.
 
 | Model        |        AAFE (time–concentration) (vs. digitised in vivo) |                          AAFE (PK Parameters) (vs. literature in vivo) | Key Matches (within 2×)       | Key Mismatches                                                           | Overall Conclusion                                                                                           |
 | ------------ | -----------------------: | --------------------------------------------: | ----------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
