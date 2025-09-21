@@ -1,5 +1,5 @@
 # Reflection
-This independent project on physiologically based pharmacokinetic (PBPK) modeling of propranolol was conducted using Berkeley Madonna, with all organ-level differential equations derived from first principles. By constructing and validating rat (IV) and human (IV and PO) models, I developed hands-on experience in mechanistic model building, parameterisation, and quantitative evaluation of model performance.
+This independent project on physiologically based pharmacokinetic (PBPK) modeling of propranolol was conducted using Berkeley Madonna, with all organ-level differential equations derived from first principles. By constructing and validating healthy rat (IV) and healthy human (IV and PO) models, I developed hands-on experience in mechanistic model building, parameterisation, and quantitative evaluation of model performance.
 
 The project successfully validated the rat IV and human IV and PO models - all three models showed consistent agreement with literature data. While the models already meet criteria, the models were quite simplified as a first attempt at PBPK modeling. Therefore, future improvements including incorporating gastric emptying and intestinal transit into the oral absorption module and integrating transporter and enzyme dynamics should be done to reflect more complex in vivo mechanism.
 
