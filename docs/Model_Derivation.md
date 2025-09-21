@@ -114,7 +114,6 @@ Table 3. Parameters obtained from literature that are used to construct **human 
 - `dosing_time_IV = 30/60 ;min`
   - Defines the infusion duration in minutes.
   - `30/60 = 0.5 min` means the infusion lasts 30 seconds
-  - (Adjustable depending on whether you want bolus-like administration or longer infusion.)
 - `IV_input = IF t< dosing_time_IV THEN dose_IV/dosing_time_IV ELSE 0`
   - Defines the infusion rate (ng/min) as a time-dependent input.
   - If the simulation time `t` is still within the infusion window (`t < dosing_time_IV`), drug is delivered at a constant rate (`Rate = Total dose / Infusion duration`)
@@ -189,16 +188,16 @@ Units:
 
 **`Vss_b`**
 - `Vss`, as explained above, is plasma-referenced. Therefore, if literature concentrations are reported in plasma, this Vss value should be used.
-- Yet, if lieterature concentrations are reported in blood, `Vss` cannot be used but should be converted to blood-level (= `Vss_b`. This can be done by dividing `Vss` by `RB`.
+- Yet, if literature concentrations are reported in blood, `Vss` cannot be used but should be converted to blood-level (= `Vss_b`. This can be done by dividing `Vss` by `RB`.
   - **`Vss_b` Derivation**:
     - `Vss,plasma ​= Amount in body​ / C_plasma​`
-      - Where `Vss,plasma` = plasma-refrenced Vss
+      - Where `Vss,plasma` = plasma-referenced Vss
       - `C_plasma` = Drug concentration in plasma
     - `Vss,blood ​= Amount in body​ / C_blood​`
-      - Where `Vss,blood` = blood-refrenced Vss
+      - Where `Vss,blood` = blood-referenced Vss
       - `C_blood` = Drug concentration in blood
     - `C_blood = C_plasma * RB`
-    - Thus, `Vss,blood` = `Amount in body​ / C_blood` = `Amount in body​ / (C_plasma * RB)` = `(Amount in body​/C_plasma) * (1/RB)` = `Vss,plasma / RB`
+    - Thus, `Vss,blood` = `Amount in body​ / C_blood` = `Amount in body​ / (C_plasma * RB)` = `(Amount in body​/C_plasma) * (1/RB)` = `Vss,plasma / RB`.
 
 
 ## Predicted Kp values
@@ -210,7 +209,7 @@ Kp (tissue-to-plasma partition coefficient) values were obtained using standard 
 ### Renal Clearance
 #### **CODE**:
 - `GFR_rat = 18 ;mL/min`
-- `CL_r = (fup/RB * GFR_rat) ;mL/mi ; fub = fup/RB`
+- `CL_r = (fup/RB * GFR_rat) ;mL/min ; fub = fup/RB`
 - `CL_r_u = GFR_rat`
 #### **Derivation**:
 - Definitions
@@ -415,7 +414,7 @@ As a heuristic cross-species adjustment, human Kp values were obtained by scalin
 ### Renal Clearance
 #### **CODE**:
 - `GFR_human = 120 ;mL/min`
-- `CL_r = (fup/RB * GFR_human) ;mL/mi ; fub = fup/RB`
+- `CL_r = (fup/RB * GFR_human) ;mL/min ; fub = fup/RB`
 - `CL_r_u_human = GFR_human`
 #### **Derivation**:
 - Definitions
