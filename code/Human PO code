@@ -94,7 +94,7 @@ INIT C_sk = 0
 INIT C_sp = 0
 
 
-{ Rate of Absorption }
+{ Absorption }
 ka = 0.25/60 ; 1/h --> 1/min
 ;ka value must be fitted based on the data points considering AAFE, Tmax, Cmax, etc.
 
