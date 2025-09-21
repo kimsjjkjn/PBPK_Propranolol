@@ -49,7 +49,7 @@ Table 2. Parameters obtained from literature that are used to construct **human 
 | fup | - | 0.1138 | Taylor, EA, and P Turner. “The Distribution of Propranolol, Pindolol and Atenolol between Human Erythrocytes and Plasma.” British Journal of Clinical Pharmacology, vol. 12, no. 4, Oct. 1981, pp. 543–548, https://doi.org/10.1111/j.1365-2125.1981.tb01263.x. | Propranolol is reported to be 88.62 + 0.93% protein bound in plasma. Thus, fup is (100-88.62)/100=0.1138. |
 | RB | - | 0.74 | Taylor, EA, and P Turner. “The Distribution of Propranolol, Pindolol and Atenolol between Human Erythrocytes and Plasma.” British Journal of Clinical Pharmacology, vol. 12, no. 4, Oct. 1981, pp. 543–548, https://doi.org/10.1111/j.1365-2125.1981.tb01263.x. | - |
 | GFR_human | mL/min | 120 | "Kaufman, Daniel P, et al. “Physiology, Glomerular Filtration Rate (GFR).” National Library of Medicine, StatPearls Publishing, 2023, www.ncbi.nlm.nih.gov/books/NBK500032/. | - |
-| CL_int_eff | mL/min | 2710 | Silberx, Bernie M, et al. “Dose-Dependent Elimination of Propranolol and Its Major Metabolites in Humans.” Journal of Pharmaceutical Sciences, vol. 72, no. 7, 1 July 1983, pp. 725–732, https://doi.org/10.1002/jps.2600720703. | """Kornhauser et al. (31) reported an average intrinsic clearance (CLint) of 2.71 liter/min on whole blood concentrations)"". Thus, this intrinsic clearance value is already invivo scaled and in the standard of blood concentration." |
+| CL_int_eff | mL/min | 2710 | Silberx, Bernie M, et al. “Dose-Dependent Elimination of Propranolol and Its Major Metabolites in Humans.” Journal of Pharmaceutical Sciences, vol. 72, no. 7, 1 July 1983, pp. 725–732, https://doi.org/10.1002/jps.2600720703. | """Kornhauser et al. (31) reported an average intrinsic clearance (CLint) of 2.71 liter/min on whole blood concentrations)"". Thus, this intrinsic clearance value is already in vivo scaled and in the standard of blood concentration." |
 | MW | g/mol | 259.3434 | DrugBank. “Propranolol.” Go.drugbank.com, 13 June 2024, go.drugbank.com/drugs/DB00571. | - |
 | Hct | - | 0.45 | "Mondal, Himel, and Saran Lotfollahzadeh. “Hematocrit (HCT).” Nih.gov, StatPearls Publishing, 6 Oct. 2024, www.ncbi.nlm.nih.gov/books/NBK542276/. | Hematocrit was set to 0.45 (45%), representing the mid-point of normal adult ranges (men 40–54%, women 36–48%). |
 | Tissue volume | mL | Check 'Human IV code' under 'code' folder | Simcyp Simulator. Version 22, Certara UK Limited, 2023. | - |
@@ -63,7 +63,7 @@ Table 3. Parameters obtained from literature that are used to construct **human 
 | fup | - | 0.1138 | Taylor, EA, and P Turner. “The Distribution of Propranolol, Pindolol and Atenolol between Human Erythrocytes and Plasma.” British Journal of Clinical Pharmacology, vol. 12, no. 4, Oct. 1981, pp. 543–548, https://doi.org/10.1111/j.1365-2125.1981.tb01263.x. | Propranolol is reported to be 88.62 + 0.93% protein bound in plasma. Thus, fup is (100-88.62)/100=0.1138. |
 | RB | - | 0.74 | Taylor, EA, and P Turner. “The Distribution of Propranolol, Pindolol and Atenolol between Human Erythrocytes and Plasma.” British Journal of Clinical Pharmacology, vol. 12, no. 4, Oct. 1981, pp. 543–548, https://doi.org/10.1111/j.1365-2125.1981.tb01263.x. | - |
 | GFR_human | mL/min | 120 | "Kaufman, Daniel P, et al. “Physiology, Glomerular Filtration Rate (GFR).” National Library of Medicine, StatPearls Publishing, 2023, www.ncbi.nlm.nih.gov/books/NBK500032/. | - |
-| CL_int_eff | mL/min | 2710 | Silberx, Bernie M, et al. “Dose-Dependent Elimination of Propranolol and Its Major Metabolites in Humans.” Journal of Pharmaceutical Sciences, vol. 72, no. 7, 1 July 1983, pp. 725–732, https://doi.org/10.1002/jps.2600720703. | """Kornhauser et al. (31) reported an average intrinsic clearance (CLint) of 2.71 liter/min on whole blood concentrations)"". Thus, this intrinsic clearance value is already invivo scaled and in the standard of blood concentration." |
+| CL_int_eff | mL/min | 2710 | Silberx, Bernie M, et al. “Dose-Dependent Elimination of Propranolol and Its Major Metabolites in Humans.” Journal of Pharmaceutical Sciences, vol. 72, no. 7, 1 July 1983, pp. 725–732, https://doi.org/10.1002/jps.2600720703. | """Kornhauser et al. (31) reported an average intrinsic clearance (CLint) of 2.71 liter/min on whole blood concentrations)"". Thus, this intrinsic clearance value is already in vivo scaled and in the standard of blood concentration." |
 | Fobs | - | 0.27 | "Taegtmeyer, Anne B, et al. A Study of the Relationship between Serum Bile Acids and Propranolol Pharmacokinetics and Pharmacodynamics in Patients with Liver Cirrhosis and in Healthy Controls. Vol. 9, no. 6, 6 June 2014, pp. e97885–e97885, https://doi.org/10.1371/journal.pone.0097885. | - |
 | MW | g/mol | 259.3434 | DrugBank. “Propranolol.” Go.drugbank.com, 13 June 2024, go.drugbank.com/drugs/DB00571. | - |
 | Hct | - | 0.45 | "Mondal, Himel, and Saran Lotfollahzadeh. “Hematocrit (HCT).” Nih.gov, StatPearls Publishing, 6 Oct. 2024, www.ncbi.nlm.nih.gov/books/NBK542276/. | Hematocrit was set to 0.45 (45%), representing the mid-point of normal adult ranges (men 40–54%, women 36–48%). |
@@ -208,7 +208,7 @@ Kp (tissue-to-plasma partition coefficient) values were obtained using standard 
 ## Metabolism & Excretion
 ### Renal Clearance
 #### **CODE**:
-- `GFR_rat = 18 ;mL/min`
+- `GFR_rat = 2.9 ;mL/min`
 - `CL_r = (fup/RB * GFR_rat) ;mL/min ; fub = fup/RB`
 - `CL_r_u = GFR_rat`
 #### **Derivation**:
@@ -315,7 +315,8 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
       - **Liver**: `d/dt(C_li) = (1/Vli) * (Xin_li - Xout_li - Xmet_li)`
         - To reflect hepatic metabolism, `Xmet_li` is incorporated in the equation (because metabolised amount = `Xmet_li` is removed from total liver concentration, `Xmet_li` is subtracted).
 - **Mass in**
-  - Basic structure of mass in equation `(Xin_T): Xin_T = Q_ab * C_T`
+  - Basic structure of mass in equation `(Xin_T): Xin_T = Q_T * C_ar`
+    - Arterial blood delivers drug to tissues, therefore inflow uses the **arterial blood concentration** `C_ar` (not `C_T`).
     - This basic structure is directly applied to mass in equation of adipose, bone, brain, gut, heart, kidney, muscle, skin, and spleen.
     - The following tissues had slight variations in mass in equations:
       - **Artery**: `Xin_ar = Xout_lg`
@@ -358,7 +359,7 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
   - In PBPK models, the **cardiac output** (**Q**) is usually **larger** than the sum of blood flows assigned to explicitly modeled tissues (`ΣQ_T`). That’s because real organisms have many organs not included in the model (e.g., pancreas, thyroid, GI sub-organs, reproductive organs, skin appendages, etc.). 
   - **Rest of Body (ROB)** (also called *Residual tissue*) is a lumped compartment that collects the **unassigned** blood flow and tissue mass from all omitted organs.
   - To conserve **flow** and **mass**, the leftover flow must be routed somewhere, and it is done by defining a residual flow (`Q_rest`).
-    - Define a residual flow: `Q_rest = Qco − (Q_a + Q_bo + Q_b + Q_h + Q_k + Q_li + Q_m + Q_sk)`
+    - Define a residual flow: `Q_rest = Q − (Q_a + Q_bo + Q_b + Q_h + Q_k + Q_li + Q_m + Q_sk)`
     - What it does: With ROB, total inflow/outflow is balanced so that: `Σ all tissue flows + Q_rest = Q`. Lung inflow/outflow and venous/arterial pools remain consistent without artificially inflating any single tissue’s flow.
 
 
@@ -470,7 +471,7 @@ This is the same as in what's discussed in rat IV model. Please refer to **'Rat 
 ## Weight
 - Note that standard average weight of male human (70kg = 70000g) is used in this model. 
 - Since this human model did not require organ weights, they were not defined. If needed (e.g., when using microsomal intrinsic clearance and requiring liver weight for in vivo scaling), human organ weights can be obtained from the SimCYP human database.
-- - This can be adjusted based on the need.
+- This can be adjusted based on the need.
 
 ## Converting Output
 - Since the literature reports drug concentration as venous plasma concentration (`Cp_ve`), the model should also provide output in terms of Cp_ve to align with the literature. As the current model is expressed in blood concentration, the venous blood concentration (`C_ve`) must be converted to `Cp_ve` using the blood-to-plasma ratio (`RB`): `Cp_ve = C_ve / RB`.
