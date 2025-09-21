@@ -44,7 +44,7 @@ EP = 1 + (RB-1)/Hct
 Vss = EP * (Vve+Var) * Hct + (Vve+Var) * (1-Hct) + Kp_a * Va + Kp_bo * Vbo + Kp_b * Vb + Kp_g * Vg + Kp_h * Vh + Kp_k * Vk + Kp_li * Vli + Kp_lg * Vlg + Kp_m * Vm + Kp_sk * Vsk + Kp_sp * Vsp ; plasma Vss
 Vss_b = Vss / RB
 
-;predicted Kp (tissue:plasma);
+{ predicted Kp (tissue:plasma) }
 Kp_a = 12.4655
 Kp_bo = 3.1750
 Kp_b = 7.1400
@@ -58,12 +58,12 @@ Kp_sk = 11.0660
 Kp_sp = 2.0413
 
 { metabolism & excretion }
-;renal clearance;
+;;;;; renal clearance ;;;;;
 GFR_rat = 2.9 ;mL/min
 CL_r = (fup/RB * GFR_rat) ;mL/mi ; fub = fup/RB
 CL_r_u = GFR_rat
 
-;renal excretion;
+;;;;; renal excretion ;;;;;
 Xexc_r = CL_r_u * (C_k * (1/kp_k)) * fup
 ; invivo CL_r_u * Cvk,u(= CvR * fub)) = CL_r_u * (fup/RB * (RB * C_k *(1/kp_k))
 
@@ -76,7 +76,7 @@ CL_int_u = CL_int / fu_MP
 Xmet_li = CL_int_u * (C_li * (1/Kp_li)) * fup   
 ; invivo CL_int_u * CvLI,u(= CvLI * fub)) = CL_int_u * (fup/RB * (RB * Cli *(1/Kp_li))
 
-;;;;; Initial Values ;;;;;
+{ Initial Values }
 
 INIT C_ar = 0
 INIT C_ve = 0
@@ -92,10 +92,11 @@ INIT C_m = 0
 INIT C_sk = 0
 INIT C_sp = 0
 
+{ Rate of absorption }
 ;;;;; IV model, thus GI absorption = 0 ;;;;;
 Rabs = 0
 
-;;;;; Mass in ;;;;;
+{ Mass in }
 Xin_ar = Xout_lg
 Xin_ve = Xout_a + Xout_bo + Xout_b + Xout_h + Xout_k + Xout_li + Xout_m + Xout_sk
 Xin_a = Q_a * C_ar
@@ -110,7 +111,7 @@ Xin_m = Q_m * C_ar
 Xin_sk = Q_sk * C_ar
 Xin_sp = Q_sp * C_ar
 
-;;;;; Mass out ;;;;;
+{ Mass out }
 Xout_ar = Q_lg * C_ar
 Xout_ve = Q_lg * C_ve
 Xout_a = Q_a * C_a * RB * (1/Kp_a)
@@ -125,7 +126,7 @@ Xout_m = Q_m * C_m * RB * (1/Kp_m)
 Xout_sk = Q_sk * C_sk * RB * (1/Kp_sk)
 Xout_sp = Q_sp * C_sp * RB * (1/Kp_sp)
 
-;;;;; Differential Equations ;;;;;
+{ Differential Equations }
 d/dt(C_ar) = (1/Var) * (Xin_ar - Xout_ar)
 d/dt(C_ve) = (1/Vve) * (IV_input + Xin_ve - Xout_ve)
 d/dt(C_a) = (1/Va) * (Xin_a - Xout_a)
@@ -140,7 +141,7 @@ d/dt(C_m) = (1/Vm) * (Xin_m - Xout_m)
 d/dt(C_sk) = (1/Vsk) * (Xin_sk - Xout_sk)
 d/dt(C_sp) = (1/Vsp) * (Xin_sp - Xout_sp)
 
-;;;;; Unit conversion ;;;;;
+{ Unit conversion }
 C_ar_uM = C_ar / MW
 C_ve_uM = C_ve / MW
 C_a_uM = C_a / MW
@@ -155,11 +156,11 @@ C_m_uM = C_m / MW
 C_sk_uM = C_sk / MW
 C_sp_uM = C_sp / MW
 
-;;;;; Compound physical & chemical properties ;;;;;
+{ Compound physical & chemical properties }
 
 MW =259.3434;g/mol
 
-; Hematocrit;
+;;;;; Hematocrit ;;;;;
 Hct = 0.45
 
 { tissue volume (mL) } ;Brown et al
