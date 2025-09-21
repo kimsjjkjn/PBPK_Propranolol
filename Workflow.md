@@ -25,16 +25,12 @@
 ## 3) Data Processing in Excel
 - Paste the exported **Table** (predictions) into an Excel file.
 - Add the literature in-vivo data in the same file if available.  
-  - If raw time–concentration datasets from literature are unavailable, use digitised data based on the figures in the literature.
+  - If raw Time–Concentration datasets from literature are unavailable, use digitised data based on the figures in the literature for plotting Time-Concentration profile.
+- Plot Time–Concentration overlays.
+  - Change y-axis to log-scale for better display.
 - Calculate metrics (Fold Error (FE), Absolute Average Fold Error (AAFE)) and PK parameters (AUC, t½, CL, Vss, Cmax, Tmax, F).
-  - Fold Error (FE): `FE = max(pred, obs) / min(pred, obs)`
-  - AAFE: `AAFE = 10^( mean( |log10(FE)| ) )`
-  - PK params: AUC (linear trapezoid), Cmax/Tmax (from profile), t½ (terminal slope), CL (as applicable), F (PO only).
-    - Vss can be calculated from running code in Berkeley Madonna because the calculating code for Vss is already embedded in the code. To view `Vss` (or `Vss_b`, as appropriate) value, go to **Graph ▸ Choose Variables…** → add `Vss` or `Vss_b` to the Y-axis, run the simulation, and then open Table to read its value (units: mL). Copy this value into Vss (L) cell in Excel and convert the unit to liters by dividing by 1000.
+    - **Vss** can be calculated from running code in Berkeley Madonna because the calculating code for Vss is already embedded in the code. To view `Vss` (or `Vss_b`, as appropriate) value, go to **Graph ▸ Choose Variables…** → add `Vss` or `Vss_b` to the Y-axis, run the simulation, and then open Table to read its value (units: mL). Copy this value into Vss (L) cell in Excel and convert the unit to liters by dividing by 1000.
       - Which one to use?
         - Use `Vss` (plasma-referenced) when literature concentrations are reported in plasma (e.g., your rat IV model).
         - Use `Vss_b` (blood-referenced) when literature concentrations are in whole blood (e.g., your human IV and PO models).
-  - For the formulas used to compute each metric and PK parameter, see the Excel file titled **[PBPK_Propranolol_Data_Processing.xlsx](PBPK_Propranolol_Data_Processing.xlsx)** 
- in this repository - click any relevant cell to view its underlying formula in the formula bar.
-- Plot time–concentration overlays.
-  - Change y-axis to log-scale for better display.
+  - For the formulas used to compute each metric and PK parameter, see the Excel file titled **[PBPK_Propranolol_Data_Processing.xlsx](PBPK_Propranolol_Data_Processing.xlsx)** in this repository - click any relevant cell to view its underlying formula in the formula bar.
