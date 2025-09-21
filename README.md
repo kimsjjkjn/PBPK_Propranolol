@@ -76,7 +76,7 @@ Table 7. **PBPK Propranolol – Model Performance Summary**
 
 | Model        |        AAFE (Time–Concentration) (digitised) |                          AAFE (PK Parameters) (literature) | Key Matches (within 2×)       | Key Mismatches                                                           | Overall Conclusion                                                                                           |
 | ------------ | -----------------------: | --------------------------------------------: | ----------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| **Rat IV**   |                      1.51 |                1.14 | All within 2× | -                                            | Good agreement. Reliable and predictive model.                                 |
+| **Rat IV**   |                      1.51 |                1.16 | All within 2× | -                                            | Good agreement. Reliable and predictive model.                                 |
 | **Human IV** | 1.28 | 1.28 | All within 2×             | - | Good agreement. Reliable and predictive model.           |
 | **Human PO** |                     1.76 |         1.43 | All within 2×        | -    |Good agreement. Reliable and predictive model.   |
 
