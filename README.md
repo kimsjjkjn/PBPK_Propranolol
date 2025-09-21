@@ -3,7 +3,7 @@ Physiologically-based pharmacokinetic (PBPK) modeling of propranolol in rats and
 
 # What this repository is
 This repository is a learning-oriented, proof-of-understanding portfolio designed to demonstrate my ability to derive ODE-based PBPK models from first principles and to critically evaluate discrepancies.
-It emphasizes first-principles derivation (to strengthen understanding of the mechanisms behind PBPK modeling), explicit documentation of assumptions, and transparent, reproducible validation of key metrics (AAFE, FE, Within 2×/3×). Simulations were performed in Berkeley Madonna, while all validation and metric calculations are reproduced transparently in Excel using formulas(please refer to **[PBPK_Propranolol_Data_Processing.xlsx](PBPK_Propranolol_Data_Processing.xlsx)** in this repository).
+It emphasizes first-principles derivation (to strengthen understanding of the mechanisms behind PBPK modeling), explicit documentation of assumptions, and transparent, reproducible validation of key metrics (AAFE, FE, Within 2×/3×). Simulations were performed in Berkeley Madonna, while all validation and metric calculations are reproduced transparently in Excel using formulas (please refer to **[PBPK_Propranolol_Data_Processing.xlsx](PBPK_Propranolol_Data_Processing.xlsx)** in this repository).
 
 
 # License
@@ -14,20 +14,19 @@ Code under MIT (**[MIT_License](/License/MIT_License)**), docs/figures under CC 
 For full workflow, see **[Workflow.md](Workflow.md)**. 
 
 1) Install Berkeley Madonna  
-   - Download from the official site for your OS.
+   - Download from the official site (https://berkeley-madonna.myshopify.com/pages/download).
 
 2) Run models  
    - Open **Berkeley Madonna → File ▸ New**, paste the code.  
-     - Repo codes: `code/Rat IV code`, `code/Human IV code`, `code/Human PO code` (open on GitHub → **Raw** → copy all).  
-   - Plot: **Graph ▸ Choose Variables…** → Y = `C_ar` (arterial) or `Cp_ve` (venous plasma). *(Optional)* log-scale Y.
+     - Repo codes: [Rat IV code](https://github.com/kimsjjkjn/PBPK_Propranolol/blob/main/code/Rat%20IV%20code), [Human IV code](https://github.com/kimsjjkjn/PBPK_Propranolol/blob/main/code/Human%20IV%20code), [Human PO code](https://github.com/kimsjjkjn/PBPK_Propranolol/blob/main/code/Human%20PO%20code) (open on GitHub → **Raw** → copy all).  
+   - Plot: **Graph ▸ Choose Variables…** → Y = `C_ar` (arterial) or `Cp_ve` (venous plasma).
      - The Y-axis selected in the model should correspond to the Y-axis reported in the literature for comparison. For example, if the literature presents venous plasma concentration on the Y-axis, the model should use the same.  
+     - *(Optional)* log-scale Y.
+   - See outputs: **Run (▶) → Table → File ▸ Export Table…** (CSV) or copy/paste to Excel.
 
-3) See outputs  
-   - **Run (▶) → Table → File ▸ Export Table…** (CSV) or copy/paste to Excel.
-
-4) Calculation & Validation
-   - Calculate key Pharmacokinetic (PK) parameters and metrics (FE & AAFE) and plot Time-Concentration profiles in Excel.
-     - For full formulas & PK calculations, see the Excel template in the repository (**[PBPK_Propranolol_Data_Processing.xlsx](PBPK_Propranolol_Data_Processing.xlsx)** )    
+3) Calculation & Validation
+   - Calculate key Pharmacokinetic (PK) parameters and metrics (FE & AAFE) and plot time-concentration profiles in Excel.
+     - For full formulas for PK parameter and metric calculations, see the Excel file in the repository (**[PBPK_Propranolol_Data_Processing.xlsx](PBPK_Propranolol_Data_Processing.xlsx)** )    
 
 > Want a quick look without running anything? See **[docs/Results.md](docs/Results.md)**, **[docs/Discussion.md](docs/Discussion.md)** for the full result summaries and interpretation.
 
@@ -59,19 +58,19 @@ Detailed document of the project
 # Key Results Highlight
 **At a glance** · Full results: [docs/Results.md](docs/Results.md)
 
-Figure 2. **Rat IV: Simulated vs Digitised In Vivo Propranolol Blood Concentrations**.
+Figure 2. **In vivo vs predicted time-concentration graph of intravenously administered propranolol to healthy rat.**
 
 <img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/a00ee682-a03b-4217-a0af-4c3cdd854fb2" />
 
-Figure 4. **Human IV: Simulated vs Digitised In Vivo Propranolol Plasma Concentrations** (in vivo data is in venous plasma concentration, so simulated data was also converted to venous plasma concentration).
+Figure 4. **In vivo vs predicted time-concentration graph of intravenously administered propranolol to healthy human.**
 
 <img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/9c75ad7b-738e-4f56-b302-1f41b00846a5" />
 
-Figure 6. **Human PO: Simulated vs Digitised In Vivo Propranolol Plasma Concentrations** (in vivo data is in venous plasma concentration, so simulated data was also converted to venous plasma concentration).
+Figure 6. **In vivo vs predicted time-concentration graph of orally administered propranolol to healthy human.**
 
   <img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/bab10706-535e-49ca-ae34-879d73117815" />
 
-Table 7. **PBPK Propranolol – Model Performance Summary**
+Table 10. **PBPK Propranolol – Model Performance Summary**.
 
 
 | Model        |        AAFE (Time–Concentration) (digitised) |                          AAFE (PK Parameters) (literature) | Key Matches (within 2×)       | Key Mismatches                                                           | Overall Conclusion                                                                                           |
@@ -80,4 +79,3 @@ Table 7. **PBPK Propranolol – Model Performance Summary**
 | **Human IV** | 1.28 | 1.28 | All within 2×             | - | Good agreement. Reliable and predictive model.           |
 | **Human PO** |                     1.76 |         1.43 | All within 2×        | -    |Good agreement. Reliable and predictive model.   |
 
-- Abbreviations: AUC, area under the Time-Concentration curve; Cmax, peak concentration; CL, clearance; F, oral bioavailability; t½, elimination half-life; Vss, volume of distribution at steady state; Tmax, time point of Cmax.
