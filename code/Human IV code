@@ -44,7 +44,7 @@ EP = 1 + (RB-1)/Hct
 Vss = EP * (Vve+Var) * Hct + (Vve+Var) * (1-Hct) + Kp_a * Va + Kp_bo * Vbo + Kp_b * Vb + Kp_g * Vg + Kp_h * Vh + Kp_k * Vk + Kp_li * Vli + Kp_lg * Vlg + Kp_m * Vm + Kp_sk * Vsk + Kp_sp * Vsp ; plasma Vss
 Vss_b = Vss / RB
 
-;predicted Kp (tissue:plasma);
+{ predicted Kp (tissue:plasma) }
 Kp_a = 17.73215821
 Kp_bo = 4.516502933
 Kp_b = 10.15666198
@@ -77,7 +77,7 @@ Xmet_li = CL_int_eff * (RB * C_li * (1/Kp_li))
 ; invivo CL_int_eff * CvLI = CL_int_eff * (RB * Cli *(1/Kp_li))
 ; since CL_int_eff is already in the standard of whole blood concentration, don't need to multiply unbound CvLI - just multiply CvLI value
 
-;;;;; Initial Values ;;;;;
+{ Initial Values }
 
 INIT C_ar = 0
 INIT C_ve = 0
@@ -93,10 +93,11 @@ INIT C_m = 0
 INIT C_sk = 0
 INIT C_sp = 0
 
-;;;;; IV model, thus GI absorption = 0 ;;;;;
+{ Rate of absorption }
+; IV model, thus GI absorption = 0
 Rabs = 0
 
-;;;;; Mass in ;;;;;
+{ Mass in }
 Xin_ar = Xout_lg
 Xin_ve = Xout_a + Xout_bo + Xout_b + Xout_h + Xout_k + Xout_li + Xout_m + Xout_sk
 Xin_a = Q_a * C_ar
@@ -111,7 +112,7 @@ Xin_m = Q_m * C_ar
 Xin_sk = Q_sk * C_ar
 Xin_sp = Q_sp * C_ar
 
-;;;;; Mass out ;;;;;
+{ Mass out }
 Xout_ar = Q_lg * C_ar
 Xout_ve = Q_lg * C_ve
 Xout_a = Q_a * C_a * RB * (1/Kp_a)
@@ -126,7 +127,7 @@ Xout_m = Q_m * C_m * RB * (1/Kp_m)
 Xout_sk = Q_sk * C_sk * RB * (1/Kp_sk)
 Xout_sp = Q_sp * C_sp * RB * (1/Kp_sp)
 
-;;;;; Differential Equations ;;;;;
+{ Differential Equations }
 d/dt(C_ar) = (1/Var) * (Xin_ar - Xout_ar)
 d/dt(C_ve) = (1/Vve) * (IV_input + Xin_ve - Xout_ve)
 d/dt(C_a) = (1/Va) * (Xin_a - Xout_a)
@@ -141,7 +142,7 @@ d/dt(C_m) = (1/Vm) * (Xin_m - Xout_m)
 d/dt(C_sk) = (1/Vsk) * (Xin_sk - Xout_sk)
 d/dt(C_sp) = (1/Vsp) * (Xin_sp - Xout_sp)
 
-;;;;; Unit conversion ;;;;;
+{ Unit conversion }
 C_ar_uM = C_ar / MW
 C_ve_uM = C_ve / MW
 C_a_uM = C_a / MW
@@ -156,11 +157,11 @@ C_m_uM = C_m / MW
 C_sk_uM = C_sk / MW
 C_sp_uM = C_sp / MW
 
-;;;;; Compound physical & chemical properties ;;;;;
+{ Compound physical & chemical properties }
 
 MW =259.3434;g/mol
 
-; Hematocrit;
+;;;;; Hematocrit ;;;;;
 Hct = 0.45
 
 { tissue volume (mL) } ; mass/density ; simcyp parameters
@@ -193,5 +194,5 @@ Q_m = Q * 17/100 ; muscle
 Q_sk = Q * 5/100 ; skin
 Q_rest = Q - (Q_a+Q_bo+Q_b+Q_h+Q_k+Q_li+Q_m+Q_sk+Q_g+Q_sp); rest of body
 
-;;; Cart/Rb --> Cp (because comparative literature gives venous plasma concentration (Cp_ve) value, convert the venous blood concentration (C_ve) values into Cp_ve by applying RB)
+;;;;; Cart/Rb --> Cp (because comparative literature gives venous plasma concentration (Cp_ve) value, convert the venous blood concentration (C_ve) values into Cp_ve by applying RB)
 Cp_ve = C_ve / RB 
