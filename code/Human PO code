@@ -71,8 +71,7 @@ Xexc_r = CL_r_u_human * (C_k * (1/Kp_k)) * fup
 CL_int_eff = 2710 ;mL/min
 ; since CL_int_eff = 2710 obtained from literature is already in the standard of whole blood concentration, there is no need to divide it by fu_MP - it is already scaled to in vivo
 
-
-;;;;; Metabolism ;;;;
+;;;;; hepatic metabolism ;;;;
 Xmet_li = CL_int_eff * (RB * C_li * (1/Kp_li))
 ; invivo CL_int_eff * CvLI = CL_int_eff * (RB * Cli *(1/Kp_li))
 ; since CL_int_eff is already in the standard of whole blood concentration, don't need to multiply unbound CvLI - just multiply CvLI value
