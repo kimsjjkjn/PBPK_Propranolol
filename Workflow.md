@@ -7,7 +7,7 @@
 ## 2) Run the models (Berkeley Madonna)
 
 - Open Berkeley Madonna → **File ▸ New** → paste the full model code.  
-  - If you want to use the code in this repository, open `code/Rat IV code`, `code/Human IV code`, or `code/Human PO code` on GitHub, click **Raw**, copy all, and paste.
+  - If you want to use the code in this repository, open [Rat IV code](https://github.com/kimsjjkjn/PBPK_Propranolol/blob/main/code/Rat%20IV%20code), [Human IV code](https://github.com/kimsjjkjn/PBPK_Propranolol/blob/main/code/Human%20IV%20code), or [Human PO code](https://github.com/kimsjjkjn/PBPK_Propranolol/blob/main/code/Human%20PO%20code) on GitHub, click **Raw**, copy all, and paste.
   - The parameter values in these files are project-specific. Adjust them as needed for your use case.
 
 - **Plot settings:** **Graph ▸ Choose Variables…** → set the Y-axis to `C_ar` or `Cp_ve`.
