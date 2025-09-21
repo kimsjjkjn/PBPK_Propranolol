@@ -9,8 +9,6 @@
 # Parameters To Prepare
 - Parameter values that are directly brought from literature or SimCYP include:
   - **Drug-specific parameters**:
-    - fup (unbound drug fraction in plasma)
-    - RB (ratio blood:plasma)
     - MW (Molecular Weight)
   - **Species-specific parameters**:
     - GFR (Glomerular Filtration Rate)
@@ -20,6 +18,8 @@
     - Weight (body weight & organ weight)
     - Hepatic IVIVE scaling factor: MPPGL (microsomal protein per gram liver (mg/g liver))
   - **Species and drug-specific parameters**:
+    - fup (unbound drug fraction in plasma)
+    - RB (ratio blood:plasma)
     - CL_int (intrinsic clearance)
     - fu_MP (unbound drug fraction in microsomal incubation)
     - Fobs (known/reported bioavailability)
@@ -30,45 +30,45 @@ Table 1. Parameters obtained from literature that are used to construct **rat IV
 
 | Parameter | Unit | Value (Baseline) | Source / Reference | Notes (Assumptions, Comments) |
 |-----------|------|------------------|--------------------|-------------------------------|
-| fup | - | 0.08 | EVANS, GWYN H., et al. “THE DISPOSITION of PROPRANOLOL. III. DECREASED HALF-LIFE and VOLUME of DISTRIBUTION as a RESULT of PLASMA BINDING in MAN, MONKEY, DOG and RAT.” The Journal of Pharmacology and Experimental Therapeutics, vol. 186, no. 1, 31 Jan. 2025, pp. 114–122, https://doi.org/10.1016/S0022-3565(25)29572-6. | The binding of propranolol to plasma has been determined at therapeutic concentrations by equilibrium dialysis in rat (92.2%), thus fup is (100-92.2)/100 = 0.078 ≈ 0.08 |
-| RB | - | 0.78 | "Singh, K, et al. “Determination of in vivo Hepatic Extraction Ratio from in Vitro Metabolism by Rat Hepatocytes.” Drug Metabolism and Disposition: The Biological Fate of Chemicals, vol. 19, no. 5, 1991, pp. 990–6, pubmed.ncbi.nlm.nih.gov/1686248/. | - |
-| GFR_rat | mL/min | 2.9 | "Potter, D, et al. “Character of Function and Size in Kidney during Normal Growth of Rats.” Pediatric Research, vol. 3, no. 1, 1 Jan. 1969, pp. 51–59, https://doi.org/10.1203/00006450-196901000-00007. | The mean GFR is reported as 1.7 mL/min for rats with an average body weight of 173 g and 4.1 mL/min for rats with an average body weight of 350 g. Since the present IV model is standardised to a rat body weight of 250 g, the average of these two values (2.9 mL/min) was adopted. This approximation is justified because the interpolated body weight (260 g) closely matches the model reference of 250 g. |
+| fup | - | 0.08 | Evans, G.H., et al., 2025. The disposition of propranolol. III. Decreased half-life and volume of distribution as a result of plasma binding in man, monkey, dog and rat. The Journal of Pharmacology and Experimental Therapeutics, 186(1), pp.114–122. https://doi.org/10.1016/S0022-3565(25)29572-6 | The binding of propranolol to plasma has been determined at therapeutic concentrations by equilibrium dialysis in rat (92.2%), thus fup is (100-92.2)/100 = 0.078 ≈ 0.08 |
+| RB | - | 0.78 | Singh, K., et al., 1991. Determination of in vivo hepatic extraction ratio from in vitro metabolism by rat hepatocytes. *Drug Metabolism and Disposition*, 19(5), pp.990–996. Available at: https://pubmed.ncbi.nlm.nih.gov/1686248 | - |
+| GFR_rat | mL/min | 2.9 | Potter, D., et al., 1969. Character of function and size in kidney during normal growth of rats. *Pediatric Research*, 3(1), pp.51–59. https://doi.org/10.1203/00006450-196901000-00007 | The mean GFR is reported as 1.7 mL/min for rats with an average body weight of 173 g and 4.1 mL/min for rats with an average body weight of 350 g. Since the present IV model is standardised to a rat body weight of 250 g, the average of these two values (2.9 mL/min) was adopted. This approximation is justified because the interpolated body weight (260 g) closely matches the model reference of 250 g. |
 | CL_int | mL/min/mg microsomal protein | 0.13 | "Hung, Daniel Y., et al. “Disposition Kinetics of Propranolol Isomers in the Perfused Rat Liver.” The Journal of Pharmacology and Experimental Therapeutics, vol. 311, no. 2, 3 Jan. 2025, pp. 822–829, www.sciencedirect.com/science/article/pii/S0022356524316593, https://doi.org/10.1124/jpet.104.070011. | - |
-| fu_MP | - | 0.49 | "Hung, Daniel Y., et al. “Disposition Kinetics of Propranolol Isomers in the Perfused Rat Liver.” The Journal of Pharmacology and Experimental Therapeutics, vol. 311, no. 2, 3 Jan. 2025, pp. 822–829, www.sciencedirect.com/science/article/pii/S0022356524316593, https://doi.org/10.1124/jpet.104.070011. | - |
-| MW | g/mol | 259.3434 | DrugBank. “Propranolol.” Go.drugbank.com, 13 June 2024, go.drugbank.com/drugs/DB00571. | - |
-| Hct | - | 0.45 | "Lee, H B, and M D Blaufox. “Blood Volume in the Rat.” Journal of Nuclear Medicine : Official Publication, Society of Nuclear Medicine, vol. 26, no. 1, Jan. 1985, pp. 72–6, pubmed.ncbi.nlm.nih.gov/3965655/. | 0.45 (45%) was set as the representative hematocrit, as Lee & Blaufox (1985) reported hematocrit values of 43.94 ± 2.77% for rats with body weight >120 g, and 42.30 ± 3.39% for male rats. |
-| Tissue volume | mL | Check 'Rat IV code' under 'code' folder | "Brown, Ronald P., et al. “Physiological Parameter Values for Physiologically Based Pharmacokinetic Models.” Toxicology and Industrial Health, vol. 13, no. 4, July 1997, pp. 407–484, https://doi.org/10.1177/074823379701300401. | - |
-| Blood flow | mL/min | Check 'Rat IV code' under 'code' folder | Simcyp Simulator. Version 22, Certara UK Limited, 2023. | - |
-| Weight | g | Check 'Rat IV code' under 'code' folder | "Brown, Ronald P., et al. “Physiological Parameter Values for Physiologically Based Pharmacokinetic Models.” Toxicology and Industrial Health, vol. 13, no. 4, July 1997, pp. 407–484, https://doi.org/10.1177/074823379701300401. | Obtained by multiplying the relative organ weights (% of body weight) reported in Brown et al. (1997) by a 250 g rat body weight. |
-| MPPGL_mic | mg microsomal protein / g liver | 44.5 | "J. Nicolaï, et al. “Verapamil Hepatic Clearance in Four Preclinical Rat Models: Towards Activity‐Based Scaling.” Biopharmaceutics & Drug Disposition, vol. 36, no. 7, 11 May 2015, pp. 462–480, https://doi.org/10.1002/bdd.1959. | - |
+| fu_MP | - | 0.49 | Hung, D.Y., et al., 2025. Disposition kinetics of propranolol isomers in the perfused rat liver. *The Journal of Pharmacology and Experimental Therapeutics*, 311(2), pp.822–829. https://doi.org/10.1124/jpet.104.070011 | - |
+| MW | g/mol | 259.3434 | DrugBank, 2024. Propranolol. *DrugBank*. Available at: https://go.drugbank.com/drugs/DB00571 | - |
+| Hct | - | 0.45 | Lee, H.B. and Blaufox, M.D., 1985. Blood volume in the rat. *Journal of Nuclear Medicine*, 26(1), pp.72–76. Available at: https://pubmed.ncbi.nlm.nih.gov/3965655 | 0.45 (45%) was set as the representative hematocrit, as Lee & Blaufox (1985) reported hematocrit values of 43.94 ± 2.77% for rats with body weight >120 g, and 42.30 ± 3.39% for male rats. |
+| Tissue volume | mL | Check 'Rat IV code' under 'code' folder | Brown, R.P., et al., 1997. Physiological parameter values for physiologically based pharmacokinetic models. *Toxicology and Industrial Health*, 13(4), pp.407–484. https://doi.org/10.1177/074823379701300401 | - |
+| Blood flow | mL/min | Check 'Rat IV code' under 'code' folder | Simcyp Simulator, 2023. Version 22. Sheffield, UK: Certara UK Limited. | - |
+| Weight | g | Check 'Rat IV code' under 'code' folder | rown, R.P., et al., 1997. Physiological parameter values for physiologically based pharmacokinetic models. *Toxicology and Industrial Health*, 13(4), pp.407–484. https://doi.org/10.1177/074823379701300401 | Obtained by multiplying the relative organ weights (% of body weight) reported in Brown et al. (1997) by a 250 g rat body weight. |
+| MPPGL_mic | mg microsomal protein / g liver | 44.5 | Nicolaï, J., et al., 2015. Verapamil hepatic clearance in four preclinical rat models: towards activity-based scaling. *Biopharmaceutics & Drug Disposition*, 36(7), pp.462–480. https://doi.org/10.1002/bdd.1959  | - |
 
 Table 2. Parameters obtained from literature that are used to construct **human IV model** and their references
 
 | Parameter | Symbol/Unit | Value (Baseline) | Source / Reference | Notes (Assumptions, Comments) |
 |-----------|-------------|------------------|--------------------|-------------------------------|
-| fup | - | 0.1138 | Taylor, EA, and P Turner. “The Distribution of Propranolol, Pindolol and Atenolol between Human Erythrocytes and Plasma.” British Journal of Clinical Pharmacology, vol. 12, no. 4, Oct. 1981, pp. 543–548, https://doi.org/10.1111/j.1365-2125.1981.tb01263.x. | Propranolol is reported to be 88.62 + 0.93% protein bound in plasma. Thus, fup is (100-88.62)/100=0.1138. |
-| RB | - | 0.74 | Taylor, EA, and P Turner. “The Distribution of Propranolol, Pindolol and Atenolol between Human Erythrocytes and Plasma.” British Journal of Clinical Pharmacology, vol. 12, no. 4, Oct. 1981, pp. 543–548, https://doi.org/10.1111/j.1365-2125.1981.tb01263.x. | - |
-| GFR_human | mL/min | 120 | "Kaufman, Daniel P, et al. “Physiology, Glomerular Filtration Rate (GFR).” National Library of Medicine, StatPearls Publishing, 2023, www.ncbi.nlm.nih.gov/books/NBK500032/. | - |
-| CL_int_eff | mL/min | 2710 | Silberx, Bernie M, et al. “Dose-Dependent Elimination of Propranolol and Its Major Metabolites in Humans.” Journal of Pharmaceutical Sciences, vol. 72, no. 7, 1 July 1983, pp. 725–732, https://doi.org/10.1002/jps.2600720703. | "Kornhauser et al. (31) reported an average intrinsic clearance (CLint) of 2.71 liter/min on whole blood concentrations)". Thus, this intrinsic clearance value is already in vivo scaled and in the standard of blood concentration. |
-| MW | g/mol | 259.3434 | DrugBank. “Propranolol.” Go.drugbank.com, 13 June 2024, go.drugbank.com/drugs/DB00571. | - |
-| Hct | - | 0.45 | "Mondal, Himel, and Saran Lotfollahzadeh. “Hematocrit (HCT).” Nih.gov, StatPearls Publishing, 6 Oct. 2024, www.ncbi.nlm.nih.gov/books/NBK542276/. | Hematocrit was set to 0.45 (45%), representing the mid-point of normal adult ranges (men 40–54%, women 36–48%). |
-| Tissue volume | mL | Check 'Human IV code' under 'code' folder | Simcyp Simulator. Version 22, Certara UK Limited, 2023. | - |
-| Blood flow | mL/min | Check 'Human IV code' under 'code' folder | Simcyp Simulator. Version 22, Certara UK Limited, 2023. | - |
+| fup | - | 0.1138 | Taylor, E.A. and Turner, P., 1981. The distribution of propranolol, pindolol and atenolol between human erythrocytes and plasma. *British Journal of Clinical Pharmacology*, 12(4), pp.543–548. https://doi.org/10.1111/j.1365-2125.1981.tb01263.x | Propranolol is reported to be 88.62 + 0.93% protein bound in plasma. Thus, fup is (100-88.62)/100=0.1138. |
+| RB | - | 0.74 | Taylor, E.A. and Turner, P., 1981. The distribution of propranolol, pindolol and atenolol between human erythrocytes and plasma. *British Journal of Clinical Pharmacology*, 12(4), pp.543–548. https://doi.org/10.1111/j.1365-2125.1981.tb01263.x | - |
+| GFR_human | mL/min | 120 | Kaufman, D.P., et al., 2023. Physiology, glomerular filtration rate (GFR). *StatPearls*. National Library of Medicine. Available at: https://www.ncbi.nlm.nih.gov/books/NBK500032 | - |
+| CL_int_eff | mL/min | 2710 | Silberx, B.M., et al., 1983. Dose-dependent elimination of propranolol and its major metabolites in humans. *Journal of Pharmaceutical Sciences*, 72(7), pp.725–732. https://doi.org/10.1002/jps.2600720703 | "Kornhauser et al. (31) reported an average intrinsic clearance (CLint) of 2.71 liter/min on whole blood concentrations)". Thus, this intrinsic clearance value is already in vivo scaled and in the standard of blood concentration. |
+| MW | g/mol | 259.3434 | DrugBank, 2024. Propranolol. *DrugBank*. Available at: https://go.drugbank.com/drugs/DB00571 | - |
+| Hct | - | 0.45 | Mondal, H. and Saran, L., 2024. Hematocrit (HCT). *StatPearls*. National Library of Medicine. Available at: https://www.ncbi.nlm.nih.gov/books/NBK542276 | Hematocrit was set to 0.45 (45%), representing the mid-point of normal adult ranges (men 40–54%, women 36–48%). |
+| Tissue volume | mL | Check 'Human IV code' under 'code' folder | Simcyp Simulator, 2023. Version 22. Sheffield, UK: Certara UK Limited. | - |
+| Blood flow | mL/min | Check 'Human IV code' under 'code' folder | Simcyp Simulator, 2023. Version 22. Sheffield, UK: Certara UK Limited. | - |
 
 
 Table 3. Parameters obtained from literature that are used to construct **human PO model** and their references
 
 | Parameter | Symbol/Unit | Value (Baseline) | Source / Reference | Notes (Assumptions, Comments) |
 |-----------|-------------|------------------|--------------------|-------------------------------|
-| fup | - | 0.1138 | Taylor, EA, and P Turner. “The Distribution of Propranolol, Pindolol and Atenolol between Human Erythrocytes and Plasma.” British Journal of Clinical Pharmacology, vol. 12, no. 4, Oct. 1981, pp. 543–548, https://doi.org/10.1111/j.1365-2125.1981.tb01263.x. | Propranolol is reported to be 88.62 + 0.93% protein bound in plasma. Thus, fup is (100-88.62)/100=0.1138. |
-| RB | - | 0.74 | Taylor, EA, and P Turner. “The Distribution of Propranolol, Pindolol and Atenolol between Human Erythrocytes and Plasma.” British Journal of Clinical Pharmacology, vol. 12, no. 4, Oct. 1981, pp. 543–548, https://doi.org/10.1111/j.1365-2125.1981.tb01263.x. | - |
-| GFR_human | mL/min | 120 | "Kaufman, Daniel P, et al. “Physiology, Glomerular Filtration Rate (GFR).” National Library of Medicine, StatPearls Publishing, 2023, www.ncbi.nlm.nih.gov/books/NBK500032/. | - |
-| CL_int_eff | mL/min | 2710 | Silberx, Bernie M, et al. “Dose-Dependent Elimination of Propranolol and Its Major Metabolites in Humans.” Journal of Pharmaceutical Sciences, vol. 72, no. 7, 1 July 1983, pp. 725–732, https://doi.org/10.1002/jps.2600720703. | "Kornhauser et al. (31) reported an average intrinsic clearance (CLint) of 2.71 liter/min on whole blood concentrations)". Thus, this intrinsic clearance value is already in vivo scaled and in the standard of blood concentration. |
-| Fobs | - | 0.27 | "Taegtmeyer, Anne B, et al. A Study of the Relationship between Serum Bile Acids and Propranolol Pharmacokinetics and Pharmacodynamics in Patients with Liver Cirrhosis and in Healthy Controls. Vol. 9, no. 6, 6 June 2014, pp. e97885–e97885, https://doi.org/10.1371/journal.pone.0097885. | - |
-| MW | g/mol | 259.3434 | DrugBank. “Propranolol.” Go.drugbank.com, 13 June 2024, go.drugbank.com/drugs/DB00571. | - |
-| Hct | - | 0.45 | "Mondal, Himel, and Saran Lotfollahzadeh. “Hematocrit (HCT).” Nih.gov, StatPearls Publishing, 6 Oct. 2024, www.ncbi.nlm.nih.gov/books/NBK542276/. | Hematocrit was set to 0.45 (45%), representing the mid-point of normal adult ranges (men 40–54%, women 36–48%). |
-| Tissue volume | mL | Check 'Human IV code' under 'code' folder | Simcyp Simulator. Version 22, Certara UK Limited, 2023. | - |
-| Blood flow | mL/min | Check 'Human IV code' under 'code' folder | Simcyp Simulator. Version 22, Certara UK Limited, 2023. | - |
+| fup | - | 0.1138 | Taylor, E.A. and Turner, P., 1981. The distribution of propranolol, pindolol and atenolol between human erythrocytes and plasma. *British Journal of Clinical Pharmacology*, 12(4), pp.543–548. https://doi.org/10.1111/j.1365-2125.1981.tb01263.x | Propranolol is reported to be 88.62 + 0.93% protein bound in plasma. Thus, fup is (100-88.62)/100=0.1138. |
+| RB | - | 0.74 | Taylor, E.A. and Turner, P., 1981. The distribution of propranolol, pindolol and atenolol between human erythrocytes and plasma. *British Journal of Clinical Pharmacology*, 12(4), pp.543–548. https://doi.org/10.1111/j.1365-2125.1981.tb01263.x | - |
+| GFR_human | mL/min | 120 | Kaufman, D.P., et al., 2023. Physiology, glomerular filtration rate (GFR). *StatPearls*. National Library of Medicine. Available at: https://www.ncbi.nlm.nih.gov/books/NBK500032 | - |
+| CL_int_eff | mL/min | 2710 | Silberx, B.M., et al., 1983. Dose-dependent elimination of propranolol and its major metabolites in humans. *Journal of Pharmaceutical Sciences*, 72(7), pp.725–732. https://doi.org/10.1002/jps.2600720703 | "Kornhauser et al. (31) reported an average intrinsic clearance (CLint) of 2.71 liter/min on whole blood concentrations)". Thus, this intrinsic clearance value is already in vivo scaled and in the standard of blood concentration. |
+| Fobs | - | 0.27 | Taegtmeyer, A.B., et al., 2014. A study of the relationship between serum bile acids and propranolol pharmacokinetics and pharmacodynamics in patients with liver cirrhosis and in healthy controls. *PLOS ONE*, 9(6), pp.e97885–e97885. https://doi.org/10.1371/journal.pone.0097885 | - |
+| MW | g/mol | 259.3434 | DrugBank, 2024. Propranolol. *DrugBank*. Available at: https://go.drugbank.com/drugs/DB00571 | - |
+| Hct | - | 0.45 | Mondal, H. and Saran, L., 2024. Hematocrit (HCT). *StatPearls*. National Library of Medicine. Available at: https://www.ncbi.nlm.nih.gov/books/NBK542276 | Hematocrit was set to 0.45 (45%), representing the mid-point of normal adult ranges (men 40–54%, women 36–48%). |
+| Tissue volume | mL | Check 'Human IV code' under 'code' folder | Simcyp Simulator, 2023. Version 22. Sheffield, UK: Certara UK Limited. | - |
+| Blood flow | mL/min | Check 'Human IV code' under 'code' folder | Simcyp Simulator, 2023. Version 22. Sheffield, UK: Certara UK Limited. | - |
 
 
 # Abbreviation
