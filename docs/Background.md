@@ -25,6 +25,6 @@ Propranolol was selected as the model compound for this PBPK project primarily b
 
 
 
-## Objectives
+## Project Objectives
 - Construct PBPK model of propranolol for Rat IV, Human IV, and Human PO administration.
 - Validate the models by comparing simulated concentration–time profiles and resulting parameters against published in vivo pharmacokinetic data.
