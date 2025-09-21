@@ -257,8 +257,6 @@ Table 10. PBPK Propranolol – Model Performance Summary.
 | **Human IV** | 1.28 | 1.28 | All within 2×             | - | Good agreement. Reliable and predictive model.           |
 | **Human PO** |                     1.76 |         1.43 | All within 2×        | -    |Good agreement. Reliable and predictive model.   |
 
-- Abbreviations: AUC, area under the time-concentration curve; Cmax, peak concentration; CL, clearance; F, oral bioavailability; t½, elimination half-life; Vss, volume of distribution at steady state; Tmax, time point of Cmax.
-
 
 # Potential Improvement
 
