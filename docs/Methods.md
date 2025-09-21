@@ -11,6 +11,7 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 - Values of parameters (fup, RB, CL_int, fu_MP, Molecular Weight, etc.) were obtained from the literature or SimCYP.
   - MW, pKa, logP, fup, RB were drug-specific properties (constant in rat and human models),
   - whilst physiological parameters such as organ volumes/flows, cardiac output, hematocrit, etc. were species-specific parameters (different in rat and human models).
+  - *For references of where each parameter was extracted from, refer to 'Table 1. Parameters obtained from literature that are used to construct rat IV model and their references' in '**[docs/Model_Derivation.md](docs/Model_Derivation)**' in 'docs' folder.*
 - Kp (tissue-to-plasma partition coefficient) values were obtained in Excel using standard partition coefficient calculators (Poulin–Theil):
 
 
@@ -26,9 +27,9 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 
    <img width="631" height="291" alt="Screenshot 2025-09-10 at 10 29 07 PM" src="https://github.com/user-attachments/assets/799af2d3-9e5e-4f78-bbb7-2e261a5cb61f" />
 
-  - Note: Because raw time-concentration datasets were not provided by original literature, digitised In Vivo data were used to plot graph and evaluate overall model performance. 
-- Key PK parameters (Cmax, Tmax, AUC, t½) from the simulated models were calculated and compared with in vivo PK parameters. The evaluation of model performance based on the calculated PK parameters was done by (adopted from the following research paper: https://doi.org/10.2165/00003088-200645050-00006) calculating:
+  - Note: Because raw Time-Concentration datasets were not provided by original literature, digitised In Vivo data were used to plot graph and evaluate overall model performance. 
+- Key PK parameters (Cmax, Tmax, AUC, t½) from the simulated models were calculated and compared with in vivo PK parameters directly reported by reference literature. The evaluation of model performance based on the calculated PK parameters was done by (adopted from the following research paper: https://doi.org/10.2165/00003088-200645050-00006) calculating:
   - Fold error (FE) per parameter = max(predicted, observed) / min(predicted, observed) so FE ≥ 1.0 by definition.
-  - Average-fold error (AFE/AAFE) across parameters = geometric mean of the per-parameter FEs; the paper also reports the % within 2-fold (and 3-fold).
+  - Absolute average fold error (AAFE) across parameters = geometric mean of the per-parameter FEs; the paper also reports the % within 2-fold (and 3-fold).
   - Note: As mentioned above, digitisation can introduce small systematic and random errors, so the “Digitised In-Vivo” numbers may not perfectly reflect the original raw values. Therefore both digitised In Vivo parameter values and In Vivo parameter values directly reported by the literature were used to evaluate overall the model performance based on parameters calculated.
     
