@@ -10,11 +10,6 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 - All equations in PBPK model were manually derived using the basic rationale discussed in the following research paper: https://doi.org/10.2165/00003088-200645050-00006. 
 - Values of parameters (fup, RB, CL_int, fu_MP, Molecular Weight, etc.) were obtained from the literature or SimCYP.
   - *For references of where each parameter used to construct each model was extracted from, refer to Table 1 (rat IV model), 2 (human IV model) and 3 (human PO model) in '**[docs/Model_Derivation.md](docs/Model_Derivation)**' in 'docs' folder.*
-- Kp (tissue-to-plasma partition coefficient) values were obtained in Excel using standard partition coefficient calculators (Poulin–Theil):
-
-
-  <img width="578" height="327" alt="Screenshot 2025-09-15 at 1 51 55 PM" src="https://github.com/user-attachments/assets/1d280f9c-fe0e-4fa4-8c0f-007078901cff" />
-
 - For derivation of each equation used in model, refer to '**[docs/Model_Derivation.md](docs/Model_Derivation)**' in 'docs' folder.
 
 ## Data & Validation
