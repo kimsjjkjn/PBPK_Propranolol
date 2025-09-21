@@ -1,6 +1,6 @@
 # Discussion
 ## Rat IV Model
-The rat IV model performed well. AAFE was 1.51 for the Time–Concentration profile and 1.16 for pharmacokinetic (PK) parameters. Major PK parameters (t½, CL, Vss, AUC) were within 2-fold of literature values. For PK parameter comparisons, only the predicted and literature values were compared, because digitised estimates can deviate from the original in vivo data (digitised data were used only for profile-level metrics as raw Time-Concentration datasets were unavailable). Generally, an AAFE within 2-fold is considered good validation for building robust PBPK models (Deepika et al., 2023). Therefore, these results indicate a robust and credible rat IV model.
+The rat IV model performed well. AAFE was 1.51 for the Time–Concentration profile and 1.16 for pharmacokinetic (PK) parameters. Major PK parameters (t½, CL, Vss, AUC) were within 2-fold of literature values. For PK parameter comparisons, only the predicted and literature values were compared, because digitised estimates can deviate from the original in vivo data (digitised data were used only for profile-level metrics as raw Time-Concentration datasets were unavailable). Generally, an AAFE within 2-fold is considered good validation for building robust PBPK models (Deepika and Kumar, 2023). Therefore, these results indicate a robust and credible rat IV model.
 
 
 ## Human IV Model
