@@ -1,6 +1,6 @@
 # Results
 
-## Rat IV Model
+## Rat IV (Intravenous Administration) Model
 - In vivo pharmacokinetic data for comparison: doi.org/10.1159/000136352
 
 
@@ -14,11 +14,12 @@ Figure 1. In vivo propranolol blood concentration versus time profiles after int
 
 
 
-Figure 2. Rat IV: Predicted vs digitised in vivo propranolol blood concentrations.
+Figure 2. In vivo vs predicted time-concentration graph of intravenously administered propranolol to healthy rat.
+
 
 <img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/1fd97cfc-5851-4255-b714-438d83ac760e" />
 
-Table 1. Model performance based on time-concentration profile: Average Absolute Fold Error (AAFE) between predicted and digitised in vivo concentrations in the IV rat model.
+Table 1. Model performance based on time-concentration profile: Average Absolute Fold Error (AAFE) between predicted and digitised in vivo concentrations in IV rat model.
   
 | Metric | Value |
 | :------ | ----: |
@@ -44,7 +45,7 @@ Note:
 - Only the parameters reported in the literature were calculated and compared.
 - The in vivo time–concentration datasets used for Figure 2 and Table 1 were digitised from published figures (as raw time-concentration datasets were unavailable). Digitised data are used only for plotting time-concentration profile and profile-level goodness-of-fit metrics (e.g., AAFE, fold-accuracy). Pharmacokinetic (PK) parameter-level comparisons (Table 2) are made exclusively against literature PK parameter values, because it is more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data.
 
-## Human IV Model
+## Human IV (Intravenous Administration) Model
 - In vivo pharmacokinetic data for comparison: 10.1371/journal.pone.0097885
 
 
@@ -53,11 +54,11 @@ Figure 3. In vivo propranolol plasma concentration versus time profiles after in
 
 - Source: 10.1371/journal.pone.0097885
 
-Figure 4. Human IV: Predicted vs digitised in vivo propranolol plasma concentrations (in vivo data is in venous plasma concentration, so predicted data was also converted to venous plasma concentration).
+Figure 4. In vivo vs predicted time-concentration graph of intravenously administered propranolol to healthy human (in vivo data is in venous plasma concentration, so predicted data was also converted to venous plasma concentration).
 
 <img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/59f4131f-4722-4d97-82e3-f392feb3212d" />
 
-Table 3. Model performance based on time-concentration profile: Average Absolute Fold Error (AAFE) between predicted and digitised in vivo concentrations in the IV human model.
+Table 3. Model performance based on time-concentration profile: Average Absolute Fold Error (AAFE) between predicted and digitised in vivo concentrations in IV human model.
 
 | Metric | Value |
 | :------ | ----: |
@@ -88,7 +89,7 @@ Note:
   - In the referenced study, blood sampling was performed only after the infusion ended. This is also evident because the first sampling time point (5 min) shows the maximum observed concentration - if sampling began during the infusion, the end-of-infusion point (10 min) would be expected to capture Cmax. Because the earliest available sample is at 5 min (no sample at t = 0), the literature Tmax defaults to 5 min by design. Direct comparison of Cmax and Tmax with a simulation that reports concentrations from t = 0 would therefore yield misaligned values that are not physiologically informative. Accordingly, Cmax and Tmax were excluded from subsequent parameter analyses and are not reported in this portfolio.
 - The in vivo time–concentration datasets used for Figure 4 and Table 3 were digitised from published figures (as raw time-concentration datasets were unavailable). Digitised data are used only for plotting time-concentration profile and profile-level goodness-of-fit metrics (e.g., AAFE, fold-accuracy). Pharmacokinetic (PK) parameter-level comparisons (Table 4) are made exclusively against literature PK parameter values, because it is more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data.
   
-## Human PO Model
+## Human PO (Oral Administration) Model
 - In vivo pharmacokinetic data for comparison: 10.1371/journal.pone.0097885
 
 Figure 5. In vivo propranolol plasma concentration versus time profiles after oral application in healthy human from the literature (figure 2B control data was used).
@@ -97,11 +98,11 @@ Figure 5. In vivo propranolol plasma concentration versus time profiles after or
 - Source: 10.1371/journal.pone.0097885
 
   
-Figure 6. Human PO: Predicted vs digitised in vivo propranolol plasma concentrations (in vivo data is in venous plasma concentration, so predicted data was also converted to venous plasma concentration).
+Figure 6. In vivo vs predicted time-concentration graph of orally administered propranolol to healthy human (in vivo data is in venous plasma concentration, so predicted data was also converted to venous plasma concentration).
 
 <img width="480" height="264" alt="image" src="https://github.com/user-attachments/assets/0b8af275-9950-4c06-a528-feb8bc5836c3" />
 
-Table 5. Model performance based on time-concentration profile: Average Absolute Fold Error (AAFE) between predicted and digitised in vivo concentrations in the PO human model.
+Table 5. Model performance based on time-concentration profile: Average Absolute Fold Error (AAFE) between predicted and digitised in vivo concentrations in PO human model.
 
 | Metric                            |       Value |
 | :-------------------------------- | ----------: |
