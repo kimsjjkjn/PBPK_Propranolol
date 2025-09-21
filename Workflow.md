@@ -25,7 +25,7 @@
 ## 3) Data Processing in Excel
 - Paste the exported **Table** (predictions) into an Excel file.
 - Add the literature in-vivo datasets in the same file if available.  
-  - If raw in vivo time–concentration datasets from literature are unavailable, use digitised data based on the figures in the literature for plotting time-concentration profile.
+  - If raw in vivo time–concentration datasets from literature are unavailable, use digitised data based on the figures in the literature for plotting time-concentration profile and profile-level model performance evaluation.
 - Plot time–concentration overlays.
   - Change y-axis to log-scale for better display.
 - Calculate metrics (Fold Error (FE), Absolute Average Fold Error (AAFE)) and PK parameters (AUC, t½, CL, Vss, Cmax, Tmax, F).
