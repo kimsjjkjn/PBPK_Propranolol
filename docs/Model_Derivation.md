@@ -97,7 +97,7 @@ Table 3. Parameters obtained from literature that are used to construct **human 
 ## Period setting
 *Note: The period setting should be aligned with the literature conditions to ensure valid comparison.*
 
-code:
+### **CODE**:
 - `STARTTIME = 0` ; Simulation start time (min)
 - `STOPTIME = 120` ; Simulation end time (min)
 - `DT = 0.001`; Solver integration step (min). Smaller → more accurate (slower); larger → faster but risk of error.
@@ -106,7 +106,7 @@ code:
 ## Administration
 *Note: The administration setting should be aligned with the literature conditions to ensure valid comparison.*
 
-code:
+### **CODE**:
 - `dose_IV = 2500000 * BW/1000  ;ng ;(BW/1000=kg)`
   - Defines the total IV dose in nanograms (ng).
   - Because 2500000 is in the unit of ng/kg, body weight in kilograms (kg) must be multiplied to change the unit to ng. 
@@ -119,6 +119,87 @@ code:
   - Defines the infusion rate (ng/min) as a time-dependent input.
   - If the simulation time `t` is still within the infusion window (`t < dosing_time_IV`), drug is delivered at a constant rate (`Rate = Total dose / Infusion duration`)
   - Once infusion time is over (`t ≥ dosing_time_IV`), the input is set to 0, meaning no more drug enters the system.
+
+## EP Calculation
+
+### **CODE**:
+- `EP = 1 + (RB-1)/Hct`
+
+### **Derivation**:
+
+Definition:
+- `C_blood` : drug concentration in whole blood
+- `C_plasma` : drug concentration in plasma
+- `C_RBC` : drug concentration inside red blood cells (RBCs)
+- `EP`: Erythrocyte-to-plasma concentration ratio (RBC concentration / plasma concentration), unitless
+- `RB` : Blood-to-plasma concentration ratio (C_blood / C_plasma), unitless.
+- `Hct` : Hematocrit (fraction of blood volume occupied by RBCs, 0–1), unitless.
+
+**`EP` Derivation**:
+- Blood is a mixture of RBCs (`Hct` fraction) and plasma (`1−Hct` fraction).
+  - Therefore, Whole blood = RBCs (`Hct` of volume) + plasma (`1 − Hct` of volume).
+  - Thus the blood concentration is the volume-weighted average of the two phases:
+    - `C_blood = Hct * C_RBC + (1 − Hct) * C_plasma`
+  - Normalize to plasma (divide both sides by `C_plasma`)
+    - `C_blood / C_plasma = Hct * (C_RBC / C_plasma) + (1 − Hct)`
+  - Identify ratios:
+    - `RB = C_blood / C_plasma`
+    - `EP = C_RBC / C_plasma`
+  - Result:
+    - `RB = Hct * EP + (1 − Hct)`
+- Solve for `EP`:
+    1. Start from the mixture identity:
+      - `RB = Hct * EP + (1 − Hct)`
+    2. Move the plasma term to the left:
+      - `RB − (1 − Hct) = Hct * EP`
+    3. Divide by Hct:
+      - `EP = (RB − (1 − Hct)) / Hct`
+      - Compact forms (equivalent): `EP = 1 + (RB − 1)/Hct`
+
+
+## Vss Calculation
+
+### **CODE**:
+- `Vss = EP * (Vve+Var) * Hct + (Vve+Var) * (1-Hct) + Kp_a * Va + Kp_bo * Vbo + Kp_b * Vb + Kp_g * Vg + Kp_h * Vh + Kp_k * Vk + Kp_li * Vli + Kp_lg * Vlg + Kp_m * Vm + Kp_sk * Vsk + Kp_sp * Vsp ; plasma Vss`
+- `Vss_b = Vss / RB`
+
+### **Derivation**:
+
+Definition:
+- `(Vve + Var)`: Total blood volume represented as venous + arterial compartments.
+- Hct: Hematocrit (fraction of blood volume that is red blood cells).
+- EP: Erythrocyte-to-plasma concentration ratio (RBC concentration / plasma concentration), dimensionless.
+
+Blood contribution (plasma-referenced):
+  - `EP * (Vve+Var) * Hct`: Drug contained inside RBCs, expressed relative to plasma concentration.
+  - `(Vve+Var) * (1−Hct)`: Drug contained in plasma itself.
+  - Together these two terms = blood volume × blood:plasma partition `(Hct⋅EP+(1−Hct))`.
+
+Tissue contributions (plasma-referenced):
+- `Kp_T * VT` terms (for a, bo, b, g, h, k, li, lg, m, sk, sp):
+  - `Kp_T` = tissue-to-plasma partition coefficient of tissue i (dimensionless).
+  - `VT`= anatomical volume of tissue i (e.g., `Va` adipose, `Vbo` bone, `Vb` brain, `Vg` gut, `Vh` heart, `Vk` kidney, `Vli` liver, `Vlg` lung, `Vm` muscle, `Vsk` skin, `Vsp` spleen).
+  - Each product `Kp_T * VT` adds that tissue’s effective distribution volume referenced to plasma.
+
+What the equation is doing:
+- It sums blood (RBC + plasma) distribution and all tissue distributions, all referenced to plasma concentration, to yield the steady-state volume of distribution vs. plasma (`Vss, plasma`).
+
+Units:
+- All volumes V in mL and EP, Hct, Kp are unitless → `Vss` returns in mL.
+
+**`Vss_b`**
+- `Vss`, as explained above, is plasma-referenced. Therefore, if literature concentrations are reported in plasma, this Vss value should be used.
+- Yet, if lieterature concentrations are reported in blood, `Vss` cannot be used but should be converted to blood-level (= `Vss_b`. This can be done by dividing `Vss` by `RB`.
+  - **`Vss_b` Derivation**:
+    - `Vss,plasma ​= Amount in body​ / C_plasma​`
+      - Where `Vss,plasma` = plasma-refrenced Vss
+      - `C_plasma` = Drug concentration in plasma
+    - `Vss,blood ​= Amount in body​ / C_blood​`
+      - Where `Vss,blood` = blood-refrenced Vss
+      - `C_blood` = Drug concentration in blood
+    - `C_blood = C_plasma * RB`
+    - Thus, `Vss,blood` = `Amount in body​ / C_blood` = `Amount in body​ / (C_plasma * RB)` = `(Amount in body​/C_plasma) * (1/RB)` = `Vss,plasma / RB`
+
 
 ## Predicted Kp values
 Kp (tissue-to-plasma partition coefficient) values were obtained using standard partition coefficient calculators (Poulin–Theil): 
@@ -290,7 +371,7 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
 ## Period setting
 *Note: The period setting should be aligned with the literature conditions to ensure valid comparison.*
 
-code:
+### **CODE**:
 - `STARTTIME = 0` ; Simulation start time (min)
 - `STOPTIME = 2890` ; Simulation end time (min) ; 10-min infusion + 2880-min post-infusion
 - `DT = 0.001`; Solver integration step (min). Smaller → more accurate (slower); larger → faster but risk of error.
@@ -310,7 +391,7 @@ This way, simulated times align exactly with the **post-infusion** sampling wind
 
 ## Administration
 *Note: The administration setting should be aligned with the literature conditions to ensure valid comparison.*
-code:
+### **CODE**:
 - `dose_IV = 1000000   ;ng`
   - Defines the total IV dose in nanograms (ng).
 - `dosing_time_IV = 10 ;min`
@@ -319,6 +400,13 @@ code:
   - Defines the infusion rate (ng/min) as a time-dependent input.
   - If the simulation time `t` is still within the infusion window (`t < dosing_time_IV`), drug is delivered at a constant rate (`Rate = Total dose / Infusion duration`)
   - Once infusion time is over (`t ≥ dosing_time_IV`), the input is set to 0, meaning no more drug enters the system.
+
+## EP Calculation
+This is the same as in what's discussed in rat IV model. Please refer to **'Rat IV Model - EP Calculation'** section.
+
+## Vss Calculation
+This is the same as in what's discussed in rat IV model. Please refer to **'Rat IV Model - Vss Calculation'** section.
+
 
 ## Predicted Human Kp values
 As a heuristic cross-species adjustment, human Kp values were obtained by scaling rat Kp values by the plasma-unbound fraction (`fup`) ratio (`fup_human / fup_rat`).
@@ -393,7 +481,7 @@ This is the same as in what's discussed in rat IV model. Please refer to **'Rat 
 
 ## Period setting
 *Note: The period setting should be aligned with the literature conditions to ensure valid comparison.*
-code:
+### **CODE**:
 - `STARTTIME = 0` ; Simulation start time (min)
 - `STOPTIME = 2880` ; Simulation end time (min) 
 - `DT = 0.001`; Solver integration step (min). Smaller → more accurate (slower); larger → faster but risk of error.
@@ -401,9 +489,15 @@ code:
 
 ## Administration
 *Note: The administration setting should be aligned with the literature conditions to ensure valid comparison.*
-code:
+### **CODE**:
 - `dose_PO = 40000000 ;ng`
   - Defines the total PO dose in nanograms (ng). 
+
+## EP Calculation
+This is the same as in what's discussed in rat IV model. Please refer to **'Rat IV Model - EP Calculation'** section.
+
+## Vss Calculation
+This is the same as in what's discussed in rat IV model. Please refer to **'Rat IV Model - Vss Calculation'** section.
 
 ## Predicted Human Kp values
 This is the same as in what's discussed in human IV model. Please refer to **'Human IV Model - Predicted Human Kp values'** section.
