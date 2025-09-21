@@ -30,8 +30,8 @@ Table 1. Parameters obtained from literature that are used to construct **rat IV
 
 | Parameter | Unit | Value (Baseline) | Source / Reference | Notes (Assumptions, Comments) |
 |-----------|------|------------------|--------------------|-------------------------------|
-| fup | - | 0.08 | EVANS, GWYN H., et al. “THE DISPOSITION of PROPRANOLOL. III. DECREASED HALF-LIFE and VOLUME of DISTRIBUTION as a RESULT of PLASMA BINDING in MAN, MONKEY, DOG and RAT.” The Journal of Pharmacology and Experimental Therapeutics, vol. 186, no. 1, 31 Jan. 2025, pp. 114–122, https://doi.org/10.1016/S0022-3565(25)29572-6. | The binding of propranolol to plasma has been determined at therapeutic concentrations by by equilibrium dialysis in rat (92.2%), thus fup is (100-92.2)/100 = 0.078 ≈ 0.08 |
-| RB | - | 0.78 | "Singh, K, et al. “Determination of in Vivo Hepatic Extraction Ratio from in Vitro Metabolism by Rat Hepatocytes.” Drug Metabolism and Disposition: The Biological Fate of Chemicals, vol. 19, no. 5, 1991, pp. 990–6, pubmed.ncbi.nlm.nih.gov/1686248/. | - |
+| fup | - | 0.08 | EVANS, GWYN H., et al. “THE DISPOSITION of PROPRANOLOL. III. DECREASED HALF-LIFE and VOLUME of DISTRIBUTION as a RESULT of PLASMA BINDING in MAN, MONKEY, DOG and RAT.” The Journal of Pharmacology and Experimental Therapeutics, vol. 186, no. 1, 31 Jan. 2025, pp. 114–122, https://doi.org/10.1016/S0022-3565(25)29572-6. | The binding of propranolol to plasma has been determined at therapeutic concentrations by equilibrium dialysis in rat (92.2%), thus fup is (100-92.2)/100 = 0.078 ≈ 0.08 |
+| RB | - | 0.78 | "Singh, K, et al. “Determination of in vivo Hepatic Extraction Ratio from in Vitro Metabolism by Rat Hepatocytes.” Drug Metabolism and Disposition: The Biological Fate of Chemicals, vol. 19, no. 5, 1991, pp. 990–6, pubmed.ncbi.nlm.nih.gov/1686248/. | - |
 | GFR_rat | mL/min | 2.9 | "Potter, D, et al. “Character of Function and Size in Kidney during Normal Growth of Rats.” Pediatric Research, vol. 3, no. 1, 1 Jan. 1969, pp. 51–59, https://doi.org/10.1203/00006450-196901000-00007. | The mean GFR is reported as 1.7 mL/min for rats with an average body weight of 173 g and 4.1 mL/min for rats with an average body weight of 350 g. Since the present IV model is standardised to a rat body weight of 250 g, the average of these two values (2.9 mL/min) was adopted. This approximation is justified because the interpolated body weight (260 g) closely matches the model reference of 250 g. |
 | CL_int | mL/min/mg microsomal protein | 0.13 | "Hung, Daniel Y., et al. “Disposition Kinetics of Propranolol Isomers in the Perfused Rat Liver.” The Journal of Pharmacology and Experimental Therapeutics, vol. 311, no. 2, 3 Jan. 2025, pp. 822–829, www.sciencedirect.com/science/article/pii/S0022356524316593, https://doi.org/10.1124/jpet.104.070011. | - |
 | fu_MP | - | 0.49 | "Hung, Daniel Y., et al. “Disposition Kinetics of Propranolol Isomers in the Perfused Rat Liver.” The Journal of Pharmacology and Experimental Therapeutics, vol. 311, no. 2, 3 Jan. 2025, pp. 822–829, www.sciencedirect.com/science/article/pii/S0022356524316593, https://doi.org/10.1124/jpet.104.070011. | - |
@@ -288,8 +288,8 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
 
 <img width="577" height="180" alt="Screenshot 2025-09-12 at 9 32 08 PM" src="https://github.com/user-attachments/assets/5619ac97-93c3-4bde-9899-952cd3c72a33" />
 
-- `VT * d/dt(C_T) = Q_T * C_ab - Q_T * Cv_T`
-  - Mass in: `Q_T * C_ab`
+- `VT * d/dt(C_T) = Q_T * C_ar - Q_T * Cv_T`
+  - Mass in: `Q_T * C_ar`
   - Mass out: `Q_T * Cv_T`
   - There is no differential equation for Cv_T as blood outflow is different depending on the tissues. Therefore, the following conversion is used to define Cv_T:
     - `Kp = C_T / C_p` ; C_T = tissue concentration, C_P = plasma concentration
@@ -297,7 +297,7 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
     - `Cv_T = C_p * RB` ; RB is multiplied to convert the standard from plasma to blood concentration
     - Thus `Cv_T = (C_T / Kp) * RB`
   - Thus, non-eliminating tissue differential equation can be written again as:
-    `VT * d/dt(C_T) = (Q_T * C_ab) - (Q_T * C_T / Kp * RB)`
+    `VT * d/dt(C_T) = (Q_T * C_ar) - (Q_T * C_T / Kp * RB)`
 
 **Mass Differential Equations**
 - **Structure**:
@@ -361,6 +361,7 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
   - To conserve **flow** and **mass**, the leftover flow must be routed somewhere, and it is done by defining a residual flow (`Q_rest`).
     - Define a residual flow: `Q_rest = Q − (Q_a + Q_bo + Q_b + Q_h + Q_k + Q_li + Q_m + Q_sk)`
     - What it does: With ROB, total inflow/outflow is balanced so that: `Σ all tissue flows + Q_rest = Q`. Lung inflow/outflow and venous/arterial pools remain consistent without artificially inflating any single tissue’s flow.
+      - Note: Blood from the gut and spleen drains to the liver first via the portal vein: `Xin_li = (Q_li - Q_sp - Q_g) * C_ar + Xout_g + Xout_sp`. Because `Q_li` represents total hepatic flow (hepatic artery + portal vein), `Q_sp` and `Q_g` are already included in it. Therefore, `Q_sp` and `Q_g` are not subtracted from `Q` when calculating `Q_rest`.
 
 
 ## Weight
@@ -471,7 +472,7 @@ This is the same as in what's discussed in rat IV model. Please refer to **'Rat 
 ## Weight
 - Note that standard average weight of male human (70kg = 70000g) is used in this model. 
 - Since this human model did not require organ weights, they were not defined. If needed (e.g., when using microsomal intrinsic clearance and requiring liver weight for in vivo scaling), human organ weights can be obtained from the SimCYP human database.
-- This can be adjusted based on the need.
+- This can be adjusted as needed.
 
 ## Converting Output
 - Since the literature reports drug concentration as venous plasma concentration (`Cp_ve`), the model should also provide output in terms of Cp_ve to align with the literature. As the current model is expressed in blood concentration, the venous blood concentration (`C_ve`) must be converted to `Cp_ve` using the blood-to-plasma ratio (`RB`): `Cp_ve = C_ve / RB`.
