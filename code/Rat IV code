@@ -63,17 +63,18 @@ GFR_rat = 2.9 ;mL/min
 CL_r = (fup/RB * GFR_rat) ;mL/mi ; fub = fup/RB
 CL_r_u = GFR_rat
 
+;renal excretion;
+Xexc_r = CL_r_u * (C_k * (1/kp_k)) * fup
+; invivo CL_r_u * Cvk,u(= CvR * fub)) = CL_r_u * (fup/RB * (RB * C_k *(1/kp_k))
+
 ;;;;; CL_int_u ;;;;
 CL_int = 0.13 * MPPGL_mic * W_li ;mL/min
 fu_MP = 0.49
 CL_int_u = CL_int / fu_MP
 
-;;;;; Metabolism ;;;;
+;;;;; hepatic metabolism ;;;;
 Xmet_li = CL_int_u * (C_li * (1/Kp_li)) * fup   
 ; invivo CL_int_u * CvLI,u(= CvLI * fub)) = CL_int_u * (fup/RB * (RB * Cli *(1/Kp_li))
-Xmet_r = CL_r_u * (C_k * (1/kp_k)) * fup
-; invivo CL_r_u * Cvk,u(= CvR * fub)) = CL_r_u * (fup/RB * (RB * C_k *(1/kp_k))
-;propranolol is almost completely hepatically metabolised, thus it is rational to put xmet_r as 0. 
 
 ;;;;; Initial Values ;;;;;
 
@@ -132,7 +133,7 @@ d/dt(C_bo) = (1/Vbo) * (Xin_bo - Xout_bo)
 d/dt(C_b) = (1/Vb) * (Xin_b - Xout_b)
 d/dt(C_g) = (1/Vg) * (Xin_g - Xout_g + Rabs)
 d/dt(C_h) = (1/Vh) * (Xin_h - Xout_h)
-d/dt(C_k) = (1/Vk) * (Xin_k - Xout_k - Xmet_r)
+d/dt(C_k) = (1/Vk) * (Xin_k - Xout_k - Xexc_r)
 d/dt(C_li) = (1/Vli) * (Xin_li - Xout_li - Xmet_li)
 d/dt(C_lg) = (1/Vlg) * (Xin_lg - Xout_lg)
 d/dt(C_m) = (1/Vm) * (Xin_m - Xout_m)
