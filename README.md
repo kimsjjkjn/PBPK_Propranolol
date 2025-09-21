@@ -79,3 +79,4 @@ Table 10. **PBPK Propranolol – Model Performance Summary**.
 | **Human IV** | 1.28 | 1.28 | All within 2×             | - | Good agreement. Reliable and predictive model.           |
 | **Human PO** |                     1.76 |         1.43 | All within 2×        | -    |Good agreement. Reliable and predictive model.   |
 
+Note: The time–concentration AAFE was computed against digitised values rather than raw in vivo measurements. Because digitisation can introduce error and does not fully reflect the original datasets, the within-two-fold agreement for the time–concentration profile should be interpreted as approximate, not exact.
