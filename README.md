@@ -72,11 +72,10 @@ Figure 6. **In vivo vs predicted time-concentration graph of orally administered
 
 Table 10. **PBPK Propranolol – Model Performance Summary**.
 
-
-| Model        |        AAFE (Time–Concentration) (digitised) |                          AAFE (PK Parameters) (literature) | Key Matches (within 2×)       | Key Mismatches                                                           | Overall Conclusion                                                                                           |
+| Model        |        AAFE (time–concentration) (vs. digitised in vivo) |                          AAFE (PK Parameters) (vs. literature in vivo) | Key Matches (within 2×)       | Key Mismatches                                                           | Overall Conclusion                                                                                           |
 | ------------ | -----------------------: | --------------------------------------------: | ----------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | **Rat IV**   |                      1.51 |                1.16 | All within 2× | -                                            | Good agreement. Reliable and predictive model.                                 |
 | **Human IV** | 1.28 | 1.28 | All within 2×             | - | Good agreement. Reliable and predictive model.           |
 | **Human PO** |                     1.76 |         1.43 | All within 2×        | -    |Good agreement. Reliable and predictive model.   |
 
-Note: The time–concentration AAFE was computed against digitised values rather than raw in vivo measurements. Because digitisation can introduce error and does not fully reflect the original datasets, the within-two-fold agreement for the time–concentration profile should be interpreted as approximate, not exact.
+**Note**: The time–concentration AAFE was computed against **digitised values** rather than raw in vivo measurements. Because digitisation can introduce error and does not fully reflect the original datasets, the within-two-fold agreement for the time–concentration profile should be interpreted as **approximate**, not exact.
