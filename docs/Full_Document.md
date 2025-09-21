@@ -233,7 +233,7 @@ Note:
 
 # Discussion
 ## Rat IV Model
-The rat IV model performed well. AAFE was 1.51 for the Time–Concentration profile and 1.16 for pharmacokinetic (PK) parameters. Major PK parameters (t½, CL, Vss, AUC) were all within 2-fold of literature values. For PK parameter comparisons, only the predicted and literature values were compared, because digitised estimates can deviate from the original in vivo data (digitised data were used only for profile-level metrics as raw time-concentration datasets were unavailable). Generally, an AAFE within 2-fold is considered good validation for building robust PBPK models (Deepika and Kumar, 2023). Therefore, these results indicate a robust and credible rat IV model.
+The rat IV model performed well. AAFE was 1.51 for the time–concentration profile and 1.16 for pharmacokinetic (PK) parameters. Major PK parameters (t½, CL, Vss, AUC) were all within 2-fold of literature values. For PK parameter comparisons, only the predicted and literature values were compared, because digitised estimates can deviate from the original in vivo data (digitised data were used only for profile-level metrics as raw time-concentration datasets were unavailable). Accordingly, one should note that because the profile AAFE is computed against digitised values, which can introduce non-trivial error, rather than raw measurements, the “AAFE within 2-fold” finding should be interpreted as approximate rather than exact. Generally, an AAFE within 2-fold is considered good validation for building robust PBPK models (Deepika and Kumar, 2023). Therefore, these results indicate a robust and credible rat IV model.
 
 
 ## Human IV Model
@@ -256,6 +256,8 @@ Table 10. PBPK Propranolol – Model Performance Summary.
 | **Rat IV**   |                      1.51 |                1.16 | All within 2× | -                                            | Good agreement. Reliable and predictive model.                                 |
 | **Human IV** | 1.28 | 1.28 | All within 2×             | - | Good agreement. Reliable and predictive model.           |
 | **Human PO** |                     1.76 |         1.43 | All within 2×        | -    |Good agreement. Reliable and predictive model.   |
+
+Note: The time–concentration AAFE was computed against digitised values rather than raw in vivo measurements. Because digitisation can introduce error and does not fully reflect the original datasets, the within-two-fold agreement for the time–concentration profile should be interpreted as approximate, not exact.
 
 
 # Potential Improvement
