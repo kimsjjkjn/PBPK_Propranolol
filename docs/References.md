@@ -12,7 +12,7 @@ Hung, D. Y., et al. “Disposition Kinetics of Propranolol Isomers in the Perfus
 
 Jamei, M., et al. “Population-Based Mechanistic Prediction of Oral Drug Absorption.” The AAPS Journal, vol. 11, no. 2, 2009, pp. 225–237. https://doi.org/10.1208/s12248-009-9099-y.
 
-Jones, H. M. and Rowland Yeo K. “Basic Concepts in Physiologically Based Pharmacokinetic Modeling in Drug Discovery and Development.” CPT: Pharmacometrics & Systems Pharmacology, vol. 2, no. 8, 2013, pp. 1–12. https://doi.org/10.1038/psp.2013.41.
+Jones, H. M. and Yeo, K.R. “Basic Concepts in Physiologically Based Pharmacokinetic Modeling in Drug Discovery and Development.” CPT: Pharmacometrics & Systems Pharmacology, vol. 2, no. 8, 2013, pp. 1–12. https://doi.org/10.1038/psp.2013.41.
 
 Jones, H. M., et al. “A Novel Strategy for Physiologically Based Predictions of Human Pharmacokinetics.” Clinical Pharmacokinetics, vol. 45, no. 5, 2006, pp. 511–542. https://doi.org/10.2165/00003088-200645050-00006.
 
@@ -50,4 +50,4 @@ Taegtmeyer, A. B., et al. “A Study of the Relationship between Serum Bile Acid
 
 Taylor, E. A., and P. Turner. “The Distribution of Propranolol, Pindolol and Atenolol between Human Erythrocytes and Plasma.” British Journal of Clinical Pharmacology, vol. 12, no. 4, Oct. 1981, pp. 543–548. https://doi.org/10.1111/j.1365-2125.1981.tb01263.x.
 
-Zhao, Peng, et al. “Applications of Physiologically Based Pharmacokinetic (PBPK) Modeling and Simulation during Regulatory Review.” Clinical Pharmacology & Therapeutics, vol. 92, no. 1, 2012, pp. 1–4. https://doi.org/10.1038/clpt.2012.113.
+Zhao, P., et al. “Applications of Physiologically Based Pharmacokinetic (PBPK) Modeling and Simulation during Regulatory Review.” Clinical Pharmacology & Therapeutics, vol. 92, no. 1, 2012, pp. 1–4. https://doi.org/10.1038/clpt.2012.113.
