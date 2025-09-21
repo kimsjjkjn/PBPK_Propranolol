@@ -278,6 +278,7 @@ Kp (tissue-to-plasma partition coefficient) values were obtained using standard 
 - Thus `Cv_li_u` = `C_li * (1/Kp_li) * RB * (fup / RB)` = `C_li * (1/Kp_li)) * fup`
 - Therefore, `Xmet_li = CL_int_u * (C_li * (1/Kp_li)) * fup`
 
+*Note: Propranolol is almost completely hepatically metabolised, thus it is rational to assume that renal metabolism is negligible (≈0). Therefore, renal metabolism is not modeled in this project.*
 
 
 ## **Differential Equations**: 
@@ -461,6 +462,9 @@ As a heuristic cross-species adjustment, human Kp values were obtained by scalin
     - Again, there is no need to multiply `fub` (= `fup / RB`) as we are not solving for `Cv_li_u`.
       - *Note that this is valid only if CL_int_eff = 2710 represents a whole-liver, blood-standard intrinsic clearance estimated under steady-state conditions. It does not apply when distribution has not been fully achieved.*
 - Therefore, `Xmet_li = CL_int_eff * (RB * C_li * (1/Kp_li))`
+
+*Note: Propranolol is almost completely hepatically metabolised, thus it is rational to assume that renal metabolism is negligible (≈0). Therefore, renal metabolism is not modeled in this project.*
+
 
 ## **Differential Equations**: 
 This is the same as in what's discussed in rat IV model. Please refer to **'Rat IV Model - Differential Equations'** section.
