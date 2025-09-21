@@ -7,8 +7,7 @@
 
 Figure 1. In vivo propranolol blood concentration versus time profiles after intravenous application in healthy rat from the literature (figure 1 control data was used).
 
-
-<img width="600" height="800" alt="Screenshot 2025-09-10 at 3 13 19 PM" src="https://github.com/user-attachments/assets/e821a4a7-fc80-422e-940d-2287ed015a3b" />
+<img width="600" height="800" alt="Screenshot 2025-09-22 at 1 38 47 AM" src="https://github.com/user-attachments/assets/4a19c3ab-637c-4650-98b0-cc14193bb2de" />
 
 - Source: doi.org/10.1159/000136352
 
@@ -19,7 +18,7 @@ Figure 2. In vivo vs predicted time-concentration graph of intravenously adminis
 
 <img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/1fd97cfc-5851-4255-b714-438d83ac760e" />
 
-Table 1. Model performance based on time-concentration profile: Average Absolute Fold Error (AAFE) between predicted and digitised in vivo concentrations in IV rat model.
+Table 1. Model performance based on time-concentration profile: Average Absolute Fold Error (AAFE) between predicted and digitised in vivo concentrations in rat IV model.
   
 | Metric | Value |
 | :------ | ----: |
@@ -27,7 +26,7 @@ Table 1. Model performance based on time-concentration profile: Average Absolute
 | Fraction within 2-fold (0.5–2.0) | 0.8 |
 | Fraction within 3-fold (0.33–3.0) | 0.8 |
 
-Table 2. Comparison of predicted pharmacokinetic parameters with literature in vivo pharmacokinetic parameters in IV rat model.
+Table 2. Comparison of predicted pharmacokinetic parameters with literature in vivo pharmacokinetic parameters in rat IV model.
 
 | Metric             |   Predicted | Literature In Vivo |    Pred/Lit |   FE vs Lit | Within 2x (Lit) | Within 3x (Lit) |
 | :----------------- | ----------: | -----------------: | ----------: | ----------: | :-------------: | :-------------: |
@@ -38,18 +37,24 @@ Table 2. Comparison of predicted pharmacokinetic parameters with literature in v
 
 - Abbreviations: AUC, area under the concentration–time curve; CL, clearance; Vss, volume of distribution at steady state; t½, elimination half-life.
 
-Route-level summary (Rat IV)					
-- vs Literature: AAFE = 1.16, within 2× = 100%, within 3× = 100%.
+Table 3. Model performance based on PK parameters: Average Absolute Fold Error (AAFE) between predicted and literature in vivo PK parameters in rat IV model.
+
+| Metric | Value |
+| :------ | ----: |
+| AAFE | 1.16 |
+| Fraction within 2-fold (0.5–2.0) | 1.0 |
+| Fraction within 3-fold (0.33–3.0)| 1.0 |
 
 Note: 
 - Only the parameters reported in the literature were calculated and compared.
-- The in vivo time–concentration datasets used for Figure 2 and Table 1 were digitised from published figures (as raw time-concentration datasets were unavailable). Digitised data are used only for plotting time-concentration profile and profile-level goodness-of-fit metrics (e.g., AAFE, fold-accuracy). Pharmacokinetic (PK) parameter-level comparisons (Table 2) are made exclusively against literature PK parameter values, because it is more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data.
+- The in vivo time–concentration datasets used for Figure 2 and Table 1 were digitised from published figures (as raw time-concentration datasets were unavailable). Digitised data are used only for plotting time-concentration profile and profile-level goodness-of-fit metrics (e.g., AAFE, fold-accuracy). Pharmacokinetic (PK) parameter-level comparisons (Table 2 and 3) are made exclusively against literature PK parameter values, because it is more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data.
 
 ## Human IV (Intravenous Administration) Model
 - In vivo pharmacokinetic data for comparison: 10.1371/journal.pone.0097885
 
 
 Figure 3. In vivo propranolol plasma concentration versus time profiles after intravenous application in healthy human from the literature (figure 2A control data was used).
+
   <img width="711" height="351" alt="Screenshot 2025-09-10 at 2 06 48 PM" src="https://github.com/user-attachments/assets/83b672f8-65d8-4171-b4b3-eead4938a100" />
 
 - Source: 10.1371/journal.pone.0097885
@@ -58,7 +63,7 @@ Figure 4. In vivo vs predicted time-concentration graph of intravenously adminis
 
 <img width="468" height="273" alt="image" src="https://github.com/user-attachments/assets/59f4131f-4722-4d97-82e3-f392feb3212d" />
 
-Table 3. Model performance based on time-concentration profile: Average Absolute Fold Error (AAFE) between predicted and digitised in vivo concentrations in IV human model.
+Table 4. Model performance based on time-concentration profile: Average Absolute Fold Error (AAFE) between predicted and digitised in vivo concentrations in human IV model.
 
 | Metric | Value |
 | :------ | ----: |
@@ -66,7 +71,7 @@ Table 3. Model performance based on time-concentration profile: Average Absolute
 | Fraction within 2-fold (0.5–2.0) | 1 |
 | Fraction within 3-fold (0.33–3.0) | 1 |
 
-Table 4. Comparison of predicted pharmacokinetic parameters with literature in vivo pharmacokinetic parameters in IV human model
+Table 5. Comparison of predicted pharmacokinetic parameters with literature in vivo pharmacokinetic parameters in human IV model
 
 | Metric             |   Predicted | Literature In Vivo |    Pred/Lit |   FE vs Lit | Within 2x (Lit) | Within 3x (Lit) |
 | :----------------- | ----------: | -----------------: | ----------: | ----------: | :-------------: | :-------------: |
@@ -80,14 +85,19 @@ Table 4. Comparison of predicted pharmacokinetic parameters with literature in v
 
 - Note: Human CL reported as total mL/min (70kg standard)
 
-Route-level summary (Human IV)
-vs Literature (excluding IV Cmax & Tmax): AAFE = 1.28, within 2× = 100%, within 3× = 100%.
+Table 6. Model performance based on PK parameters: Average Absolute Fold Error (AAFE) between predicted and literature in vivo PK parameters in human IV model.
+
+| Metric | Value |
+| :------ | ----: |
+| AAFE | 1.28 |
+| Fraction within 2-fold (0.5–2.0) | 1.0 |
+| Fraction within 3-fold (0.33–3.0)| 1.0 |
 
 
 Note: 
 - Only the parameters reported in the literature were calculated and compared.
   - In the referenced study, blood sampling was performed only after the infusion ended. This is also evident because the first sampling time point (5 min) shows the maximum observed concentration - if sampling began during the infusion, the end-of-infusion point (10 min) would be expected to capture Cmax. Because the earliest available sample is at 5 min (no sample at t = 0), the literature Tmax defaults to 5 min by design. Direct comparison of Cmax and Tmax with a simulation that reports concentrations from t = 0 would therefore yield misaligned values that are not physiologically informative. Accordingly, Cmax and Tmax were excluded from subsequent parameter analyses and are not reported in this portfolio.
-- The in vivo time–concentration datasets used for Figure 4 and Table 3 were digitised from published figures (as raw time-concentration datasets were unavailable). Digitised data are used only for plotting time-concentration profile and profile-level goodness-of-fit metrics (e.g., AAFE, fold-accuracy). Pharmacokinetic (PK) parameter-level comparisons (Table 4) are made exclusively against literature PK parameter values, because it is more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data.
+- The in vivo time–concentration datasets used for Figure 4 and Table 4 were digitised from published figures (as raw time-concentration datasets were unavailable). Digitised data are used only for plotting time-concentration profile and profile-level goodness-of-fit metrics (e.g., AAFE, fold-accuracy). Pharmacokinetic (PK) parameter-level comparisons (Table 5 and 6) are made exclusively against literature PK parameter values, because it is more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data.
   
 ## Human PO (Oral Administration) Model
 - In vivo pharmacokinetic data for comparison: 10.1371/journal.pone.0097885
@@ -102,7 +112,7 @@ Figure 6. In vivo vs predicted time-concentration graph of orally administered p
 
 <img width="480" height="264" alt="image" src="https://github.com/user-attachments/assets/0b8af275-9950-4c06-a528-feb8bc5836c3" />
 
-Table 5. Model performance based on time-concentration profile: Average Absolute Fold Error (AAFE) between predicted and digitised in vivo concentrations in PO human model.
+Table 7. Model performance based on time-concentration profile: Average Absolute Fold Error (AAFE) between predicted and digitised in vivo concentrations in human PO model.
 
 | Metric                            |       Value |
 | :-------------------------------- | ----------: |
@@ -110,7 +120,7 @@ Table 5. Model performance based on time-concentration profile: Average Absolute
 | Fraction within 2-fold (0.5–2.0)  | 0.58 |
 | Fraction within 3-fold (0.33–3.0) | 0.92 |
 
-Table 6. Comparison of predicted pharmacokinetic parameters with literature in vivo pharmacokinetic parameters in PO human model.
+Table 8. Comparison of predicted pharmacokinetic parameters with literature in vivo pharmacokinetic parameters in human PO model.
 
 | Metric             |   Predicted | Literature In Vivo |    Pred/Lit |   FE vs Lit | Within 2x (Lit) | Within 3x (Lit) |
 | :----------------- | ----------: | -----------------: | ----------: | ----------: | :-------------: | :-------------: |
@@ -123,11 +133,15 @@ Table 6. Comparison of predicted pharmacokinetic parameters with literature in v
 - Abbreviations: AUC, area under the concentration–time curve; Cmax, peak concentration; F, oral bioavailability; t½, elimination half-life; Tmax, time point of Cmax.
 
 
-Route-level summary (Human PO)
-- vs Literature: AAFE = 1.43, within 2× = 100%, within 3× = 100%.
+Table 9. Model performance based on PK parameters: Average Absolute Fold Error (AAFE) between predicted and literature in vivo PK parameters in human PO model.
 
+| Metric | Value |
+| :------ | ----: |
+| AAFE | 1.43 |
+| Fraction within 2-fold (0.5–2.0) | 1.0 |
+| Fraction within 3-fold (0.33–3.0)| 1.0 |
 
 
 Note: 
 - Only the parameters reported in the literature were calculated and compared.
-- The in vivo time–concentration datasets used for Figure 6 and Table 5 were digitised from published figures (as raw time-concentration datasets were unavailable). Digitised data are used only for plotting time-concentration profile and profile-level goodness-of-fit metrics (e.g., AAFE, fold-accuracy). Pharmacokinetic (PK) parameter-level comparisons (Table 6) are made exclusively against literature PK parameter values, because it is more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data.
+- The in vivo time–concentration datasets used for Figure 6 and Table 7 were digitised from published figures (as raw time-concentration datasets were unavailable). Digitised data are used only for plotting time-concentration profile and profile-level goodness-of-fit metrics (e.g., AAFE, fold-accuracy). Pharmacokinetic (PK) parameter-level comparisons (Table 8 and 9) are made exclusively against literature PK parameter values, because it is more appropriate to benchmark against actual literature data rather than digitised estimates, as digitised values may not fully reflect observed in vivo data.
