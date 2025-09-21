@@ -225,22 +225,20 @@ Kp (tissue-to-plasma partition coefficient) values were obtained using standard 
   - `CL_r_blood` = `(fub * C_blood * GFR) / C_blood` = `fub * GFR`
   - `CL_r_u` = `(fub * C_blood * GFR) / (fub * C_blood)` = `GFR`
 
-### **Renal Metabolism**: 
+### **Renal Excretion**: 
 #### **CODE**:
-- `Xmet_r = CL_r_u * (C_k * (1/Kp_k)) * fup`
+- `Xexc_r = CL_r_u * (C_k * (1/Kp_k)) * fup`
 #### **Derivation**:
 
 <img width="327" height="68" alt="Screenshot 2025-09-12 at 9 29 51 PM" src="https://github.com/user-attachments/assets/14f18d62-a625-4829-b64d-e77e34b469d5" />
 
-- In this Mass balance differential equation of kidney tissue, the metabolism equation is `CL_R_u * Cv_k_u`.
+- In this Mass balance differential equation of kidney tissue, the excretion equation is `CL_R_u * Cv_k_u`.
 - `Cv_k_u = Cv_k * fub` ; fub is multiplied to obtain unbound drug concentration in venous 'blood'.
   - `Cv_k = C_k * (1/Kp_k) * RB`
     - *Please refer to **Non-Eliminating Tissue Differential Equation Derivation** in **Rat IV Model - Differential Equation** section for the derivation of `Cv_k`.*
   - `fub = fup / RB`
 - Thus `Cv_k_u` = `C_k * (1/Kp_k) * RB * (fup / RB)` = `C_k * (1/Kp_k)) * fup`
-- Therefore, `Xmet_r = CL_r_u * (C_k * (1/Kp_k)) * fup`
-#### Note:
-Propranolol is almost completely hepatically metabolised, thus it is rational to put `Xmet_r` as 0. 
+- Therefore, `Xexc_r = CL_r_u * (C_k * (1/Kp_k)) * fup`
 
 ### **CL_int_u**: 
 #### **CODE**:
@@ -310,8 +308,8 @@ Propranolol is almost completely hepatically metabolised, thus it is rational to
       - **Gut**: `d/dt(C_g) = (1/Vg) * (Xin_g - Xout_g + Rabs)`
         - Gut is where absorption of drug occurs. Therefore, absorption rate (= `Rabs`) is added to the basic structure in the case of PO model.
         - Because absorption does not occur in the case of IV administration (thus put as `Rabs = 0` in IV model), gut mass differential equation is the same as the basic structure in IV model (but this is not the case for PO model - see Rabs derivation in **Human PO Model - Absorption** section below).
-      - **Kidney**: `d/dt(C_k) = (1/Vk) * (Xin_k - Xout_k - Xmet_r)`
-        - To reflect renal clearance, `Xmet_r` is incorporated in the equation (because metabolised amount = `Xmet_r` is removed from total kidney concentration, Xmet_r is subtracted).
+      - **Kidney**: `d/dt(C_k) = (1/Vk) * (Xin_k - Xout_k - Xexc_r)`
+        - To reflect renal excretion, `Xexc_r` is incorporated in the equation (because excreted amount = `Xexc_r` is removed from total kidney concentration, `Xexc_r` is subtracted).
       - **Liver**: `d/dt(C_li) = (1/Vli) * (Xin_li - Xout_li - Xmet_li)`
         - To reflect hepatic metabolism, `Xmet_li` is incorporated in the equation (because metabolised amount = `Xmet_li` is removed from total liver concentration, `Xmet_li` is subtracted).
 - **Mass in**
@@ -432,9 +430,9 @@ As a heuristic cross-species adjustment, human Kp values were obtained by scalin
   - `CL_r_blood` = `(fub * C_blood * GFR) / C_blood` = `fub * GFR`
   - `CL_r_u_human` = `(fub * C_blood * GFR) / (fub * C_blood)` = `GFR`
 
-### **Renal Metabolism**: 
+### **Renal Excretion**: 
 #### **CODE**:
-- `Xmet_r = CL_r_u_human * (C_k * (1/Kp_k)) * fup`
+- `Xexc_r = CL_r_u_human * (C_k * (1/Kp_k)) * fup`
 #### **Derivation**:
 
 <img width="327" height="68" alt="Screenshot 2025-09-12 at 9 29 51 PM" src="https://github.com/user-attachments/assets/14f18d62-a625-4829-b64d-e77e34b469d5" />
@@ -445,12 +443,10 @@ As a heuristic cross-species adjustment, human Kp values were obtained by scalin
     - *Please refer to **Non-Eliminating Tissue Differential Equation Derivation** in **Rat IV Model - Differential Equation** section for the derivation of `Cv_k`.*
   - `fub = fup / RB`
 - Thus `Cv_k_u` = `C_k * (1/Kp_k) * RB * (fup / RB)` = `C_k * (1/Kp_k)) * fup`
-- Therefore, `Xmet_r = CL_r_u_human * (C_k * (1/Kp_k)) * fup`
-#### Note:
-Propranolol is almost completely hepatically metabolised, thus it is rational to put `Xmet_r` as 0. 
+- Therefore, `Xexc_r = CL_r_u_human * (C_k * (1/Kp_k)) * fup`
 
 
-### **CL_int_u**: 
+### **CL_int_eff**: 
 #### **CODE**:
 - `CL_int_eff = 2710 ;mL/min`
   - Since `CL_int_eff = 2710` obtained from literature is already in the standard of whole blood concentration, there is no need to divide it by fu_MP - it is already scaled to in vivo. 
