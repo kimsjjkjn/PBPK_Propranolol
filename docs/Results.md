@@ -30,15 +30,15 @@ Table 2. Comparison of Predicted Pharmacokinetic Parameters with Literature In V
 
 | Metric             |   Predicted | Literature In Vivo |    Pred/Lit |   FE vs Lit | Within 2x (Lit) | Within 3x (Lit) |
 | :----------------- | ----------: | -----------------: | ----------: | ----------: | :-------------: | :-------------: |
-| AUC₀–∞ (ng·min/mL) | 30703.66 |             27,122 | 1.13 | 1.13 |       TRUE      |       TRUE      |
+| AUC₀–∞ (ng·min/mL) | 30703.66 |             27122 | 1.13 | 1.13 |       TRUE      |       TRUE      |
 | CL (mL/min)        |       81.42 |               92.2 | 0.88 | 1.13 |       TRUE      |       TRUE      |
 | Vss (L/kg)         | 5.89 |                5.3 | 1.11 | 1.11 |       TRUE      |       TRUE      |
-| t½ (min)           | 46.77 |                 40 | 1.17 | 1.17 |       TRUE      |       TRUE      |
+| t½ (min)           | 50.17 |                 40 | 1.25 | 1.25 |       TRUE      |       TRUE      |
 
 - Abbreviations: AUC, area under the concentration–time curve; CL, clearance; Vss, volume of distribution at steady state; t½, elimination half-life.
 
 Route-level summary (Rat IV)					
-- vs Literature: AAFE = 1.14, within 2× = 100%, within 3× = 100%.
+- vs Literature: AAFE = 1.16, within 2× = 100%, within 3× = 100%.
 
 Note: 
 - Only the parameters reported in the literature were calculated and compared.
@@ -116,7 +116,7 @@ Table 6. Comparison of Predicted Pharmacokinetic Parameters with Literature In V
 | Cmax (ng/mL)       | 17.31 |                 28 | 0.62 | 1.62 |       TRUE      |       TRUE      |
 | Tmax (min)         |         100 |                180 | 0.56 |         1.8 |       TRUE      |       TRUE      |
 | AUC₀–∞ (ng·min/mL) | 11196.36 |               8930 | 1.25 | 1.25 |       TRUE      |       TRUE      |
-| t½ (min)           | 269.99 |                214 | 1.26 | 1.26 |       TRUE      |       TRUE      |
+| t½ (min)           | 270.06 |                214 | 1.26 | 1.26 |       TRUE      |       TRUE      |
 | F (%)              | 34.91 |                 27 | 1.29 | 1.29 |       TRUE      |       TRUE      |
 
 - Abbreviations: AUC, area under the concentration–time curve; Cmax, peak concentration; F, oral bioavailability; t½, elimination half-life; Tmax, time point of Cmax.
