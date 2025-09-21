@@ -437,7 +437,7 @@ As a heuristic cross-species adjustment, human Kp values were obtained by scalin
 
 <img width="327" height="68" alt="Screenshot 2025-09-12 at 9 29 51 PM" src="https://github.com/user-attachments/assets/14f18d62-a625-4829-b64d-e77e34b469d5" />
 
-- In this Mass balance differential equation of kidney tissue, the metabolism equation is `CL_r_u_human * Cv_k_u`.
+- In this Mass balance differential equation of kidney tissue, the excretion equation is `CL_r_u_human * Cv_k_u`.
 - `Cv_k_u = Cv_k * fub` ; fub is multiplied to obtain unbound drug concentration in venous 'blood'.
   - `Cv_k = C_k * (1/Kp_k) * RB`
     - *Please refer to **Non-Eliminating Tissue Differential Equation Derivation** in **Rat IV Model - Differential Equation** section for the derivation of `Cv_k`.*
