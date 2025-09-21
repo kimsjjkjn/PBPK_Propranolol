@@ -36,7 +36,7 @@ Rowland, M., et al. “Physiologically Based Pharmacokinetics in Drug Developmen
 
 Rowland, M., and T. N. Tozer. Clinical Pharmacokinetics and Pharmacodynamics: Concepts and Applications. 4th ed., Wolters Kluwer Health/Lippincott Williams & Wilkins, 2011
 
-Shahrokhi, M., and V. Gupta. “Propranolol.” StatPearls, StatPearls Publishing, 1 May 2023, https://www.ncbi.nlm.nih.gov/books/NBK557801/
+Shahrokhi, M., and V. Gupta. “Propranolol.” StatPearls, National Library of Medicine, 1 May 2023, https://www.ncbi.nlm.nih.gov/books/NBK557801/
 
 Shand, D. G., et al. “The Disposition of Propranolol.” Pharmacology, vol. 8, no. 4–6, 1 Jan. 1972, pp. 344–352. https://doi.org/10.1159/000136352
 
