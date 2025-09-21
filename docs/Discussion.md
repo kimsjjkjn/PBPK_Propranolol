@@ -1,30 +1,30 @@
 # Discussion
 ## Rat IV Model
-The rat IV model performed well. AAFE was 1.51 for the Time–Concentration profile and 1.16 for pharmacokinetic (PK) parameters. Major PK parameters (t½, CL, Vss, AUC) were within 2-fold of literature values. For PK parameter comparisons, only the predicted and literature values were compared, because digitised estimates can deviate from the original in vivo data (digitised data were used only for profile-level metrics as raw Time-Concentration datasets were unavailable). Generally, an AAFE within 2-fold is considered good validation for building robust PBPK models (Deepika and Kumar, 2023). Therefore, these results indicate a robust and credible rat IV model.
+The rat IV model performed well. AAFE was 1.51 for the Time–Concentration profile and 1.16 for pharmacokinetic (PK) parameters. Major PK parameters (t½, CL, Vss, AUC) were all within 2-fold of literature values. For PK parameter comparisons, only the predicted and literature values were compared, because digitised estimates can deviate from the original in vivo data (digitised data were used only for profile-level metrics as raw time-concentration datasets were unavailable). Generally, an AAFE within 2-fold is considered good validation for building robust PBPK models (Deepika and Kumar, 2023). Therefore, these results indicate a robust and credible rat IV model.
 
 
 ## Human IV Model
-The human IV model showed AAFE 1.28 for the Time–Concentration profile and 1.28 for PK parameters, with major PK parameters (t½, CL, Vss, AUC) within 2-fold of literature values. PK parameter comparisons use literature-reported values rather than digitised estimates for the same reason as above.
+The human IV model showed AAFE 1.28 for the time–concentration profile and 1.28 for PK parameters, with major PK parameters (t½, CL, Vss, AUC) within 2-fold of literature values. PK parameter comparisons use literature-reported values rather than digitised estimates for the same reason as above.
 
 Although Cmax and Tmax were reported in the literature, these two parameters were not included in the comparison. This is because in the cited study, sampling began after the infusion ended. The first available sample (5 min) is the observed maximum, and with no sample at t = 0, Tmax defaults to 5 min by design. Directly contrasting these with simulations that report concentrations from t = 0 would be misaligned and physiologically uninformative. Accordingly, Cmax and Tmax were excluded from parameter analyses.
 
 Overall, the human IV model demonstrates consistent predictive performance within commonly used 2-fold criteria.
 
 ## Human PO Model
-The human PO model yielded AAFE 1.76 (Time–Concentration profile) and 1.43 (PK parameters). Major PK parameters (t½, Tmax, Cmax, AUC, F) were within 2-fold of literature values. As above, parameter comparisons were made against literature rather than digitised estimates. These findings support that the human PO model also provides acceptable predictive accuracy.
+The human PO model yielded AAFE 1.76 (time–concentration profile) and 1.43 (PK parameters). Major PK parameters (t½, Tmax, Cmax, AUC, F) were all within 2-fold of literature values. As above, parameter comparisons were made against literature rather than digitised estimates. These findings support that the human PO model also provides acceptable predictive accuracy.
 
 
 # Model Performance Summary
 
-- Table 7. PBPK Propranolol – Model Performance Summary
+Table 10. PBPK Propranolol – Model Performance Summary
 
-| Model        |        AAFE (Time–Concentration) (digitised) |                          AAFE (PK Parameters) (literature) | Key Matches (within 2×)       | Key Mismatches                                                           | Overall Conclusion                                                                                           |
+| Model        |        AAFE (time–concentration) (vs. digitised in vivo) |                          AAFE (PK Parameters) (vs. literature in vivo) | Key Matches (within 2×)       | Key Mismatches                                                           | Overall Conclusion                                                                                           |
 | ------------ | -----------------------: | --------------------------------------------: | ----------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | **Rat IV**   |                      1.51 |                1.16 | All within 2× | -                                            | Good agreement. Reliable and predictive model.                                 |
 | **Human IV** | 1.28 | 1.28 | All within 2×             | - | Good agreement. Reliable and predictive model.           |
 | **Human PO** |                     1.76 |         1.43 | All within 2×        | -    |Good agreement. Reliable and predictive model.   |
 
-- Abbreviations: AUC, area under the Time-Concentration curve; Cmax, peak concentration; CL, clearance; F, oral bioavailability; t½, elimination half-life; Vss, volume of distribution at steady state; Tmax, time point of Cmax.
+- Abbreviations: AUC, area under the time-concentration curve; Cmax, peak concentration; CL, clearance; F, oral bioavailability; t½, elimination half-life; Vss, volume of distribution at steady state; Tmax, time point of Cmax.
 
 
 # Potential Improvement
