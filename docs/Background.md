@@ -28,7 +28,7 @@ Propranolol is a non-selective β-blocker that competitively inhibits β1/β2 re
 
 Pharmacokinetically, it undergoes extensive first-pass hepatic metabolism (oral bioavailability is therefore limited) and has a short half-life of about 3 to 6 hours in patients with healthy renal systems (Shahrokhi and Gupta, 2023). 
 
-### Why Propranolol Was Chosen for PBPK Modeling Project
+## Why Propranolol Was Chosen for PBPK Modeling Project
 Propranolol was selected as the model compound for this PBPK project primarily because it is extensively studied in clinical pharmacology, providing a rich body of literature data. This allows for robust model validation and makes propranolol an appropriate small-molecule drug to begin with. 
 
 
