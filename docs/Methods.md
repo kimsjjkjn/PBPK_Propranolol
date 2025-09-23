@@ -8,9 +8,9 @@ Model development and simulation were performed in Berkeley Madonna (METHOD RK4)
 - A physiologically based, perfusion-limited, well-stirred PBPK model was implemented for rat IV, human IV, and human PO simulations.
 - Blood concentrations were the model standard. When literature to be compared reported plasma concentration values, simulated blood concentration values were converted to plasma concentration values at the end using the following equation: `Cp_ve = C_ve / RB` (in case the collected sample is venous blood) or `Cp_ar = C_ar / RB` (in case the collected sample is arterial blood).
 - Values of parameters (fup, RB, CL_int, fu_MP, Molecular Weight, etc.) that are needed to construct models were obtained from the literature or SimCYP.
-  - *For references of where each parameter used to construct each model was extracted from, refer to Table 1 (rat IV model), 2 (human IV model) and 3 (human PO model) in '**[Model_Derivation.md](docs/Model_Derivation.md)**' in 'docs' folder.*
+  - *For references of where each parameter used to construct each model was extracted from, refer to Table 1 (rat IV model), 2 (human IV model) and 3 (human PO model) in '**[docs/Model_Derivation.md](Model_Derivation.md)**' in 'docs' folder.*
 - All equations in PBPK model were manually derived using the basic rationale discussed in the following research paper: https://doi.org/10.2165/00003088-200645050-00006.
-  - For derivation of each equation used in model, refer to '**[Model_Derivation.md](docs/Model_Derivation.md)**' in 'docs' folder.
+  - For derivation of each equation used in model, refer to '**[docs/Model_Derivation.md](Model_Derivation.md)**' in 'docs' folder.
 
 
 ## Data & Validation
