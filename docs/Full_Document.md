@@ -77,7 +77,7 @@ After completing simulations in Berkeley Madonna, the simulated time-concentrati
   - Absolute average fold error (AAFE) across parameters = geometric mean of the per-parameter FEs; the paper also reports the % within 2-fold (and 3-fold).
   - *For the formulas used to compute each metric and PK parameter, see the Excel file titled **[PBPK_Propranolol_Data_Processing.xlsx](/PBPK_Propranolol_Data_Processing.xlsx)** in this repository - click any relevant cell to view its underlying formula in the formula bar.*
 
-Note: As mentioned above, digitisation can introduce small systematic and random errors, so the dgitised in vivo data may not perfectly reflect the original raw values. Therefore, PK parameter-level evaluation used only literature-reported in vivo PK values. The digitised in vivo time-concentration values were used solely to plot time–concentration profile overlays and compute profile-level metrics (e.g., AAFE, % within 2×/3×), not to derive PK parameters.
+Note: As mentioned above, digitisation can introduce small systematic and random errors, so the digitised in vivo data may not perfectly reflect the original raw values. Therefore, PK parameter-level evaluation used only literature-reported in vivo PK values. The digitised in vivo time-concentration values were used solely to plot time–concentration profile overlays and compute profile-level metrics (e.g., AAFE, % within 2×/3×), not to derive PK parameters.
     
 
 
