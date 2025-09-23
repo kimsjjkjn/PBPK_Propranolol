@@ -2,7 +2,7 @@
 Physiologically-based pharmacokinetic (PBPK) modeling of propranolol in rats and humans (IV & PO) using Berkeley Madonna with validation against in vivo data.
 
 # What this repository is
-This repository is a learning-oriented, proof-of-understanding portfolio designed to demonstrate my ability to derive ODE-based PBPK models from first principles and to critically evaluate discrepancies.
+This repository is a learning-oriented, proof-of-understanding portfolio designed to demonstrate my ability to derive ODE-based PBPK models from first principles and to critically evaluate the model performance.
 It emphasizes first-principles derivation (to strengthen understanding of the mechanisms behind PBPK modeling), explicit documentation of assumptions, and transparent, reproducible validation of key metrics (AAFE, FE, Within 2×/3×). Simulations were performed in Berkeley Madonna, while all validation and metric calculations are reproduced transparently in Excel using formulas (please refer to **[PBPK_Propranolol_Data_Processing.xlsx](PBPK_Propranolol_Data_Processing.xlsx)** in this repository).
 
 
