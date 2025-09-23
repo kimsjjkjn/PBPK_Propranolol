@@ -6,9 +6,9 @@ Deepika, D. and Kumar, V., 2023. The role of ‘physiologically based pharmacoki
 
 DrugBank, 2024. Propranolol. *DrugBank*. Available at: https://go.drugbank.com/drugs/DB00571
 
-Evans, G.H., et al., 2025. The disposition of propranolol. III. Decreased half-life and volume of distribution as a result of plasma binding in man, monkey, dog and rat. *The Journal of Pharmacology and Experimental Therapeutics*, 186(1), pp.114–122. https://doi.org/10.1016/S0022-3565(25)29572-6
+Evans, G.H., et al., 1973. The disposition of propranolol. III. Decreased half-life and volume of distribution as a result of plasma binding in man, monkey, dog and rat. *The Journal of Pharmacology and Experimental Therapeutics*, 186(1), pp.114–122. https://doi.org/10.1016/S0022-3565(25)29572-6
 
-Hung, D.Y., et al., 2025. Disposition kinetics of propranolol isomers in the perfused rat liver. *The Journal of Pharmacology and Experimental Therapeutics*, 311(2), pp.822–829. https://doi.org/10.1124/jpet.104.070011
+Hung, D.Y., et al., 2004. Disposition kinetics of propranolol isomers in the perfused rat liver. *The Journal of Pharmacology and Experimental Therapeutics*, 311(2), pp.822–829. https://doi.org/10.1124/jpet.104.070011
 
 Jamei, M., et al., 2009. Population-based mechanistic prediction of oral drug absorption. *The AAPS Journal*, 11(2), pp.225–237. https://doi.org/10.1208/s12248-009-9099-y
 
@@ -40,7 +40,7 @@ Shahrokhi, M. and Gupta, V., 2023. Propranolol. *StatPearls*. National Library o
 
 Shand, D.G., et al., 1972. The disposition of propranolol. *Pharmacology*, 8(4–6), pp.344–352. https://doi.org/10.1159/000136352
 
-Silberx, B.M., et al., 1983. Dose-dependent elimination of propranolol and its major metabolites in humans. *Journal of Pharmaceutical Sciences*, 72(7), pp.725–732. https://doi.org/10.1002/jps.2600720703
+Silber, B.M., et al., 1983. Dose-dependent elimination of propranolol and its major metabolites in humans. *Journal of Pharmaceutical Sciences*, 72(7), pp.725–732. https://doi.org/10.1002/jps.2600720703
 
 Simcyp Simulator, 2023. Version 22. Sheffield, UK: Certara UK Limited.
 
