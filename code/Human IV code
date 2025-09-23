@@ -65,7 +65,7 @@ CL_r_u_human  = GFR_human  ; mL/min
 
 ;;;;; renal excretion ;;;;;
 Xexc_r = CL_r_u_human * (C_k * (1/Kp_k)) * fup
-; invivo CL_r_u * Cvk,u(= CvR * fub)) = CL_r_u * (fup/RB * (RB * C_k *(1/Kp_k))
+; invivo CL_r_u * Cvk,u(= CvR * fub) = CL_r_u * (fup/RB * (RB * C_k *(1/Kp_k)))
 
 ;;;;; CL_int_eff ;;;;
 CL_int_eff = 2710 ;mL/min
