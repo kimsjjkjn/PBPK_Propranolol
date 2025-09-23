@@ -470,9 +470,8 @@ As a heuristic cross-species adjustment, human Kp values were obtained by scalin
 This is the same as in what's discussed in rat IV model. Please refer to **'Rat IV Model - Differential Equations'** section.
 
 ## Weight
-- Note that standard average weight of male human (70kg = 70000g) is used in this model. 
+- Note that standard average weight of male human (70kg = 70000g) is used in this model. This can be adjusted as needed.
 - Since this human model did not require organ weights, they were not defined. If needed (e.g., when using microsomal intrinsic clearance and requiring liver weight for in vivo scaling), human organ weights can be obtained from the SimCYP human database.
-- This can be adjusted as needed.
 
 ## Converting Output
 - Since the literature reports drug concentration as venous plasma concentration (`Cp_ve`), the model should also provide output in terms of Cp_ve to align with the literature. As the current model is expressed in blood concentration, the venous blood concentration (`C_ve`) must be converted to `Cp_ve` using the blood-to-plasma ratio (`RB`): `Cp_ve = C_ve / RB`.
