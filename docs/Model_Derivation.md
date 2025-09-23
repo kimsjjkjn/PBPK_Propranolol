@@ -540,7 +540,7 @@ This is the same as in what's discussed in human IV model. Please refer to **'Hu
   - Thus, `FH = Q_li / (Q_li + CL_int_eff)`
 
 - `FaFg = MIN(1, Fobs / FH)`
-  - `Fa * Fg` represents intestinal loss (where Fa = fraction absorbed in gut; Fg = fraction escaping gut-wall elimination).
+  - `Fa * Fg` represents intestinal availability, the fraction remaining after the gut (where Fa = fraction absorbed in gut; Fg = fraction escaping gut-wall elimination).
   - Under linear PK, systemic oral bioavailability is `F_obs = Fa * Fg * FH`. 
   - Thus, `Fa * Fg = F_obs / FH`
   - Function `MIN(1,` is used to numerically cap to [0, 1] to avoid round-off/estimation artifacts.
@@ -552,11 +552,11 @@ This is the same as in what's discussed in human IV model. Please refer to **'Hu
   - This reflects first-order depletion from the gut lumen.
 
 - `Rabs0 = ka * A_gut ;ng/min`
-  - This is uncorrected absorption flux into portal vein (pre-gut loss).
+  - This is uncorrected absorption rate from the gut lumen - i.e. a notional portal-vein inflow before gut-wall loss (pre–gut wall).
 
 - `Rabs = FaFg * Rabs0`
-  - Apply intestinal loss (`Fa * Fg`) to `Rabs0` (uncorrected absorption flux into portal vein) (post-gut loss) so that systemic `F_obs = FaFg * FH`.
-  - Thus `Rabs` represents the amount that actually enters the portal vein after traversing the intestinal wall.
+  - Applies intestinal availability (`Fa * Fg`) to `Rabs0`. This yields the portal-vein inflow rate after gut-wall loss and ensures that systemic oral bioavailability satisfies `F_obs = FaFg * FH`.
+  - Thus `Rabs` represents the absorption rate after gut-wall loss (post–gut wall).
 
 
 ## **Differential Equations**: 
