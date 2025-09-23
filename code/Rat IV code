@@ -65,7 +65,7 @@ CL_r_u = GFR_rat
 
 ;;;;; renal excretion ;;;;;
 Xexc_r = CL_r_u * (C_k * (1/Kp_k)) * fup
-; invivo CL_r_u * Cvk,u(= CvR * fub)) = CL_r_u * (fup/RB * (RB * C_k *(1/Kp_k))
+; invivo CL_r_u * Cvk,u(= CvR * fub) = CL_r_u * (fup/RB * (RB * C_k *(1/Kp_k)))
 
 ;;;;; CL_int_u ;;;;
 CL_int = 0.13 * MPPGL_mic * W_li ;mL/min
@@ -74,7 +74,7 @@ CL_int_u = CL_int / fu_MP
 
 ;;;;; hepatic metabolism ;;;;
 Xmet_li = CL_int_u * (C_li * (1/Kp_li)) * fup   
-; invivo CL_int_u * CvLI,u(= CvLI * fub)) = CL_int_u * (fup/RB * (RB * Cli *(1/Kp_li))
+; invivo CL_int_u * CvLI,u(= CvLI * fub) = CL_int_u * (fup/RB * (RB * Cli *(1/Kp_li))
 
 { Initial Values }
 
