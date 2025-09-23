@@ -193,5 +193,5 @@ Q_m = Q * 17/100 ; muscle
 Q_sk = Q * 5/100 ; skin
 Q_rest = Q - (Q_a+Q_bo+Q_b+Q_h+Q_k+Q_li+Q_m+Q_sk); rest of body
 
-;;;;; Cart/Rb --> Cp (because comparative literature gives venous plasma concentration (Cp_ve) value, convert the venous blood concentration (C_ve) values into Cp_ve by applying RB)
+;;;;; Cart/RB --> Cp (because comparative literature gives venous plasma concentration (Cp_ve) value, convert the venous blood concentration (C_ve) values into Cp_ve by applying RB)
 Cp_ve = C_ve / RB 
