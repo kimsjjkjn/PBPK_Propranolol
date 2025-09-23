@@ -28,8 +28,6 @@ Nicolaï, J., et al., 2015. Verapamil hepatic clearance in four preclinical rat 
 
 Potter, D., et al., 1969. Character of function and size in kidney during normal growth of rats. *Pediatric Research*, 3(1), pp.51–59. https://doi.org/10.1203/00006450-196901000-00007
 
-Reigner, B., et al., 1989. Comparative pharmacokinetics of propranolol after administration into the portal and systemic circulation in the rat. *Journal of Pharmacology*, 38(2), pp.112–119. https://doi.org/10.1159/000136352
-
 Rostami-Hodjegan, A., 2012. Physiologically based pharmacokinetics joined with in vitro–in vivo extrapolation of ADME: a marriage under the arch of systems pharmacology. *Clinical Pharmacology & Therapeutics*, 92(1), pp.50–61. https://doi.org/10.1038/clpt.2012.65
 
 Rowland, M., et al., 2006. Physiologically based pharmacokinetics in drug development and regulatory science: a workshop report. *Clinical Pharmacokinetics*, 45(5), pp.507–526. https://doi.org/10.2165/00003088-200645050-00006
