@@ -15,7 +15,7 @@
     - If the literature reports **arterial blood** concentrations, plot `C_ar`.  
     - If it reports **venous plasma**, convert and plot `Cp_ve`.  
   - Always note the chosen matrix in the figure caption.  
-  - *(Optional)* Use a log scale on the Y-axis for clearer display (**Graph ▸ Axix Settings…** → set Left Y Axis as auto and log).
+  - *(Optional)* Use a log scale on the Y-axis for clearer display (**Graph ▸ Axis Settings…** → set Left Y Axis as auto and log).
 
 - **Execute:** press **Run (▶)** → view results in **Table**.  
   - **Export results:** **File ▸ Export Table…** to save as CSV, or select all cells in **Table** and paste directly into Excel.
